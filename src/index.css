@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+.shadow-icon {
+  box-shadow: 2px 2px 5px #00000070;
+}
+
+.shadow-ku {
+  box-shadow: 3px 3px 7px #00000070;
+}
+
+.shadow-nav {
+  box-shadow: 4px 6px -30px rgba(0, 0, 0);
+}
