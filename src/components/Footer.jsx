@@ -1,4 +1,4 @@
-import { FaFacebookF, FaInstagram, FaAmbulance, FaYoutube, FaPhoneAlt, FaWhatsapp, FaEnvelope, FaTiktok, FaRegEnvelope } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaAmbulance, FaYoutube, FaPhoneAlt, FaWhatsapp, FaTiktok, FaRegEnvelope } from "react-icons/fa";
 import { img } from "../api/data";
 import { Link } from "react-router-dom";
 import { FaLocationDot } from "react-icons/fa6";

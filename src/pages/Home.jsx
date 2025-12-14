@@ -1,12 +1,9 @@
 import { useEffect } from "react";
-import { FaWhatsappSquare, FaUserMd, FaPhoneAlt } from "react-icons/fa";
 import PartnerKami from "../components/home/PartnerKami";
 import JknGoObat from "../components/home/JknGoObat";
 import PelayananKami from "../components/home/PelayananKami";
-import HeaderNavbar from "../components/HeaderNavbar";
 import Slider from "../components/home/Slider";
 import BeritaArtikel from "../components/home/BeritaArtikel";
-import Footer from "../components/footer";
 
 const Home = () => {
   useEffect(() => {
