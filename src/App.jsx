@@ -12,7 +12,7 @@ import Igd from "./pages/Igd";
 import BedPasien from "./pages/BedPasien";
 import GoObat from "./pages/GoObat";
 import Berita from "./pages/Berita";
-import Footer from "./pages/Footer";
+import Footer from "./components/Footer";
 import Promosi from "./pages/Promosi";
 import Gallery from "./pages/Gallery";
 import Simrs from "./pages/Simrs";
