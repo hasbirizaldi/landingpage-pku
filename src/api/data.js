@@ -4,9 +4,12 @@ import slider3 from "../assets/slider/s3.webp";
 import slider4 from "../assets/slider/s4.webp";
 import slider5 from "../assets/slider/s5.webp";
 import logo from "../assets/logo/pku.webp";
+import imgHome from "../assets/img/1.jpg";
 import logo2 from "../assets/logo/kiri.png";
 import mas from "../assets/logo/mas.webp";
 import jkn from "../assets/logo/jkn.png";
+import call from "../assets/logo/call.png";
+import emergency from "../assets/logo/emergency.png";
 import ios from "../assets/logo/ios.png";
 import go_obat from "../assets/logo/go-obat.png";
 import pln from "../assets/logo/partner/pln.png";
@@ -19,7 +22,8 @@ import kai from "../assets/logo/partner/kai.png";
 import jasa_raharja from "../assets/logo/partner/jasa-raharja.png";
 
 export const sliderImages = [slider1, slider2, slider3, slider4, slider5];
-export const img = [logo, mas, jkn, logo2, ios, go_obat];
+export const img = [logo, mas, jkn, logo2, ios, go_obat, call, emergency];
+export const images = [imgHome];
 export const partner = [bpjskes, bpjstk, car, brilife, kai, jasa_raharja, mag, pln];
 
 export const layanan = [

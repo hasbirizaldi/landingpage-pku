@@ -1,157 +1,265 @@
-import { img } from "../api/data";
-import { IoLocationSharp } from "react-icons/io5";
+import { FaFacebookF, FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa";
 import { MdKeyboardArrowDown } from "react-icons/md";
+import { IoMdCloseCircle } from "react-icons/io";
+import { TiThMenu } from "react-icons/ti";
 import { Link } from "react-router-dom";
+import { img } from "../api/data";
+import { useState, useEffect } from "react";
 
 const HeaderNavbar = () => {
+  const [openMenu, setOpenMenu] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  const closeAll = () => {
+    setOpenMenu(false);
+  };
+
+  // ===== SCROLL DETECTOR =====
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 80);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <div>
-      <header className="bg-white h-20 px-30 border-b-2 border-white flex ">
-        <div className="flex items-center justify-between gap-20 w-full">
-          <span className="flex items-center">
-            <img src={img[0]} alt="PKU MUHAMMADIYAH SRUWENG" className="w-16 h-15 mr-2" />
-            <div>
-              <h1 className="font-bold text-xl">RS PKU MUHAMMADIYAH SRUWENG</h1>
-              <p className="text-red-600 font-semibold">Semaikin Unggul dan Islami</p>
+    <>
+      {/* ================= HEADER ================= */}
+      <header
+        className={`
+    sticky top-0 lg:fixed lg:top-0 lg:left-0
+    w-full z-50
+    bg-slate-50
+    lg:h-20 h-14
+    lg:px-40 px-2
+    flex items-center
+    transition-all duration-300
+    ${scrolled ? "lg:-translate-y-full lg:opacity-0" : ""}
+  `}
+      >
+        <div className="flex justify-between items-center w-full">
+          {/* LOGO */}
+          <div className="flex gap-20 items-center">
+            <div className="flex gap-2">
+              <img src={img[0]} alt="logo" className="w-12 lg:w-16" />
+              <div>
+                <h1 className="font-bold leading-5 text-green-800">RS PKU MUHAMMADIYAH</h1>
+                <h1 className="font-bold leading-5 text-yellow-600">SRUWENG</h1>
+                <p className="text-red-600 font-semibold hidden lg:block">Semakin Unggul dan Islami</p>
+              </div>
             </div>
-          </span>
-          <img src={img[1]} alt="LARSI" className=" h-12" />
+            <img src={img[1]} alt="logo" className="w-12 lg:w-30 hidden lg:flex" />
+          </div>
+
+          {/* SOSMED DESKTOP */}
+          <div className="lg:flex hidden items-center justify-between">
+            <div className="flex gap-3">
+              <div className="flex gap-2 items-center font-bold text-base ">
+                <div className="border-2 border-red-600 p-1 rounded-full shadow-icon">
+                  <img src={img[7]} alt="Emergency" className="h-6" />
+                </div>
+                <p className="flex flex-col">
+                  <span className="font-normal leading-4 text-slate-900">Emergency</span>
+                  <span className="text-red-600">0287-6601061</span>
+                </p>
+              </div>
+              <div className="flex gap-2 items-center font-bold text-base">
+                <div className="border-2 border-green-700 p-1 rounded-full  shadow-icon">
+                  <img src={img[6]} alt="Call-center" className="h-6" />
+                </div>
+                <p className="flex flex-col">
+                  <span className="font-normal leading-4 text-slate-900">Emergency</span>
+                  <span className="text-green-700">0287-6601061</span>
+                </p>
+              </div>
+            </div>
+            <div>
+              <div className="flex gap-1 ml-12">
+                <Link to="/" className="w-8 h-8 flex items-center justify-center transition">
+                  <FaInstagram
+                    className="text-xl text-slate-700
+                   hover:text-pink-700 hover:scale-110 transition-all ease-in-out"
+                  />
+                </Link>
+                <Link to="/" className="w-8 h-8 flex items-center justify-center transition">
+                  <FaFacebookF
+                    className="text-xl text-slate-700
+                   hover:text-blue-600
+                  0 hover:scale-110 transition-all "
+                  />
+                </Link>
+                <Link to="/" className="w-8 h-8 flex items-center justify-center transition">
+                  <FaTiktok
+                    className="text-xl text-slate-700
+                   hover:text-gray-700 hover:scale-110 transition-all "
+                  />
+                </Link>
+                <Link to="/" className="w-8 h-8 flex items-center justify-center transition">
+                  <FaYoutube
+                    className="text-xl text-slate-700
+                   hover:text-red-600 hover:scale-110 transition-all "
+                  />
+                </Link>
+              </div>
+            </div>
+          </div>
+          {/* HAMBURGER */}
+          <div className="lg:hidden cursor-pointer" onClick={() => setOpenMenu(!openMenu)}>
+            {openMenu ? <IoMdCloseCircle className="text-4xl text-green-700" /> : <TiThMenu className="text-4xl text-green-700" />}
+          </div>
         </div>
       </header>
-      <nav className="bg-gradient-to-r from-yellow-700 via-yellow-500 to-yellow-600 z-50">
-        <div className="max-w-7xl mx-auto px-4 py-2 flex justify-center items-center">
-          {/* Menu desktop */}
-          <ul className="hidden md:flex text-white font-semibold text-[14px] overflow-visible">
-            <li className="px-3">
+
+      {/* ================= NAV DESKTOP ================= */}
+      <nav
+        className={`
+          bg-green-900 z-40
+          transition-all duration-300
+          hidden lg:block shadow-ku
+          ${scrolled ? "fixed top-0 w-full " : "relative mt-20"}
+        `}
+      >
+        <div className="bg-gradient-to-r from-yellow-700 via-yellow-500 to-yellow-600 max-w-[1110px] mx-auto rounded-b-3xl border-b-4 border-green-900">
+          <ul className="flex justify-center text-white text-sm font-semibold">
+            <li className="px-3 py-3">
               <Link to="/">BERANDA</Link>
             </li>
-            <li className="px-3">
-              <Link to="/jadwal-dokter">DOKTER KAMI</Link>
+            <li className="px-3 py-3">
+              <Link to="/jadwal-dokter">JADWAL DOKTER</Link>
             </li>
-            <li className="px-3">
-              <Link to="/indikator-mutu">INDIKATOR MUTU</Link>
-            </li>
-            <li className="px-3">
-              <Link to="/falsafah-visi-misi">FALSAFAH VISI & MISI</Link>
-            </li>
-            <li className="px-3 relative group">
-              <div className="flex items-end cursor-pointer">
-                <span>FASILITAS</span>
-                <MdKeyboardArrowDown className="text-xl" />
-              </div>
 
-              {/* Dropdown */}
-              <div className="absolute left-0 top-8 bg-white text-black rounded shadow-lg w-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 z-50">
-                <ul className="py-2">
-                  <li className="px-4 py-2 hover:bg-gray-100 ">
-                    <Link to="rawat-jalan" className="text-sm font-normal">
-                      Pelayanan Rawat Jalan
-                    </Link>
-                  </li>
-                  <li className="px-4 py-2 hover:bg-gray-100">
-                    <Link to="/rawat-inap" className="text-sm font-normal">
-                      Pelayanan Rawat Inap
-                    </Link>
-                  </li>
-                  <li className="px-4 py-2 hover:bg-gray-100">
-                    <Link to="/penunjang" className="text-sm font-normal">
-                      Pelayanan Penunjang
-                    </Link>
-                  </li>
-                  <li className="px-4 py-2 hover:bg-gray-100">
-                    <Link to="/dokter-kami" className="text-sm font-normal">
-                      Dokter Kami
-                    </Link>
-                  </li>
-                  <li className="px-4 py-2 hover:bg-gray-100">
-                    <Link to="/igd" className="text-sm font-normal">
-                      IGD 24 Jam
-                    </Link>
-                  </li>
-                  <li className="px-4 py-2 hover:bg-gray-100">
-                    <Link to="/bed-pasien" className="text-sm font-normal">
-                      Bed Pasien
-                    </Link>
-                  </li>
-                  <li className="px-4 py-2 hover:bg-gray-100">
-                    <Link to="/go-obat" className="text-sm font-normal">
-                      Go Obat
-                    </Link>
-                  </li>
-                </ul>
+            {/* TENTANG */}
+            <li className="relative group px-3 py-3 cursor-pointer">
+              <div className="flex items-center">
+                TENTANG KAMI <MdKeyboardArrowDown />
+              </div>
+              <div className="absolute left-0 top-full bg-white text-black w-56 rounded shadow opacity-0 invisible group-hover:visible group-hover:opacity-100 transition">
+                <Link className="block px-4 py-2 hover:bg-gray-100" to="/">
+                  Sejarah
+                </Link>
+                <Link className="block px-4 py-2 hover:bg-gray-100" to="/falsafah-visi-misi">
+                  Falsafah Visi & Misi
+                </Link>
+                <Link className="block px-4 py-2 hover:bg-gray-100" to="/falsafah-visi-misi">
+                  Akreditasi & Penghargaan
+                </Link>
+                <Link className="block px-4 py-2 hover:bg-gray-100" to="/indikator-mutu">
+                  Indikator Mutu
+                </Link>
+                <Link className="block px-4 py-2 hover:bg-gray-100" to="/falsafah-visi-misi">
+                  Struktur Organisasi
+                </Link>
               </div>
             </li>
-            <li className="px-3 relative group">
-              <div className="flex items-end cursor-pointer">
-                <span>BERITA & ARTIKEL</span>
-                <MdKeyboardArrowDown className="text-xl" />
+            {/* FASILITAS */}
+            <li className="relative group px-3 py-3 cursor-pointer">
+              <div className="flex items-center">
+                FASILITAS <MdKeyboardArrowDown />
               </div>
+              <div className="absolute left-0 top-full bg-white text-black w-56 rounded shadow opacity-0 invisible group-hover:visible group-hover:opacity-100 transition">
+                <Link className="block px-4 py-2 hover:bg-gray-100" to="/rawat-jalan">
+                  Pelayanan Rawat Jalan
+                </Link>
+                <Link className="block px-4 py-2 hover:bg-gray-100" to="/rawat-inap">
+                  Pelayanan Rawat Inap
+                </Link>
+                <Link className="block px-4 py-2 hover:bg-gray-100" to="/penunjang">
+                  PELAYANAN PENUNJANG
+                </Link>
+                <Link className="block px-4 py-2 hover:bg-gray-100" to="/igd">
+                  IGD 24 JAM
+                </Link>
+                <Link className="block px-4 py-2 hover:bg-gray-100" to="/dokter-kami">
+                  Dokter Kami
+                </Link>
+                <Link className="block px-4 py-2 hover:bg-gray-100" to="/bed-pasien">
+                  Bed Pasien
+                </Link>
+                <Link className="block px-4 py-2 hover:bg-gray-100" to="/go-obat">
+                  Go Obat
+                </Link>
+              </div>
+            </li>
+            {/* BERITA ARTIKEL */}
+            <li className="relative group px-3 py-3 cursor-pointer">
+              <div className="flex items-center">
+                BERITA & ARTIKEL <MdKeyboardArrowDown />
+              </div>
+              <div className="absolute left-0 top-full bg-white text-black w-56 rounded shadow opacity-0 invisible group-hover:visible group-hover:opacity-100 transition">
+                <Link className="block px-4 py-2 hover:bg-gray-100" to="/berita">
+                  Berita
+                </Link>
+                <Link className="block px-4 py-2 hover:bg-gray-100" to="/artikel-islami">
+                  Artikel Islami
+                </Link>
+                <Link className="block px-4 py-2 hover:bg-gray-100" to="/artikel-kesehatan">
+                  Artikel Kesehatan
+                </Link>
+                <Link className="block px-4 py-2 hover:bg-gray-100" to="/promosi-leaflet">
+                  Promosi & Leaflet
+                </Link>
+                <Link className="block px-4 py-2 hover:bg-gray-100" to="/gallery">
+                  Gallery
+                </Link>
+              </div>
+            </li>
+            {/* VIDIO TUTORIAL */}
+            <li className="relative group px-3 py-3 cursor-pointer">
+              <div className="flex items-center">
+                BERITA & ARTIKEL <MdKeyboardArrowDown />
+              </div>
+              <div className="absolute left-0 top-full bg-white text-black w-56 rounded shadow opacity-0 invisible group-hover:visible group-hover:opacity-100 transition">
+                <Link className="block px-4 py-2 hover:bg-gray-100" to="/keislaman">
+                  Keislaman
+                </Link>
+                <Link className="block px-4 py-2 hover:bg-gray-100" to="/kesehatan">
+                  Kesehatan
+                </Link>
+                <Link className="block px-4 py-2 hover:bg-gray-100" to="/simrs">
+                  SIMRS
+                </Link>
+              </div>
+            </li>
 
-              {/* Dropdown */}
-              <div className="absolute left-0 top-8 bg-white text-black rounded shadow-lg w-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 z-50">
-                <ul className="py-2">
-                  <li className="px-4 py-2 hover:bg-gray-100 ">
-                    <Link to="/berita" className="text-sm font-normal">
-                      Berita
-                    </Link>
-                  </li>
-                  <li className="px-4 py-2 hover:bg-gray-100">
-                    <Link to="/artikel-islami" className="text-sm font-normal">
-                      Artikel Islami
-                    </Link>
-                  </li>
-                  <li className="px-4 py-2 hover:bg-gray-100">
-                    <Link to="/artikel-kesehatan" className="text-sm font-normal">
-                      Artikel Kesehatan
-                    </Link>
-                  </li>
-                  <li className="px-4 py-2 hover:bg-gray-100">
-                    <Link to="/promosi-leaflet" className="text-sm font-normal">
-                      Promosi & Leaflet
-                    </Link>
-                  </li>
-                  <li className="px-4 py-2 hover:bg-gray-100">
-                    <Link to="/gallery" className="text-sm font-normal">
-                      Gallery
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-            </li>
-            <li className="px-3 relative group">
-              <div className="flex items-end cursor-pointer">
-                <span>VIDIO & TUTORIAL</span>
-                <MdKeyboardArrowDown className="text-xl" />
-              </div>
-
-              {/* Dropdown */}
-              <div className="absolute left-0 top-8 bg-white text-black rounded shadow-lg w-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 z-50">
-                <ul className="py-2">
-                  <li className="px-4 py-2 hover:bg-gray-100 ">
-                    <Link to="/keislaman" className="text-sm font-normal">
-                      Keislaman
-                    </Link>
-                  </li>
-                  <li className="px-4 py-2 hover:bg-gray-100">
-                    <Link to="/kesehatan" className="text-sm font-normal">
-                      Kesehatan
-                    </Link>
-                  </li>
-                  <li className="px-4 py-2 hover:bg-gray-100">
-                    <Link to="/simrs" className="text-sm font-normal">
-                      SIMRS
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-            </li>
-            <li className="px-3">
+            <li className="px-3 py-3">
               <Link to="/karir">KARIR</Link>
             </li>
           </ul>
         </div>
       </nav>
-    </div>
+
+      {/* ===== SPACER (WAJIB, BIAR GA LOMPAT) ===== */}
+      <div className={`${scrolled ? "lg:h-12" : "lg:h-0"}`} />
+
+      {/* ================= NAV MOBILE ================= */}
+      <div
+        className={`
+          lg:hidden fixed top-14 left-0 w-full bg-green-700 text-white z-40
+          transition-all duration-300
+          ${openMenu ? "max-h-screen opacity-100" : "max-h-0 opacity-0 overflow-hidden"}
+        `}
+      >
+        <ul className="flex flex-col text-sm font-semibold">
+          <li className="px-4 py-3 border-b">
+            <Link to="/" onClick={closeAll}>
+              BERANDA
+            </Link>
+          </li>
+          <li className="px-4 py-3 border-b">
+            <Link to="/jadwal-dokter" onClick={closeAll}>
+              JADWAL DOKTER
+            </Link>
+          </li>
+          <li className="px-4 py-3 border-b">
+            <Link to="/karir" onClick={closeAll}>
+              KARIR
+            </Link>
+          </li>
+        </ul>
+      </div>
+    </>
   );
 };
 

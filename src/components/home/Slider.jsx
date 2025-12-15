@@ -1,32 +1,44 @@
-import React, { useEffect, useState } from "react";
-import { sliderImages } from "../../api/data";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import { images, sliderImages } from "../../api/data";
 
-const Slider = () => {
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setIndex((prev) => (prev + 1) % sliderImages.length);
-    }, 3000);
-
-    return () => clearInterval(timer);
-  }, []);
-
+export default function ImageSlider() {
   return (
-    <div className="relative overflow-hidden w-full">
-      {/* TEXT CENTER */}
-      <div className="absolute inset-0 z-10 flex items-center justify-center text-center px-6">
-        <div>
-          <p className="text-3xl md:text-4xl font-bold mb-2 text-white">Selamat Datang di</p>
-          <p className="text-4xl md:text-5xl font-bold text-white">RS PKU MUHAMMADIYAH SRUWENG</p>
-          <p className="mt-2 text-red-400 font-semibold text-xl md:text-2xl">"Semakin Unggul dan Islami"</p>
+    <div className="w-full px-4 md:px-16 lg:px-60">
+      <div className="relative overflow-hidden lg:rounded-xl rounded mb-2">
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white bg-black/30">
+          <h1 className="lg:text-3xl text-xl font-semibold mb-2">SELAMAT DATANG DI</h1>
+          <h1 className="lg:text-5xl text-2xl font-bold mb-1">RS PKU MUHAMMADIYAH SRUWENG</h1>
+          <h1 className="lg:text-2xl text-xl">"Semakin Unggul dan Islami"</h1>
         </div>
+        <img src={images[0]} alt="Home" className="h-120 w-full object-bottom" />
       </div>
-
-      {/* IMAGE */}
-      <img src={sliderImages[index]} alt="slider" className="w-full h-[500px] object-cover brightness-50 transition-all duration-700" />
+      <div className="">
+        <Swiper
+          modules={[Navigation, Autoplay]}
+          navigation
+          autoplay={{ delay: 2000, disableOnInteraction: false }}
+          loop
+          spaceBetween={20}
+          slidesPerView={3}
+          breakpoints={{
+            0: { slidesPerView: 1 },
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          }}
+          className="rounded-2xl"
+        >
+          {sliderImages.map((img, i) => (
+            <SwiperSlide key={i}>
+              <div className="overflow-hidden rounded-2xl shadow-lg">
+                <img src={img} alt={`slide-${i}`} className="h-[200px] w-full object-cover hover:scale-105 transition duration-500" />
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
     </div>
   );
-};
-
-export default Slider;
+}
