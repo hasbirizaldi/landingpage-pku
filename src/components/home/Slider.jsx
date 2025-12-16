@@ -46,14 +46,14 @@ export default function ImageSlider() {
           </div>
         </div>
       </section>
-      <section className="lg:w-[80%] mx-auto">
+      <section className="lg:block hidden lg:w-[80%] mx-auto">
         <div className="grid grid-cols-3 lg:grid-cols-3 h-auto lg:h-40 lg:rounded-b-2xl overflow-hidden">
-          <Link to="/" className="flex flex-col items-center justify-center py-3 bg-green-700 group hover:bg-green-900 transition">
+          <Link to="/dokter-kami" className="flex flex-col items-center justify-center py-3 bg-green-700 group hover:bg-green-900 transition">
             <div className="bg-white group-hover:bg-green-700 lg:p-5 p-4 rounded-full">
               <FaUserDoctor className="text-2xl lg:text-4xl text-green-800 group-hover:text-white" />
             </div>
-            <span className="font-semibold text-white text-[12px] lg:text-lg mt-1">CARI </span>
-            <span className="font-semibold text-white text-[12px] lg:text-lg">DOKTER </span>
+            <span className="font-semibold text-white text-[12px] lg:text-lg mt-1">DOKTER </span>
+            <span className="font-semibold text-white text-[12px] lg:text-lg">KAMI </span>
           </Link>
 
           <Link to="/" className="flex flex-col items-center justify-center py-3 bg-green-700 border-x-2 border-white group hover:bg-green-900 transition">

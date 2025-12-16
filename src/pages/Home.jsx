@@ -8,17 +8,13 @@ import BeritaArtikel from "../components/home/BeritaArtikel";
 
 const Home = () => {
   useEffect(() => {
-    document.title = "RS PKU Muhammadiyah Sruweng | Beranda";
+    document.title = "RS PKU Sruweng | Beranda";
   }, []);
   return (
     <div>
       {/* konten */}
       <div className="bg-slate-50 relative">
-        {/* fixed */}
-        {/* <FixedMenu /> */}
-
         <Slider />
-
         <JknGoObat />
         <PartnerKami />
         <PelayananKami />

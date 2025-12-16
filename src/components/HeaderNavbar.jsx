@@ -120,7 +120,7 @@ const HeaderNavbar = () => {
           ${scrolled ? "fixed top-0 w-full " : "relative mt-20"}
         `}
       >
-        <div className="bg-gradient-to-r from-yellow-700 via-yellow-500 to-yellow-600 max-w-[80%] mx-auto rounded-b-2xl">
+        <div className="bg-gradient-to-r from-yellow-700 via-yellow-500 to-yellow-600 max-w-[80%] mx-auto rounded-b-full">
           <ul className="flex justify-center text-white text-sm font-semibold h-13">
             <li className="px-3 py-4">
               <Link to="/">BERANDA</Link>
@@ -135,27 +135,27 @@ const HeaderNavbar = () => {
                 TENTANG KAMI <MdKeyboardArrowDown />
               </div>
               <div className="absolute left-0 top-full bg-white text-black w-56 rounded shadow opacity-0 invisible group-hover:visible group-hover:opacity-100 transition">
-                <Link className="block px-4 py-2 hover:bg-gray-100" to="/">
+                <Link className="block px-4 py-2 hover:bg-gray-100" to="/sejarah">
                   Sejarah
                 </Link>
                 <Link className="block px-4 py-2 hover:bg-gray-100" to="/falsafah-visi-misi">
                   Falsafah Visi & Misi
                 </Link>
-                <Link className="block px-4 py-2 hover:bg-gray-100" to="/falsafah-visi-misi">
+                <Link className="block px-4 py-2 hover:bg-gray-100" to="/akreditasi-penghargaan">
                   Akreditasi & Penghargaan
                 </Link>
                 <Link className="block px-4 py-2 hover:bg-gray-100" to="/indikator-mutu">
                   Indikator Mutu
                 </Link>
-                <Link className="block px-4 py-2 hover:bg-gray-100" to="/falsafah-visi-misi">
+                <Link className="block px-4 py-2 hover:bg-gray-100" to="/struktur-organisasi">
                   Struktur Organisasi
                 </Link>
               </div>
             </li>
-            {/* FASILITAS */}
+            {/* PELAYANAN */}
             <li className="relative group px-3 py-4 cursor-pointer">
               <div className="flex items-center">
-                FASILITAS <MdKeyboardArrowDown />
+                PELAYANAN <MdKeyboardArrowDown />
               </div>
               <div className="absolute left-0 top-full bg-white text-black w-56 rounded shadow opacity-0 invisible group-hover:visible group-hover:opacity-100 transition">
                 <Link className="block px-4 py-2 hover:bg-gray-100" to="/rawat-jalan">
@@ -165,10 +165,10 @@ const HeaderNavbar = () => {
                   Pelayanan Rawat Inap
                 </Link>
                 <Link className="block px-4 py-2 hover:bg-gray-100" to="/penunjang">
-                  PELAYANAN PENUNJANG
+                  Pelayanan Penunjang
                 </Link>
                 <Link className="block px-4 py-2 hover:bg-gray-100" to="/igd">
-                  IGD 24 JAM
+                  IGD 24 Jam
                 </Link>
                 <Link className="block px-4 py-2 hover:bg-gray-100" to="/dokter-kami">
                   Dokter Kami
@@ -207,7 +207,7 @@ const HeaderNavbar = () => {
             {/* VIDIO TUTORIAL */}
             <li className="relative group px-3 py-4 cursor-pointer">
               <div className="flex items-center">
-                BERITA & ARTIKEL <MdKeyboardArrowDown />
+                VIDIO & TUTORIAL <MdKeyboardArrowDown />
               </div>
               <div className="absolute left-0 top-full bg-white text-black w-56 rounded shadow opacity-0 invisible group-hover:visible group-hover:opacity-100 transition">
                 <Link className="block px-4 py-2 hover:bg-gray-100" to="/keislaman">
@@ -235,7 +235,7 @@ const HeaderNavbar = () => {
       {/* ================= NAV MOBILE ================= */}
       <div
         className={`
-          lg:hidden fixed top-14 left-0 w-full bg-green-700 text-white z-40
+          lg:hidden fixed top-14 left-0 w-full bg-green-800 text-white z-40
           transition-all duration-300
           ${openMenu ? "max-h-screen opacity-100" : "max-h-0 opacity-0 overflow-hidden"}
         `}
