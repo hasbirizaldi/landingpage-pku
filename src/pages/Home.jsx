@@ -13,7 +13,7 @@ const Home = () => {
   return (
     <div>
       {/* konten */}
-      <div className="bg-slate-50 relative pt-2">
+      <div className="bg-slate-50 relative">
         {/* fixed */}
         {/* <FixedMenu /> */}
 

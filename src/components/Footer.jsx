@@ -117,7 +117,7 @@ const Footer = () => {
       </div>
 
       {/* COPYRIGHT */}
-      <div className="bg-gradient-to-r from-yellow-700 via-yellow-500 to-yellow-600 text-slate-900 text-center py-2 text-xs sm:text-sm font-semibold">© 2025 Powered by Brindil | All rights reserved.</div>
+      <div className="bg-gradient-to-r from-yellow-700 via-yellow-500 to-yellow-600 text-slate-900 text-center py-1 text-[10px] sm:text-xs font-semibold">© 2025 Powered by Brindil | All rights reserved.</div>
     </footer>
   );
 };

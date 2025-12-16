@@ -31,31 +31,37 @@ export const layanan = [
     title: "Emergency 24 Jam",
     desc: "Instalasi Gawat Darurat (IGD) RS PKU Muhammadiyah Sruweng siap melayani pasien gawat darurat selama 24 jam dengan tenaga medis profesional dan respons cepat. Untuk kondisi darurat, silakan hubungi nomor layanan kami.",
     icon: "ambulance",
+    url: "/igd",
   },
   {
     title: "Pelayanan Rawat Jalan",
     desc: "RS PKU Muhammadiyah Sruweng menyediakan pelayanan rawat jalan dengan berbagai poli spesialis yang didukung oleh dokter berpengalaman serta fasilitas medis yang memadai.",
     icon: "medis",
+    url: "/rawat-jalan",
   },
   {
     title: "Perawatan Rawat Inap",
     desc: "Kami melayani perawatan pasien rawat inap dengan menyediakan beberapa pilihan kelas bangsal yang nyaman, bersih, dan dilengkapi fasilitas penunjang untuk menunjang proses penyembuhan.",
     icon: "bed",
+    url: "/rawat-inap",
   },
   {
     title: "Fasilitas Rumah Sakit",
     desc: "RS PKU Muhammadiyah Sruweng dilengkapi dengan fasilitas medis dan penunjang modern untuk mendukung pelayanan kesehatan yang optimal, aman, dan berkualitas.",
     icon: "hospital",
+    url: "/",
   },
   {
     title: "Dokter Kami",
     desc: "Tim dokter RS PKU Muhammadiyah Sruweng terdiri dari dokter umum dan dokter spesialis yang kompeten, berpengalaman, dan berkomitmen memberikan pelayanan terbaik bagi pasien.",
     icon: "docter",
+    url: "/dokter-kami",
   },
   {
     title: "Go Obat",
     desc: "Layanan Go Obat memudahkan pasien dalam mendapatkan obat dengan cepat dan aman, baik melalui resep dokter maupun layanan pengantaran sesuai ketentuan yang berlaku.",
     icon: "medicine",
+    url: "/go-obat",
   },
 ];
 

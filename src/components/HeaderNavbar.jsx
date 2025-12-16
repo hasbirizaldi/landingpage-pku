@@ -31,23 +31,22 @@ const HeaderNavbar = () => {
         className={`
     sticky top-0 lg:fixed lg:top-0 lg:left-0
     w-full z-50
-    bg-slate-50
-    lg:h-20 h-14
-    lg:px-40 px-2
+    bg-white
+    lg:h-20 h-16
+    lg:px-30 px-2
     flex items-center
-    transition-all duration-300
+    transition-all duration-300 lg:border-none border-b-2 border-green-700
     ${scrolled ? "lg:-translate-y-full lg:opacity-0" : ""}
   `}
       >
         <div className="flex justify-between items-center w-full">
           {/* LOGO */}
-          <div className="flex gap-20 items-center">
-            <div className="flex gap-2">
-              <img src={img[0]} alt="logo" className="w-12 lg:w-16" />
-              <div>
-                <h1 className="font-bold leading-5 text-green-800">RS PKU MUHAMMADIYAH</h1>
-                <h1 className="font-bold leading-5 text-yellow-600">SRUWENG</h1>
-                <p className="text-red-600 font-semibold hidden lg:block">Semakin Unggul dan Islami</p>
+          <div className="flex gap-16 items-center">
+            <div className="flex lg:gap-2 gap-1">
+              <img src={img[0]} alt="logo" className="max-w-14 lg:max-w-18 lg:max-h-16" />
+              <div className="flex flex-col justify-center">
+                <h1 className="font-bold leading-5 text-green-800 text-sm lg:text-lg">RS PKU MUHAMMADIYAH</h1>
+                <h1 className="font-bold leading-5 text-green-800 text-sm lg:text-lg">SRUWENG</h1>
               </div>
             </div>
             <img src={img[1]} alt="logo" className="w-12 lg:w-30 hidden lg:flex" />
@@ -56,21 +55,21 @@ const HeaderNavbar = () => {
           {/* SOSMED DESKTOP */}
           <div className="lg:flex hidden items-center justify-between">
             <div className="flex gap-3">
-              <div className="flex gap-2 items-center font-bold text-base ">
+              <div className="flex gap-2 items-center font-bold text-sm ">
                 <div className="border-2 border-red-600 p-1 rounded-full shadow-icon">
-                  <img src={img[7]} alt="Emergency" className="h-6" />
+                  <img src={img[7]} alt="Emergency" className="h-5 w-5" />
                 </div>
                 <p className="flex flex-col">
-                  <span className="font-normal leading-4 text-slate-900">Emergency</span>
+                  <span className="font-semibold leading-4 text-red-600 text-sm ">Emergency</span>
                   <span className="text-red-600">0287-6601061</span>
                 </p>
               </div>
-              <div className="flex gap-2 items-center font-bold text-base">
+              <div className="flex gap-2 items-center font-bold text-sm">
                 <div className="border-2 border-green-700 p-1 rounded-full  shadow-icon">
-                  <img src={img[6]} alt="Call-center" className="h-6" />
+                  <img src={img[6]} alt="Call-center" className="h-5 w-5" />
                 </div>
                 <p className="flex flex-col">
-                  <span className="font-normal leading-4 text-slate-900">Emergency</span>
+                  <span className="font-semibold leading-4 text-green-700">Call Center</span>
                   <span className="text-green-700">0287-6601061</span>
                 </p>
               </div>
@@ -79,26 +78,26 @@ const HeaderNavbar = () => {
               <div className="flex gap-1 ml-12">
                 <Link to="/" className="w-8 h-8 flex items-center justify-center transition">
                   <FaInstagram
-                    className="text-xl text-slate-700
+                    className="text-lg text-slate-700
                    hover:text-pink-700 hover:scale-110 transition-all ease-in-out"
                   />
                 </Link>
                 <Link to="/" className="w-8 h-8 flex items-center justify-center transition">
                   <FaFacebookF
-                    className="text-xl text-slate-700
+                    className="text-lg text-slate-700
                    hover:text-blue-600
                   0 hover:scale-110 transition-all "
                   />
                 </Link>
                 <Link to="/" className="w-8 h-8 flex items-center justify-center transition">
                   <FaTiktok
-                    className="text-xl text-slate-700
+                    className="text-lg text-slate-700
                    hover:text-gray-700 hover:scale-110 transition-all "
                   />
                 </Link>
                 <Link to="/" className="w-8 h-8 flex items-center justify-center transition">
                   <FaYoutube
-                    className="text-xl text-slate-700
+                    className="text-lg text-slate-700
                    hover:text-red-600 hover:scale-110 transition-all "
                   />
                 </Link>
@@ -107,7 +106,7 @@ const HeaderNavbar = () => {
           </div>
           {/* HAMBURGER */}
           <div className="lg:hidden cursor-pointer" onClick={() => setOpenMenu(!openMenu)}>
-            {openMenu ? <IoMdCloseCircle className="text-4xl text-green-700" /> : <TiThMenu className="text-4xl text-green-700" />}
+            {openMenu ? <IoMdCloseCircle className="text-4xl text-green-700" /> : <TiThMenu className="text-4xl text-green-700 border-3 border-green-700 rounded" />}
           </div>
         </div>
       </header>
@@ -115,23 +114,23 @@ const HeaderNavbar = () => {
       {/* ================= NAV DESKTOP ================= */}
       <nav
         className={`
-          bg-green-900 z-40
+          bg-green-900 z-40 h-14
           transition-all duration-300
           hidden lg:block shadow-ku
           ${scrolled ? "fixed top-0 w-full " : "relative mt-20"}
         `}
       >
-        <div className="bg-gradient-to-r from-yellow-700 via-yellow-500 to-yellow-600 max-w-[1110px] mx-auto rounded-b-3xl border-b-4 border-green-900">
-          <ul className="flex justify-center text-white text-sm font-semibold">
-            <li className="px-3 py-3">
+        <div className="bg-gradient-to-r from-yellow-700 via-yellow-500 to-yellow-600 max-w-[80%] mx-auto rounded-b-2xl">
+          <ul className="flex justify-center text-white text-sm font-semibold h-13">
+            <li className="px-3 py-4">
               <Link to="/">BERANDA</Link>
             </li>
-            <li className="px-3 py-3">
+            <li className="px-3 py-4">
               <Link to="/jadwal-dokter">JADWAL DOKTER</Link>
             </li>
 
             {/* TENTANG */}
-            <li className="relative group px-3 py-3 cursor-pointer">
+            <li className="relative group px-3 py-4 cursor-pointer">
               <div className="flex items-center">
                 TENTANG KAMI <MdKeyboardArrowDown />
               </div>
@@ -154,7 +153,7 @@ const HeaderNavbar = () => {
               </div>
             </li>
             {/* FASILITAS */}
-            <li className="relative group px-3 py-3 cursor-pointer">
+            <li className="relative group px-3 py-4 cursor-pointer">
               <div className="flex items-center">
                 FASILITAS <MdKeyboardArrowDown />
               </div>
@@ -183,7 +182,7 @@ const HeaderNavbar = () => {
               </div>
             </li>
             {/* BERITA ARTIKEL */}
-            <li className="relative group px-3 py-3 cursor-pointer">
+            <li className="relative group px-3 py-4 cursor-pointer">
               <div className="flex items-center">
                 BERITA & ARTIKEL <MdKeyboardArrowDown />
               </div>
@@ -206,7 +205,7 @@ const HeaderNavbar = () => {
               </div>
             </li>
             {/* VIDIO TUTORIAL */}
-            <li className="relative group px-3 py-3 cursor-pointer">
+            <li className="relative group px-3 py-4 cursor-pointer">
               <div className="flex items-center">
                 BERITA & ARTIKEL <MdKeyboardArrowDown />
               </div>
@@ -223,7 +222,7 @@ const HeaderNavbar = () => {
               </div>
             </li>
 
-            <li className="px-3 py-3">
+            <li className="px-3 py-4">
               <Link to="/karir">KARIR</Link>
             </li>
           </ul>
