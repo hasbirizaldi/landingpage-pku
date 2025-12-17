@@ -29,12 +29,12 @@ const JadwalDokter = () => {
         </div>
 
         {/* Cari */}
-        <div className="lg:w-[60%] lg:mx-auto mx-2 bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 p-6 mt-8 rounded-xl shadow-ku">
+        <div className="lg:w-[60%] lg:mx-auto mx-2 bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 p-8 mt-8 rounded-xl shadow-ku">
           <p className="text-slate-50 text-lg font-semibold text-center mb-1">Cari Jadwal Dokter di RS PKU Muhammadiyah Sruweng</p>
           <p className="text-slate-50 text-[11px] font-semibold text-center mb-3">*Jadwal dapat berubah sewaktu-waktu. Informasi terupdate silakan menghubungi WA Pendaftaran : 08xx xxxx xxxx </p>
           <form className="">
             {/* Cari Nama Dokter */}
-            <div className="flex flex-col mb-5">
+            <div className="flex flex-col mb-3">
               <label className="text-white text-sm mb-1">Cari Dokter</label>
               <input type="text" placeholder="Cari nama dokter anda disini..." className="px-4 py-1 rounded outline-none bg-white focus:ring-2 focus:ring-yellow-400" />
             </div>

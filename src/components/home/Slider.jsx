@@ -13,7 +13,7 @@ export default function Slider() {
     <div className="bg-transparent">
       {/* ===== HERO ===== */}
       <section>
-        <div className="w-full lg:w-[80%] mx-auto pt-1 ">
+        <div className="w-full lg:w-[80%] mx-auto lg:pt-1 ">
           <div className="relative overflow-hidden lg:rounded-xl shadow-ku">
             {/* overlay text */}
             <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white bg-black/40 z-10">

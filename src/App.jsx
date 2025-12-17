@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import HeaderNavbar from "./components/HeaderNavbar";
 import DokterKami from "./pages/DokterKami";
@@ -66,9 +66,13 @@ const App = () => {
         <Route path="/vidio-islami" element={<VidioIslami />} />
         <Route path="/vidio-kesehatan" element={<VidioKesehatan />} />
       </Routes>
-      <div className="fixed lg:bottom-40 bottom-38 lg:right-13 right-1 z-60 bg-white cursor-pointer hover:scale-105 transition-all ease-in-out rounded-lg shadow-icon">
+      <Link
+        to="https://wa.me/6287877505050?text=Assalamualaikum%20RS%20PKU%20Sruweng%2C%20saya%20ingin%20bertanya"
+        target="_blank"
+        className="fixed lg:bottom-40 bottom-38 lg:right-13 right-1 z-60 bg-white cursor-pointer hover:scale-105 transition-all ease-in-out rounded-lg shadow-icon"
+      >
         <FaWhatsappSquare className="text-green-600 lg:text-6xl text-5xl" />
-      </div>
+      </Link>
       <Footer />
     </div>
   );
