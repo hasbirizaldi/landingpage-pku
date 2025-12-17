@@ -20,9 +20,10 @@ import car from "../assets/logo/partner/car.png";
 import brilife from "../assets/logo/partner/brilife.png";
 import kai from "../assets/logo/partner/kai.png";
 import jasa_raharja from "../assets/logo/partner/jasa-raharja.png";
+import dokter from "../assets/logo/dokter.png";
 
 export const sliderImages = [slider1, slider2, slider3, slider4, slider5];
-export const img = [logo, mas, jkn, logo2, ios, go_obat, call, emergency];
+export const img = [logo, mas, jkn, logo2, ios, go_obat, call, emergency, dokter];
 export const images = [imgHome];
 export const partner = [bpjskes, bpjstk, car, brilife, kai, jasa_raharja, mag, pln];
 
@@ -49,7 +50,7 @@ export const layanan = [
     title: "Fasilitas Rumah Sakit",
     desc: "RS PKU Muhammadiyah Sruweng dilengkapi dengan fasilitas medis dan penunjang modern untuk mendukung pelayanan kesehatan yang optimal, aman, dan berkualitas.",
     icon: "hospital",
-    url: "/",
+    url: "/bed-pasien",
   },
   {
     title: "Dokter Kami",
@@ -156,5 +157,148 @@ export const dataArtikel = [
         Aktivitas fisik membantu meningkatkan daya tahan tubuh dan menjaga berat badan.
       </p>
     `,
+  },
+];
+
+export const dokterList = [
+  {
+    nama: "dr. Khoerul Anwar, Sp.PD",
+    spesialis: "Spesialis Penyakit Dalam",
+    foto: img[8],
+    jadwal: {
+      senin: "08:00 - 12:00",
+      selasa: "-",
+      rabu: "08:00 - 12:00",
+      kamis: "13:00 - 16:00",
+      jumat: "08:00 - 12:00",
+      sabtu: "08:00 - 11:00",
+      minggu: "-",
+    },
+  },
+  {
+    nama: "dr. Siti Aminah, Sp.A",
+    spesialis: "Spesialis Anak",
+    foto: img[9],
+    jadwal: {
+      senin: "-",
+      selasa: "09:00 - 13:00",
+      rabu: "09:00 - 13:00",
+      kamis: "-",
+      jumat: "09:00 - 12:00",
+      sabtu: "-",
+      minggu: "-",
+    },
+  },
+  {
+    nama: "dr. Ahmad Fauzi",
+    spesialis: "Dokter Umum",
+    foto: img[10],
+    jadwal: {
+      senin: "07:00 - 11:00",
+      selasa: "07:00 - 11:00",
+      rabu: "07:00 - 11:00",
+      kamis: "07:00 - 11:00",
+      jumat: "-",
+      sabtu: "07:00 - 10:00",
+      minggu: "-",
+    },
+  },
+  {
+    nama: "dr. Rina Marlina, Sp.OG",
+    spesialis: "Spesialis Kandungan",
+    foto: img[11],
+    jadwal: {
+      senin: "13:00 - 16:00",
+      selasa: "-",
+      rabu: "13:00 - 16:00",
+      kamis: "-",
+      jumat: "13:00 - 15:00",
+      sabtu: "-",
+      minggu: "-",
+    },
+  },
+  {
+    nama: "dr. Budi Santoso, Sp.B",
+    spesialis: "Spesialis Bedah",
+    foto: img[12],
+    jadwal: {
+      senin: "08:00 - 11:00",
+      selasa: "-",
+      rabu: "08:00 - 11:00",
+      kamis: "-",
+      jumat: "08:00 - 11:00",
+      sabtu: "-",
+      minggu: "-",
+    },
+  },
+  {
+    nama: "dr. Andi Wijaya, Sp.JP",
+    spesialis: "Spesialis Jantung",
+    foto: img[13],
+    jadwal: {
+      senin: "-",
+      selasa: "13:00 - 16:00",
+      rabu: "-",
+      kamis: "13:00 - 16:00",
+      jumat: "-",
+      sabtu: "09:00 - 12:00",
+      minggu: "-",
+    },
+  },
+  {
+    nama: "dr. Dewi Lestari, Sp.M",
+    spesialis: "Spesialis Mata",
+    foto: img[14],
+    jadwal: {
+      senin: "08:00 - 11:00",
+      selasa: "08:00 - 11:00",
+      rabu: "-",
+      kamis: "-",
+      jumat: "08:00 - 11:00",
+      sabtu: "-",
+      minggu: "-",
+    },
+  },
+  {
+    nama: "dr. Hendra Saputra, Sp.THT",
+    spesialis: "Spesialis THT",
+    foto: img[15],
+    jadwal: {
+      senin: "-",
+      selasa: "09:00 - 12:00",
+      rabu: "09:00 - 12:00",
+      kamis: "-",
+      jumat: "-",
+      sabtu: "09:00 - 12:00",
+      minggu: "-",
+    },
+  },
+  {
+    nama: "dr. Lina Kusuma, Sp.KK",
+    spesialis: "Spesialis Kulit",
+    foto: img[16],
+    jadwal: {
+      senin: "13:00 - 16:00",
+      selasa: "-",
+      rabu: "-",
+      kamis: "13:00 - 16:00",
+      jumat: "-",
+      sabtu: "-",
+      minggu: "-",
+    },
+  },
+  {
+    nama: "dr. Yudi Pratama, Sp.S",
+    spesialis: "Spesialis Saraf",
+    foto: img[17],
+    jadwal: {
+      senin: "-",
+      selasa: "08:00 - 11:00",
+      rabu: "-",
+      kamis: "08:00 - 11:00",
+      jumat: "-",
+      sabtu: "-",
+      minggu: "-",
+    },
   },
 ];

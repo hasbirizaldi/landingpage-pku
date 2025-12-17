@@ -1,5 +1,3 @@
-import { BiSolidAmbulance } from "react-icons/bi";
-import { FaPhoneAlt, FaUserMd } from "react-icons/fa";
 import { img } from "../api/data";
 
 const FixedMenu = () => {

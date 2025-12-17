@@ -27,13 +27,17 @@ import PelayananPenunjang from "./pages/PelayananPenunjang";
 import { FaWhatsappSquare } from "react-icons/fa";
 import MenuBottom from "./components/home/MenuBottom";
 import Akreditasi from "./pages/Akreditasi";
+import ScrollToTop from "./components/ScrollToTop";
+import ScrollTopButton from "./components/ScrollToTopButton";
 
 const App = () => {
   return (
-    <div className="relative">
+    <div className="relative poppins">
       <HeaderNavbar />
       {/* <FixedMenu /> */}
       <MenuBottom />
+      <ScrollToTop />
+      <ScrollTopButton />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/jadwal-dokter" element={<JadwalDokter />} />
@@ -62,7 +66,7 @@ const App = () => {
         <Route path="/vidio-islami" element={<VidioIslami />} />
         <Route path="/vidio-kesehatan" element={<VidioKesehatan />} />
       </Routes>
-      <div className="fixed bottom-20 lg:right-10 right-1 z-60 bg-white cursor-pointer hover:scale-105 transition-all ease-in-out rounded-lg shadow-icon">
+      <div className="fixed lg:bottom-40 bottom-38 lg:right-13 right-1 z-60 bg-white cursor-pointer hover:scale-105 transition-all ease-in-out rounded-lg shadow-icon">
         <FaWhatsappSquare className="text-green-600 lg:text-6xl text-5xl" />
       </div>
       <Footer />

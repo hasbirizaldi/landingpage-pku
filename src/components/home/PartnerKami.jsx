@@ -3,17 +3,22 @@ import { partner } from "../../api/data";
 
 const PartnerKami = () => {
   return (
-    <section className="bg-slate-50 py-10 sm:py-14 lg:py-16 w-[80%] mx-auto">
+    <section className="bg-white/50 rounded-lg py-10 sm:py-14 lg:py-10 lg:w-[80%] lg:mx-auto mx-2 my-5 shadow-ku">
       <div className="max-w-7xl mx-auto">
         <h1 className="font-bold text-center text-2xl sm:text-3xl text-green-900">Partner Kami</h1>
 
         <div className="h-[2px] w-60 lg:w-80 mx-auto bg-green-900 mb-8 sm:mb-10 mt-2"></div>
 
         {/* GRID PARTNER */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-0 gap-y-10 ">
-          {partner.map((item, index) => (
-            <img key={index} src={item} alt="partner" className="h-6 lg:h-10 w-full object-contain" />
-          ))}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-y-10">
+          <img src={partner[0]} alt="JKN" className="h-6 lg:h-8 w-full object-contain" />
+          <img src={partner[1]} alt="BPJSTK" className="h-6 lg:h-10 w-full object-contain" />
+          <img src={partner[2]} alt="CAR" className="h-6 lg:h-12 w-full object-contain" />
+          <img src={partner[3]} alt="BRILIFE" className="h-6 lg:h-10 w-full object-contain" />
+          <img src={partner[4]} alt="KAI" className="h-6 lg:h-8 w-full object-contain" />
+          <img src={partner[5]} alt="JASA-RAHARJA" className="h-6 lg:h-12 w-full object-contain" />
+          <img src={partner[6]} alt="MAG" className="h-6 lg:h-10 w-full object-contain" />
+          <img src={partner[7]} alt="PLN" className="h-6 lg:h-10 w-full object-contain" />
         </div>
 
         {/* BUTTON */}

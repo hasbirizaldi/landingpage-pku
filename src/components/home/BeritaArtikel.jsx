@@ -5,7 +5,7 @@ import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 
 const BeritaArtikel = () => {
   return (
-    <section className="bg-slate-50 py-10 px-3 lg:w-[80%] mx-auto">
+    <section className="bg-white/50 py-10 lg:px-5 px-3 lg:w-[80%] lg:mx-auto mx-2 rounded-lg shadow-ku my-5">
       <h1 className="font-bold text-center text-2xl sm:text-3xl text-green-900">Berita & Artikel</h1>
       <div className="h-[2px] w-60 lg:w-80 mx-auto bg-green-900 mb-8 sm:mb-10 mt-2"></div>
 
@@ -24,6 +24,7 @@ const BeritaArtikel = () => {
               relative
               cursor-pointer
               pb-6
+              hover:scale-[1.01]
             "
           >
             {/* IMAGE */}

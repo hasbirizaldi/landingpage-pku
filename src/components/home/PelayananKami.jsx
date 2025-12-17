@@ -17,8 +17,8 @@ const iconMap = {
 
 const PelayananKami = () => {
   return (
-    <section className="bg-slate-100  lg:block hidden">
-      <div className="w-[80%] mx-auto py-10">
+    <section className="bg-white/50 lg:block hidden lg:w-[80%] lg:mx-auto rounded-lg px-5 my-5 shadow-ku">
+      <div className=" py-10">
         <h1 className="font-bold text-center text-2xl sm:text-3xl text-green-900">Layanan Kami</h1>
         <div className="h-[2px] w-60 lg:w-80 mx-auto bg-green-900 mb-8 sm:mb-10 mt-2"></div>
 
@@ -28,15 +28,15 @@ const PelayananKami = () => {
               key={index}
               className="
               bg-white
-              rounded-2xl
+              rounded-lg
               shadow
-              hover:shadow-xl
+              hover:shadow-lg
               transition
-              cursor-pointer border-green-950 border-2
+              cursor-pointer border-green-800 hover:scale-[1.01] border-2
             "
             >
               {/* ICON */}
-              <div className="flex justify-center bg-gradient-to-r from-emerald-500 via-emerald-700 to-emerald-900 py-4 rounded-t-xl">
+              <div className="flex justify-center bg-gradient-to-r from-emerald-500 via-emerald-700 to-emerald-900 py-4 rounded-t-sm">
                 <div className="bg-gradient-to-r from-emerald-400 via-emerald-700 to-emerald-950 w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center rounded-full text-white">{iconMap[item.icon]}</div>
               </div>
               <div className=" rounded-b-xl  relative min-h-[210px] px-4">
