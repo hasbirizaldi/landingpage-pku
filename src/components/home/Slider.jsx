@@ -7,8 +7,19 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { images, sliderImages } from "../../api/data";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { RxDoubleArrowLeft, RxDoubleArrowRight } from "react-icons/rx";
 
 export default function Slider() {
+  const [activeIndex, setActiveIndex] = useState(null);
+  const nextImage = () => {
+    setActiveIndex((prev) => (prev === sliderImages.length - 1 ? 0 : prev + 1));
+  };
+
+  const prevImage = () => {
+    setActiveIndex((prev) => (prev === 0 ? sliderImages.length - 1 : prev - 1));
+  };
+
   return (
     <div className="bg-transparent">
       {/* ===== HERO ===== */}
@@ -43,7 +54,7 @@ export default function Slider() {
           >
             {sliderImages.map((img, i) => (
               <SwiperSlide key={i}>
-                <div className="overflow-hidden lg:rounded-lg">
+                <div onClick={() => setActiveIndex(i)} className="overflow-hidden lg:rounded-lg cursor-pointer">
                   <div className="h-[200px] bg-cover bg-center hover:scale-105 transition duration-500" style={{ backgroundImage: `url(${img})` }} />
                 </div>
               </SwiperSlide>
@@ -80,6 +91,35 @@ export default function Slider() {
           </Link>
         </div>
       </section>
+      {/* ===== MODAL IMAGE ===== */}
+      {activeIndex !== null && (
+        <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center" onClick={() => setActiveIndex(null)}>
+          {/* Prev Button */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              prevImage();
+            }}
+            className="absolute left-4 lg:left-60 text-white text-4xl lg:text-7xl hover:scale-110 transition cursor-pointer"
+          >
+            <RxDoubleArrowLeft />
+          </button>
+
+          {/* Image */}
+          <img src={sliderImages[activeIndex]} alt="Preview" className="max-w-[90%] max-h-[90%] rounded-lg shadow-lg animate-zoom" onClick={(e) => e.stopPropagation()} />
+
+          {/* Next Button */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              nextImage();
+            }}
+            className="absolute right-4 lg:right-60 text-white text-4xl lg:text-7xl hover:scale-110 transition cursor-pointer"
+          >
+            <RxDoubleArrowRight />
+          </button>
+        </div>
+      )}
     </div>
   );
 }

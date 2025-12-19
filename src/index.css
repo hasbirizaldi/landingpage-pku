@@ -114,3 +114,18 @@
 .swiper-button-prev:hover {
   color: #facc15; /* kuning */
 }
+
+@keyframes zoom {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-zoom {
+  animation: zoom 0.3s ease-out;
+}

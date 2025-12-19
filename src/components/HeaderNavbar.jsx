@@ -2,7 +2,7 @@ import { FaAmbulance, FaFacebookF, FaInstagram, FaTiktok, FaYoutube } from "reac
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { IoMdCloseCircle } from "react-icons/io";
 import { TiThMenu } from "react-icons/ti";
-import { Link } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom"; // Tambah useLocation
 import { img } from "../api/data";
 import { useState, useEffect } from "react";
 
@@ -10,6 +10,21 @@ const HeaderNavbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
+
+  const location = useLocation(); // Mengambil info URL saat ini
+
+  // 1. Fungsi pembantu untuk mengecek apakah path saat ini ada di dalam list dropdown
+  const isActiveParent = (paths) => {
+    return paths.some((path) => location.pathname === path);
+  };
+
+  // List path untuk masing-masing dropdown
+  const pathsTentang = ["/sejarah", "/falsafah-visi-misi", "/akreditasi-penghargaan", "/indikator-mutu", "/struktur-organisasi"];
+  const pathsPelayanan = ["/rawat-jalan", "/rawat-inap", "/penunjang", "/igd", "/dokter-kami", "/bed-pasien", "/go-obat"];
+  const pathsBerita = ["/berita", "/artikel-islami", "/artikel-kesehatan", "/promosi-leaflet", "/gallery"];
+  const pathsVideo = ["/keislaman", "/kesehatan", "/simrs"];
+
+  const navClass = ({ isActive }) => (isActive ? " border-b-2 border-white transition-all ease" : "hover:text-yellow-200 transition-all ease");
 
   const toggleDropdown = (menu) => {
     setOpenDropdown(openDropdown === menu ? null : menu);
@@ -39,7 +54,7 @@ const HeaderNavbar = () => {
     w-full z-50
     bg-white
     lg:h-20 h-16
-    lg:px-30 px-2
+    lg:px-20 px-2
     flex items-center
     transition-all duration-300 lg:border-none border-b-2 border-green-700
     ${scrolled ? "lg:-translate-y-full lg:opacity-0" : ""}
@@ -76,36 +91,23 @@ const HeaderNavbar = () => {
                 </div>
                 <p className="flex flex-col">
                   <span className="font-semibold leading-4 text-green-700">Care Center</span>
-                  <span className="text-green-700">0287-6601061</span>
+                  <span className="text-green-700">087877505050</span>
                 </p>
               </Link>
             </div>
-            <div>
+            <div className="flex flex-col justify-center items-center">
               <div className="flex gap-1 ml-12">
                 <Link to="https://www.instagram.com/rspkumuhammadiyahsruweng/" target="_blank" className="w-8 h-8 flex items-center justify-center transition">
-                  <FaInstagram
-                    className="text-lg text-slate-700
-                   hover:text-pink-700 hover:scale-110 transition-all ease-in-out"
-                  />
+                  <FaInstagram className="text-lg text-slate-700 hover:text-pink-700 hover:scale-110 transition-all ease-in-out" />
                 </Link>
                 <Link to="https://web.facebook.com/pkusruweng" target="_blank" className="w-8 h-8 flex items-center justify-center transition">
-                  <FaFacebookF
-                    className="text-lg text-slate-700
-                   hover:text-blue-600
-                  0 hover:scale-110 transition-all "
-                  />
+                  <FaFacebookF className="text-lg text-slate-700 hover:text-blue-600 hover:scale-110 transition-all " />
                 </Link>
                 <Link to="https://www.tiktok.com/@rspkumuhammadiyahsruweng" target="_blank" className="w-8 h-8 flex items-center justify-center transition">
-                  <FaTiktok
-                    className="text-lg text-slate-700
-                   hover:text-gray-700 hover:scale-110 transition-all "
-                  />
+                  <FaTiktok className="text-lg text-slate-700 hover:text-gray-700 hover:scale-110 transition-all " />
                 </Link>
                 <Link to="https://www.youtube.com/@pkusruweng9292" target="_blank" className="w-8 h-8 flex items-center justify-center transition">
-                  <FaYoutube
-                    className="text-lg text-slate-700
-                   hover:text-red-600 hover:scale-110 transition-all "
-                  />
+                  <FaYoutube className="text-lg text-slate-700 hover:text-red-600 hover:scale-110 transition-all " />
                 </Link>
               </div>
             </div>
@@ -129,113 +131,94 @@ const HeaderNavbar = () => {
         <div className="bg-gradient-to-r from-yellow-700 via-yellow-500 to-yellow-600 max-w-[80%] mx-auto rounded-b-full">
           <ul className="flex justify-center text-white text-sm font-bold h-13">
             <li className="px-3 py-4">
-              <Link to="/">BERANDA</Link>
+              <NavLink to="/" className={navClass}>
+                BERANDA
+              </NavLink>
             </li>
-            <li className="px-3 py-4">
-              <Link to="/jadwal-dokter">JADWAL DOKTER</Link>
+            <li className="px-3 py-4 ">
+              <NavLink to="/jadwal-dokter" className={navClass}>
+                JADWAL DOKTER
+              </NavLink>
             </li>
 
-            {/* TENTANG */}
-            <li className="relative group px-3 py-4 cursor-pointer">
-              <div className="flex items-center">
+            {/* TENTANG KAMI - LOGIKA ACTIVE DROPDOWN */}
+            <li className={`relative group px-3 py-4 cursor-pointer`}>
+              <div className={`flex items-center ${isActiveParent(pathsTentang) ? " border-b-2 border-white" : ""}`}>
                 TENTANG KAMI <MdKeyboardArrowDown />
               </div>
               <div className="absolute font-normal left-0 top-full bg-white text-black w-56 rounded shadow opacity-0 invisible group-hover:visible group-hover:opacity-100 transition">
-                <Link className="block px-4 py-2 hover:bg-gray-100" to="/sejarah">
-                  Sejarah
-                </Link>
-                <Link className="block px-4 py-2 hover:bg-gray-100" to="/falsafah-visi-misi">
-                  Falsafah Visi & Misi
-                </Link>
-                <Link className="block px-4 py-2 hover:bg-gray-100" to="/akreditasi-penghargaan">
-                  Akreditasi & Penghargaan
-                </Link>
-                <Link className="block px-4 py-2 hover:bg-gray-100" to="/indikator-mutu">
-                  Indikator Mutu
-                </Link>
-                <Link className="block px-4 py-2 hover:bg-gray-100" to="/struktur-organisasi">
-                  Struktur Organisasi
-                </Link>
+                {pathsTentang.map((path, idx) => {
+                  const labels = ["Sejarah", "Falsafah Visi & Misi", "Akreditasi & Penghargaan", "Indikator Mutu", "Struktur Organisasi"];
+                  return (
+                    <Link key={path} className={`block px-4 py-2 hover:bg-gray-100 ${location.pathname === path ? "bg-gray-100 font-bold text-green-800" : ""}`} to={path}>
+                      {labels[idx]}
+                    </Link>
+                  );
+                })}
               </div>
             </li>
-            {/* PELAYANAN */}
-            <li className="relative group px-3 py-4 cursor-pointer">
-              <div className="flex items-center">
+
+            {/* PELAYANAN - LOGIKA ACTIVE DROPDOWN */}
+            <li className={`relative group px-3 py-4 cursor-pointer`}>
+              <div className={`flex items-center ${isActiveParent(pathsPelayanan) ? " border-b-2 border-white" : ""}`}>
                 PELAYANAN <MdKeyboardArrowDown />
               </div>
               <div className="absolute font-normal left-0 top-full bg-white text-black w-56 rounded shadow opacity-0 invisible group-hover:visible group-hover:opacity-100 transition">
-                <Link className="block px-4 py-2 hover:bg-gray-100" to="/rawat-jalan">
-                  Pelayanan Rawat Jalan
-                </Link>
-                <Link className="block px-4 py-2 hover:bg-gray-100" to="/rawat-inap">
-                  Pelayanan Rawat Inap
-                </Link>
-                <Link className="block px-4 py-2 hover:bg-gray-100" to="/penunjang">
-                  Pelayanan Penunjang
-                </Link>
-                <Link className="block px-4 py-2 hover:bg-gray-100" to="/igd">
-                  IGD 24 Jam
-                </Link>
-                <Link className="block px-4 py-2 hover:bg-gray-100" to="/dokter-kami">
-                  Dokter Kami
-                </Link>
-                <Link className="block px-4 py-2 hover:bg-gray-100" to="/bed-pasien">
-                  Bed Pasien
-                </Link>
-                <Link className="block px-4 py-2 hover:bg-gray-100" to="/go-obat">
-                  Go Obat
-                </Link>
+                {pathsPelayanan.map((path, idx) => {
+                  const labels = ["Pelayanan Rawat Jalan", "Pelayanan Rawat Inap", "Pelayanan Penunjang", "IGD 24 Jam", "Dokter Kami", " Bed Pasien", " Go Obat"];
+                  return (
+                    <Link key={path} className={`block px-4 py-2 hover:bg-gray-100 ${location.pathname === path ? "bg-gray-100 font-bold text-green-800" : ""}`} to={path}>
+                      {labels[idx]}
+                    </Link>
+                  );
+                })}
               </div>
             </li>
-            {/* BERITA ARTIKEL */}
-            <li className="relative group px-3 py-4 cursor-pointer">
-              <div className="flex items-center">
+
+            {/* BERITA ARTIKEL - LOGIKA ACTIVE DROPDOWN */}
+            <li className={`relative group px-3 py-4 cursor-pointer`}>
+              <div className={`flex items-center ${isActiveParent(pathsBerita) ? " border-b-2 border-white" : ""}`}>
                 BERITA & ARTIKEL <MdKeyboardArrowDown />
               </div>
               <div className="absolute font-normal left-0 top-full bg-white text-black w-56 rounded shadow opacity-0 invisible group-hover:visible group-hover:opacity-100 transition">
-                <Link className="block px-4 py-2 hover:bg-gray-100" to="/berita">
-                  Berita
-                </Link>
-                <Link className="block px-4 py-2 hover:bg-gray-100" to="/artikel-islami">
-                  Artikel Islami
-                </Link>
-                <Link className="block px-4 py-2 hover:bg-gray-100" to="/artikel-kesehatan">
-                  Artikel Kesehatan
-                </Link>
-                <Link className="block px-4 py-2 hover:bg-gray-100" to="/promosi-leaflet">
-                  Promosi & Leaflet
-                </Link>
-                <Link className="block px-4 py-2 hover:bg-gray-100" to="/gallery">
-                  Gallery
-                </Link>
+                {pathsBerita.map((path, idx) => {
+                  const labels = ["Berita", "Artikel Islami", "Artikel Kesehatan", "Promosi & Leaflet", "Gallery"];
+                  return (
+                    <Link key={path} className={`block px-4 py-2 hover:bg-gray-100 ${location.pathname === path ? "bg-gray-100 font-bold text-green-800" : ""}`} to={path}>
+                      {labels[idx]}
+                    </Link>
+                  );
+                })}
               </div>
             </li>
-            {/* VIDIO TUTORIAL */}
-            <li className="relative group px-3 py-4 cursor-pointer">
-              <div className="flex items-center">
+
+            {/* VIDIO TUTORIAL - LOGIKA ACTIVE DROPDOWN */}
+            <li className={`relative group px-3 py-4 cursor-pointer`}>
+              <div className={`flex items-center ${isActiveParent(pathsVideo) ? " border-b-2 border-white" : ""}`}>
                 VIDIO & TUTORIAL <MdKeyboardArrowDown />
               </div>
               <div className="absolute font-normal left-0 top-full bg-white text-black w-56 rounded shadow opacity-0 invisible group-hover:visible group-hover:opacity-100 transition">
-                <Link className="block px-4 py-2 hover:bg-gray-100" to="/keislaman">
-                  Keislaman
-                </Link>
-                <Link className="block px-4 py-2 hover:bg-gray-100" to="/kesehatan">
-                  Kesehatan
-                </Link>
-                <Link className="block px-4 py-2 hover:bg-gray-100" to="/simrs">
-                  SIMRS
-                </Link>
+                {pathsVideo.map((path, idx) => {
+                  const labels = ["Vidio Keislaman", "Vidio Kesehatan", "Vidio SIMRS"];
+                  return (
+                    <Link key={path} className={`block px-4 py-2 hover:bg-gray-100 ${location.pathname === path ? "bg-gray-100 font-bold text-green-800" : ""}`} to={path}>
+                      {labels[idx]}
+                    </Link>
+                  );
+                })}
               </div>
             </li>
 
             <li className="px-3 py-4">
-              <Link to="/karir">KARIR</Link>
+              <NavLink to="/karir" className={navClass}>
+                KARIR
+              </NavLink>
             </li>
           </ul>
         </div>
       </nav>
 
-      {/* ===== SPACER (WAJIB, BIAR GA LOMPAT) ===== */}
+      {/* ===== SPACER ===== */}
       <div className={`${scrolled ? "lg:h-12" : "lg:h-0"}`} />
 
       {/* ================= NAV MOBILE ================= */}
@@ -249,23 +232,21 @@ const HeaderNavbar = () => {
   `}
       >
         <ul className="flex flex-col text-sm font-semibold">
-          {/* BERANDA */}
-          <li className="px-4 py-3 border-b">
+          <li className={`px-4 py-3 border-b ${location.pathname === "/" ? "bg-emerald-800" : ""}`}>
             <Link to="/" onClick={closeAll}>
               BERANDA
             </Link>
           </li>
 
-          {/* JADWAL */}
-          <li className="px-4 py-3 border-b">
+          <li className={`px-4 py-3 border-b ${location.pathname === "/jadwal-dokter" ? "bg-emerald-800" : ""}`}>
             <Link to="/jadwal-dokter" onClick={closeAll}>
               JADWAL DOKTER
             </Link>
           </li>
 
-          {/* TENTANG KAMI */}
+          {/* MOBILE TENTANG KAMI */}
           <li className="border-b">
-            <button onClick={() => toggleDropdown("tentang")} className="w-full px-4 py-3 flex justify-between items-center">
+            <button onClick={() => toggleDropdown("tentang")} className={`w-full px-4 py-3 flex justify-between items-center ${isActiveParent(pathsTentang) ? "text-yellow-300" : ""}`}>
               TENTANG KAMI
               <MdKeyboardArrowDown className={`transition ${openDropdown === "tentang" ? "rotate-180" : ""}`} />
             </button>
@@ -300,9 +281,9 @@ const HeaderNavbar = () => {
             )}
           </li>
 
-          {/* PELAYANAN */}
+          {/* MOBILE PELAYANAN */}
           <li className="border-b">
-            <button onClick={() => toggleDropdown("pelayanan")} className="w-full px-4 py-3 flex justify-between items-center">
+            <button onClick={() => toggleDropdown("pelayanan")} className={`w-full px-4 py-3 flex justify-between items-center ${isActiveParent(pathsPelayanan) ? "text-yellow-300" : ""}`}>
               PELAYANAN
               <MdKeyboardArrowDown className={`transition ${openDropdown === "pelayanan" ? "rotate-180" : ""}`} />
             </button>
@@ -347,9 +328,9 @@ const HeaderNavbar = () => {
             )}
           </li>
 
-          {/* BERITA */}
+          {/* MOBILE BERITA */}
           <li className="border-b">
-            <button onClick={() => toggleDropdown("berita")} className="w-full px-4 py-3 flex justify-between items-center">
+            <button onClick={() => toggleDropdown("berita")} className={`w-full px-4 py-3 flex justify-between items-center ${isActiveParent(pathsBerita) ? "text-yellow-300" : ""}`}>
               BERITA & ARTIKEL
               <MdKeyboardArrowDown className={`transition ${openDropdown === "berita" ? "rotate-180" : ""}`} />
             </button>
@@ -379,38 +360,26 @@ const HeaderNavbar = () => {
             )}
           </li>
 
-          {/* KARIR */}
-          <li className="px-4 py-3 border-b">
+          <li className={`px-4 py-3 border-b ${location.pathname === "/karir" ? "bg-emerald-800" : ""}`}>
             <Link to="/karir" onClick={closeAll}>
               KARIR
             </Link>
           </li>
+
+          {/* SOSMED MOBILE */}
           <li className="px-4 py-3" onClick={closeAll}>
             <div className="flex gap-1">
               <Link to="https://www.instagram.com/rspkumuhammadiyahsruweng/" target="_blank" className="w-8 h-8 flex items-center justify-center transition">
-                <FaInstagram
-                  className="text-lg text-slate-50
-                   hover:text-pink-700 hover:scale-110 transition-all ease-in-out"
-                />
+                <FaInstagram className="text-lg text-slate-50 hover:text-pink-700 hover:scale-110 transition-all ease-in-out" />
               </Link>
               <Link to="https://web.facebook.com/pkusruweng" target="_blank" className="w-8 h-8 flex items-center justify-center transition">
-                <FaFacebookF
-                  className="text-lg text-slate-50
-                   hover:text-blue-600
-                  0 hover:scale-110 transition-all "
-                />
+                <FaFacebookF className="text-lg text-slate-50 hover:text-blue-600 hover:scale-110 transition-all " />
               </Link>
               <Link to="https://www.tiktok.com/@rspkumuhammadiyahsruweng" target="_blank" className="w-8 h-8 flex items-center justify-center transition">
-                <FaTiktok
-                  className="text-lg text-slate-50
-                   hover:text-gray-700 hover:scale-110 transition-all "
-                />
+                <FaTiktok className="text-lg text-slate-50 hover:text-gray-700 hover:scale-110 transition-all " />
               </Link>
               <Link to="https://www.youtube.com/@pkusruweng9292" target="_blank" className="w-8 h-8 flex items-center justify-center transition">
-                <FaYoutube
-                  className="text-lg text-slate-50
-                   hover:text-red-600 hover:scale-110 transition-all "
-                />
+                <FaYoutube className="text-lg text-slate-50 hover:text-red-600 hover:scale-110 transition-all " />
               </Link>
             </div>
           </li>
