@@ -41,7 +41,7 @@ const JknGoObat = () => {
             <p className="font-bold text-green-700 leading-5">Kini Obat Bisa Diantar Kerumah</p>
             <p className="font-bold text-yellow-600 mb-4">Dengan Harga Lebih Terjangkau</p>
 
-            <Link to="/go-obat" className="hover:scale-105 transition flex items-center gap-1 text-lg bg-gradient-to-r from-emerald-500 via-emerald-700 to-emerald-900 text-white font-semibold lg:py-2 py-1 lg:px-5 px-5 rounded-full">
+            <Link to="/go-obat" className="hover:scale-105 transition flex items-center gap-1 text-lg bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-600 text-white font-semibold lg:py-2 py-1 lg:px-5 px-5 rounded-full">
               <IoIosArrowDroprightCircle />
               Cara Pemesanan
             </Link>

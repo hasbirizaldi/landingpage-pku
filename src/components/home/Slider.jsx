@@ -9,16 +9,10 @@ import { images, sliderImages } from "../../api/data";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { RxDoubleArrowLeft, RxDoubleArrowRight } from "react-icons/rx";
+import { IoClose } from "react-icons/io5";
 
 export default function Slider() {
   const [activeIndex, setActiveIndex] = useState(null);
-  const nextImage = () => {
-    setActiveIndex((prev) => (prev === sliderImages.length - 1 ? 0 : prev + 1));
-  };
-
-  const prevImage = () => {
-    setActiveIndex((prev) => (prev === 0 ? sliderImages.length - 1 : prev - 1));
-  };
 
   return (
     <div className="bg-transparent">
@@ -66,7 +60,7 @@ export default function Slider() {
       {/* ===== MENU ICON ===== */}
       <section className="lg:w-[80%] mx-auto ">
         <div className="grid grid-cols-3 h-auto lg:h-40 lg:rounded-lg overflow-hidden">
-          <Link to="/dokter-kami" className="flex flex-col py-2 items-center justify-center bg-green-800 hover:bg-green-950 transition">
+          <Link to="/dokter-kami" className="flex flex-col py-2 items-center justify-center bg-gradient-to-r from-emerald-800 via-emerald-600 to-emerald-800 hover:bg-green-950 transition">
             <div className="bg-white p-2 lg:p-5 rounded-full">
               <FaUserDoctor className="text-2xl lg:text-4xl text-green-950" />
             </div>
@@ -74,7 +68,7 @@ export default function Slider() {
             <span className="text-white lg:text-base text-sm font-semibold">KAMI</span>
           </Link>
 
-          <Link to="/" className="flex flex-col items-center justify-center bg-green-800 border-x-2 border-white hover:bg-green-950 transition">
+          <Link to="/" className="flex flex-col items-center justify-center bg-gradient-to-r from-emerald-800 via-emerald-600 to-emerald-800 border-x-2 border-white hover:bg-green-950 transition">
             <div className="bg-white p-2 lg:p-5 rounded-full">
               <FaUsers className="text-2xl lg:text-4xl text-green-950" />
             </div>
@@ -82,7 +76,7 @@ export default function Slider() {
             <span className="text-white lg:text-base text-sm font-semibold">ANTRIAN</span>
           </Link>
 
-          <Link to="/" className="flex flex-col items-center justify-center bg-green-800 hover:bg-green-950 transition">
+          <Link to="/" className="flex flex-col items-center justify-center bg-gradient-to-r from-emerald-800 via-emerald-600 to-emerald-800 hover:bg-green-950 transition">
             <div className="bg-white p-2 lg:p-5 rounded-full">
               <MdLibraryBooks className="text-2xl lg:text-4xl text-green-950" />
             </div>
@@ -91,33 +85,56 @@ export default function Slider() {
           </Link>
         </div>
       </section>
-      {/* ===== MODAL IMAGE ===== */}
+      {/* ===== MODAL IMAGE (SWIPER SAFE CLOSE) ===== */}
       {activeIndex !== null && (
-        <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center" onClick={() => setActiveIndex(null)}>
-          {/* Prev Button */}
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              prevImage();
-            }}
-            className="absolute left-4 lg:left-60 text-white text-4xl lg:text-7xl hover:scale-110 transition cursor-pointer"
-          >
-            <RxDoubleArrowLeft />
-          </button>
+        <div className="fixed inset-0 z-50">
+          {/* BACKDROP */}
+          <div
+            className="absolute inset-0 bg-black/80 z-40"
+            onMouseDown={() => setActiveIndex(null)} // 🔥 FIX
+          />
 
-          {/* Image */}
-          <img src={sliderImages[activeIndex]} alt="Preview" className="max-w-[90%] max-h-[90%] rounded-lg shadow-lg animate-zoom" onClick={(e) => e.stopPropagation()} />
+          {/* MODAL */}
+          <div className="relative z-50 w-full h-full flex items-center justify-center">
+            {/* CLOSE */}
+            <button
+              type="button"
+              onMouseDown={() => setActiveIndex(null)} // 🔥 FIX
+              className="absolute lg:top-5 top-40 right-5 z-[999] cursor-pointer text-white text-4xl hover:scale-110 transition"
+            >
+              <IoClose className="lg:text-5xl" />
+            </button>
 
-          {/* Next Button */}
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              nextImage();
-            }}
-            className="absolute right-4 lg:right-60 text-white text-4xl lg:text-7xl hover:scale-110 transition cursor-pointer"
-          >
-            <RxDoubleArrowRight />
-          </button>
+            {/* Arrow Kiri */}
+            <button className="swiper-prev absolute left-4 lg:left-20 z-[999] text-white text-5xl lg:text-7xl">
+              <RxDoubleArrowLeft />
+            </button>
+
+            {/* Arrow Kanan */}
+            <button className="swiper-next absolute right-4 lg:right-20 z-[999] text-white text-5xl lg:text-7xl">
+              <RxDoubleArrowRight />
+            </button>
+
+            <Swiper
+              modules={[Navigation]}
+              navigation={{
+                prevEl: ".swiper-prev",
+                nextEl: ".swiper-next",
+              }}
+              initialSlide={activeIndex}
+              slidesPerView={1}
+              loop
+              className="w-full h-full"
+            >
+              {sliderImages.map((img, i) => (
+                <SwiperSlide key={i}>
+                  <div className="w-full h-full flex items-center justify-center">
+                    <img src={img} alt={`Preview ${i}`} className="max-w-[95%] max-h-[90%] rounded-lg shadow-lg cursor-pointer" draggable={false} />
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
         </div>
       )}
     </div>

@@ -18,7 +18,7 @@ const JadwalDokter = () => {
       {/* overlay biar teks kebaca */}
       <div className="bg-white/10 min-h-screen pb-5">
         <div className="pt-4">
-          <div className="lg:w-[80%] lg:mx-auto mx-2 text-slate-50  bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 lg:p-12 p-8 flex flex-col justify-center h-36 rounded-lg shadow-ku">
+          <div className="lg:w-[80%] lg:mx-auto mx-2 text-slate-50 bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-500 lg:p-12 p-8 flex flex-col justify-center h-36 rounded-lg shadow-ku">
             <h1 className="lg:text-3xl text-2xl font-bold mb-1">Jadwal Dokter</h1>
             <div className="flex items-center gap-1 text-slate-200">
               <span>Home</span>
@@ -29,7 +29,7 @@ const JadwalDokter = () => {
         </div>
 
         {/* Cari */}
-        <div className="lg:w-[60%] lg:mx-auto mx-2 bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 p-8 mt-8 rounded-xl shadow-ku">
+        <div className="lg:w-[60%] lg:mx-auto mx-2 bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-500 p-8 mt-8 rounded-xl shadow-ku">
           <p className="text-slate-50 text-lg font-semibold text-center mb-1">Cari Jadwal Dokter di RS PKU Muhammadiyah Sruweng</p>
           <p className="text-slate-50 text-[11px] font-semibold text-center mb-3">*Jadwal dapat berubah sewaktu-waktu. Informasi terupdate silakan menghubungi WA Pendaftaran : 08xx xxxx xxxx </p>
           <form className="">
@@ -81,7 +81,7 @@ const JadwalDokter = () => {
                 <div className="flex flex-col justify-center lg:items-start items-center">
                   <p className="font-semibold mb-1">{dokter.nama}</p>
                   <p className="bg-gradient-to-r from-yellow-700 via-yellow-500 to-yellow-600 w-fit text-white rounded px-2 mb-4">{dokter.spesialis}</p>
-                  <Link to="#" className="flex items-center justify-center bg-gradient-to-r from-emerald-500 via-emerald-700 to-emerald-900 text-white font-semibold py-1 rounded w-32 hover:scale-[1.02] transition">
+                  <Link to="#" className="flex items-center justify-center bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-600 text-white font-semibold py-1 rounded w-32 hover:scale-[1.02] transition">
                     Lihat Profil
                   </Link>
                 </div>
@@ -91,7 +91,7 @@ const JadwalDokter = () => {
                   {/* ================= DESKTOP (TABLE) ================= */}
                   <div className="hidden lg:block overflow-x-auto">
                     <table className="w-full border border-slate-300 text-sm text-center">
-                      <thead className="bg-emerald-700 text-white">
+                      <thead className="bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-600 text-white">
                         <tr>
                           {["Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu"].map((hari) => (
                             <th key={hari} className="border px-2 py-3">

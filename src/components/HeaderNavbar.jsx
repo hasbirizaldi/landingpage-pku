@@ -91,7 +91,7 @@ const HeaderNavbar = () => {
                 </div>
                 <p className="flex flex-col">
                   <span className="font-semibold leading-4 text-green-700">Care Center</span>
-                  <span className="text-green-700">087877505050</span>
+                  <span className="text-green-700">0878 7750 5050</span>
                 </p>
               </Link>
             </div>
@@ -122,7 +122,7 @@ const HeaderNavbar = () => {
       {/* ================= NAV DESKTOP ================= */}
       <nav
         className={`
-          bg-green-900 z-40 h-14
+          bg-gradient-to-r from-emerald-800 via-emerald-600 to-emerald-800 z-40 h-14
           transition-all duration-300
           hidden lg:block shadow-ku
           ${scrolled ? "fixed top-0 w-full " : "relative mt-20"}
@@ -232,16 +232,16 @@ const HeaderNavbar = () => {
   `}
       >
         <ul className="flex flex-col text-sm font-semibold">
-          <li className={`px-4 py-3 border-b ${location.pathname === "/" ? "bg-emerald-800" : ""}`}>
-            <Link to="/" onClick={closeAll}>
+          <li className={`px-4 py-3 border-b ${location.pathname === "/" ? "bg-emerald-800 text-yellow-400" : ""}`}>
+            <NavLink to="/" onClick={closeAll}>
               BERANDA
-            </Link>
+            </NavLink>
           </li>
 
-          <li className={`px-4 py-3 border-b ${location.pathname === "/jadwal-dokter" ? "bg-emerald-800" : ""}`}>
-            <Link to="/jadwal-dokter" onClick={closeAll}>
+          <li className={`px-4 py-3 border-b ${location.pathname === "/jadwal-dokter" ? "bg-emerald-800 text-yellow-400" : ""}`}>
+            <NavLink to="/jadwal-dokter" onClick={closeAll}>
               JADWAL DOKTER
-            </Link>
+            </NavLink>
           </li>
 
           {/* MOBILE TENTANG KAMI */}
@@ -360,10 +360,10 @@ const HeaderNavbar = () => {
             )}
           </li>
 
-          <li className={`px-4 py-3 border-b ${location.pathname === "/karir" ? "bg-emerald-800" : ""}`}>
-            <Link to="/karir" onClick={closeAll}>
+          <li className={`px-4 py-3 border-b ${location.pathname === "/karir" ? "bg-emerald-800 text-yellow-400" : ""}`}>
+            <NavLink to="/karir" onClick={closeAll}>
               KARIR
-            </Link>
+            </NavLink>
           </li>
 
           {/* SOSMED MOBILE */}

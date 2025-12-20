@@ -36,7 +36,7 @@ const PelayananKami = () => {
             "
             >
               {/* ICON */}
-              <div className="flex justify-center bg-gradient-to-r from-emerald-500 via-emerald-700 to-emerald-900 py-4 rounded-t-sm">
+              <div className="flex justify-center bg-gradient-to-r from-emerald-800 via-emerald-600 to-emerald-700 py-4 rounded-t-sm">
                 <div className="bg-gradient-to-r from-emerald-400 via-emerald-700 to-emerald-950 w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center rounded-full text-white">{iconMap[item.icon]}</div>
               </div>
               <div className=" rounded-b-xl  relative min-h-[210px] px-4">

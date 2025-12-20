@@ -32,7 +32,7 @@ const ScrollTopButton = () => {
       className="
         fixed bottom-20 right-1 lg:right-13
         z-50 border-2 borer-white
-        bg-gradient-to-r from-emerald-700 via-emerald-600 to-emerald-800
+        bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-600
         text-white
         p-3
         rounded-full

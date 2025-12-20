@@ -28,7 +28,7 @@ const PartnerKami = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="
-              bg-gradient-to-r from-emerald-500 via-emerald-700 to-emerald-900
+             bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-600
               text-white
               px-4 sm:px-8 py-2 sm:py-2 
               rounded
