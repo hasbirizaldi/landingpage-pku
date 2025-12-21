@@ -21,6 +21,7 @@ import Karir from "./pages/Karir";
 import VidioIslami from "./pages/VidioIslami";
 import StrukturOrganisasi from "./pages/StrukturOrganisasi";
 import VidioKesehatan from "./pages/VidioKesehatan";
+import VidioPromosi from "./pages/VidioPromosi";
 import ArtikelIslami from "./pages/ArtikelIslami";
 import ArtikelKesehatan from "./pages/ArtikelKesehatan";
 import PelayananPenunjang from "./pages/PelayananPenunjang";
@@ -65,6 +66,7 @@ const App = () => {
         <Route path="/promosi-leaflet" element={<Promosi />} />
         <Route path="/vidio-islami" element={<VidioIslami />} />
         <Route path="/vidio-kesehatan" element={<VidioKesehatan />} />
+        <Route path="/vidio-promosi" element={<VidioPromosi />} />
       </Routes>
       <Link
         to="https://wa.me/6287877505050?text=Assalamualaikum%20RS%20PKU%20Sruweng%2C%20saya%20ingin%20bertanya"

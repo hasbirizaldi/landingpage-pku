@@ -28,7 +28,7 @@ const BeritaArtikel = () => {
             "
           >
             {/* IMAGE */}
-            <img src={item.image} alt={item.title} className="h-44 sm:h-48 w-full object-contain" />
+            <img src={item.image} alt={item.title} className="h-44 sm:h-48 w-full object-cover" />
 
             <div className="p-3 sm:p-3">
               <p className="text-xs sm:text-sm text-slate-500 mb-1">{item.date}</p>

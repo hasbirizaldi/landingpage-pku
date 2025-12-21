@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { IoIosArrowForward } from "react-icons/io";
 import { dataVidio } from "../api/data";
 
-const Simrs = () => {
-  const [activeCategory, setActiveCategory] = useState("simrs");
+const VidioKesehatan = () => {
+  const [activeCategory, setActiveCategory] = useState("vidio-promosi");
 
   const tabs = [
     { label: "Vidio Promosi", value: "vidio-promosi" },
@@ -33,7 +33,7 @@ const Simrs = () => {
           </div>
 
           {/* TAB */}
-          <div className="grid grid-cols-4 lg:w-[80%] h-12 lg:mx-auto mx-2 mb-6 overflow-hidden bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-500 rounded-t-lg">
+          <div className="grid grid-cols-4 lg:w-[80%] h-12 lg:mx-auto mx-2 overflow-hidden mb-6 bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-500 rounded-t-lg">
             {tabs.map((tab) => (
               <button
                 key={tab.value}
@@ -68,4 +68,4 @@ const Simrs = () => {
   );
 };
 
-export default Simrs;
+export default VidioKesehatan;

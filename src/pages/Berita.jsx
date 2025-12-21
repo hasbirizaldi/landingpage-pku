@@ -16,7 +16,7 @@ const Berita = () => {
   ];
 
   useEffect(() => {
-    document.title = "RS PKU Sruweng | Berita";
+    document.title = "RS PKU Sruweng | Berita & Artikel";
   }, []);
 
   const filteredArtikel = dataArtikel.filter((item) => item.category === activeCategory).slice(0, 6);
@@ -35,12 +35,12 @@ const Berita = () => {
           <div className="lg:w-[80%] lg:mx-auto mx-2 text-slate-50 bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-500 lg:p-12 p-8 flex flex-col justify-center h-36 rounded-lg shadow-ku sm:mb-8 mb-5">
             <h1 className="lg:text-3xl text-2xl font-bold mb-1">Berita & Artikel</h1>
             <div className="flex items-center gap-1 text-slate-200">
-              <span>Home</span>
+              <span>Beranda</span>
               <IoIosArrowForward />
               <span>Berita & Artikel</span>
             </div>
           </div>
-          <div className="grid grid-cols-5 lg:w-[80%] h-12 items-center lg:mx-auto mx-2 mb-5 bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-500 rounded-t-lg">
+          <div className="grid grid-cols-5 lg:w-[80%] h-12 items-center lg:mx-auto mx-2 mb-5 overflow-hidden bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-500 rounded-t-lg">
             {tabs.map((tab) => (
               <button
                 key={tab.value}
@@ -82,7 +82,7 @@ const Berita = () => {
                     alt={item.title}
                     className={`
           w-full object-cover
-          ${isImageOnly ? "h-56 sm:h-64" : "h-44 sm:h-48"}
+          ${isImageOnly ? "h-full" : "h-44 sm:h-48"}
         `}
                   />
 
@@ -91,7 +91,7 @@ const Berita = () => {
                     <div className="p-3">
                       <p className="text-xs sm:text-sm text-slate-500 mb-1">{item.date}</p>
 
-                      <h2 className="font-bold text-base sm:text-lg text-slate-800 mb-1 line-clamp-2">{item.title}</h2>
+                      <h2 className="font-semibold text-base sm:text-lg text-slate-800 mb-1 line-clamp-2">{item.title}</h2>
 
                       <div className="text-slate-600 text-sm mb-4 line-clamp-2" dangerouslySetInnerHTML={{ __html: item.desc }} />
 

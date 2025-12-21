@@ -21,8 +21,8 @@ const HeaderNavbar = () => {
   // List path untuk masing-masing dropdown
   const pathsTentang = ["/sejarah", "/falsafah-visi-misi", "/akreditasi-penghargaan", "/indikator-mutu", "/struktur-organisasi"];
   const pathsPelayanan = ["/rawat-jalan", "/rawat-inap", "/penunjang", "/igd", "/dokter-kami", "/bed-pasien", "/go-obat"];
-  const pathsBerita = ["/berita", "/artikel-islami", "/artikel-kesehatan", "/promosi-leaflet", "/gallery"];
-  const pathsVideo = ["/kesehatan", "/keislaman", "/simrs"];
+  const pathsBerita = ["/berita", "/artikel-kesehatan", "/artikel-islami", "/promosi-leaflet", "/gallery"];
+  const pathsVideo = ["/vidio-promosi", "/kesehatan", "/keislaman", "/simrs"];
 
   const navClass = ({ isActive }) => (isActive ? " border-b-2 border-white transition-all ease" : "hover:text-yellow-200 transition-all ease");
 
@@ -56,7 +56,7 @@ const HeaderNavbar = () => {
     lg:h-20 h-16
     lg:px-20 px-2
     flex items-center
-    transition-all duration-300 lg:border-none border-b-2 border-green-700
+    transition-all duration-300 lg:border-none border-b-2 border-yellow-400
     ${scrolled ? "lg:-translate-y-full lg:opacity-0" : ""}
   `}
       >
@@ -161,7 +161,7 @@ const HeaderNavbar = () => {
             {/* PELAYANAN - LOGIKA ACTIVE DROPDOWN */}
             <li className={`relative group px-3 py-4 cursor-pointer`}>
               <div className={`flex items-center ${isActiveParent(pathsPelayanan) ? " border-b-2 border-white" : ""}`}>
-                PELAYANAN <MdKeyboardArrowDown />
+                FASILITAS <MdKeyboardArrowDown />
               </div>
               <div className="absolute font-normal left-0 top-full bg-white text-black w-56 rounded shadow opacity-0 invisible group-hover:visible group-hover:opacity-100 transition">
                 {pathsPelayanan.map((path, idx) => {
@@ -182,7 +182,7 @@ const HeaderNavbar = () => {
               </div>
               <div className="absolute font-normal left-0 top-full bg-white text-black w-56 rounded shadow opacity-0 invisible group-hover:visible group-hover:opacity-100 transition">
                 {pathsBerita.map((path, idx) => {
-                  const labels = ["Berita Terbaru", "Artikel Islami", "Artikel Kesehatan", "Promosi & Leaflet", "Gallery"];
+                  const labels = ["Berita Terbaru", "Artikel Kesehatan", "Artikel Islami", "Promosi & Leaflet", "Gallery"];
                   return (
                     <Link key={path} className={`block px-4 py-2 hover:bg-gray-100 ${location.pathname === path ? "bg-gray-100 font-bold text-green-800" : ""}`} to={path}>
                       {labels[idx]}
@@ -199,7 +199,7 @@ const HeaderNavbar = () => {
               </div>
               <div className="absolute font-normal left-0 top-full bg-white text-black w-56 rounded shadow opacity-0 invisible group-hover:visible group-hover:opacity-100 transition">
                 {pathsVideo.map((path, idx) => {
-                  const labels = ["Vidio Kesehatan", "Vidio Keislaman", "Vidio SIMRS"];
+                  const labels = ["Vidio Promosi", "Vidio Kesehatan", "Vidio Keislaman", "Vidio SIMRS"];
                   return (
                     <Link key={path} className={`block px-4 py-2 hover:bg-gray-100 ${location.pathname === path ? "bg-gray-100 font-bold text-green-800" : ""}`} to={path}>
                       {labels[idx]}
@@ -354,6 +354,38 @@ const HeaderNavbar = () => {
                 <li className="px-6 py-2">
                   <Link to="/gallery" onClick={closeAll}>
                     Gallery
+                  </Link>
+                </li>
+              </ul>
+            )}
+          </li>
+
+          {/* MOBILE VIDIO */}
+          <li className="border-b">
+            <button onClick={() => toggleDropdown("vidio")} className={`w-full px-4 py-3 flex justify-between items-center ${isActiveParent(pathsVideo) ? "text-yellow-300" : ""}`}>
+              VIDIO & TUTORIAL
+              <MdKeyboardArrowDown className={`transition ${openDropdown === "vidio" ? "rotate-180" : ""}`} />
+            </button>
+            {openDropdown === "vidio" && (
+              <ul className="bg-emerald-800 text-sm">
+                <li className="px-6 py-2">
+                  <Link to="/vidio-promosi" onClick={closeAll}>
+                    Vidio Promosi
+                  </Link>
+                </li>
+                <li className="px-6 py-2">
+                  <Link to="/vidio-kesehatan" onClick={closeAll}>
+                    Vidio Kesehatan
+                  </Link>
+                </li>
+                <li className="px-6 py-2">
+                  <Link to="/vidio-islami" onClick={closeAll}>
+                    Vidio Islami
+                  </Link>
+                </li>
+                <li className="px-6 py-2">
+                  <Link to="/simrs" onClick={closeAll}>
+                    Vidio SIMRS
                   </Link>
                 </li>
               </ul>

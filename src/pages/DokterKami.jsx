@@ -21,9 +21,9 @@ const DokterKami = () => {
           <div className="lg:w-[80%] lg:mx-auto mx-2 text-slate-50 bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-500 lg:p-12 p-8 flex flex-col justify-center h-36 rounded-lg shadow-ku">
             <h1 className="lg:text-3xl text-2xl font-bold mb-1">Dokter Kami</h1>
             <div className="flex items-center gap-1 text-slate-200">
-              <span>Home</span>
+              <span>Beranda</span>
               <IoIosArrowForward />
-              <span>Dokter Kami</span>
+              <span>Fasilitas</span>
             </div>
           </div>
         </div>

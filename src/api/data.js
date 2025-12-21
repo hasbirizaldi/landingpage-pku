@@ -21,6 +21,9 @@ import brilife from "../assets/logo/partner/brilife.png";
 import kai from "../assets/logo/partner/kai.png";
 import jasa_raharja from "../assets/logo/partner/jasa-raharja.png";
 import dokter from "../assets/logo/dokter.png";
+import leaflet1 from "../assets/leaflet/1.jpg";
+import leaflet2 from "../assets/leaflet/2.jpg";
+import leaflet3 from "../assets/leaflet/3.jpg";
 
 export const sliderImages = [slider1, slider2, slider3, slider4, slider5];
 export const img = [logo, mas, jkn, logo2, ios, go_obat, call, emergency, dokter];
@@ -318,7 +321,7 @@ export const dataArtikel = [
     category: "promosi-leaflet",
     title: "Promo Medical Check Up Akhir Tahun",
     date: "15 November 2025",
-    image: "https://cdn.banyumasekspres.id/wp-content/uploads/2025/07/pku-sruweng-siap-ikuti-kebijakan-implememtasi-kris.jpg",
+    image: leaflet1,
     desc: "<p>Dapatkan promo MCU dengan harga spesial.</p>",
   },
   {
@@ -326,7 +329,7 @@ export const dataArtikel = [
     category: "promosi-leaflet",
     title: "Diskon Pemeriksaan Laboratorium",
     date: "13 November 2025",
-    image: "https://cdn.banyumasekspres.id/wp-content/uploads/2025/07/pku-sruweng-siap-ikuti-kebijakan-implememtasi-kris.jpg",
+    image: leaflet2,
     desc: "<p>Promo pemeriksaan laboratorium periode terbatas.</p>",
   },
   {
@@ -334,7 +337,7 @@ export const dataArtikel = [
     category: "promosi-leaflet",
     title: "Promo Paket Persalinan",
     date: "11 November 2025",
-    image: "https://cdn.banyumasekspres.id/wp-content/uploads/2025/07/pku-sruweng-siap-ikuti-kebijakan-implememtasi-kris.jpg",
+    image: leaflet3,
     desc: "<p>Paket persalinan nyaman dengan harga terjangkau.</p>",
   },
 
@@ -342,26 +345,26 @@ export const dataArtikel = [
   {
     id: 16,
     category: "gallery",
-    title: "Fasilitas Rawat Inap",
+    title: "",
     date: "9 November 2025",
-    image: "https://cdn.banyumasekspres.id/wp-content/uploads/2025/07/pku-sruweng-siap-ikuti-kebijakan-implememtasi-kris.jpg",
-    desc: "<p>Fasilitas rawat inap yang bersih dan nyaman.</p>",
+    image: slider2,
+    desc: "",
   },
   {
     id: 17,
     category: "gallery",
-    title: "Kegiatan Senam Sehat",
+    title: "",
     date: "7 November 2025",
-    image: "https://cdn.banyumasekspres.id/wp-content/uploads/2025/07/pku-sruweng-siap-ikuti-kebijakan-implememtasi-kris.jpg",
-    desc: "<p>Senam sehat rutin bersama staf dan masyarakat.</p>",
+    image: slider3,
+    desc: "",
   },
   {
     id: 18,
     category: "gallery",
-    title: "Pelayanan Rawat Jalan",
+    title: "",
     date: "5 November 2025",
-    image: "https://cdn.banyumasekspres.id/wp-content/uploads/2025/07/pku-sruweng-siap-ikuti-kebijakan-implememtasi-kris.jpg",
-    desc: "<p>Pelayanan rawat jalan dengan sistem antrian modern.</p>",
+    image: slider4,
+    desc: "",
   },
   {
     id: 19,
@@ -410,5 +413,158 @@ export const dataArtikel = [
     date: "25 November 2025",
     image: "https://cdn.banyumasekspres.id/wp-content/uploads/2025/07/pku-sruweng-siap-ikuti-kebijakan-implememtasi-kris.jpg",
     desc: "<p>Stres berlebih dapat berdampak buruk pada kesehatan.</p>",
+  },
+];
+
+export const dataVidio = [
+  {
+    id: 1,
+    title: "Kesan Yoda Idol tentang pelayanan di RS PKU Muhammadiyah Sruweng",
+    videoUrl: "https://www.youtube.com/embed/IKaORgMwWp0",
+    category: "vidio-promosi",
+    uploadDate: "2024-01-10",
+  },
+  {
+    id: 2,
+    title: "Pemanfaatan antrian online menggunakan mobile JKN RS PKU Muhammadiyah Sruweng",
+    videoUrl: "https://www.youtube.com/embed/0G-QqthdQyQ?si=qAKRcCGgQQzidwxz",
+    category: "vidio-promosi",
+    uploadDate: "2024-01-18",
+  },
+  {
+    id: 3,
+    title: "Mengenal Antibiotik",
+    videoUrl: "https://www.youtube.com/embed/IuC3A4RUm1c?si=ABeuafK6bWGdPaiu",
+    category: "vidio-kesehatan",
+    uploadDate: "2024-02-02",
+  },
+  {
+    id: 4,
+    title: "Mengenal TB Paru, Pencegahan dan Pengobatan",
+    videoUrl: "https://www.youtube.com/embed/u06foUTS6aI?si=aYjIzrXZBc5pL-by",
+    category: "vidio-kesehatan",
+    uploadDate: "2024-02-10",
+  },
+  {
+    id: 5,
+    title: "Tata Cara Wudhu Menurut Rasulullah SAW",
+    videoUrl: "https://www.youtube.com/embed/Zp8qM1J1ibY?si=lxEYYXnS8pNhRwty",
+    category: "vidio-keislaman",
+    uploadDate: "2024-03-01",
+  },
+  {
+    id: 6,
+    title: "Panduan Aplikasi Kajian Rutin Morbis 2",
+    videoUrl: "https://www.youtube.com/embed/SlP0IYtIfrY?si=trv0V9kPJRZi-LqM",
+    category: "simrs",
+    uploadDate: "2024-03-12",
+  },
+  {
+    id: 7,
+    title: "Gedung Nyai Walidah PKU Sruweng",
+    videoUrl: "https://www.youtube.com/embed/oYeqeL6qgCk?si=JK3f2AOO1Q_gcpaz",
+    category: "vidio-promosi",
+    uploadDate: "2024-03-20",
+  },
+  {
+    id: 8,
+    title: "Layanan Pengantaran Obat sampai Alamat",
+    videoUrl: "https://www.youtube.com/embed/nzjoqkrmFCY?si=wevrjr6ZC9bLcMTo",
+    category: "vidio-promosi",
+    uploadDate: "2024-04-05",
+  },
+  {
+    id: 9,
+    title: "Tips Memilih Skincare",
+    videoUrl: "https://www.youtube.com/embed/t3YrUjOde_Q?si=vwaegcJDIEhwuD7_",
+    category: "vidio-kesehatan",
+    uploadDate: "2024-04-12",
+  },
+  {
+    id: 10,
+    title: "Tata Cara Tayamum Menurut Rasulullah",
+    videoUrl: "https://www.youtube.com/embed/xwEi8Sq87WE?si=JTZvo7a1g2Upau99",
+    category: "vidio-keislaman",
+    uploadDate: "2024-04-20",
+  },
+  {
+    id: 11,
+    title: "Sholat Berdasarkan HPT Muhammadiyah",
+    videoUrl: "https://www.youtube.com/embed/3GxHmfti2t8?si=1rqOUqYeClAYWZfu",
+    category: "vidio-keislaman",
+    uploadDate: "2024-05-01",
+  },
+  {
+    id: 12,
+    title: "Tata Cara Mandi Wajib",
+    videoUrl: "https://www.youtube.com/embed/vBXKpWKx6bo?si=XNqEffO2jGz8R-mf",
+    category: "vidio-keislaman",
+    uploadDate: "2024-05-10",
+  },
+  {
+    id: 13,
+    title: "Shalat Jama'ah dan Qashar",
+    videoUrl: "https://www.youtube.com/embed/rh2mq_H5EYA?si=s7-9Tu3HkBX-U2t3",
+    category: "vidio-keislaman",
+    uploadDate: "2024-05-18",
+  },
+  {
+    id: 14,
+    title: "Panduan Aplikasi Manajemen Laundry Morbis 2",
+    videoUrl: "https://www.youtube.com/embed/0yFpFCpncio?si=vVxnGmxX1NAux-dh",
+    category: "simrs",
+    uploadDate: "2024-06-01",
+  },
+];
+
+export const dataKarir = [
+  {
+    id: 1,
+    posisi: "Tenaga Teknis Kefarmasian (TTK)",
+    jumlah: 2,
+    urgent: true,
+    deskripsi: "2 Analis dengan persyaratan sebagai berikut :",
+    persyaratan: ["Sehat jasmani & rohani", "Pria/wanita usia maksimal 35 tahun", "Pendidikan minimal D3 Farmasi", "Memiliki akun SATUSEHAT", "Tidak sedang bekerja di tempat lain"],
+    berkas: [
+      "Ijazah/transkrip nilai legalisir",
+      "Memiliki STR seumur hidup",
+      "Daftar Riwayat Hidup (Bagi yang sudah pernah bekerja)",
+      "SKCK Kepolisian",
+      "Surat Keterangan Sehat",
+      "Pas Foto 4x6",
+      "Sertifikat pendukung",
+      "Scan KTP yang masih berlaku",
+    ],
+    batasPendaftaran: "30 September 2025",
+  },
+  {
+    id: 2,
+    posisi: "Perawat Rawat Inap",
+    jumlah: 3,
+    urgent: true,
+    deskripsi: "3 Perawat dengan kualifikasi :",
+    persyaratan: ["Laki-laki / Perempuan", "Usia maksimal 30 tahun", "Pendidikan minimal D3 Keperawatan", "Memiliki STR aktif", "Mampu bekerja dalam tim", "Bersedia bekerja shift"],
+    berkas: ["Ijazah & transkrip nilai", "STR aktif", "CV / Daftar Riwayat Hidup", "SKCK", "Surat Keterangan Sehat", "Pas Foto terbaru", "Scan KTP"],
+    batasPendaftaran: "15 Oktober 2025",
+  },
+  {
+    id: 3,
+    posisi: "Radiografer",
+    jumlah: 1,
+    urgent: false,
+    deskripsi: "1 Radiografer dengan persyaratan :",
+    persyaratan: ["Pendidikan minimal D3 Radiologi", "Memiliki STR aktif", "Pengalaman kerja diutamakan", "Mampu mengoperasikan alat radiologi", "Sehat jasmani & rohani"],
+    berkas: ["Ijazah & transkrip nilai", "STR aktif", "CV", "SKCK", "Surat Keterangan Sehat", "Pas Foto", "Scan KTP"],
+    batasPendaftaran: "20 Oktober 2025",
+  },
+  {
+    id: 4,
+    posisi: "Staff IT Rumah Sakit",
+    jumlah: 1,
+    urgent: false,
+    deskripsi: "1 Staff IT dengan kualifikasi :",
+    persyaratan: ["Pendidikan minimal D3/S1 Informatika", "Menguasai jaringan & troubleshooting", "Memahami SIMRS (nilai tambah)", "Mampu bekerja mandiri & tim", "Komunikatif"],
+    berkas: ["Ijazah & transkrip nilai", "CV", "Portofolio (jika ada)", "SKCK", "Surat Keterangan Sehat", "Pas Foto", "Scan KTP"],
+    batasPendaftaran: "31 Oktober 2025",
   },
 ];
