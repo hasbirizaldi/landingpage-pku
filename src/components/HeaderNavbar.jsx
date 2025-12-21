@@ -22,7 +22,7 @@ const HeaderNavbar = () => {
   const pathsTentang = ["/sejarah", "/falsafah-visi-misi", "/akreditasi-penghargaan", "/indikator-mutu", "/struktur-organisasi"];
   const pathsPelayanan = ["/rawat-jalan", "/rawat-inap", "/penunjang", "/igd", "/dokter-kami", "/bed-pasien", "/go-obat"];
   const pathsBerita = ["/berita", "/artikel-islami", "/artikel-kesehatan", "/promosi-leaflet", "/gallery"];
-  const pathsVideo = ["/keislaman", "/kesehatan", "/simrs"];
+  const pathsVideo = ["/kesehatan", "/keislaman", "/simrs"];
 
   const navClass = ({ isActive }) => (isActive ? " border-b-2 border-white transition-all ease" : "hover:text-yellow-200 transition-all ease");
 
@@ -182,7 +182,7 @@ const HeaderNavbar = () => {
               </div>
               <div className="absolute font-normal left-0 top-full bg-white text-black w-56 rounded shadow opacity-0 invisible group-hover:visible group-hover:opacity-100 transition">
                 {pathsBerita.map((path, idx) => {
-                  const labels = ["Berita", "Artikel Islami", "Artikel Kesehatan", "Promosi & Leaflet", "Gallery"];
+                  const labels = ["Berita Terbaru", "Artikel Islami", "Artikel Kesehatan", "Promosi & Leaflet", "Gallery"];
                   return (
                     <Link key={path} className={`block px-4 py-2 hover:bg-gray-100 ${location.pathname === path ? "bg-gray-100 font-bold text-green-800" : ""}`} to={path}>
                       {labels[idx]}
@@ -199,7 +199,7 @@ const HeaderNavbar = () => {
               </div>
               <div className="absolute font-normal left-0 top-full bg-white text-black w-56 rounded shadow opacity-0 invisible group-hover:visible group-hover:opacity-100 transition">
                 {pathsVideo.map((path, idx) => {
-                  const labels = ["Vidio Keislaman", "Vidio Kesehatan", "Vidio SIMRS"];
+                  const labels = ["Vidio Kesehatan", "Vidio Keislaman", "Vidio SIMRS"];
                   return (
                     <Link key={path} className={`block px-4 py-2 hover:bg-gray-100 ${location.pathname === path ? "bg-gray-100 font-bold text-green-800" : ""}`} to={path}>
                       {labels[idx]}

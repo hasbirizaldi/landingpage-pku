@@ -66,100 +66,6 @@ export const layanan = [
   },
 ];
 
-export const dataArtikel = [
-  {
-    id: 1,
-    title: "Tips Menjaga Kesehatan Jantung",
-    date: "10 Desember 2025",
-    image: "https://wahananews.co/photo/berita/dir112022/9-tips-menjaga-kesehatan-jantung_O4vPAA6pS9.jpg",
-    desc: `
-      <p>
-        Menjaga kesehatan jantung sangatlah penting, karena jantung merupakan organ vital
-        yang berperan dalam memompa darah ke seluruh tubuh.
-      </p>
-
-      <p>
-        Agar jantung tetap sehat, ada sejumlah langkah yang perlu Anda lakukan, seperti
-        rutin berolahraga, menjaga berat badan ideal, menjalani pola makan sehat, dan
-        tidak merokok.
-      </p>
-
-      <h3>Tips Menjaga Kesehatan Jantung</h3>
-
-      <ol>
-        <li>
-          <strong>Tidak merokok</strong><br />
-          Merokok dapat merusak pembuluh darah dan meningkatkan risiko penyakit jantung.
-        </li>
-
-        <li>
-          <strong>Rutin berolahraga</strong><br />
-          Lakukan aktivitas fisik 20–30 menit per hari, seperti berjalan kaki atau berenang.
-        </li>
-
-        <li>
-          <strong>Mengonsumsi omega-3</strong><br />
-          Konsumsi ikan seperti salmon dan tuna untuk menjaga kesehatan jantung.
-        </li>
-
-        <li>
-          <strong>Memperbanyak serat</strong><br />
-          Serat membantu menurunkan kolesterol jahat (LDL).
-        </li>
-
-        <li>
-          <strong>Mengurangi lemak jenuh</strong><br />
-          Batasi konsumsi makanan berlemak tinggi dan gorengan.
-        </li>
-
-        <li>
-          <strong>Menjaga tekanan darah</strong><br />
-          Tekanan darah tinggi dapat meningkatkan risiko serangan jantung.
-        </li>
-
-        <li>
-          <strong>Mengontrol gula darah</strong><br />
-          Kadar gula darah tinggi dapat merusak pembuluh darah.
-        </li>
-
-        <li>
-          <strong>Istirahat yang cukup</strong><br />
-          Tidur 7–8 jam per hari membantu menjaga kesehatan jantung.
-        </li>
-      </ol>
-
-      <p>
-        Dengan menerapkan pola hidup sehat dan melakukan pemeriksaan rutin, kesehatan
-        jantung dapat terjaga dengan baik.
-      </p>
-    `,
-  },
-  {
-    id: 2,
-    title: "Pola Hidup Sehat di Era Modern",
-    date: "8 Desember 2025",
-    image: "https://directiongenerale.id/wp-content/uploads/2025/08/Pola-makan-sehat-1024x1024.jpg",
-    desc: `
-      <p>
-        Di era modern, menjaga pola hidup sehat menjadi tantangan tersendiri bagi masyarakat.
-        Gaya hidup serba cepat sering membuat orang mengabaikan kesehatan.
-      </p>
-    `,
-  },
-  {
-    id: 3,
-    title: "Manfaat Olahraga Rutin Setiap Hari",
-    date: "5 Desember 2025",
-    image: "https://ayosehat.kemkes.go.id/imagex/content/1bf6bdc06bac95df8cc3286292280895.webp",
-    desc: `
-      <p>
-        Olahraga rutin memberikan banyak manfaat bagi kesehatan fisik dan mental.
-        Aktivitas fisik membantu meningkatkan daya tahan tubuh dan menjaga berat badan.
-      </p>
-    `,
-  },
-];
-
 export const dokterList = [
   {
     nama: "dr. Khoerul Anwar, Sp.PD",
@@ -300,5 +206,209 @@ export const dokterList = [
       sabtu: "-",
       minggu: "-",
     },
+  },
+];
+
+export const dataArtikel = [
+  // ================== BERITA (4) ==================
+  {
+    id: 1,
+    category: "berita",
+    title: "RS PKU Sruweng Resmikan Gedung Rawat Inap Baru",
+    date: "10 Desember 2025",
+    image: "https://cdn.banyumasekspres.id/wp-content/uploads/2025/07/pku-sruweng-siap-ikuti-kebijakan-implememtasi-kris.jpg",
+    desc: "<p>RS PKU Sruweng resmi membuka gedung rawat inap baru untuk meningkatkan pelayanan masyarakat.</p>",
+  },
+  {
+    id: 2,
+    category: "berita",
+    title: "Kegiatan Bakti Sosial Kesehatan Gratis",
+    date: "8 Desember 2025",
+    image: "https://rri-assets.obs.ap-southeast-4.myhuaweicloud.com/berita/47/o/WhatsApp_Image_2025-12-11_at_16.50.17/9eh23yt3ov5ohcb.jpeg",
+    desc: "<p>Kegiatan bakti sosial disambut antusias oleh warga sekitar rumah sakit.</p>",
+  },
+  {
+    id: 3,
+    category: "berita",
+    title: "Peningkatan Layanan IGD 24 Jam",
+    date: "5 Desember 2025",
+    image: "https://dk4fkkwa4o9l0.cloudfront.net/production/uploads/announcement/image/4771/Cover_Web.jpg",
+    desc: "<p>IGD RS PKU Sruweng kini dilengkapi tenaga medis dan fasilitas yang lebih lengkap.</p>",
+  },
+  {
+    id: 4,
+    category: "berita",
+    title: "Pelatihan Tanggap Darurat untuk Perawat",
+    date: "2 Desember 2025",
+    image: "https://cdn.banyumasekspres.id/wp-content/uploads/2025/07/pku-sruweng-siap-ikuti-kebijakan-implememtasi-kris.jpg",
+    desc: "<p>Pelatihan rutin dilakukan untuk meningkatkan kompetensi tenaga kesehatan.</p>",
+  },
+
+  // ================== ARTIKEL KESEHATAN (4) ==================
+  {
+    id: 5,
+    category: "artikel-kesehatan",
+    title: "Tips Menjaga Daya Tahan Tubuh",
+    date: "1 Desember 2025",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4keC9ijcaBrkONkb4vok7QbOsS8he2TqQDQ&s",
+    desc: "<p>Pola hidup sehat membantu meningkatkan daya tahan tubuh.</p>",
+  },
+  {
+    id: 6,
+    category: "artikel-kesehatan",
+    title: "Pentingnya Cek Kesehatan Rutin",
+    date: "29 November 2025",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSz976D0Jv9dpT5TZDNw84JgnfDqEJuHoy7jw&s",
+    desc: "<p>Pemeriksaan rutin dapat mendeteksi penyakit lebih dini.</p>",
+  },
+  {
+    id: 7,
+    category: "artikel-kesehatan",
+    title: "Manfaat Minum Air Putih yang Cukup",
+    date: "27 November 2025",
+    image: "https://cdn.banyumasekspres.id/wp-content/uploads/2025/07/pku-sruweng-siap-ikuti-kebijakan-implememtasi-kris.jpg",
+    desc: "<p>Air putih berperan penting dalam menjaga fungsi organ tubuh.</p>",
+  },
+  {
+    id: 8,
+    category: "artikel-kesehatan",
+    title: "Cara Mengelola Stres dengan Baik",
+    date: "25 November 2025",
+    image: "https://cdn.banyumasekspres.id/wp-content/uploads/2025/07/pku-sruweng-siap-ikuti-kebijakan-implememtasi-kris.jpg",
+    desc: "<p>Stres berlebih dapat berdampak buruk pada kesehatan.</p>",
+  },
+
+  // ================== ARTIKEL ISLAMI (4) ==================
+  {
+    id: 9,
+    category: "artikel-islami",
+    title: "Menjaga Kesehatan sebagai Amanah",
+    date: "23 November 2025",
+    image: "https://cdn.banyumasekspres.id/wp-content/uploads/2025/07/pku-sruweng-siap-ikuti-kebijakan-implememtasi-kris.jpg",
+    desc: "<p>Kesehatan adalah amanah dari Allah SWT yang harus dijaga.</p>",
+  },
+  {
+    id: 10,
+    category: "artikel-islami",
+    title: "Makna Sabar Saat Menghadapi Penyakit",
+    date: "21 November 2025",
+    image: "https://cdn.banyumasekspres.id/wp-content/uploads/2025/07/pku-sruweng-siap-ikuti-kebijakan-implememtasi-kris.jpg",
+    desc: "<p>Sabar dalam sakit akan mendatangkan pahala.</p>",
+  },
+  {
+    id: 11,
+    category: "artikel-islami",
+    title: "Berobat dan Bertawakal",
+    date: "19 November 2025",
+    image: "https://cdn.banyumasekspres.id/wp-content/uploads/2025/07/pku-sruweng-siap-ikuti-kebijakan-implememtasi-kris.jpg",
+    desc: "<p>Islam mengajarkan usaha dan tawakal secara seimbang.</p>",
+  },
+  {
+    id: 12,
+    category: "artikel-islami",
+    title: "Doa Kesembuhan untuk Orang Sakit",
+    date: "17 November 2025",
+    image: "https://cdn.banyumasekspres.id/wp-content/uploads/2025/07/pku-sruweng-siap-ikuti-kebijakan-implememtasi-kris.jpg",
+    desc: "<p>Doa menjadi salah satu ikhtiar dalam mencari kesembuhan.</p>",
+  },
+
+  // ================== PROMOSI & LEAFLET (3) ==================
+  {
+    id: 13,
+    category: "promosi-leaflet",
+    title: "Promo Medical Check Up Akhir Tahun",
+    date: "15 November 2025",
+    image: "https://cdn.banyumasekspres.id/wp-content/uploads/2025/07/pku-sruweng-siap-ikuti-kebijakan-implememtasi-kris.jpg",
+    desc: "<p>Dapatkan promo MCU dengan harga spesial.</p>",
+  },
+  {
+    id: 14,
+    category: "promosi-leaflet",
+    title: "Diskon Pemeriksaan Laboratorium",
+    date: "13 November 2025",
+    image: "https://cdn.banyumasekspres.id/wp-content/uploads/2025/07/pku-sruweng-siap-ikuti-kebijakan-implememtasi-kris.jpg",
+    desc: "<p>Promo pemeriksaan laboratorium periode terbatas.</p>",
+  },
+  {
+    id: 15,
+    category: "promosi-leaflet",
+    title: "Promo Paket Persalinan",
+    date: "11 November 2025",
+    image: "https://cdn.banyumasekspres.id/wp-content/uploads/2025/07/pku-sruweng-siap-ikuti-kebijakan-implememtasi-kris.jpg",
+    desc: "<p>Paket persalinan nyaman dengan harga terjangkau.</p>",
+  },
+
+  // ================== GALLERY (3) ==================
+  {
+    id: 16,
+    category: "gallery",
+    title: "Fasilitas Rawat Inap",
+    date: "9 November 2025",
+    image: "https://cdn.banyumasekspres.id/wp-content/uploads/2025/07/pku-sruweng-siap-ikuti-kebijakan-implememtasi-kris.jpg",
+    desc: "<p>Fasilitas rawat inap yang bersih dan nyaman.</p>",
+  },
+  {
+    id: 17,
+    category: "gallery",
+    title: "Kegiatan Senam Sehat",
+    date: "7 November 2025",
+    image: "https://cdn.banyumasekspres.id/wp-content/uploads/2025/07/pku-sruweng-siap-ikuti-kebijakan-implememtasi-kris.jpg",
+    desc: "<p>Senam sehat rutin bersama staf dan masyarakat.</p>",
+  },
+  {
+    id: 18,
+    category: "gallery",
+    title: "Pelayanan Rawat Jalan",
+    date: "5 November 2025",
+    image: "https://cdn.banyumasekspres.id/wp-content/uploads/2025/07/pku-sruweng-siap-ikuti-kebijakan-implememtasi-kris.jpg",
+    desc: "<p>Pelayanan rawat jalan dengan sistem antrian modern.</p>",
+  },
+  {
+    id: 19,
+    category: "berita",
+    title: "RS PKU Sruweng Resmikan Gedung Rawat Inap Baru",
+    date: "10 Desember 2025",
+    image: "https://cdn.banyumasekspres.id/wp-content/uploads/2025/07/pku-sruweng-siap-ikuti-kebijakan-implememtasi-kris.jpg",
+    desc: "<p>RS PKU Sruweng resmi membuka gedung rawat inap baru untuk meningkatkan pelayanan masyarakat.</p>",
+  },
+  {
+    id: 20,
+    category: "berita",
+    title: "RS PKU Sruweng Resmikan Gedung Rawat Inap Baru",
+    date: "10 Desember 2025",
+    image: "https://cdn.banyumasekspres.id/wp-content/uploads/2025/07/pku-sruweng-siap-ikuti-kebijakan-implememtasi-kris.jpg",
+    desc: "<p>RS PKU Sruweng resmi membuka gedung rawat inap baru untuk meningkatkan pelayanan masyarakat.</p>",
+  },
+  {
+    id: 21,
+    category: "artikel-kesehatan",
+    title: "Cara Mengelola Stres dengan Baik",
+    date: "25 November 2025",
+    image: "https://cdn.banyumasekspres.id/wp-content/uploads/2025/07/pku-sruweng-siap-ikuti-kebijakan-implememtasi-kris.jpg",
+    desc: "<p>Stres berlebih dapat berdampak buruk pada kesehatan.</p>",
+  },
+  {
+    id: 22,
+    category: "artikel-kesehatan",
+    title: "Cara Mengelola Stres dengan Baik",
+    date: "25 November 2025",
+    image: "https://cdn.banyumasekspres.id/wp-content/uploads/2025/07/pku-sruweng-siap-ikuti-kebijakan-implememtasi-kris.jpg",
+    desc: "<p>Stres berlebih dapat berdampak buruk pada kesehatan.</p>",
+  },
+  {
+    id: 23,
+    category: "artikel-islami",
+    title: "Cara Mengelola Stres dengan Baik",
+    date: "25 November 2025",
+    image: "https://cdn.banyumasekspres.id/wp-content/uploads/2025/07/pku-sruweng-siap-ikuti-kebijakan-implememtasi-kris.jpg",
+    desc: "<p>Stres berlebih dapat berdampak buruk pada kesehatan.</p>",
+  },
+  {
+    id: 24,
+    category: "artikel-islami",
+    title: "Cara Mengelola Stres dengan Baik",
+    date: "25 November 2025",
+    image: "https://cdn.banyumasekspres.id/wp-content/uploads/2025/07/pku-sruweng-siap-ikuti-kebijakan-implememtasi-kris.jpg",
+    desc: "<p>Stres berlebih dapat berdampak buruk pada kesehatan.</p>",
   },
 ];

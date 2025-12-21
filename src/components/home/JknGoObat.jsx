@@ -11,7 +11,8 @@ const JknGoObat = () => {
       {/* ================= MOBILE JKN & GO OBAT ================= */}
       <section className=" py-10 lg:w-[80%] lg:mx-auto mx-2 bg-white/50 rounded-lg my-5 shadow-ku">
         <p className="font-bold text-center text-2xl sm:text-3xl text-green-900">Layanan Unggulan</p>
-        <div className="h-[2px] w-60 sm:w-60 lg:w-80 mx-auto bg-green-900 mb-8 sm:mb-10 mt-2"></div>
+        <div className="h-[2px] w-60 lg:w-80 mx-auto   bg-gradient-to-r from-emerald-800 via-emerald-600 to-emerald-500 mb-8 sm:mb-10 mt-2"></div>
+
         <div className="grid grid-cols-1 lg:grid-cols-2  gap-20 ">
           {/* MOBILE JKN */}
           <div className="flex flex-col items-center">

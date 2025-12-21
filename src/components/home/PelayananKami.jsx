@@ -20,7 +20,7 @@ const PelayananKami = () => {
     <section className="bg-white/50 lg:block hidden lg:w-[80%] lg:mx-auto rounded-lg px-5 my-5 shadow-ku">
       <div className=" py-10">
         <h1 className="font-bold text-center text-2xl sm:text-3xl text-green-900">Layanan Kami</h1>
-        <div className="h-[2px] w-60 lg:w-80 mx-auto bg-green-900 mb-8 sm:mb-10 mt-2"></div>
+        <div className="h-[3px] w-60 lg:w-80 mx-auto   bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-500 mb-8 sm:mb-10 mt-2"></div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
           {layanan.map((item, index) => (
