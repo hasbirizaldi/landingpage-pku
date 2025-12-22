@@ -31,7 +31,7 @@ const JadwalDokter = () => {
         {/* Cari */}
         <div className="lg:w-[60%] lg:mx-auto mx-2 bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-500 p-8 mt-8 rounded-xl shadow-ku">
           <p className="text-slate-50 text-lg font-semibold text-center mb-1">Cari Jadwal Dokter di RS PKU Muhammadiyah Sruweng</p>
-          <p className="text-slate-50 text-[11px] font-semibold text-center mb-3">*Jadwal dapat berubah sewaktu-waktu. Informasi terupdate silakan menghubungi WA Pendaftaran : 08xx xxxx xxxx </p>
+          <p className="text-[11px] font-semibold text-center mb-3 text-red-300 ">*Jadwal dapat berubah sewaktu-waktu. Informasi terupdate silakan menghubungi WA Care Center : 08xx xxxx xxxx </p>
           <form className="">
             {/* Cari Nama Dokter */}
             <div className="flex flex-col mb-3">

@@ -60,20 +60,20 @@ export default function Slider() {
       {/* ===== MENU ICON ===== */}
       <section className="lg:w-[80%] mx-auto ">
         <div className="grid grid-cols-3 h-auto lg:h-40 lg:rounded-lg overflow-hidden">
-          <Link to="/dokter-kami" className="flex flex-col py-2 items-center justify-center bg-gradient-to-r from-emerald-800 via-emerald-600 to-emerald-800 hover:bg-green-950 transition">
+          <Link to="/jadwal-dokter" className="flex flex-col py-2 items-center justify-center bg-gradient-to-r from-emerald-800 via-emerald-600 to-emerald-800 hover:bg-green-950 transition">
             <div className="bg-white p-2 lg:p-5 rounded-full">
               <FaUserDoctor className="text-2xl lg:text-4xl text-green-950" />
             </div>
-            <span className="text-white lg:text-base text-sm font-semibold mt-2">DOKTER</span>
+            <span className="text-white lg:text-base text-sm font-semibold mt-2">Jadwal Dokter</span>
             <span className="text-white lg:text-base text-sm font-semibold">KAMI</span>
           </Link>
 
-          <Link to="/" className="flex flex-col items-center justify-center bg-gradient-to-r from-emerald-800 via-emerald-600 to-emerald-800 border-x-2 border-white hover:bg-green-950 transition">
+          <Link to="/dokter-kami" className="flex flex-col items-center justify-center bg-gradient-to-r from-emerald-800 via-emerald-600 to-emerald-800 border-x-2 border-white hover:bg-green-950 transition">
             <div className="bg-white p-2 lg:p-5 rounded-full">
               <FaUsers className="text-2xl lg:text-4xl text-green-950" />
             </div>
-            <span className="text-white lg:text-base text-sm font-semibold mt-2">INFO</span>
-            <span className="text-white lg:text-base text-sm font-semibold">ANTRIAN</span>
+            <span className="text-white lg:text-base text-sm font-semibold mt-2">Dokter</span>
+            <span className="text-white lg:text-base text-sm font-semibold">Kami</span>
           </Link>
 
           <Link to="/" className="flex flex-col items-center justify-center bg-gradient-to-r from-emerald-800 via-emerald-600 to-emerald-800 hover:bg-green-950 transition">
