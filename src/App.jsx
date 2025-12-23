@@ -73,7 +73,7 @@ const App = () => {
         target="_blank"
         className="fixed lg:bottom-40 bottom-38 lg:right-13 right-1 z-60 bg-white cursor-pointer hover:scale-105 transition-all ease-in-out rounded-lg shadow-icon"
       >
-        <FaWhatsappSquare className="text-green-600 lg:text-6xl text-5xl" />
+        <FaWhatsappSquare className="text-green-600 lg:text-7xl text-5xl" />
       </Link>
       <Footer />
     </div>

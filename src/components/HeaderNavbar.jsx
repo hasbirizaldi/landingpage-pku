@@ -20,7 +20,7 @@ const HeaderNavbar = () => {
 
   // List path untuk masing-masing dropdown
   const pathsTentang = ["/sejarah", "/falsafah-visi-misi", "/akreditasi-penghargaan", "/indikator-mutu", "/struktur-organisasi"];
-  const pathsPelayanan = ["/rawat-jalan", "/rawat-inap", "/penunjang", "/igd", "/dokter-kami", "/bed-pasien", "/go-obat"];
+  const pathsPelayanan = ["/rawat-jalan", "/rawat-inap", "/penunjang", "/igd", "/bed-pasien", "/go-obat"];
   const pathsBerita = ["/berita", "/artikel-kesehatan", "/artikel-islami", "/promosi-leaflet", "/gallery"];
   const pathsVideo = ["/vidio-promosi", "/kesehatan", "/keislaman", "/simrs"];
 
@@ -140,6 +140,11 @@ const HeaderNavbar = () => {
                 JADWAL DOKTER
               </NavLink>
             </li>
+            <li className="px-3 py-4 ">
+              <NavLink to="/dokter-kami" className={navClass}>
+                DOKTER KAMI
+              </NavLink>
+            </li>
 
             {/* TENTANG KAMI - LOGIKA ACTIVE DROPDOWN */}
             <li className={`relative group px-3 py-4 cursor-pointer`}>
@@ -165,7 +170,7 @@ const HeaderNavbar = () => {
               </div>
               <div className="absolute font-normal left-0 top-full bg-white text-black w-56 rounded shadow opacity-0 invisible group-hover:visible group-hover:opacity-100 transition">
                 {pathsPelayanan.map((path, idx) => {
-                  const labels = ["Pelayanan Rawat Jalan", "Pelayanan Rawat Inap", "Pelayanan Penunjang", "IGD 24 Jam", "Dokter Kami", " Bed Pasien", " Go Obat"];
+                  const labels = ["Pelayanan Rawat Jalan", "Pelayanan Rawat Inap", "Pelayanan Penunjang", "IGD 24 Jam", " Bed Pasien", " Go Obat"];
                   return (
                     <Link key={path} className={`block px-4 py-2 hover:bg-gray-100 ${location.pathname === path ? "bg-gray-100 font-bold text-green-800" : ""}`} to={path}>
                       {labels[idx]}
@@ -310,11 +315,6 @@ const HeaderNavbar = () => {
                   </Link>
                 </li>
                 <li className="px-6 py-2">
-                  <Link to="/dokter-kami" onClick={closeAll}>
-                    Dokter Kami
-                  </Link>
-                </li>
-                <li className="px-6 py-2">
                   <Link to="/bed-pasien" onClick={closeAll}>
                     Bed Pasien
                   </Link>
@@ -349,6 +349,11 @@ const HeaderNavbar = () => {
                 <li className="px-6 py-2">
                   <Link to="/artikel-kesehatan" onClick={closeAll}>
                     Artikel Kesehatan
+                  </Link>
+                </li>
+                <li className="px-6 py-2">
+                  <Link to="/promosi-leaflet" onClick={closeAll}>
+                    Promosi & Leaflet
                   </Link>
                 </li>
                 <li className="px-6 py-2">

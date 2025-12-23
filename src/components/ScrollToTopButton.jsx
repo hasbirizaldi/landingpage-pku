@@ -30,7 +30,7 @@ const ScrollTopButton = () => {
     <button
       onClick={scrollToTop}
       className="
-        fixed bottom-20 right-1 lg:right-13
+        fixed bottom-20 right-1 lg:right-14
         z-50 border-2 borer-white
         bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-600
         text-white
@@ -42,7 +42,7 @@ const ScrollTopButton = () => {
       "
       aria-label="Scroll to top"
     >
-      <FaArrowUp className="lg:text-3xl text-xl" />
+      <FaArrowUp className="lg:text-4xl text-xl" />
     </button>
   );
 };

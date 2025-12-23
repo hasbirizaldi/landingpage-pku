@@ -750,3 +750,221 @@ export const dataKarir = [
     batasPendaftaran: "31 Oktober 2025",
   },
 ];
+
+export const jadwalDokter = [
+  {
+    spesialis: "Spesialis Penyakit Dalam",
+    dokter: [
+      {
+        nama: "dr. Khoerul Anwar, Sp.PD",
+        jam: "09.00 WIB - 13.00 WIB",
+        status: true,
+      },
+      {
+        nama: "dr. Haryono Yuniarto, Sp.PD-KGH",
+        jam: "07.00 WIB - 09.00 WIB",
+        status: true,
+      },
+    ],
+  },
+  {
+    spesialis: "Spesialis Bedah",
+    dokter: [
+      {
+        nama: "dr. Ricky Dwi Nur Tyastono, Sp.B",
+        jam: "09.00 WIB - 12.00 WIB",
+        status: true,
+      },
+      {
+        nama: "dr. Adi Purnomo, Sp.B",
+        jam: "Tidak Praktik",
+        status: false,
+      },
+    ],
+  },
+  {
+    spesialis: "Spesialis Anak",
+    dokter: [
+      {
+        nama: "dr. Dyah Ayu Wulansari, M.Sc., Sp.A",
+        jam: "09.00 WIB - 13.00 WIB",
+        status: true,
+      },
+      {
+        nama: "dr. M. Jalul Mutaqorrib, M.Med.Sc., Sp.A",
+        jam: "Tidak Praktik",
+        status: false,
+      },
+    ],
+  },
+  {
+    spesialis: "Spesialis Paru",
+    dokter: [
+      {
+        nama: "dr. Inet Fyndiannne M, Sp. P",
+        jam: "07.00 WIB - 13.00 WIB",
+        status: true,
+      },
+    ],
+  },
+  {
+    spesialis: "Spesialis Kandungan",
+    dokter: [
+      {
+        nama: "dr. Deyna Primavita P., Sp. OG(K)-KFM",
+        jam: "14.30 WIB - Selesai",
+        status: true,
+      },
+      {
+        nama: "dr. Syaiful Alam, Sp. OG",
+        jam: "Tidak Praktik",
+        status: false,
+      },
+    ],
+  },
+  {
+    spesialis: "Spesialis THT",
+    dokter: [
+      {
+        nama: "dr. Windy Rizkiana, Sp. THT-KL",
+        jam: "09.00 WIB - 13.00 WIB",
+        status: true,
+      },
+      {
+        nama: "dr. Yayan Mitayani, Sp. THT-KL",
+        jam: "Tidak Praktik",
+        status: false,
+      },
+    ],
+  },
+  {
+    spesialis: "Spesialis Radiologi",
+    dokter: [
+      {
+        nama: "dr. Vida Berry Al Aden, Sp. Rad",
+        jam: "07.00 WIB - 14.00 WIB",
+        status: true,
+      },
+      {
+        nama: "dr. Iwan Danardono, Sp. Rad",
+        jam: "15.00 WIB - Selesai",
+        status: true,
+      },
+    ],
+  },
+  {
+    spesialis: "Spesialis Saraf",
+    dokter: [
+      {
+        nama: "dr. Khalifa Rahmani, Sp. N",
+        jam: "09.00 WIB - 13.00 WIB",
+        status: true,
+      },
+      {
+        nama: "dr. Tri Hastuti H, Sp. S",
+        jam: "Tidak Praktik",
+        status: false,
+      },
+    ],
+  },
+  {
+    spesialis: "Spesialis Jantung",
+    dokter: [
+      {
+        nama: "dr. Sari Rahayu Dwi Utami, Sp. JP",
+        jam: "09.00 WIB - 13.00 WIB",
+        status: true,
+      },
+    ],
+  },
+  {
+    spesialis: "Spesialis Mata",
+    dokter: [
+      {
+        nama: "dr. Inkoni Novitasari, Sp. M",
+        jam: "Tidak Praktik",
+        status: false,
+      },
+    ],
+  },
+  {
+    spesialis: "Spesialis Orthopedi",
+    dokter: [
+      {
+        nama: "dr. M. Abdul Aziz, Sp. OT",
+        jam: "Tidak Praktik",
+        status: false,
+      },
+    ],
+  },
+  {
+    spesialis: "Spesialis Urologi",
+    dokter: [
+      {
+        nama: "dr. Andreas Pramudito, Sp. U",
+        jam: "Tidak Praktik",
+        status: false,
+      },
+    ],
+  },
+  {
+    spesialis: "Spesialis Kulit & Kelamin",
+    dokter: [
+      {
+        nama: "dr. Ahmad Satya Negara, Sp. D.V",
+        jam: "Tidak Praktik",
+        status: false,
+      },
+    ],
+  },
+  {
+    spesialis: "Spesialis Rehab Medik",
+    dokter: [
+      {
+        nama: "dr.Andi Sulistyo Nugroho, Sp. KFR",
+        jam: "14.30 WIB - Selesai",
+        status: true,
+      },
+      {
+        nama: "Fisio Terapi",
+        jam: "07.00 WIB - 17.00 WIB",
+        status: true,
+      },
+      {
+        nama: "Terapi Wicara & Okupasi",
+        jam: "08.00 WIB - Selesai",
+        status: true,
+      },
+    ],
+  },
+  {
+    spesialis: "Klinik Vaksinasi Internasional",
+    dokter: [
+      {
+        nama: "",
+        jam: "10.00 WIB - 13.00WIB",
+        status: true,
+      },
+    ],
+  },
+  {
+    spesialis: "Spesialis Patologi Klinik",
+    dokter: [
+      {
+        nama: "dr. Desi Widiyanti, Sp. PK",
+        jam: "Tidak Praktik",
+        status: false,
+      },
+    ],
+  },
+  {
+    spesialis: "Klinik Gizi",
+    dokter: [
+      {
+        nama: "",
+        jam: "Tidak Praktik",
+        status: false,
+      },
+    ],
+  },
+];

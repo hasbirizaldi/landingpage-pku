@@ -99,6 +99,13 @@
   box-shadow: 3px 3px 7px #00000070;
 }
 
+.shadow-ja {
+  box-shadow: 4px 4px 1px #fcce00fd;
+}
+.shadow-jak {
+  box-shadow: 2px 2px 1px #fcce00fd;
+}
+
 .shadow-nav {
   box-shadow: 4px 6px -30px rgba(0, 0, 0);
 }
