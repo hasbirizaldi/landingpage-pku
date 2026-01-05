@@ -9,12 +9,12 @@ const Footer = () => {
       {/* CONTENT */}
       <div className="px-4 sm:px-10 md:px-20 lg:px-20 py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr] gap-10">
         {/* LOGO & ADDRESS */}
-        <div className="lg:border-r border-slate-400 pr-0 lg:pr-8">
+        <div className="lg:border-r border-slate-400 pr-0 lg:pr-1">
           <Link to="/" className="flex items-center gap-2 mb-4">
             <img src={img[0]} alt="PKU Muhammadiyah Sruweng" className="w-14 sm:w-16" />
             <div>
               <p className="font-bold text-lg sm:text-xl text-white">PKU Muhammadiyah Sruweng</p>
-              <p className="font-semibold text-sm sm:text-md text-slate-100">Semakin Unggul dan Islami</p>
+              <p className="font-semibold text-sm sm:text-md text-yellow-300">Semakin Unggul dan Islami</p>
             </div>
           </Link>
 

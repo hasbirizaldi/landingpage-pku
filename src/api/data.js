@@ -24,9 +24,23 @@ import dokter from "../assets/logo/dokter.png";
 import leaflet1 from "../assets/leaflet/1.jpg";
 import leaflet2 from "../assets/leaflet/2.jpg";
 import leaflet3 from "../assets/leaflet/3.jpg";
+import anwar from "../assets/dokter/anwar.png";
+import adi from "../assets/dokter/adi.png";
+import khayati from "../assets/dokter/khayati.png";
+import ricky from "../assets/dokter/ricky.png";
+import saria from "../assets/dokter/saria.png";
+import jalul from "../assets/dokter/jalul.png";
+import sarijan from "../assets/dokter/sarijan.png";
+import inet from "../assets/dokter/inet.png";
+import haryono from "../assets/dokter/haryono.png";
+import alam from "../assets/dokter/alam.png";
+import inkoni from "../assets/dokter/inkoni.png";
+import levi from "../assets/dokter/levi.png";
+import khalifa from "../assets/dokter/khalifa.png";
 
 export const sliderImages = [slider1, slider2, slider3, slider4, slider5];
 export const img = [logo, mas, jkn, logo2, ios, go_obat, call, emergency, dokter];
+export const dokterImg = [anwar, adi, khayati, ricky, saria, jalul, sarijan, inet, haryono, alam, inkoni, levi, khalifa];
 export const images = [imgHome];
 export const partner = [bpjskes, bpjstk, car, brilife, kai, jasa_raharja, mag, pln];
 
@@ -73,7 +87,7 @@ export const dokterList = [
   {
     nama: "dr. Khoerul Anwar, Sp.PD",
     spesialis: "Spesialis Penyakit Dalam",
-    foto: img[8],
+    foto: dokterImg[0],
     jadwal: {
       senin: "09:00 - 13:00",
       selasa: "09:00 - 13:00",
@@ -87,7 +101,7 @@ export const dokterList = [
   {
     nama: "dr. Khayati Handayani, Sp.PD",
     spesialis: "Spesialis Penyakit Dalam",
-    foto: img[8],
+    foto: dokterImg[2],
     jadwal: {
       senin: "-",
       selasa: "14.00 - Selesai",
@@ -101,7 +115,7 @@ export const dokterList = [
   {
     nama: "dr. Haryono Yuniarto, Sp.PD -KGH",
     spesialis: "Spesialis Penyakit Dalam",
-    foto: img[8],
+    foto: dokterImg[8],
     jadwal: {
       senin: "16:00 - 20:00",
       selasa: "-",
@@ -115,7 +129,7 @@ export const dokterList = [
   {
     nama: "dr. Ricky Dwi Nur Tyastono, Sp.B",
     spesialis: "Spesialis Bedah",
-    foto: img[8],
+    foto: dokterImg[3],
     jadwal: {
       senin: "09:00 - 12:00",
       selasa: "09:00 - 12:00",
@@ -129,7 +143,7 @@ export const dokterList = [
   {
     nama: "dr. Adi Purnomo, Sp. B",
     spesialis: "Spesialis Bedah",
-    foto: img[8],
+    foto: dokterImg[1],
     jadwal: {
       senin: "14:30 - Selesai",
       selasa: "14:30 - Selesai",
@@ -143,7 +157,7 @@ export const dokterList = [
   {
     nama: "dr. Dyah Ayu Wulansari, M, Sc, Sp. A",
     spesialis: "Spesialis Anak",
-    foto: img[8],
+    foto: dokterImg[4],
     jadwal: {
       senin: "09:00 - 13:00",
       selasa: "09:00 - 13:00",
@@ -157,21 +171,21 @@ export const dokterList = [
   {
     nama: "dr. M. Jalul Mutaqorrib, M.Med.Sc, Sp. A",
     spesialis: "Spesialis Anak",
-    foto: img[8],
+    foto: dokterImg[5],
     jadwal: {
       senin: "14:30 - 17:30",
       selasa: "14:30 - 17:30",
       rabu: "14:30 - 17:30",
       kamis: "14:30 - 17:30",
       jumat: "14:30 - 17:30",
-      sabtu: "-",
+      sabtu: "14:30 - 17:30",
       minggu: "-",
     },
   },
   {
     nama: "dr. Inet Fyndianne Mentaningrum, Sp. P",
     spesialis: "Spesialis Paru",
-    foto: img[8],
+    foto: dokterImg[7],
     jadwal: {
       senin: "07:00 - 13:00",
       selasa: "07:00 - 13:00",
@@ -185,7 +199,7 @@ export const dokterList = [
   {
     nama: "dr. Deyna Primavita P.,Sp. OG(K)-KFM",
     spesialis: "Spesialis Kandungan",
-    foto: img[8],
+    foto: dokterImg[11],
     jadwal: {
       senin: "14:30 - Selesai",
       selasa: "14:30 - Selesai",
@@ -199,7 +213,7 @@ export const dokterList = [
   {
     nama: "dr. Syaiful Alam, Sp. OG",
     spesialis: "Spesialis Kandungan",
-    foto: img[8],
+    foto: dokterImg[9],
     jadwal: {
       senin: "08:00 - 09:00 & 11:00 - 13:00",
       selasa: "08:00 - 12:00",
@@ -269,7 +283,7 @@ export const dokterList = [
   {
     nama: "dr. Khalifa Rahmani, Sp. N",
     spesialis: "Spesialis Saraf",
-    foto: img[8],
+    foto: dokterImg[12],
     jadwal: {
       senin: "09:00 - 13:00",
       selasa: "09:00 - 13:00",
@@ -297,7 +311,7 @@ export const dokterList = [
   {
     nama: "dr. Sari Rahayu Dwi Utami, Sp. JP",
     spesialis: "Spesialis Jantung",
-    foto: img[8],
+    foto: dokterImg[6],
     jadwal: {
       senin: "09:00 - 13:00",
       selasa: "09:00 - 13:00",
@@ -311,7 +325,7 @@ export const dokterList = [
   {
     nama: "dr. Inkoni Novitasari, Sp. M",
     spesialis: "Spesialis Mata",
-    foto: img[8],
+    foto: dokterImg[10],
     jadwal: {
       senin: "09:00 - 13:00",
       selasa: "15:00 - Selesai",
@@ -792,8 +806,8 @@ export const jadwalDokter = [
       },
       {
         nama: "dr. M. Jalul Mutaqorrib, M.Med.Sc., Sp.A",
-        jam: "Tidak Praktik",
-        status: false,
+        jam: "09.00 WIB - 13.00 WIB",
+        status: true,
       },
     ],
   },

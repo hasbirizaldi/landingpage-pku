@@ -100,9 +100,9 @@ const DokterKami = () => {
             <div key={index} className="lg:w-[80%] lg:mx-auto mx-2 bg-white/40 py-6 px-4 rounded-lg shadow-ku">
               <div className="flex flex-col lg:flex-row lg:gap-6 gap-3">
                 {/* ================= FOTO (KIRI) ================= */}
-                <div className="flex flex-col gap-2 items-center">
-                  <div className="bg-white w-50 h-50 rounded-lg border-2 border-green-800 shadow-ku overflow-hidden flex justify-center items-center">
-                    <img src={dokter.foto} alt={dokter.nama} className="h-40 w-40 object-cover" />
+                <div className="flex flex-col gap-2 items-center justify-center">
+                  <div className="bg-gradient-to-r from-slate-400 via-slate-50 to-slate-400 w-50 h-50 rounded-full border-4 border-yellow-500 shadow-ku overflow-hidden flex justify-center items-center">
+                    <img src={dokter.foto} alt={dokter.nama} className="h-50 w-40 object-contain" />
                   </div>
                 </div>
 

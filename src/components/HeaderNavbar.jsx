@@ -1,4 +1,4 @@
-import { FaAmbulance, FaFacebookF, FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa";
+import { FaAmbulance, FaFacebookF,FaPhoneAlt, FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { IoMdCloseCircle } from "react-icons/io";
 import { TiThMenu } from "react-icons/ti";
@@ -86,12 +86,12 @@ const HeaderNavbar = () => {
                 </div>
               </Link>
               <Link to="https://wa.me/6287877505050?text=Assalamualaikum%20RS%20PKU%20Sruweng%2C%20saya%20ingin%20bertanya" target="_blank" className="flex gap-2 items-center font-bold text-sm">
-                <div className="border-2 border-green-700 p-1 rounded-full  shadow-icon">
-                  <img src={img[6]} alt="Call-center" className="h-5 w-5" />
+                <div className="border-2 border-green-800 p-1 rounded-full  shadow-icon">
+                 <FaPhoneAlt className="text-lg text-green-800"/>
                 </div>
                 <p className="flex flex-col">
-                  <span className="font-semibold leading-4 text-green-700">Care Center</span>
-                  <span className="text-green-700">0878 7750 5050</span>
+                  <span className="font-semibold leading-4 text-green-800">Call Center</span>
+                  <span className="text-green-800">0287 - 6601061</span>
                 </p>
               </Link>
             </div>
@@ -128,8 +128,8 @@ const HeaderNavbar = () => {
           ${scrolled ? "fixed top-0 w-full " : "relative mt-20"}
         `}
       >
-        <div className="bg-gradient-to-r from-yellow-700 via-yellow-500 to-yellow-600 max-w-[80%] mx-auto rounded-b-full">
-          <ul className="flex justify-center text-white text-sm font-bold h-13">
+        <div className="bg-gradient-to-r from-yellow-700 via-yellow-500 to-yellow-600 max-w-[85%] mx-auto rounded-b-full">
+          <ul className="flex justify-center text-white text-sm font-semibold h-13">
             <li className="px-3 py-4">
               <NavLink to="/" className={navClass}>
                 BERANDA
@@ -137,7 +137,7 @@ const HeaderNavbar = () => {
             </li>
             <li className="px-3 py-4 ">
               <NavLink to="/jadwal-dokter" className={navClass}>
-                JADWAL DOKTER
+                JADWAL POLIKLINIK
               </NavLink>
             </li>
             <li className="px-3 py-4 ">

@@ -46,11 +46,11 @@ const JadwalDokter = () => {
       <div className="bg-white/10 min-h-screen pb-5">
         <div className="pt-4">
           <div className="lg:w-[80%] lg:mx-auto mx-2 text-slate-50 bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-500 lg:p-12 p-8 flex flex-col justify-center h-36 rounded-lg shadow-ku">
-            <h1 className="lg:text-3xl text-2xl font-bold mb-1">Jadwal Dokter</h1>
+            <h1 className="lg:text-3xl text-2xl font-bold mb-1">Jadwal Poliklinik</h1>
             <div className="flex items-center gap-1 text-slate-200">
               <span>Beranda</span>
               <IoIosArrowForward />
-              <span>Jadwal Dokter</span>
+              <span>Jadwal Poliklinik</span>
             </div>
           </div>
         </div>
@@ -106,30 +106,30 @@ const JadwalDokter = () => {
           </form>
         </div>
         <div className="space-y-6 pt-4">
-          <div className="lg:w-[80%] lg:mx-auto mx-2 bg-white/80 py-6 lg:px-10 px-2 rounded-lg shadow-ku">
+          <div className="lg:w-[85%] lg:mx-auto mx-2 bg-white/80 py-6 lg:px-10 px-2 rounded-lg shadow-ku">
             <div className="text-center lg:w-[50%] w-[80%] mx-auto bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-500 lg:shadow-ja shadow-jak py-2 rounded-full text-[#ffffff] flex flex-col items-center mb-10">
-              <h2 className="lg:text-4xl text-xl font-bold text-[#ffffff]">Jadwal Poliklinik</h2>
-              <p className="text-[#ffffff] lg:text-xl text-sm font-semibold">Hari Sabtu, 13 Desember 2025</p>
+              <h2 className="lg:text-3xl text-xl font-bold text-[#ffffff]">Jadwal Poliklinik</h2>
+              <p className="text-[#ffffff] sm:text-base text-sm font-semibold">Hari Sabtu, 13 Desember 2025</p>
             </div>
-            <div className="grid lg:grid-cols-2 grid-cols-1 lg:gap-10">
+            <div className="grid lg:grid-cols-2 grid-cols-1 lg:gap-8">
               {/* KIRI */}
               <div>
                 {leftColumn.map((item, i) => (
                   <div key={i} className="mb-6">
                     <h4
                       className="bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-500 
-          font-semibold text-white px-8 py-1 rounded lg:shadow-ja shadow-jak mb-2 lg:text-lg text-sm"
+          font-semibold text-white px-8 py-1 rounded lg:shadow-ja shadow-jak mb-2 lg:text-base text-sm"
                     >
                       {item.spesialis}
                     </h4>
 
                     {item.dokter.map((d, idx) => (
-                      <div key={idx} className="flex justify-between lg:mx-2 mb-1">
+                      <div key={idx} className="flex justify-between">
                         <div className="flex items-center">
                           <PiDotOutlineBold className="lg:text-4xl text-xl" />
-                          <p className="font-semibold lg:text-base text-[11px]">{d.nama}</p>
+                          <p className="font-semibold lg:text-sm text-[11px]">{d.nama}</p>
                         </div>
-                        <p className={`flex items-center font-semibold lg:text-base text-[11px] ${d.status == false ? "text-red-600" : ""}`}>{d.jam}</p>
+                        <p className={`flex items-center font-semibold lg:text-sm text-[11px] ${d.status == false ? "text-red-600" : ""}`}>{d.jam}</p>
                       </div>
                     ))}
                   </div>
@@ -142,7 +142,7 @@ const JadwalDokter = () => {
                   <div key={i} className="mb-6">
                     <h4
                       className="bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-500 
-          font-semibold text-white px-8 py-1 rounded lg:shadow-ja shadow-jak mb-2 lg:text-lg text-sm"
+          font-semibold text-white px-8 py-1 rounded lg:shadow-ja shadow-jak mb-2 lg:text-base text-sm"
                     >
                       {item.spesialis}
                     </h4>
@@ -151,9 +151,9 @@ const JadwalDokter = () => {
                       <div key={idx} className="flex justify-between lg:mx-2 mb-1">
                         <div className="flex items-center lg:gap-1">
                           <PiDotOutlineBold className="lg:text-4xl text-xl" />
-                          <p className="font-semibold lg:text-base text-[11px]">{d.nama}</p>
+                          <p className="font-semibold lg:text-sm text-[11px]">{d.nama}</p>
                         </div>
-                        <p className={`flex items-center font-semibold lg:text-base text-[11px] ${d.status == false ? "text-red-600" : ""}`}>{d.jam}</p>
+                        <p className={`flex items-center font-semibold lg:text-sm text-[11px] ${d.status == false ? "text-red-600" : ""}`}>{d.jam}</p>
                       </div>
                     ))}
                   </div>
