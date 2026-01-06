@@ -4,6 +4,10 @@ import { dokterList } from "../api/data";
 import { Link } from "react-router-dom";
 
 const DokterKami = () => {
+
+  const ITEMS_PER_PAGE = 10;
+  const [visibleCount, setVisibleCount] = useState(ITEMS_PER_PAGE);
+
   const [searchNama, setSearchNama] = useState("");
   const [filterSpesialis, setFilterSpesialis] = useState("");
 
@@ -12,9 +16,6 @@ const DokterKami = () => {
     setFilterSpesialis("");
   };
 
-  useEffect(() => {
-    document.title = "RS PKU Sruweng | Dokter Kami";
-  }, []);
   useEffect(() => {
     document.title = "RS PKU Sruweng | Dokter Kami";
   }, []);
@@ -49,8 +50,7 @@ const DokterKami = () => {
 
         {/* Cari */}
         <div className="lg:w-[60%] lg:mx-auto mx-2 bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-500 p-8 mt-8 rounded-xl shadow-ku">
-          <p className="text-slate-50 text-lg font-semibold text-center mb-1">Cari Jadwal Dokter di RS PKU Muhammadiyah Sruweng</p>
-          <p className="text-red-400 text-[11px] font-semibold text-center mb-3">*Jadwal dapat berubah sewaktu-waktu tergantung konfirmasi dokter</p>
+          <p className="text-slate-50 text-lg font-semibold text-center mb-4">Cari Jadwal Dokter di RS PKU Muhammadiyah Sruweng</p>
           <form onSubmit={(e) => e.preventDefault()}>
             {/* Cari Nama Dokter */}
 
@@ -64,6 +64,7 @@ const DokterKami = () => {
                 <label className="text-white text-sm mb-1">Pilih Spesialis</label>
                 <select value={filterSpesialis} onChange={(e) => setFilterSpesialis(e.target.value)} className="px-4 py-1 cursor-pointer rounded outline-none focus:ring-2 bg-white focus:ring-yellow-400">
                   <option value="">Semua Spesialis</option>
+                  <option value="Dokter Umum">Dokter Umum</option>
                   <option value="Spesialis Penyakit Dalam">Spesialis Penyakit Dalam</option>
                   <option value="Spesialis Bedah">Spesialis Bedah</option>
                   <option value="Spesialis Anak">Spesialis Anak</option>
@@ -96,13 +97,13 @@ const DokterKami = () => {
           </form>
         </div>
         <div className="space-y-6 pt-4">
-          {dokterFiltered.map((dokter, index) => (
+          {dokterFiltered.slice(0, visibleCount).map((dokter, index) => (
             <div key={index} className="lg:w-[80%] lg:mx-auto mx-2 bg-white/40 py-6 px-4 rounded-lg shadow-ku">
               <div className="flex flex-col lg:flex-row lg:gap-6 gap-3">
                 {/* ================= FOTO (KIRI) ================= */}
                 <div className="flex flex-col gap-2 items-center justify-center">
-                  <div className="bg-gradient-to-r from-slate-400 via-slate-50 to-slate-400 w-50 h-50 rounded-full border-4 border-yellow-500 shadow-ku overflow-hidden flex justify-center items-center">
-                    <img src={dokter.foto} alt={dokter.nama} className="h-50 w-40 object-contain" />
+                  <div className="bg-gradient-to-r from-slate-400 via-white to-slate-400 w-55 h-55 rounded-lg border-2 border-yellow-500 shadow-ku overflow-hidden flex justify-center items-center">
+                    <img src={dokter.foto} alt={dokter.nama} className="h-54 w-50 object-contain" />
                   </div>
                 </div>
 
@@ -159,6 +160,19 @@ const DokterKami = () => {
             </div>
           ))}
         </div>
+        {visibleCount < dokterFiltered.length && (
+          <div className="flex justify-center mt-6">
+            <button
+              onClick={() => setVisibleCount((prev) => prev + ITEMS_PER_PAGE)}
+              className="bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-600 
+                        text-white font-semibold px-6 py-2 rounded-lg shadow-ku
+                        hover:scale-[1.03] transition cursor-pointer"
+            >
+              Lihat Lainya
+            </button>
+          </div>
+        )}
+
       </div>
     </div>
   );

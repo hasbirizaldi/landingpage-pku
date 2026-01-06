@@ -137,7 +137,7 @@ const HeaderNavbar = () => {
             </li>
             <li className="px-3 py-4 ">
               <NavLink to="/jadwal-dokter" className={navClass}>
-                JADWAL POLIKLINIK
+                JADWAL DOKTER
               </NavLink>
             </li>
             <li className="px-3 py-4 ">

@@ -47,12 +47,54 @@ import andreas from "../assets/dokter/andreas.png";
 import satya from "../assets/dokter/satya.png";
 import aziz from "../assets/dokter/aziz.png";
 import iwan from "../assets/dokter/iwan.png";
+import faizal from "../assets/dokter/faizal.png";
+import prasdika from "../assets/dokter/prasdika.png";
+import robi from "../assets/dokter/robi.png";
+import kevin from "../assets/dokter/kevin.png";
+import hartika from "../assets/dokter/hartika.png";
+import agung from "../assets/dokter/agung.png";
+import nurwahidin from "../assets/dokter/nurwahidin.png";
+import pandu from "../assets/dokter/pandu.png";
+import keijstha from "../assets/dokter/keijstha.png";
+import ade from "../assets/dokter/ade.png";
+import karmila from "../assets/dokter/karmila.png";
+import arima from "../assets/dokter/arima.png";
+import hana from "../assets/dokter/hana.png";
+import ilham from "../assets/dokter/ilham.png";
+import hasan from "../assets/direksi/hasan.png";
+import adi_hamid from "../assets/direksi/adi.png";
+import dyah from "../assets/direksi/dyah.png";
+import niken from "../assets/direksi/niken.png";
 
 export const sliderImages = [slider1, slider2, slider3, slider4, slider5];
 export const img = [logo, mas, jkn, logo2, ios, go_obat, call, emergency, dokter];
-export const dokterImg = [anwar, adi, khayati, ricky, saria, jalul, sarijan, inet, haryono, alam, inkoni, levi, khalifa, desi, andi, vida, windy, tri, yayan, andreas, satya, aziz, iwan];
+export const dokterImg = [anwar, adi, khayati, ricky, saria, jalul, sarijan, inet, haryono, alam, inkoni, levi, khalifa, desi, andi, vida, windy, tri, yayan, andreas, satya, aziz, iwan, faizal, prasdika, robi, kevin, hartika, agung, nurwahidin, pandu, keijstha, ade, karmila, arima, hana, ilham];
 export const images = [imgHome];
 export const partner = [bpjskes, bpjstk, car, brilife, kai, jasa_raharja, mag, pln];
+export const direksiImg = [hasan, dyah, adi_hamid, niken];
+
+export const direksi = [
+  {
+    nama: 'dr. H. Hasan Bayuni',
+    jabatan: 'Direktur Utama',
+    img:hasan
+  },
+  {
+    nama: 'dr. Diah Fitriana',
+    jabatan: 'Direktur Pelayanan',
+    img:dyah
+  },
+  {
+    nama: 'H. Adi Hamid Fuadi, S.Hi.MM',
+    jabatan: 'Direktur Bindatra dan PSDI',
+    img:adi_hamid
+  },
+  {
+    nama: 'Tri Utami Niken Widiastuti, SE',
+    jabatan: 'Direktur Umum dan Keuangan',
+    img:niken
+  },
+];
 
 export const layanan = [
   {
@@ -411,6 +453,202 @@ export const dokterList = [
       selasa: "10:00",
       rabu: "-",
       kamis: "10:00",
+      jumat: "-",
+      sabtu: "-",
+      minggu: "-",
+    },
+  },
+   {
+    nama: "Muhammad Faizal Hadiyanto, Sp.An",
+    spesialis: "Spesialis Anestesi",
+    foto: dokterImg[23],
+    jadwal: {
+      senin: "-",
+      selasa: "-",
+      rabu: "-",
+      kamis: "-",
+      jumat: "-",
+      sabtu: "-",
+      minggu: "-",
+    },
+  },
+   {
+    nama: "dr. Prasdika Arie P, Sp.An.TI",
+    spesialis: "Spesialis Anestesi",
+    foto: dokterImg[24],
+    jadwal: {
+      senin: "-",
+      selasa: "-",
+      rabu: "-",
+      kamis: "-",
+      jumat: "-",
+      sabtu: "-",
+      minggu: "-",
+    },
+  },
+   {
+    nama: "Roby Maulana, dr",
+    spesialis: "Dokter Umum",
+    foto: dokterImg[25],
+    jadwal: {
+      senin: "-",
+      selasa: "-",
+      rabu: "-",
+      kamis: "-",
+      jumat: "-",
+      sabtu: "-",
+      minggu: "-",
+    },
+  },
+   {
+    nama: "Kevin Deva Candra, dr",
+    spesialis: "Dokter Umum",
+    foto: dokterImg[26],
+    jadwal: {
+      senin: "-",
+      selasa: "-",
+      rabu: "-",
+      kamis: "-",
+      jumat: "-",
+      sabtu: "-",
+      minggu: "-",
+    },
+  },
+   {
+    nama: "Hartika Dwi Mulyanti, dr",
+    spesialis: "Dokter Umum",
+    foto: dokterImg[27],
+    jadwal: {
+      senin: "-",
+      selasa: "-",
+      rabu: "-",
+      kamis: "-",
+      jumat: "-",
+      sabtu: "-",
+      minggu: "-",
+    },
+  },
+  {
+    nama: "Agung Setiawan, dr",
+    spesialis: "Dokter Umum",
+    foto: dokterImg[28],
+    jadwal: {
+      senin: "-",
+      selasa: "-",
+      rabu: "-",
+      kamis: "-",
+      jumat: "-",
+      sabtu: "-",
+      minggu: "-",
+    },
+  },
+  {
+    nama: "M. Nurwahidin, dr",
+    spesialis: "Dokter Umum",
+    foto: dokterImg[29],
+    jadwal: {
+      senin: "-",
+      selasa: "-",
+      rabu: "-",
+      kamis: "-",
+      jumat: "-",
+      sabtu: "-",
+      minggu: "-",
+    },
+  },
+  {
+    nama: "Pandu Nugroho Kanta, dr",
+    spesialis: "Dokter Umum",
+    foto: dokterImg[30],
+    jadwal: {
+      senin: "-",
+      selasa: "-",
+      rabu: "-",
+      kamis: "-",
+      jumat: "-",
+      sabtu: "-",
+      minggu: "-",
+    },
+  },
+  {
+    nama: "Keijstha Maya Yuselie, dr",
+    spesialis: "Dokter Umum",
+    foto: dokterImg[31],
+    jadwal: {
+      senin: "-",
+      selasa: "-",
+      rabu: "-",
+      kamis: "-",
+      jumat: "-",
+      sabtu: "-",
+      minggu: "-",
+    },
+  },
+   {
+    nama: "Ade Guvinda Perdana, dr",
+    spesialis: "Dokter Umum",
+    foto: dokterImg[32],
+    jadwal: {
+      senin: "-",
+      selasa: "-",
+      rabu: "-",
+      kamis: "-",
+      jumat: "-",
+      sabtu: "-",
+      minggu: "-",
+    },
+  },
+   {
+    nama: "Karmila Bela Nugraheni, dr",
+    spesialis: "Dokter Umum",
+    foto: dokterImg[33],
+    jadwal: {
+      senin: "-",
+      selasa: "-",
+      rabu: "-",
+      kamis: "-",
+      jumat: "-",
+      sabtu: "-",
+      minggu: "-",
+    },
+  },
+   {
+    nama: "Arima Kurnia Sari Dewi Nurcahyani, dr",
+    spesialis: "Dokter Umum",
+    foto: dokterImg[34],
+    jadwal: {
+      senin: "-",
+      selasa: "-",
+      rabu: "-",
+      kamis: "-",
+      jumat: "-",
+      sabtu: "-",
+      minggu: "-",
+    },
+  },
+   {
+    nama: "Hana Hanifah, dr",
+    spesialis: "Dokter Umum",
+    foto: dokterImg[35],
+    jadwal: {
+      senin: "-",
+      selasa: "-",
+      rabu: "-",
+      kamis: "-",
+      jumat: "-",
+      sabtu: "-",
+      minggu: "-",
+    },
+  },
+   {
+    nama: "Ilham Maulana Naufal Nugratama, dr",
+    spesialis: "Dokter Umum",
+    foto: dokterImg[36],
+    jadwal: {
+      senin: "-",
+      selasa: "-",
+      rabu: "-",
+      kamis: "-",
       jumat: "-",
       sabtu: "-",
       minggu: "-",
