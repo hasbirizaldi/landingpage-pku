@@ -1,39 +1,46 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 import { IoIosArrowForward } from "react-icons/io";
 import { PiDotOutlineBold } from "react-icons/pi";
-import { jadwalDokter } from "../api/data";
+import { parseDate } from "../lib/helper";
+import { IoLogoWhatsapp } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 const JadwalDokter = () => {
-  const [searchNama, setSearchNama] = useState("");
-  const [filterSpesialis, setFilterSpesialis] = useState("");
+  const [jadwal, setJadwal] = useState(null);
+  const [hasData, setHasData] = useState(true);
+
+  const [tanggal, setTanggal] = useState('')
+  const [tanggalApi, setTanggalApi] = useState("");
+
+
+ const fetchData = async (selectedTanggal = null) => {
+    const res = await axios.get(
+      "http://localhost:8000/api/jadwal-polikliniks-public",
+      {
+        params: selectedTanggal ? { tanggal: selectedTanggal } : {},
+      }
+    );
+
+    setTanggalApi(res.data.tanggal);
+
+    if (res.data.data.length === 0) {
+      setHasData(false);
+      setJadwal(null);
+    } else {
+      setHasData(true);
+      setJadwal(res.data.data[0]);
+    }
+  };
+
+
 
   useEffect(() => {
     document.title = "RS PKU Sruweng | Jadwal Dokter";
-  }, []);
 
-  const filteredJadwal = jadwalDokter
-    .map((item) => {
-      // filter spesialis
-      if (filterSpesialis && item.spesialis !== filterSpesialis) {
-        return null;
-      }
+    fetchData(tanggal || null);
+  }, [tanggal]); // ⬅️ PENTING
 
-      // filter dokter berdasarkan nama
-      const dokterFiltered = item.dokter.filter((d) => d.nama.toLowerCase().includes(searchNama.toLowerCase()));
-
-      if (dokterFiltered.length === 0) return null;
-
-      return {
-        ...item,
-        dokter: dokterFiltered,
-      };
-    })
-    .filter(Boolean);
-
-  const LEFT_COUNT = 7;
-
-  const leftColumn = filteredJadwal.slice(0, LEFT_COUNT);
-  const rightColumn = filteredJadwal.slice(LEFT_COUNT);
 
   return (
     <div
@@ -45,7 +52,7 @@ const JadwalDokter = () => {
       {/* overlay biar teks kebaca */}
       <div className="bg-white/10 min-h-screen pb-5">
         <div className="pt-4">
-          <div className="lg:w-[80%] lg:mx-auto mx-2 text-slate-50 bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-500 lg:p-12 p-8 flex flex-col justify-center h-36 rounded-lg shadow-ku">
+          <div className="lg:w-[80%] lg:mx-auto mx-2 text-slate-50 bg-gradient-to-r from-[#1A2A75] via-{# 079C4E #} to-emerald-500 lg:p-12 p-8 flex flex-col justify-center h-36 rounded-lg shadow-ku">
             <h1 className="lg:text-3xl text-2xl font-bold mb-1">Jadwal Dokter</h1>
             <div className="flex items-center gap-1 text-slate-200">
               <span>Beranda</span>
@@ -57,109 +64,581 @@ const JadwalDokter = () => {
 
         {/* Cari */}
         <div className="lg:w-[60%]  lg:mx-auto mx-2 bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-500 p-8 mt-8 rounded-xl shadow-ku">
-          <p className="text-slate-50 text-base sm:text-lg font-semibold text-center mb-1">Cari Jadwal Dokter di RS PKU Muhammadiyah Sruweng</p>
-          <p className="text-[11px] font-semibold text-center mb-3 text-red-400 ">*Jadwal dapat berubah sewaktu-waktu tergantung konfirmasi dokter</p>
-          <form onSubmit={(e) => e.preventDefault()}>
-            {/* Cari Nama Dokter */}
-            <div className="flex flex-col mb-3">
-              <label className="text-white text-sm mb-1">Cari Dokter</label>
-              <input type="text" placeholder="Cari nama dokter anda disini..." value={searchNama} onChange={(e) => setSearchNama(e.target.value)} className="px-4 py-1 rounded outline-none bg-white focus:ring-2 focus:ring-yellow-400" />
-            </div>
+          <p className="text-slate-50 text-base sm:text-lg font-semibold text-center mb-4">Cari Jadwal Dokter di RS PKU Muhammadiyah Sruweng</p>
+          
 
-            {/* Pilih Spesialis */}
-            <div className="grid lg:grid-cols-2 lg:gap-10">
-              <div className="flex flex-col lg:mb-5 mb-3">
-                <label className="text-white text-sm mb-1">Pilih Spesialis</label>
-                <select value={filterSpesialis} onChange={(e) => setFilterSpesialis(e.target.value)} className="px-4 py-1 cursor-pointer rounded outline-none focus:ring-2 bg-white focus:ring-yellow-400">
-                  <option value="">Semua Spesialis</option>
-                  <option value="Spesialis Penyakit Dalam">Spesialis Penyakit Dalam</option>
-                  <option value="Spesialis Bedah">Spesialis Bedah</option>
-                  <option value="Spesialis Anak">Spesialis Anak</option>
-                  <option value="Spesialis Paru">Spesialis Paru</option>
-                  <option value="Spesialis Kandungan">Spesialis Kandungan</option>
-                  <option value="Spesialis THT">Spesialis THT</option>
-                  <option value="Spesialis Radiologi">Spesialis Radiologi</option>
-                  <option value="Spesialis Saraf">Spesialis Saraf</option>
-                  <option value="Spesialis Jantung">Spesialis Jantung</option>
-                  <option value="Spesialis Mata">Spesialis Mata</option>
-                  <option value="Spesialis Orthopedi">Spesialis Orthopedi</option>
-                  <option value="Spesialis Urologi">Spesialis Urologi</option>
-                  <option value="Spesialis Kulit & Kelamin">Spesialis Kulit & Kelamin</option>
-                  <option value="Spesialis Rehab Medik">Spesialis Rehab Medik</option>
-                  <option value="Klinik Vaksinasi Internasional">Klinik Vaksinasi Internasional</option>
-                  <option value="Spesialis Patologi Klinik">Spesialis Patologi Klinik</option>
-                  <option value="Klinik Gizi">Klinik Gizi</option>
-                </select>
-              </div>
-              <div className="flex flex-col mb-5">
-                <label className="text-white text-sm mb-1">Pilih Tanggal</label>
-                <input type="date" placeholder="Cari nama dokter anda disini..." className="px-4 py-1 rounded outline-none bg-white focus:ring-2 focus:ring-yellow-400 cursor-pointer" />
+            <div className="flex justify-center lg:gap-10">
+              <div className="flex flex-col mb-5 w-[50%]">
+                <label className="text-white text-sm mb-1 text-center">Pilih Tanggal</label>
+                <input type="date" value={tanggal}
+                  onChange={(e) => setTanggal(e.target.value)} className="px-4 py-1 rounded outline-none bg-white focus:ring-2 focus:ring-yellow-400 cursor-pointer" />
               </div>
             </div>
 
-            {/* Tombol Cari */}
-            <div className="flex items-end">
-              <button type="submit" className="w-[30%] bg-gradient-to-r from-yellow-700 via-yellow-500 to-yellow-600 text-white font-semibold text-[14px] lg:text-base py-1 cursor-pointer rounded hover:scale-[1.01] transition">
-                Cari Dokter
-              </button>
-            </div>
-          </form>
         </div>
         <div className="space-y-6 pt-4">
           <div className="lg:w-[85%] lg:mx-auto mx-2 bg-white/80 py-6 lg:px-10 px-2 rounded-lg shadow-ku">
-            <div className="text-center lg:w-[50%] w-[80%] mx-auto bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-500 lg:shadow-ja shadow-jak py-2 rounded-full text-[#ffffff] flex flex-col items-center mb-10">
+            <div className="text-center lg:w-[50%] w-[80%] h-19 mx-auto bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-500 lg:shadow-ja shadow-jak py-2 rounded-full text-[#ffffff] flex flex-col items-center mb-2">
               <h2 className="lg:text-3xl text-xl font-bold text-[#ffffff]">Jadwal Poliklinik</h2>
-              <p className="text-[#ffffff] sm:text-base text-sm font-semibold">Hari Sabtu, 13 Desember 2025</p>
+              {tanggalApi && (
+                <p className="text-[#ffffff] sm:text-base text-sm font-semibold">
+                  {parseDate(tanggalApi).toLocaleDateString("id-ID", {
+                    weekday: "long",
+                    day: "numeric",
+                    month: "long",
+                    year: "numeric",
+                  })}
+                </p>
+              )}
+
             </div>
+            <p className="text-[12px] mb-8 font-semibold text-center mb-3 text-red-400 ">*Jadwal dapat berubah sewaktu-waktu tergantung konfirmasi dokter</p>
+            {!hasData ? (
+              <div className="text-center py-10 text-red-600 font-semibold text-xl">
+                Mohon maaf jadwal belum tersedia
+              </div>
+            ):(
+
             <div className="grid lg:grid-cols-2 grid-cols-1 lg:gap-8">
               {/* KIRI */}
               <div>
-                {leftColumn.map((item, i) => (
-                  <div key={i} className="mb-6">
-                    <h4
-                      className="bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-500 
-          font-semibold text-white px-8 py-1 rounded lg:shadow-ja shadow-jak mb-2 lg:text-base text-sm"
-                    >
-                      {item.spesialis}
-                    </h4>
+                 <div className="mb-5">
+                    <h5 className="bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-500 
+                    font-semibold text-white px-8 py-1 rounded lg:shadow-ja shadow-jak mb-2 lg:text-lg text-sm">Spesialis Penyakit Dalam</h5>
+                    <div className="flex items-center justify-between pr-4 font-semibold">
+                      <p className="flex items-center text-slate-800">
+                        <PiDotOutlineBold className="text-3xl" />
+                        <span>dr. Khoerul Anwar, Sp.PD</span>
+                      </p>
 
-                    {item.dokter.map((d, idx) => (
-                      <div key={idx} className="flex justify-between">
-                        <div className="flex items-center">
-                          <PiDotOutlineBold className="lg:text-4xl text-xl" />
-                          <p className="font-semibold lg:text-sm text-[11px]">{d.nama}</p>
-                        </div>
-                        <p className={`flex items-center font-semibold lg:text-sm text-[11px] ${d.status == false ? "text-red-600" : ""}`}>{d.jam}</p>
-                      </div>
-                    ))}
+                      <p
+                        className={
+                          jadwal?.anwar
+                            ? "text-slate-800"
+                            : "text-red-600"
+                        }
+                      >
+                        {jadwal?.anwar || "Tidak Praktik"}
+                      </p>
+                    </div>
+                    <div className="flex items-center justify-between pr-4 font-semibold">
+                      <p className="flex items-center text-slate-800">
+                        <PiDotOutlineBold className="text-3xl" />
+                        <span>dr. Khayati Handayani, Sp.PD</span>
+                      </p>
+
+                      <p
+                        className={
+                          jadwal?.khayati
+                            ? "text-slate-800"
+                            : "text-red-600"
+                        }
+                      >
+                        {jadwal?.khayati || "Tidak Praktik"}
+                      </p>
+                    </div>
+                    <div className="flex items-center justify-between pr-4 font-semibold">
+                      <p className="flex items-center text-slate-800">
+                        <PiDotOutlineBold className="text-3xl" />
+                        <span>dr. Haryono Yuniarto, Sp.PD-KGH</span>
+                      </p>
+
+                      <p
+                        className={
+                          jadwal?.haryono
+                            ? "text-slate-800"
+                            : "text-red-700"
+                        }
+                      >
+                        {jadwal?.haryono || "Tidak Praktik"}
+                      </p>
+                    </div>
                   </div>
-                ))}
-              </div>
 
+                  <div  className="mb-5">
+                    <h5 className="bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-500 
+                    font-semibold text-white px-8 py-1 rounded lg:shadow-ja shadow-jak mb-2 lg:text-lg text-sm">Spesialis Bedah</h5>
+                    <div className="flex items-center justify-between pr-4 font-semibold">
+                      <p className="flex items-center text-slate-800">
+                        <PiDotOutlineBold className="text-3xl" />
+                        <span>dr. Ricky Dwi Nur Tyastono, Sp.B</span>
+                      </p>
+
+                      <p
+                        className={
+                          jadwal?.ricky
+                            ? "text-slate-800"
+                            : "text-red-600"
+                        }
+                      >
+                        {jadwal?.ricky || "Tidak Praktik"}
+                      </p>
+                    </div>
+                    <div className="flex items-center justify-between pr-4 font-semibold">
+                      <p className="flex items-center text-slate-800">
+                        <PiDotOutlineBold className="text-3xl" />
+                        <span>dr. Adi Purnomo, Sp.B</span>
+                      </p>
+
+                      <p
+                        className={
+                          jadwal?.adi
+                            ? "text-slate-800"
+                            : "text-red-600"
+                        }
+                      >
+                        {jadwal?.adi || "Tidak Praktik"}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div  className="mb-5">
+                    <h5 className="bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-500 
+                    font-semibold text-white px-8 py-1 rounded lg:shadow-ja shadow-jak mb-2 lg:text-lg text-sm">Spesialis Anak</h5>
+                    <div className="flex items-center justify-between pr-4 font-semibold">
+                      <p className="flex items-center text-slate-800">
+                        <PiDotOutlineBold className="text-3xl" />
+                        <span>dr. Dyah Ayu Wulansari, M.Sc., Sp.A</span>
+                      </p>
+
+                      <p
+                        className={
+                          jadwal?.saria
+                            ? "text-slate-800"
+                            : "text-red-600"
+                        }
+                      >
+                        {jadwal?.saria || "Tidak Praktik"}
+                      </p>
+                    </div>
+                    <div className="flex items-center justify-between pr-4 font-semibold">
+                      <p className="flex items-center text-slate-800">
+                        <PiDotOutlineBold className="text-3xl" />
+                        <span>dr. M. Jalul Mutaqorrib, M.Med.Sc., Sp.A</span>
+                      </p>
+
+                      <p
+                        className={
+                          jadwal?.jalul
+                            ? "text-slate-800"
+                            : "text-red-600"
+                        }
+                      >
+                        {jadwal?.jalul || "Tidak Praktik"}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div  className="mb-5">
+                    <h5 className="bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-500 
+                    font-semibold text-white px-8 py-1 rounded lg:shadow-ja shadow-jak mb-2 lg:text-lg text-sm">Spesialis Paru</h5>
+                     <div className="flex items-center justify-between pr-4 font-semibold">
+                      <p className="flex items-center text-slate-800">
+                        <PiDotOutlineBold className="text-3xl" />
+                        <span>dr. Inet Fyndiannne M, Sp. P</span>
+                      </p>
+
+                      <p
+                        className={
+                          jadwal?.inet
+                            ? "text-slate-800"
+                            : "text-red-600"
+                        }
+                      >
+                        {jadwal?.inet || "Tidak Praktik"}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div  className="mb-5">
+                    <h5 className="bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-500 
+                    font-semibold text-white px-8 py-1 rounded lg:shadow-ja shadow-jak mb-2 lg:text-lg text-sm">Spesialis Kandungan</h5>
+                     <div className="flex items-center justify-between pr-4 font-semibold">
+                      <p className="flex items-center text-slate-800">
+                        <PiDotOutlineBold className="text-3xl" />
+                        <span>dr. Deyna Primavita P., Sp.OG(K)-KFM</span>
+                      </p>
+
+                      <p
+                        className={
+                          jadwal?.levi
+                            ? "text-slate-800"
+                            : "text-red-600"
+                        }
+                      >
+                        {jadwal?.levi || "Tidak Praktik"}
+                      </p>
+                    </div>
+                    <div className="flex items-center justify-between pr-4 font-semibold">
+                      <p className="flex items-center text-slate-800">
+                        <PiDotOutlineBold className="text-3xl" />
+                        <span>dr. Syaiful Alam, Sp.OG</span>
+                      </p>
+
+                      <p
+                        className={
+                          jadwal?.alam
+                            ? "text-slate-800"
+                            : "text-red-600"
+                        }
+                      >
+                        {jadwal?.alam || "Tidak Praktik"}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div  className="mb-5">
+                    <h5 className="bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-500 
+                    font-semibold text-white px-8 py-1 rounded lg:shadow-ja shadow-jak mb-2 lg:text-lg text-sm">Spesialis THT</h5>
+                    <div className="flex items-center justify-between pr-4 font-semibold">
+                      <p className="flex items-center text-slate-800">
+                        <PiDotOutlineBold className="text-3xl" />
+                        <span>dr. Windy Rizkiana, Sp.THT-KL</span>
+                      </p>
+
+                      <p
+                        className={
+                          jadwal?.windy
+                            ? "text-slate-800"
+                            : "text-red-600"
+                        }
+                      >
+                        {jadwal?.windy || "Tidak Praktik"}
+                      </p>
+                    </div>
+                    <div className="flex items-center justify-between pr-4 font-semibold">
+                      <p className="flex items-center text-slate-800">
+                        <PiDotOutlineBold className="text-3xl" />
+                        <span>dr. Yayan Mitayani, Sp.THT-KL</span>
+                      </p>
+
+                      <p
+                        className={
+                          jadwal?.yayan
+                            ? "text-slate-800"
+                            : "text-red-600"
+                        }
+                      >
+                        {jadwal?.yayan || "Tidak Praktik"}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div  className="mb-5">
+                    <h5 className="bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-500 
+                    font-semibold text-white px-8 py-1 rounded lg:shadow-ja shadow-jak mb-2 lg:text-lg text-sm">Spesialis Radiologi</h5>
+                     <div className="flex items-center justify-between pr-4 font-semibold">
+                      <p className="flex items-center text-slate-800">
+                        <PiDotOutlineBold className="text-3xl" />
+                        <span>dr. Vida Berry Al Aden, Sp.Rad</span>
+                      </p>
+
+                      <p
+                        className={
+                          jadwal?.vida
+                            ? "text-slate-800"
+                            : "text-red-600"
+                        }
+                      >
+                        {jadwal?.vida || "Tidak Praktik"}
+                      </p>
+                    </div>
+                    <div className="flex items-center justify-between pr-4 font-semibold">
+                      <p className="flex items-center text-slate-800">
+                        <PiDotOutlineBold className="text-3xl" />
+                        <span>dr. Iwan Danardono, Sp.Rad</span>
+                      </p>
+
+                      <p
+                        className={
+                          jadwal?.iwan
+                            ? "text-slate-800"
+                            : "text-red-600"
+                        }
+                      >
+                        {jadwal?.iwan || "Tidak Praktik"}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="border-3 lg:block hidden border-green-800 py-2 px-6 rounded-xl w-[300px] mb-6">
+                    <p className="font-bold text-red-600">Pelayanan 24 jam</p>
+                    <div className="font-semibold">
+                      <span className="flex items-center"><PiDotOutlineBold className="text-2xl"/>IGD</span>
+                      <span className="flex items-center"><PiDotOutlineBold className="text-2xl"/>Laboratorium</span>
+                      <span className="flex items-center"><PiDotOutlineBold className="text-2xl"/>Farmasi</span>
+                      <span className="flex items-center"><PiDotOutlineBold className="text-2xl"/>Radiologi</span>
+                      <span className="flex items-center"><PiDotOutlineBold className="text-2xl"/>Ambulance</span>
+                    </div>
+                  </div>
+                   <div className=" mb-6 lg:block hidden">
+                    <p className="font-bold mb-1">Pendaftaran Pasien Umum & Asuransi Non-JKN</p>
+                    <Link to="https://wa.me/6282241997117?text=Assalamualaikum%20RS%20PKU%20Sruweng" target="_blank" className="font-semibold underline">
+                      <span className="flex items-center gap-1 text-xl"><IoLogoWhatsapp className="text-3xl text-green-700"/>0822 4199 7117</span>
+                    </Link>
+                  </div>
+              </div>
+              
               {/* KANAN */}
               <div>
-                {rightColumn.map((item, i) => (
-                  <div key={i} className="mb-6">
-                    <h4
-                      className="bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-500 
-          font-semibold text-white px-8 py-1 rounded lg:shadow-ja shadow-jak mb-2 lg:text-base text-sm"
-                    >
-                      {item.spesialis}
-                    </h4>
+                 <div  className="mb-5">
+                    <h5 className="bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-500 
+                    font-semibold text-white px-8 py-1 rounded lg:shadow-ja shadow-jak mb-2 lg:text-lg text-sm">Spesialis Saraf</h5>
+                    <div className="flex items-center justify-between pr-4 font-semibold">
+                      <p className="flex items-center text-slate-800">
+                        <PiDotOutlineBold className="text-3xl" />
+                        <span>dr. Khalifa Rahmani, Sp.N</span>
+                      </p>
 
-                    {item.dokter.map((d, idx) => (
-                      <div key={idx} className="flex justify-between lg:mx-2 mb-1">
-                        <div className="flex items-center lg:gap-1">
-                          <PiDotOutlineBold className="lg:text-4xl text-xl" />
-                          <p className="font-semibold lg:text-sm text-[11px]">{d.nama}</p>
-                        </div>
-                        <p className={`flex items-center font-semibold lg:text-sm text-[11px] ${d.status == false ? "text-red-600" : ""}`}>{d.jam}</p>
-                      </div>
-                    ))}
+                      <p
+                        className={
+                          jadwal?.khalifa
+                            ? "text-slate-800"
+                            : "text-red-600"
+                        }
+                      >
+                        {jadwal?.khalifa || "Tidak Praktik"}
+                      </p>
+                    </div>
+                    <div className="flex items-center justify-between pr-4 font-semibold">
+                      <p className="flex items-center text-slate-800">
+                        <PiDotOutlineBold className="text-3xl" />
+                        <span>dr. Tri Hastuti H, Sp.S</span>
+                      </p>
+
+                      <p
+                        className={
+                          jadwal?.tri
+                            ? "text-slate-800"
+                            : "text-red-600"
+                        }
+                      >
+                        {jadwal?.tri || "Tidak Praktik"}
+                      </p>
+                    </div>
                   </div>
-                ))}
+
+                   <div  className="mb-5">
+                      <h5 className="bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-500 
+                      font-semibold text-white px-8 py-1 rounded lg:shadow-ja shadow-jak mb-2 lg:text-lg text-sm">Spesialis Jantung</h5>
+                      <div className="flex items-center justify-between pr-4 font-semibold">
+                        <p className="flex items-center text-slate-800">
+                          <PiDotOutlineBold className="text-3xl" />
+                          <span>dr. Sari Rahayu Dwi Utami, Sp.JP</span>
+                        </p>
+
+                        <p
+                          className={
+                            jadwal?.sarijan
+                              ? "text-slate-800"
+                              : "text-red-600"
+                          }
+                        >
+                          {jadwal?.sarijan || "Tidak Praktik"}
+                        </p>
+                    </div>
+                  </div>
+
+                   <div  className="mb-5">
+                      <h5 className="bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-500 
+                      font-semibold text-white px-8 py-1 rounded lg:shadow-ja shadow-jak mb-2 lg:text-lg text-sm">Spesialis Mata</h5>
+                      <div className="flex items-center justify-between pr-4 font-semibold">
+                        <p className="flex items-center text-slate-800">
+                          <PiDotOutlineBold className="text-3xl" />
+                          <span>dr. Inkoni Novitasari, Sp. M</span>
+                        </p>
+
+                        <p
+                          className={
+                            jadwal?.inkoni
+                              ? "text-slate-800"
+                              : "text-red-600"
+                          }
+                        >
+                          {jadwal?.inkoni || "Tidak Praktik"}
+                        </p>
+                      </div>
+                  </div>
+
+                   <div  className="mb-5">
+                    <h5 className="bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-500 
+                    font-semibold text-white px-8 py-1 rounded lg:shadow-ja shadow-jak mb-2 lg:text-lg text-sm">Spesialis Orthopedi</h5>
+                    <div className="flex items-center justify-between pr-4 font-semibold">
+                        <p className="flex items-center text-slate-800">
+                          <PiDotOutlineBold className="text-3xl" />
+                          <span>dr. M. Abdul Aziz, Sp.OT</span>
+                        </p>
+
+                        <p
+                          className={
+                            jadwal?.aziz
+                              ? "text-slate-800"
+                              : "text-red-600"
+                          }
+                        >
+                          {jadwal?.aziz || "Tidak Praktik"}
+                        </p>
+                    </div>
+                  </div>
+
+                   <div  className="mb-5">
+                    <h5 className="bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-500 
+                    font-semibold text-white px-8 py-1 rounded lg:shadow-ja shadow-jak mb-2 lg:text-lg text-sm">Spesialis Urologi</h5>
+                    <div className="flex items-center justify-between pr-4 font-semibold">
+                        <p className="flex items-center text-slate-800">
+                          <PiDotOutlineBold className="text-3xl" />
+                          <span>dr. Andreas Pramudito, Sp. U</span>
+                        </p>
+
+                        <p
+                          className={
+                            jadwal?.andreas
+                              ? "text-slate-800"
+                              : "text-red-600"
+                          }
+                        >
+                          {jadwal?.andreas || "Tidak Praktik"}
+                        </p>
+                    </div>
+                  </div>
+
+                   <div  className="mb-5">
+                    <h5 className="bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-500 
+                    font-semibold text-white px-8 py-1 rounded lg:shadow-ja shadow-jak mb-2 lg:text-lg text-sm">Spesialis Kulit & Kelamin</h5>
+                    <div className="flex items-center justify-between pr-4 font-semibold">
+                        <p className="flex items-center text-slate-800">
+                          <PiDotOutlineBold className="text-3xl" />
+                          <span>dr. Ahmad Satya Negara, Sp.D.V</span>
+                        </p>
+
+                        <p
+                          className={
+                            jadwal?.satya
+                              ? "text-slate-800"
+                              : "text-red-600"
+                          }
+                        >
+                          {jadwal?.satya || "Tidak Praktik"}
+                        </p>
+                    </div>
+                  </div>
+
+                   <div  className="mb-5">
+                    <h5 className="bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-500 
+                    font-semibold text-white px-8 py-1 rounded lg:shadow-ja shadow-jak mb-2 lg:text-lg text-sm">Spesialis Rehab Medik</h5>
+                    <div className="flex items-center justify-between pr-4 font-semibold">
+                        <p className="flex items-center text-slate-800">
+                          <PiDotOutlineBold className="text-3xl" />
+                          <span>dr.Andi Sulistyo Nugroho, Sp. KFR</span>
+                        </p>
+
+                        <p
+                          className={
+                            jadwal?.andy
+                              ? "text-slate-800"
+                              : "text-red-600"
+                          }
+                        >
+                          {jadwal?.andy || "Tidak Praktik"}
+                        </p>
+                    </div>
+                    <div className="flex items-center justify-between pr-4 font-semibold">
+                      <p className="flex items-center text-slate-800">
+                        <PiDotOutlineBold className="text-3xl" />
+                        <span>Fisioterapi</span>
+                      </p>
+
+                      <p
+                        className={
+                          jadwal?.fisio
+                            ? "text-slate-800"
+                            : "text-red-600"
+                        }
+                      >
+                        {jadwal?.fisio || "Tidak Praktik"}
+                      </p>
+                    </div>
+                    <div className="flex items-center justify-between pr-4 font-semibold">
+                      <p className="flex items-center text-slate-800">
+                        <PiDotOutlineBold className="text-3xl" />
+                        <span>Terapi Wicara & Okupasi</span>
+                      </p>
+
+                      <p
+                        className={
+                          jadwal?.wicara
+                            ? "text-slate-800"
+                            : "text-red-600"
+                        }
+                      >
+                        {jadwal?.wicara || "Tidak Praktik"}
+                      </p>
+                    </div>
+                  </div>
+
+                   <div  className="mb-5">
+                    <h5 className="bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-500 
+                    font-semibold text-white px-8 py-1 rounded lg:shadow-ja shadow-jak mb-2 lg:text-lg text-sm">Klinik Vaksinasi Internasional</h5>
+                    <div className="flex items-center justify-between pr-4 font-semibold">
+                      <p className="flex items-center text-slate-800">
+                        <PiDotOutlineBold className="text-3xl" />
+                      </p>
+
+                      <p
+                        className={
+                          jadwal?.vaksinasi
+                            ? "text-slate-800"
+                            : "text-red-600"
+                        }
+                      >
+                        {jadwal?.vaksinasi || "Tidak Praktik"}
+                      </p>
+                    </div>
+                  </div>
+
+                   <div  className="mb-5">
+                    <h5 className="bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-500 
+                    font-semibold text-white px-8 py-1 rounded lg:shadow-ja shadow-jak mb-2 lg:text-lg text-sm">Spesialis Patologi Klinik</h5>
+                    <div className="flex items-center justify-between pr-4 font-semibold">
+                      <p className="flex items-center text-slate-800">
+                        <PiDotOutlineBold className="text-3xl" />
+                        <span>dr. Desi Widiyanti, Sp.PK</span>
+                      </p>
+
+                      <p
+                        className={
+                          jadwal?.desi
+                            ? "text-slate-800"
+                            : "text-red-600"
+                        }
+                      >
+                        {jadwal?.desi || "Tidak Praktik"}
+                      </p>
+                    </div>
+                  </div>
+
+                   <div  className="mb-5">
+                    <h5 className="bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-500 
+                    font-semibold text-white px-8 py-1 rounded lg:shadow-ja shadow-jak mb-2 lg:text-lg text-sm">Klinik Gizi</h5>
+                    <div className="flex items-center justify-between pr-4 font-semibold">
+                      <p className="flex items-center text-slate-800">
+                        <PiDotOutlineBold className="text-3xl" />
+                      </p>
+
+                      <p
+                        className={
+                          jadwal?.gizi
+                            ? "text-slate-800"
+                            : "text-red-600"
+                        }
+                      >
+                        {jadwal?.gizi || "Tidak Praktik"}
+                      </p>
+                    </div>
+                  </div>
+
               </div>
             </div>
+            )}
           </div>
         </div>
       </div>

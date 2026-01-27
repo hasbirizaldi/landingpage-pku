@@ -129,7 +129,7 @@ const HeaderNavbar = () => {
         `}
       >
         <div className="bg-gradient-to-r from-yellow-700 via-yellow-500 to-yellow-600 max-w-[85%] mx-auto rounded-b-full">
-          <ul className="flex justify-center text-white text-sm font-semibold h-13">
+          <ul className="flex justify-center text-white text-[13px] font-semibold h-13">
             <li className="px-3 py-4">
               <NavLink to="/" className={navClass}>
                 BERANDA
@@ -183,11 +183,11 @@ const HeaderNavbar = () => {
             {/* BERITA ARTIKEL - LOGIKA ACTIVE DROPDOWN */}
             <li className={`relative group px-3 py-4 cursor-pointer`}>
               <div className={`flex items-center ${isActiveParent(pathsBerita) ? " border-b-2 border-white" : ""}`}>
-                BERITA & ARTIKEL <MdKeyboardArrowDown />
+                 ARTIKEL <MdKeyboardArrowDown />
               </div>
               <div className="absolute font-normal left-0 top-full bg-white text-black w-56 rounded shadow opacity-0 invisible group-hover:visible group-hover:opacity-100 transition">
                 {pathsBerita.map((path, idx) => {
-                  const labels = ["Berita Terbaru", "Artikel Kesehatan", "Artikel Islami", "Promosi & Leaflet", "Gallery"];
+                  const labels = ["Artikel Terbaru", "Artikel Kesehatan", "Artikel Islami", "Promosi & Leaflet", "Gallery"];
                   return (
                     <Link key={path} className={`block px-4 py-2 hover:bg-gray-100 ${location.pathname === path ? "bg-gray-100 font-bold text-green-800" : ""}`} to={path}>
                       {labels[idx]}
@@ -204,7 +204,7 @@ const HeaderNavbar = () => {
               </div>
               <div className="absolute font-normal left-0 top-full bg-white text-black w-56 rounded shadow opacity-0 invisible group-hover:visible group-hover:opacity-100 transition">
                 {pathsVideo.map((path, idx) => {
-                  const labels = ["Vidio Promosi", "Vidio Kesehatan", "Vidio Keislaman", "Vidio SIMRS"];
+                  const labels = ["Vidio Promosi", "Vidio Kesehatan", "Vidio Keislaman", "Vidio Tutorial SIMRS"];
                   return (
                     <Link key={path} className={`block px-4 py-2 hover:bg-gray-100 ${location.pathname === path ? "bg-gray-100 font-bold text-green-800" : ""}`} to={path}>
                       {labels[idx]}
@@ -216,7 +216,7 @@ const HeaderNavbar = () => {
 
             <li className="px-3 py-4">
               <NavLink to="/karir" className={navClass}>
-                KARIR
+                KARIER
               </NavLink>
             </li>
           </ul>

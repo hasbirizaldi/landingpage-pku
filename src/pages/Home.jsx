@@ -21,7 +21,7 @@ const Home = () => {
       />
 
       {/* overlay supaya konten jelas */}
-      <div className="fixed inset-0 bg-white/30 -z-10" />
+      <div className="fixed inset-0 bg-white/40 -z-10" />
 
       {/* ===== KONTEN HOME ===== */}
       <div className="relative">

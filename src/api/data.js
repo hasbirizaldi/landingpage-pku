@@ -24,6 +24,11 @@ import dokter from "../assets/logo/dokter.png";
 import leaflet1 from "../assets/leaflet/1.jpg";
 import leaflet2 from "../assets/leaflet/2.jpg";
 import leaflet3 from "../assets/leaflet/3.jpg";
+import leaflet4 from "../assets/leaflet/4.jpg";
+import leaflet5 from "../assets/leaflet/5.jpg";
+import leaflet6 from "../assets/leaflet/6.jpg";
+import leaflet7 from "../assets/leaflet/7.jpg";
+import leaflet8 from "../assets/leaflet/8.png";
 import anwar from "../assets/dokter/anwar.png";
 import adi from "../assets/dokter/adi.png";
 import khayati from "../assets/dokter/khayati.png";
@@ -65,6 +70,12 @@ import hasan from "../assets/direksi/hasan.png";
 import adi_hamid from "../assets/direksi/adi.png";
 import dyah from "../assets/direksi/dyah.png";
 import niken from "../assets/direksi/niken.png";
+import gallery1 from "../assets/gallery/1.jpg";
+import gallery2 from "../assets/gallery/2.jpg";
+import gallery4 from "../assets/gallery/4.jpg";
+import gallery5 from "../assets/gallery/5.jpg";
+import gallery6 from "../assets/gallery/6.jpg";
+import gallery7 from "../assets/gallery/7.jpg";
 
 export const sliderImages = [slider1, slider2, slider3, slider4, slider5];
 export const img = [logo, mas, jkn, logo2, ios, go_obat, call, emergency, dokter];
@@ -656,8 +667,87 @@ export const dokterList = [
   },
 ];
 
+export const leaflet = [
+  {
+    id: 1,
+    date: "15 November 2025",
+    image: leaflet1,
+  },
+  {
+    id: 2,
+    date: "13 November 2025",
+    image: leaflet2,
+  },
+  {
+    id: 3,
+    date: "11 November 2025",
+    image: leaflet3,
+  },
+   {
+    id: 4,
+    date: "11 November 2025",
+    image: leaflet4,
+  },
+   {
+    id: 5,
+    date: "11 November 2025",
+    image: leaflet5,
+  },
+   {
+    id: 6,
+    date: "11 November 2025",
+    image: leaflet6,
+  },
+   {
+    id: 7,
+    date: "11 November 2025",
+    image: leaflet7,
+  },
+   {
+    id: 8,
+    date: "11 November 2025",
+    image: leaflet8,
+  },
+]
+
+export const gallery = [
+  {
+    id: 1,
+    date: "9 November 2025",
+    image: gallery1,
+  },
+  {
+    id: 2,
+    date: "7 November 2025",
+    image: gallery2,
+  },
+  {
+    id: 3,
+    date: "5 November 2025",
+    image: gallery2,
+  },
+   {
+    id: 4,
+    date: "5 November 2025",
+    image: gallery4,
+  },
+   {
+    id: 5,
+    date: "5 November 2025",
+    image: gallery5,
+  },
+   {
+    id: 6,
+    date: "5 November 2025",
+    image: gallery6,
+  },
+   {
+    id: 7,
+    date: "5 November 2025",
+    image: gallery7,
+  },
+]
 export const dataArtikel = [
-  // ================== BERITA (4) ==================
   {
     id: 1,
     category: "berita",
@@ -758,92 +848,40 @@ export const dataArtikel = [
     image: "https://cdn.banyumasekspres.id/wp-content/uploads/2025/07/pku-sruweng-siap-ikuti-kebijakan-implememtasi-kris.jpg",
     desc: "<p>Doa menjadi salah satu ikhtiar dalam mencari kesembuhan.</p>",
   },
-
-  // ================== PROMOSI & LEAFLET (3) ==================
   {
     id: 13,
-    category: "promosi-leaflet",
-    title: "Promo Medical Check Up Akhir Tahun",
-    date: "15 November 2025",
-    image: leaflet1,
-    desc: "<p>Dapatkan promo MCU dengan harga spesial.</p>",
+    category: "berita",
+    title: "RS PKU Sruweng Resmikan Gedung Rawat Inap Baru",
+    date: "10 Desember 2025",
+    image: "https://cdn.banyumasekspres.id/wp-content/uploads/2025/07/pku-sruweng-siap-ikuti-kebijakan-implememtasi-kris.jpg",
+    desc: "<p>RS PKU Sruweng resmi membuka gedung rawat inap baru untuk meningkatkan pelayanan masyarakat.</p>",
   },
   {
     id: 14,
-    category: "promosi-leaflet",
-    title: "Diskon Pemeriksaan Laboratorium",
-    date: "13 November 2025",
-    image: leaflet2,
-    desc: "<p>Promo pemeriksaan laboratorium periode terbatas.</p>",
+    category: "berita",
+    title: "RS PKU Sruweng Resmikan Gedung Rawat Inap Baru",
+    date: "10 Desember 2025",
+    image: "https://cdn.banyumasekspres.id/wp-content/uploads/2025/07/pku-sruweng-siap-ikuti-kebijakan-implememtasi-kris.jpg",
+    desc: "<p>RS PKU Sruweng resmi membuka gedung rawat inap baru untuk meningkatkan pelayanan masyarakat.</p>",
   },
   {
     id: 15,
-    category: "promosi-leaflet",
-    title: "Promo Paket Persalinan",
-    date: "11 November 2025",
-    image: leaflet3,
-    desc: "<p>Paket persalinan nyaman dengan harga terjangkau.</p>",
+    category: "artikel-kesehatan",
+    title: "Cara Mengelola Stres dengan Baik",
+    date: "25 November 2025",
+    image: "https://cdn.banyumasekspres.id/wp-content/uploads/2025/07/pku-sruweng-siap-ikuti-kebijakan-implememtasi-kris.jpg",
+    desc: "<p>Stres berlebih dapat berdampak buruk pada kesehatan.</p>",
   },
-
-  // ================== GALLERY (3) ==================
   {
     id: 16,
-    category: "gallery",
-    title: "",
-    date: "9 November 2025",
-    image: slider2,
-    desc: "",
+    category: "artikel-kesehatan",
+    title: "Cara Mengelola Stres dengan Baik",
+    date: "25 November 2025",
+    image: "https://cdn.banyumasekspres.id/wp-content/uploads/2025/07/pku-sruweng-siap-ikuti-kebijakan-implememtasi-kris.jpg",
+    desc: "<p>Stres berlebih dapat berdampak buruk pada kesehatan.</p>",
   },
   {
     id: 17,
-    category: "gallery",
-    title: "",
-    date: "7 November 2025",
-    image: slider3,
-    desc: "",
-  },
-  {
-    id: 18,
-    category: "gallery",
-    title: "",
-    date: "5 November 2025",
-    image: slider4,
-    desc: "",
-  },
-  {
-    id: 19,
-    category: "berita",
-    title: "RS PKU Sruweng Resmikan Gedung Rawat Inap Baru",
-    date: "10 Desember 2025",
-    image: "https://cdn.banyumasekspres.id/wp-content/uploads/2025/07/pku-sruweng-siap-ikuti-kebijakan-implememtasi-kris.jpg",
-    desc: "<p>RS PKU Sruweng resmi membuka gedung rawat inap baru untuk meningkatkan pelayanan masyarakat.</p>",
-  },
-  {
-    id: 20,
-    category: "berita",
-    title: "RS PKU Sruweng Resmikan Gedung Rawat Inap Baru",
-    date: "10 Desember 2025",
-    image: "https://cdn.banyumasekspres.id/wp-content/uploads/2025/07/pku-sruweng-siap-ikuti-kebijakan-implememtasi-kris.jpg",
-    desc: "<p>RS PKU Sruweng resmi membuka gedung rawat inap baru untuk meningkatkan pelayanan masyarakat.</p>",
-  },
-  {
-    id: 21,
-    category: "artikel-kesehatan",
-    title: "Cara Mengelola Stres dengan Baik",
-    date: "25 November 2025",
-    image: "https://cdn.banyumasekspres.id/wp-content/uploads/2025/07/pku-sruweng-siap-ikuti-kebijakan-implememtasi-kris.jpg",
-    desc: "<p>Stres berlebih dapat berdampak buruk pada kesehatan.</p>",
-  },
-  {
-    id: 22,
-    category: "artikel-kesehatan",
-    title: "Cara Mengelola Stres dengan Baik",
-    date: "25 November 2025",
-    image: "https://cdn.banyumasekspres.id/wp-content/uploads/2025/07/pku-sruweng-siap-ikuti-kebijakan-implememtasi-kris.jpg",
-    desc: "<p>Stres berlebih dapat berdampak buruk pada kesehatan.</p>",
-  },
-  {
-    id: 23,
     category: "artikel-islami",
     title: "Cara Mengelola Stres dengan Baik",
     date: "25 November 2025",
@@ -851,7 +889,7 @@ export const dataArtikel = [
     desc: "<p>Stres berlebih dapat berdampak buruk pada kesehatan.</p>",
   },
   {
-    id: 24,
+    id: 18,
     category: "artikel-islami",
     title: "Cara Mengelola Stres dengan Baik",
     date: "25 November 2025",

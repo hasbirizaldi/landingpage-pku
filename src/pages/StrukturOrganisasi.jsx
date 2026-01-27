@@ -13,14 +13,12 @@ const StrukturOrganisasi = () => {
         backgroundImage: "url('/5.jpg')", // pastikan di public
       }}
     >
-      <div className="lg:w-[80%] text-slate-50 sm:mx-auto mx-2 bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 lg:p-12 p-8 flex items-start justify-center flex-col h-36 rounded-lg">
-        <h1 className="sm:text-3xl text-2xl font-bold mb-1">Struktur Organisasi</h1>
-        <div className="flex items-center gap-1 text-slate-200">
+      <div className="lg:w-[80%] lg:mx-auto mx-2 text-white bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-500 lg:p-10 p-8 lg:h-36 h-30 rounded-lg shadow-ku mb-6">
+        <h1 className="lg:text-2xl text-xl font-bold mb-1">Struktur Organisasi</h1>
+        <div className="flex lg:text-base text-sm items-center gap-1 text-slate-200">
           <span>Beranda</span>
-          <span>
-            <IoIosArrowForward />
-          </span>
-          <span>Tentang Kami</span>
+          <IoIosArrowForward />
+          <span>Struktur Organisasi</span>
         </div>
       </div>
       <div className="bg-white/60 lg:w-[90%] mx-2 lg:mx-auto mt-8 sm:p-8 py-8 px-4 rounded-xl shadow-ku">

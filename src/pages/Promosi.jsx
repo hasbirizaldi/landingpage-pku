@@ -1,111 +1,225 @@
 import { useEffect, useState } from "react";
+import axios from "axios";
 import { IoIosArrowForward } from "react-icons/io";
-import { dataArtikel } from "../api/data";
-import { Link } from "react-router-dom";
-import { MdKeyboardDoubleArrowRight } from "react-icons/md";
+import {
+  MdOutlineKeyboardDoubleArrowLeft,
+  MdOutlineKeyboardDoubleArrowRight,
+} from "react-icons/md";
+
+const PROMOSI_API = "http://localhost:8000/api/public-promosis";
+const GALLERY_API = "http://localhost:8000/api/public-galleries";
 
 const Promosi = () => {
   const [activeCategory, setActiveCategory] = useState("promosi-leaflet");
+  const [loading, setLoading] = useState(true);
 
-  const tabs = [
-    { label: "Berita Terbaru", value: "berita" },
-    { label: "Artikel Kesehatan", value: "artikel-kesehatan" },
-    { label: "Artikel Islami", value: "artikel-islami" },
-    { label: "Promosi & Leaflet", value: "promosi-leaflet" },
-    { label: "Gallery", value: "gallery" },
-  ];
+  // DATA PROMOSI
+  const [promosi, setPromosi] = useState([]);
+  const [promosiPage, setPromosiPage] = useState(1);
+  const [promosiHasMore, setPromosiHasMore] = useState(true);
+
+  // DATA GALLERY
+  const [gallery, setGallery] = useState([]);
+  const [galleryPage, setGalleryPage] = useState(1);
+  const [galleryHasMore, setGalleryHasMore] = useState(true);
+
+  // SLIDER
+  const [showSlider, setShowSlider] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [sliderData, setSliderData] = useState([]);
+
+  // SWIPE
+  const [startX, setStartX] = useState(null);
+  const handleStart = (x) => setStartX(x);
+
+  const handleEnd = (x) => {
+    if (startX === null) return;
+    const diff = startX - x;
+
+    if (diff > 50)
+      setCurrentIndex((prev) =>
+        prev === sliderData.length - 1 ? 0 : prev + 1
+      );
+    else if (diff < -50)
+      setCurrentIndex((prev) =>
+        prev === 0 ? sliderData.length - 1 : prev - 1
+      );
+
+    setStartX(null);
+  };
+
+  // FETCH PROMOSI
+  const fetchPromosi = async (page = 1) => {
+    const res = await axios.get(`${PROMOSI_API}?page=${page}`);
+    const newData = res.data.data.data;
+
+    setPromosi((prev) => (page === 1 ? newData : [...prev, ...newData]));
+    setPromosiHasMore(res.data.data.next_page_url !== null);
+  };
+
+  // FETCH GALLERY
+  const fetchGallery = async (page = 1) => {
+    const res = await axios.get(`${GALLERY_API}?page=${page}`);
+    const newData = res.data.data.data;
+
+    setGallery((prev) => (page === 1 ? newData : [...prev, ...newData]));
+    setGalleryHasMore(res.data.data.next_page_url !== null);
+  };
 
   useEffect(() => {
-    document.title = "RS PKU Sruweng | Berita & Artikel";
+    document.title = "RS PKU Sruweng | Leaflet & Gallery";
+    Promise.all([fetchPromosi(1), fetchGallery(1)]).finally(() =>
+      setLoading(false)
+    );
   }, []);
 
-  const filteredArtikel = dataArtikel.filter((item) => item.category === activeCategory).slice(0, 6);
-  const imageOnlyCategory = ["promosi-leaflet", "gallery"];
+  const data =
+    activeCategory === "promosi-leaflet" ? promosi : gallery;
 
   return (
     <div
       className="min-h-screen bg-fixed bg-cover bg-center"
-      style={{
-        backgroundImage: "url('/5.jpg')", // pastikan di public
-      }}
+      style={{ backgroundImage: "url('/5.jpg')" }}
     >
-      {/* overlay biar teks kebaca */}
-      <div className="bg-white/10 min-h-screen pb-5">
-        <div className="pt-4">
-          <div className="lg:w-[80%] lg:mx-auto mx-2 text-slate-50 bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-500 lg:p-12 p-8 flex flex-col justify-center h-36 rounded-lg shadow-ku sm:mb-8 mb-5">
-            <h1 className="lg:text-3xl text-2xl font-bold mb-1">Berita & Artikel</h1>
-            <div className="flex items-center gap-1 text-slate-200">
-              <span>Beranda</span>
-              <IoIosArrowForward />
-              <span>Berita & Artikel</span>
-            </div>
-          </div>
-          <div className="grid grid-cols-5 lg:w-[80%] h-12 items-center lg:mx-auto mx-2 mb-5 overflow-hidden bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-500 rounded-t-lg">
-            {tabs.map((tab) => (
-              <button
-                key={tab.value}
-                onClick={() => setActiveCategory(tab.value)}
-                className={`
-        text-xs lg:text-base font-semibold text-slate-50 flex justify-center items-center h-full
-        transition cursor-pointer
-        ${activeCategory === tab.value ? "border-b-4 border-yellow-400 bg-black/30" : "hover:bg-black/20"}
-      `}
-              >
-                {tab.label}
-              </button>
-            ))}
-          </div>
+      <div className="bg-white/10 min-h-screen pb-5 pt-4">
 
-          <div className="grid lg:grid-cols-3 grid-cols-1 sm:gap-6 gap-4 lg:w-[80%] mx-2 lg:mx-auto ">
-            {filteredArtikel.map((item) => {
-              const isImageOnly = imageOnlyCategory.includes(activeCategory);
-
-              return (
-                <div
-                  key={item.id}
-                  className={`
-        bg-white
-        ${isImageOnly ? "p-0" : "pb-6"}
-        sm:rounded-lg rounded
-        shadow-ku
-        hover:shadow-xl
-        transition
-        overflow-hidden
-        relative
-        cursor-pointer
-        hover:scale-[1.01]
-      `}
-                >
-                  {/* IMAGE */}
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className={`
-          w-full object-cover
-          ${isImageOnly ? "h-full" : "h-44 sm:h-48"}
-        `}
-                  />
-
-                  {/* JIKA BUKAN IMAGE ONLY */}
-                  {!isImageOnly && (
-                    <div className="p-3">
-                      <p className="text-xs sm:text-sm text-slate-500 mb-1">{item.date}</p>
-
-                      <h2 className="font-semibold text-base sm:text-lg text-slate-800 mb-1 line-clamp-2">{item.title}</h2>
-
-                      <div className="text-slate-600 text-sm mb-4 line-clamp-2" dangerouslySetInnerHTML={{ __html: item.desc }} />
-
-                      <Link to="/" className="absolute bottom-4 left-2 sm:left-3 text-sm font-semibold text-blue-600 hover:text-blue-800 flex items-center">
-                        Baca Selengkapnya
-                        <MdKeyboardDoubleArrowRight className="text-xl ml-1" />
-                      </Link>
-                    </div>
-                  )}
-                </div>
-              );
-            })}
+        {/* HEADER */}
+        <div className="lg:w-[80%] mx-2 lg:mx-auto text-white bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-500 p-6 lg:p-12 rounded-lg mb-5">
+          <h1 className="lg:text-3xl text-lg font-bold">Leaflet & Gallery</h1>
+          <div className="flex items-center gap-1 text-sm">
+            <span>Beranda</span>
+            <IoIosArrowForward />
+            <span>Leaflet & Gallery</span>
           </div>
         </div>
+
+        {/* TAB */}
+        <div className="grid grid-cols-2 lg:w-[80%] mx-2 lg:mx-auto h-12 mb-5 bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-500 rounded-t-lg overflow-hidden ">
+          {[
+            { label: "Promosi & Leaflet", value: "promosi-leaflet" },
+            { label: "Gallery", value: "gallery" },
+          ].map((tab) => (
+            <button
+              key={tab.value}
+              onClick={() => setActiveCategory(tab.value)}
+              className={`text-white font-semibold cursor-pointer ${
+                activeCategory === tab.value
+                  ? "bg-black/30 border-b-4 border-yellow-500"
+                  : "hover:bg-black/20"
+              }`}
+            >
+              {tab.label}
+            </button>
+          ))}
+        </div>
+
+        {/* LIST */}
+        <div className="grid sm:grid-cols-3 grid-cols-2 gap-3 lg:w-[80%] mx-2 lg:mx-auto">
+          {loading &&
+            [...Array(6)].map((_, i) => (
+              <div key={i} className="h-48 bg-slate-300 animate-pulse rounded" />
+            ))}
+
+          {!loading &&
+            data.map((item, index) => (
+              <div
+                key={item.id}
+                onClick={() => {
+                  setSliderData(data);
+                  setCurrentIndex(index);
+                  setShowSlider(true);
+                }}
+                className="bg-white rounded shadow cursor-pointer hover:scale-[1.02]"
+              >
+                <img
+                  src={`http://localhost:8000/storage/${item.image}`}
+                  alt="img"
+                  className="w-full object-cover"
+                />
+              </div>
+            ))}
+        </div>
+
+        {/* LOAD MORE */}
+        {!loading &&
+          ((activeCategory === "promosi-leaflet" && promosiHasMore) ||
+            (activeCategory === "gallery" && galleryHasMore)) && (
+            <div className="flex justify-center mt-6">
+              <button
+                onClick={() => {
+                  if (activeCategory === "promosi-leaflet") {
+                    const next = promosiPage + 1;
+                    setPromosiPage(next);
+                    fetchPromosi(next);
+                  } else {
+                    const next = galleryPage + 1;
+                    setGalleryPage(next);
+                    fetchGallery(next);
+                  }
+                }}
+                className="px-6 py-2 bg-emerald-600 text-white rounded cursor-pointer hover:bg-emerald-700"
+              >
+                Load More
+              </button>
+            </div>
+          )}
+
+        {/* SLIDER */}
+        {showSlider && (
+          <div className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center">
+            <button
+              onClick={() => setShowSlider(false)}
+              className="absolute top-5 right-5 text-white text-3xl cursor-pointer"
+            >
+              ✕
+            </button>
+
+            <button
+              onClick={() =>
+                setCurrentIndex((p) =>
+                  p === 0 ? sliderData.length - 1 : p - 1
+                )
+              }
+              className="absolute left-5 text-white text-4xl cursor-pointer"
+            >
+              <MdOutlineKeyboardDoubleArrowLeft />
+            </button>
+
+            <div
+              className="max-w-3xl w-full overflow-hidden"
+              onTouchStart={(e) => handleStart(e.touches[0].clientX)}
+              onTouchEnd={(e) => handleEnd(e.changedTouches[0].clientX)}
+              onMouseDown={(e) => handleStart(e.clientX)}
+              onMouseUp={(e) => handleEnd(e.clientX)}
+            >
+              <div
+                className="flex transition-transform duration-300"
+                style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+              >
+                {sliderData.map((item) => (
+                  <div key={item.id} className="min-w-full flex justify-center">
+                    <img
+                      src={`http://localhost:8000/storage/${item.image}`}
+                      className="max-h-[90vh] object-contain"
+                      draggable={false}
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <button
+              onClick={() =>
+                setCurrentIndex((p) =>
+                  p === sliderData.length - 1 ? 0 : p + 1
+                )
+              }
+              className="absolute right-5 text-white text-4xl cursor-pointer"
+            >
+              <MdOutlineKeyboardDoubleArrowRight />
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

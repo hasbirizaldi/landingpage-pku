@@ -1,45 +1,128 @@
 import { useEffect, useState } from "react";
+import axios from "axios";
 import { IoIosArrowForward } from "react-icons/io";
-import { dokterList } from "../api/data";
-import { Link } from "react-router-dom";
+
+const DokterSkeleton = () => {
+  return (
+    <div className="lg:w-[80%] lg:mx-auto mx-2 bg-white/40 p-6 rounded-lg shadow-ku animate-pulse">
+      <div className="flex flex-col lg:flex-row gap-6">
+
+        {/* FOTO */}
+        <div className="flex justify-center">
+          <div className="w-40 h-40 bg-slate-300 rounded " />
+        </div>
+
+        {/* INFO */}
+        <div className="flex-1 space-y-3">
+
+          {/* NAMA */}
+          <div className="w-1/3 h-5 bg-slate-300 rounded" />
+
+          {/* SPESIALIS */}
+          <div className="w-1/4 h-4 bg-slate-300 rounded" />
+
+          {/* BUTTON */}
+          <div className="w-28 h-8 bg-slate-300 rounded" />
+
+          {/* JADWAL DESKTOP */}
+          <div className="hidden lg:block">
+            <div className="grid grid-cols-7 gap-1 mt-4">
+              {[...Array(7)].map((_, i) => (
+                <div key={i} className="h-10 bg-slate-300 rounded" />
+              ))}
+            </div>
+          </div>
+
+          {/* JADWAL MOBILE */}
+          <div className="lg:hidden grid grid-cols-2 gap-3 mt-4">
+            {[...Array(4)].map((_, i) => (
+              <div key={i} className="h-14 bg-slate-300 rounded" />
+            ))}
+          </div>
+
+        </div>
+      </div>
+    </div>
+  );
+};
+
 
 const DokterKami = () => {
-
   const ITEMS_PER_PAGE = 10;
+
+  const [dokterList, setDokterList] = useState([]);
   const [visibleCount, setVisibleCount] = useState(ITEMS_PER_PAGE);
+  const [loading, setLoading] = useState(true);
 
   const [searchNama, setSearchNama] = useState("");
   const [filterSpesialis, setFilterSpesialis] = useState("");
 
-  const handleReset = () => {
-    setSearchNama("");
-    setFilterSpesialis("");
-  };
-
+  // ================= FETCH API =================
   useEffect(() => {
     document.title = "RS PKU Sruweng | Dokter Kami";
+
+    axios
+      .get("http://localhost:8000/api/dokter-kami")
+      .then((res) => {
+        setDokterList(res.data);
+      })
+      .catch((err) => {
+        console.error("Gagal ambil data dokter:", err);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   }, []);
 
+  // ================= FILTER =================
   const dokterFiltered = dokterList.filter((dokter) => {
-    const matchNama = dokter.nama.toLowerCase().includes(searchNama.toLowerCase());
+    const matchNama = dokter.nama
+      .toLowerCase()
+      .includes(searchNama.toLowerCase());
 
-    const matchSpesialis = filterSpesialis ? dokter.spesialis === filterSpesialis : true;
+    const matchSpesialis = filterSpesialis
+      ? dokter.spesialis === filterSpesialis
+      : true;
 
     return matchNama && matchSpesialis;
   });
 
+  const handleReset = () => {
+    setSearchNama("");
+    setFilterSpesialis("");
+    setVisibleCount(ITEMS_PER_PAGE);
+  };
+
+  // ================= LOADING =================
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-fixed bg-cover bg-center"
+        style={{ backgroundImage: "url('/5.jpg')" }}
+      >
+        <div className="bg-white/10 min-h-screen pb-6 space-y-6 pt-6">
+          {[...Array(5)].map((_, i) => (
+            <DokterSkeleton key={i} />
+          ))}
+        </div>
+      </div>
+    );
+  }
+
+
+  // ================= RENDER =================
   return (
     <div
       className="min-h-screen bg-fixed bg-cover bg-center"
-      style={{
-        backgroundImage: "url('/5.jpg')", // pastikan di public
-      }}
+      style={{ backgroundImage: "url('/5.jpg')" }}
     >
-      {/* overlay biar teks kebaca */}
-      <div className="bg-white/10 min-h-screen pb-5">
+      <div className="bg-white/10 min-h-screen pb-6">
+
+        {/* ================= HEADER ================= */}
         <div className="pt-4">
-          <div className="lg:w-[80%] lg:mx-auto mx-2 text-slate-50 bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-500 lg:p-12 p-8 flex flex-col justify-center h-36 rounded-lg shadow-ku">
-            <h1 className="lg:text-3xl text-2xl font-bold mb-1">Dokter Kami</h1>
+          <div className="lg:w-[80%] lg:mx-auto mx-2 bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-500 lg:px-12 lg:py-10 p-8 rounded-lg shadow-ku text-white">
+            <h1 className="lg:text-3xl text-xl font-bold mb-1">
+              Dokter Kami
+            </h1>
             <div className="flex items-center gap-1 text-slate-200">
               <span>Beranda</span>
               <IoIosArrowForward />
@@ -48,127 +131,124 @@ const DokterKami = () => {
           </div>
         </div>
 
-        {/* Cari */}
+        {/* ================= FILTER ================= */}
         <div className="lg:w-[60%] lg:mx-auto mx-2 bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-500 p-8 mt-8 rounded-xl shadow-ku">
-          <p className="text-slate-50 text-lg font-semibold text-center mb-4">Cari Jadwal Dokter di RS PKU Muhammadiyah Sruweng</p>
-          <form onSubmit={(e) => e.preventDefault()}>
-            {/* Cari Nama Dokter */}
+          <p className="text-white text-lg font-semibold text-center mb-4">
+            Cari Dokter di RS PKU Muhammadiyah Sruweng
+          </p>
 
-            {/* Pilih Spesialis */}
-            <div className="grid grid-cols-2 lg:gap-5 gap-3">
-              <div className="flex flex-col mb-3">
-                <label className="text-white text-sm mb-1">Cari Dokter</label>
-                <input type="text" placeholder="Cari nama dokter anda disini..." value={searchNama} onChange={(e) => setSearchNama(e.target.value)} className="px-4 py-1 rounded outline-none bg-white focus:ring-2 focus:ring-yellow-400" />
+          <form onSubmit={(e) => e.preventDefault()}>
+            <div className="grid lg:grid-cols-2 lg:gap-4 gap-2">
+              <div>
+                <label className="text-white text-sm">Cari Dokter</label>
+                <input
+                  type="text"
+                  value={searchNama}
+                  onChange={(e) => setSearchNama(e.target.value)}
+                  placeholder="Nama dokter..."
+                  className="w-full px-4 py-1 rounded outline-none bg-white focus:ring-2 focus:ring-yellow-500"
+                />
               </div>
-              <div className="flex flex-col mb-5">
-                <label className="text-white text-sm mb-1">Pilih Spesialis</label>
-                <select value={filterSpesialis} onChange={(e) => setFilterSpesialis(e.target.value)} className="px-4 py-1 cursor-pointer rounded outline-none focus:ring-2 bg-white focus:ring-yellow-400">
+
+              <div>
+                <label className="text-white text-sm">Spesialis</label>
+                <select
+                  value={filterSpesialis}
+                  onChange={(e) => setFilterSpesialis(e.target.value)}
+                  className="w-full px-4 py-1 rounded bg-white focus:ring-2 focus:ring-yellow-500"
+                >
                   <option value="">Semua Spesialis</option>
-                  <option value="Dokter Umum">Dokter Umum</option>
-                  <option value="Spesialis Penyakit Dalam">Spesialis Penyakit Dalam</option>
-                  <option value="Spesialis Bedah">Spesialis Bedah</option>
-                  <option value="Spesialis Anak">Spesialis Anak</option>
-                  <option value="Spesialis Paru">Spesialis Paru</option>
-                  <option value="Spesialis Kandungan">Spesialis Kandungan</option>
-                  <option value="Spesialis THT">Spesialis THT</option>
-                  <option value="Spesialis Radiologi">Spesialis Radiologi</option>
-                  <option value="Spesialis Saraf">Spesialis Saraf</option>
-                  <option value="Spesialis Jantung">Spesialis Jantung</option>
-                  <option value="Spesialis Mata">Spesialis Mata</option>
-                  <option value="Spesialis Orthopedi">Spesialis Orthopedi</option>
-                  <option value="Spesialis Urologi">Spesialis Urologi</option>
-                  <option value="Spesialis Kulit & Kelamin">Spesialis Kulit & Kelamin</option>
-                  <option value="Spesialis Rehab Medik">Spesialis Rehab Medik</option>
-                  <option value="Patologi Klinik">Patologi Klinik</option>
+                  {[...new Set(dokterList.map(d => d.spesialis))].map((s, i) => (
+                    <option key={i} value={s}>{s}</option>
+                  ))}
                 </select>
               </div>
             </div>
 
-            {/* Tombol Cari */}
-            <div className="flex items-end gap-3">
-              <button type="submit" className="w-[30%] bg-gradient-to-r from-yellow-700 via-yellow-500 to-yellow-600 text-white font-semibold text-[14px] lg:text-base py-1 cursor-pointer rounded hover:scale-[1.01] transition">
-                Cari Dokter
-              </button>
-
-              <button type="button" onClick={handleReset} className="w-[30%] bg-slate-200 text-slate-800 font-semibold text-[14px] lg:text-base py-1 cursor-pointer rounded hover:bg-slate-300 transition">
+            <div className="flex gap-3 mt-4">
+              <button
+                type="button"
+                onClick={handleReset}
+                className="w-1/3 bg-slate-200 hover:bg-slate-300 text-slate-800 font-semibold py-1 rounded cursor-pointer"
+              >
                 Reset
               </button>
             </div>
           </form>
         </div>
-        <div className="space-y-6 pt-4">
-          {dokterFiltered.slice(0, visibleCount).map((dokter, index) => (
-            <div key={index} className="lg:w-[80%] lg:mx-auto mx-2 bg-white/40 py-6 px-4 rounded-lg shadow-ku">
-              <div className="flex flex-col lg:flex-row lg:gap-6 gap-3">
-                {/* ================= FOTO (KIRI) ================= */}
-                <div className="flex flex-col gap-2 items-center justify-center">
-                  <div className="bg-gradient-to-r from-slate-400 via-white to-slate-400 w-55 h-55 rounded-lg border-2 border-yellow-500 shadow-ku overflow-hidden flex justify-center items-center">
-                    <img src={dokter.foto} alt={dokter.nama} className="h-54 w-50 object-contain" />
-                  </div>
+
+        {/* ================= LIST DOKTER ================= */}
+        <div className="space-y-6 pt-6">
+          {dokterFiltered.slice(0, visibleCount).map((dokter) => (
+            <div
+              key={dokter.id}
+              className="lg:w-[80%] lg:mx-auto mx-2 bg-white/80 lg:p-6 p-4 rounded-lg shadow-ku"
+            >
+              <div className="flex flex-col lg:flex-row gap-6">
+
+                {/* FOTO */}
+                <div className="flex justify-center">
+                  <img
+                    src={dokter.foto}
+                    alt={dokter.nama}
+                    className="w-60 h-60 object-contain rounded border-2 border-yellow-500 bg-gradient-to-r from-slate-400 via-white to-slate-400 "
+                  />
                 </div>
 
-                {/* ================= KONTEN (KANAN) ================= */}
-                <div className="flex-1 flex-col justify-center lg:items-start">
-                  {/* Info dasar */}
-                  <div className="flex flex-col lg:items-start items-center">
-                    <p className="font-semibold text-emerald-950 text-lg mb-1">{dokter.nama}</p>
+                {/* INFO */}
+                <div className="flex-1">
+                  <p className="text-lg  font-semibold text-emerald-900">
+                    {dokter.nama}
+                  </p>
 
-                    <p className="inline-block bg-gradient-to-r from-yellow-700 via-yellow-500 to-yellow-600 text-white rounded px-3 py-1 text-sm mb-3">{dokter.spesialis}</p>
-                    <div className="mb-4">
-                      <Link to="#" className="inline-flex items-center justify-center bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-600 text-white font-semibold py-1 px-4 rounded text-sm hover:scale-[1.02] transition">
-                        Lihat Profil
-                      </Link>
-                    </div>
-                  </div>
+                  <span className="inline-block mb-3  bg-gradient-to-r from-yellow-700 via-yellow-500 to-yellow-600  text-white text-sm px-3 py-0.5 rounded">
+                    {dokter.spesialis}
+                  </span>
 
-                  {/* ================= JADWAL ================= */}
-                  {/* DESKTOP */}
-                  <div className="hidden lg:block overflow-x-auto">
-                    <table className="w-full border border-slate-300 text-sm text-center">
-                      <thead className="bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-600 text-white">
-                        <tr>
-                          {["Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu"].map((hari) => (
-                            <th key={hari} className="border px-2 py-3">
-                              {hari}
-                            </th>
-                          ))}
-                        </tr>
-                      </thead>
-                      <tbody className="bg-white">
-                        <tr className="hover:bg-slate-100">
-                          {Object.values(dokter.jadwal).map((jam, i) => (
-                            <td key={i} className="border px-2 py-2">
-                              {jam}
-                            </td>
-                          ))}
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-
-                  {/* MOBILE */}
-                  <div className="lg:hidden grid grid-cols-2 gap-3 mt-4">
+                  {/* JADWAL DESKTOP */}
+                  <div className="hidden lg:grid grid-cols-3 gap-2">
                     {Object.entries(dokter.jadwal).map(([hari, jam]) => (
-                      <div key={hari} className="bg-white border border-green-700 rounded-lg p-3 shadow-sm">
-                        <p className="text-sm font-semibold text-emerald-700 capitalize">{hari}</p>
-                        <p className="text-sm text-slate-700 ">{jam}</p>
+                      <div
+                        key={hari}
+                        className="bg-white border border-gray-500 shadow rounded px-3 py-1"
+                      >
+                        <p className="font-semibold text-sm capitalize text-emerald-700">
+                          {hari}
+                        </p>
+                        <p className="text-sm">{jam}</p>
                       </div>
                     ))}
                   </div>
+
+                  {/* JADWAL MOBILE */}
+                  <div className="lg:hidden grid grid-cols-2 gap-2 mt-2">
+                    {Object.entries(dokter.jadwal).map(([hari, jam]) => (
+                      <div
+                        key={hari}
+                        className="bg-white border border-gray-500 shadow rounded p-2 "
+                      >
+                        <p className="font-semibold capitalize text-emerald-700 text-xs">
+                          {hari}
+                        </p>
+                        <p className="text-xs">{jam}</p>
+                      </div>
+                    ))}
+                  </div>
+
                 </div>
               </div>
             </div>
           ))}
         </div>
+
+        {/* ================= LOAD MORE ================= */}
         {visibleCount < dokterFiltered.length && (
           <div className="flex justify-center mt-6">
             <button
-              onClick={() => setVisibleCount((prev) => prev + ITEMS_PER_PAGE)}
-              className="bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-600 
-                        text-white font-semibold px-6 py-2 rounded-lg shadow-ku
-                        hover:scale-[1.03] transition cursor-pointer"
+              onClick={() => setVisibleCount(v => v + ITEMS_PER_PAGE)}
+              className="bg-emerald-700 text-white px-6 py-1 rounded cursor-pointer"
             >
-              Lihat Lainya
+              Lihat Lainnya
             </button>
           </div>
         )}
