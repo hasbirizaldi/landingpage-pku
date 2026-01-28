@@ -10,7 +10,6 @@ const SkeletonBox = ({ className }) => (
   <div className={`animate-pulse bg-slate-200 rounded ${className}`} />
 );
 
-
 const BeritaDetail = () => {
   const { slug } = useParams();
 
@@ -128,11 +127,11 @@ const BeritaDetail = () => {
           {/* ================= KONTEN UTAMA ================= */}
           <div className="p-5 lg:p-8">
             <Link
-              to="/berita"
+              to="/artikel"
               className="inline-flex items-center text-sm text-emerald-700 font-semibold mb-4 hover:underline"
             >
               <IoIosArrowBack className="mr-1" />
-              Kembali ke Berita
+              Kembali
             </Link>
 
             <h1 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-2">
@@ -155,15 +154,30 @@ const BeritaDetail = () => {
             />
 
             <div
-              className="prose max-w-none prose-slate"
+              className="prose max-w-none prose-slate mb-6"
               dangerouslySetInnerHTML={{ __html: artikel.content }}
             />
+            {artikel.tags && artikel.tags.length > 0 && (
+              <div className="mb-4">
+                <strong>Tags:</strong>
+                <ul className="flex gap-2 mt-1">
+                  {artikel.tags.map(tag => (
+                    <li key={tag.id} className="px-2 py-1 bg-gray-200 rounded hover:bg-gray-300 transition">
+                      <Link to={`/tags/${tag.slug}`} className="text-emerald-700 hover:underline">
+                        #{tag.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
 
             {/* SHARE */}
             <div className="mt-10 text-center flex items-center justify-center flex-col">
               <h4 className="font-semibold mb-3">Share Artikel</h4>
               <ShareButton title={artikel.title} />
             </div>
+
           </div>
 
           {/* ================= SIDEBAR ================= */}
@@ -183,7 +197,7 @@ const BeritaDetail = () => {
                 {related.map(item => (
                   <Link
                     key={item.id}
-                    to={`/berita/${item.slug}`}
+                    to={`/artikel/${item.slug}`}
                     className="flex gap-3 group"
                   >
                     <img
@@ -218,7 +232,7 @@ const BeritaDetail = () => {
             {featured.map(item => (
               <Link
                 key={item.id}
-                to={`/berita/${item.slug}`}
+                to={`/artikel/${item.slug}`}
                 className="bg-white rounded shadow hover:shadow-lg transition"
               >
                 <img

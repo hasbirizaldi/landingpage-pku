@@ -26,6 +26,7 @@ import PelayananPenunjang from "./pages/PelayananPenunjang";
 import Akreditasi from "./pages/Akreditasi";
 import PublicLayout from "./components/layout/PublicLayout";
 import BeritaDetail from "./pages/BeritaDetail";
+import TagPage from "./pages/TagPage";
 
 const App = () => {
   return (
@@ -46,8 +47,9 @@ const App = () => {
           <Route path="/igd" element={<Igd />} />
           <Route path="/bed-pasien" element={<BedPasien />} />
           <Route path="/go-obat" element={<GoObat />} />
-          <Route path="/berita" element={<Berita />} />
-          <Route path="/berita/:slug" element={<BeritaDetail />} />
+          <Route path="/artikel-baru" element={<Berita />} />
+          <Route path="/artikel/:slug" element={<BeritaDetail />} />
+          <Route path="/tags/:tag" element={<TagPage />} />
           <Route path="/akreditasi" element={<Akreditasi />} />
           <Route path="/keislaman" element={<VidioIslami />} />
           <Route path="/kesehatan" element={<VidioKesehatan />} />

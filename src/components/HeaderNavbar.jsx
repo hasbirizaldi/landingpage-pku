@@ -21,7 +21,7 @@ const HeaderNavbar = () => {
   // List path untuk masing-masing dropdown
   const pathsTentang = ["/sejarah", "/falsafah-visi-misi", "/akreditasi-penghargaan", "/indikator-mutu", "/struktur-organisasi"];
   const pathsPelayanan = ["/rawat-jalan", "/rawat-inap", "/penunjang", "/igd", "/bed-pasien", "/go-obat"];
-  const pathsBerita = ["/berita", "/artikel-kesehatan", "/artikel-islami", "/promosi-leaflet", "/gallery"];
+  const pathsBerita = ["/artikel-baru", "/artikel-kesehatan", "/artikel-islami", "/promosi-leaflet", "/gallery"];
   const pathsVideo = ["/vidio-promosi", "/kesehatan", "/keislaman", "/simrs"];
 
   const navClass = ({ isActive }) => (isActive ? " border-b-2 border-white transition-all ease" : "hover:text-yellow-200 transition-all ease");
@@ -53,7 +53,7 @@ const HeaderNavbar = () => {
     sticky top-0 lg:fixed lg:top-0 lg:left-0
     w-full z-50
     bg-white
-    lg:h-20 h-16
+    lg:h-18 h-16
     lg:px-20 px-2
     flex items-center
     transition-all duration-300 lg:border-none border-b-2 border-yellow-400
@@ -122,14 +122,14 @@ const HeaderNavbar = () => {
       {/* ================= NAV DESKTOP ================= */}
       <nav
         className={`
-          bg-gradient-to-r from-emerald-800 via-emerald-600 to-emerald-800 z-40 h-14 pt-0.5
+          bg-gradient-to-r from-emerald-800 via-emerald-600 to-emerald-800 z-40 h-12
           transition-all duration-300
           hidden lg:block shadow-ku
-          ${scrolled ? "fixed top-0 w-full " : "relative mt-20"}
+          ${scrolled ? "fixed top-0 w-full " : "relative mt-18"}
         `}
       >
-        <div className="bg-gradient-to-r from-yellow-700 via-yellow-500 to-yellow-600 max-w-[85%] mx-auto rounded-full">
-          <ul className="flex justify-center text-white text-[13px] font-semibold h-13">
+        <div className="bg-gradient-to-r from-yellow-700 via-yellow-500 to-yellow-600 max-w-[85%] mx-auto rounded-b-full flex justify-center items-center ">
+          <ul className="flex justify-center items-center text-white text-[13px] font-semibold h-11">
             <li className="px-3 py-4">
               <NavLink to="/" className={navClass}>
                 BERANDA

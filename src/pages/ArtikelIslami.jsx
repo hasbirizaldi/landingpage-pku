@@ -134,7 +134,7 @@ const Berita = () => {
              {!loading &&
               artikels.map((item) => (
                 <Link
-                  to={`/berita/${item.slug}`}
+                  to={`/artikel/${item.slug}`}
                   key={item.id}
                   className="bg-white rounded shadow-lg overflow-hidden relative hover:scale-[1.01] transition pb-6 block"
                 >
