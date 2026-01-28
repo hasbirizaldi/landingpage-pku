@@ -6,7 +6,7 @@ const Falsafah = () => {
     document.title = "RS PKU Sruweng | Falsafah Visi & Misi";
   }, []);
   return (
-    <div className="bg-slate-100 pt-4 min-h-screen">
+    <div className="bg-slate-100 py-4 min-h-screen">
       <div className="lg:w-[80%] lg:mx-auto mx-2 text-white bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-500 lg:p-12 p-8 lg:h-36 h-30 rounded-lg shadow-ku mb-6">
         <h1 className="lg:text-2xl text-xl font-bold mb-1">Falsafah Visi & Misi</h1>
         <div className="flex lg:text-base text-sm items-center gap-1 text-slate-200">

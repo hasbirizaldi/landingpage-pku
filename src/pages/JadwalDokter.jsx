@@ -52,7 +52,7 @@ const JadwalDokter = () => {
       {/* overlay biar teks kebaca */}
       <div className="bg-white/10 min-h-screen pb-5">
         <div className="pt-4">
-          <div className="lg:w-[80%] lg:mx-auto mx-2 text-slate-50 bg-gradient-to-r from-[#1A2A75] via-{# 079C4E #} to-emerald-500 lg:p-12 p-8 flex flex-col justify-center h-36 rounded-lg shadow-ku">
+          <div className="lg:w-[80%] lg:mx-auto mx-2 text-slate-50 bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-500 lg:p-12 p-8 flex flex-col justify-center h-36 rounded-lg shadow-ku">
             <h1 className="lg:text-3xl text-2xl font-bold mb-1">Jadwal Dokter</h1>
             <div className="flex items-center gap-1 text-slate-200">
               <span>Beranda</span>

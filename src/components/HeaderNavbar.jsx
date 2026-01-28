@@ -64,13 +64,13 @@ const HeaderNavbar = () => {
           {/* LOGO */}
           <Link to="/" className="flex gap-16 items-center">
             <div className="flex lg:gap-2 gap-1">
-              <img src={img[0]} alt="logo" className="max-w-14 lg:max-w-18 lg:max-h-16" />
+              <img src={img[0]} alt="logo" className="max-w-12 lg:max-w-14 lg:max-h-16" />
               <div className="flex flex-col justify-center">
-                <h1 className="font-bold leading-5 text-green-800 text-sm lg:text-lg">RS PKU MUHAMMADIYAH</h1>
-                <h1 className="font-bold leading-5 text-green-800 text-sm lg:text-lg">SRUWENG</h1>
+                <h1 className="font-bold leading-5 text-green-800 text-sm lg:text-base">RS PKU MUHAMMADIYAH</h1>
+                <h1 className="font-bold leading-5 text-green-800 text-sm lg:text-base">SRUWENG</h1>
               </div>
             </div>
-            <img src={img[1]} alt="logo" className="w-12 lg:w-30 hidden lg:flex" />
+            <img src={img[1]} alt="logo" className="w-12 lg:w-34 hidden lg:flex" />
           </Link>
 
           {/* SOSMED DESKTOP */}
@@ -122,13 +122,13 @@ const HeaderNavbar = () => {
       {/* ================= NAV DESKTOP ================= */}
       <nav
         className={`
-          bg-gradient-to-r from-emerald-800 via-emerald-600 to-emerald-800 z-40 h-14
+          bg-gradient-to-r from-emerald-800 via-emerald-600 to-emerald-800 z-40 h-14 pt-0.5
           transition-all duration-300
           hidden lg:block shadow-ku
           ${scrolled ? "fixed top-0 w-full " : "relative mt-20"}
         `}
       >
-        <div className="bg-gradient-to-r from-yellow-700 via-yellow-500 to-yellow-600 max-w-[85%] mx-auto rounded-b-full">
+        <div className="bg-gradient-to-r from-yellow-700 via-yellow-500 to-yellow-600 max-w-[85%] mx-auto rounded-full">
           <ul className="flex justify-center text-white text-[13px] font-semibold h-13">
             <li className="px-3 py-4">
               <NavLink to="/" className={navClass}>
