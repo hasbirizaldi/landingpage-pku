@@ -5,7 +5,7 @@ import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { FiSearch } from "react-icons/fi";
 import { IoIosArrowForward } from "react-icons/io";
 
-const API = "http://localhost:8000/api/public-artikels";
+const API = "https://brewokode.site/api/public-artikels";
 
 const TagPage = () => {
   const { tag: slug } = useParams();
@@ -126,7 +126,7 @@ const TagPage = () => {
                     className="bg-white rounded shadow-lg overflow-hidden relative hover:scale-[1.01] transition pb-6 block"
                     >
                     <img
-                        src={`http://localhost:8000/storage/${item.image}`}
+                        src={`https://brewokode.site/storage/${item.image}`}
                         alt={item.title}
                         className="w-full h-48 object-cover"
                     />

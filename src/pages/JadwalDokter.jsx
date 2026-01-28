@@ -16,7 +16,7 @@ const JadwalDokter = () => {
 
  const fetchData = async (selectedTanggal = null) => {
     const res = await axios.get(
-      "http://localhost:8000/api/jadwal-polikliniks-public",
+      "https://brewokode.site/api/jadwal-polikliniks-public",
       {
         params: selectedTanggal ? { tanggal: selectedTanggal } : {},
       }

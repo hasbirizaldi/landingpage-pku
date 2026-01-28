@@ -62,7 +62,7 @@ const DokterKami = () => {
     document.title = "RS PKU Sruweng | Dokter Kami";
 
     axios
-      .get("http://localhost:8000/api/dokter-kami")
+      .get("https://brewokode.site/api/dokter-kami")
       .then((res) => {
         setDokterList(res.data);
       })

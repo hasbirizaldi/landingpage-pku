@@ -6,8 +6,8 @@ import {
   MdOutlineKeyboardDoubleArrowRight,
 } from "react-icons/md";
 
-const PROMOSI_API = "http://localhost:8000/api/public-promosis";
-const GALLERY_API = "http://localhost:8000/api/public-galleries";
+const PROMOSI_API = "https://brewokode.site/api/public-promosis";
+const GALLERY_API = "https://brewokode.site/api/public-galleries";
 
 const Gallery = () => {
   const [activeCategory, setActiveCategory] = useState("gallery");
@@ -132,7 +132,7 @@ const Gallery = () => {
                 className="bg-white rounded shadow cursor-pointer hover:scale-[1.02]"
               >
                 <img
-                  src={`http://localhost:8000/storage/${item.image}`}
+                  src={`https://brewokode.site/storage/${item.image}`}
                   alt="img"
                   className="w-full object-cover"
                 />
@@ -199,7 +199,7 @@ const Gallery = () => {
                 {sliderData.map((item) => (
                   <div key={item.id} className="min-w-full flex justify-center">
                     <img
-                      src={`http://localhost:8000/storage/${item.image}`}
+                      src={`https://brewokode.site/storage/${item.image}`}
                       className="max-h-[90vh] object-contain"
                       draggable={false}
                     />

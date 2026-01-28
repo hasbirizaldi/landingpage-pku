@@ -6,8 +6,8 @@ import {
   MdOutlineKeyboardDoubleArrowRight,
 } from "react-icons/md";
 
-const PROMOSI_API = "http://localhost:8000/api/public-promosis";
-const GALLERY_API = "http://localhost:8000/api/public-galleries";
+const PROMOSI_API = "https://brewokode.site/api/public-promosis";
+const GALLERY_API = "https://brewokode.site/api/public-galleries";
 
 const Promosi = () => {
   const [activeCategory, setActiveCategory] = useState("promosi-leaflet");
@@ -96,7 +96,7 @@ const Promosi = () => {
         {/* TAB */}
         <div className="grid grid-cols-2 lg:w-[80%] mx-2 lg:mx-auto h-12 mb-5 bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-500 rounded-t-lg overflow-hidden ">
           {[
-            { label: "Promosi & Leaflet", value: "promosi-leaflet" },
+            { label: "Leaflet", value: "promosi-leaflet" },
             { label: "Gallery", value: "gallery" },
           ].map((tab) => (
             <button
@@ -132,7 +132,7 @@ const Promosi = () => {
                 className="bg-white rounded shadow cursor-pointer hover:scale-[1.02]"
               >
                 <img
-                  src={`http://localhost:8000/storage/${item.image}`}
+                  src={`https://brewokode.site/storage/${item.image}`}
                   alt="img"
                   className="w-full object-cover"
                 />
@@ -199,7 +199,7 @@ const Promosi = () => {
                 {sliderData.map((item) => (
                   <div key={item.id} className="min-w-full flex justify-center">
                     <img
-                      src={`http://localhost:8000/storage/${item.image}`}
+                      src={`https://brewokode.site/storage/${item.image}`}
                       className="max-h-[90vh] object-contain"
                       draggable={false}
                     />

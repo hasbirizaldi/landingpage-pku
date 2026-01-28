@@ -8,7 +8,7 @@ const BeritaArtikel = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/api/public-artikels/featured")
+      .get("https://brewokode.site/api/public-artikels/featured")
       .then((res) => {
         setArtikels(res.data.data);
       })
@@ -30,7 +30,7 @@ const BeritaArtikel = () => {
           >
             {/* IMAGE */}
             <img
-              src={`http://localhost:8000/storage/${item.image}`}
+              src={`https://brewokode.site/storage/${item.image}`}
               alt={item.image_alt || item.title}
               className="h-44 sm:h-48 w-full object-cover"
             />

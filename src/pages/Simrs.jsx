@@ -4,7 +4,7 @@ import { IoIosArrowForward } from "react-icons/io";
 import { getEmbedUrl } from "../lib/helper";
 import { formatTanggal } from "../lib/helper";
 
-const API = "http://localhost:8000/api/public-vidios/featured";
+const API = "https://brewokode.site/api/public-vidios/featured";
 
 const VidioSkeleton = () => {
   return (

@@ -4,7 +4,7 @@ import { IoIosArrowForward } from "react-icons/io";
 import Swal from "sweetalert2";
 import { formatTanggal } from "../lib/helper";
 
-const API = "http://localhost:8000/api/public-job-vacancies";
+const API = "https://brewokode.site/api/public-job-vacancies";
 
 const Karir = () => {
   const [jobs, setJobs] = useState([]);
@@ -31,7 +31,7 @@ const Karir = () => {
 
   const checkNikUnique = async (nik) => {
     try {
-      const res = await axios.get(`http://localhost:8000/api/check-nik?nik=${nik}`);
+      const res = await axios.get(`https://brewokode.site/api/check-nik?nik=${nik}`);
       return res.data.exists === false; // true jika unik
     } catch (error) {
       console.error("Gagal cek NIK:", error);
@@ -193,7 +193,7 @@ const handleSubmit = async (e) => {
     });
 
     await axios.post(
-      "http://localhost:8000/api/lamaran",
+      "https://brewokode.site/api/lamaran",
       formData,
       {
         headers: {
@@ -290,9 +290,6 @@ const handleSubmit = async (e) => {
               <h2 className="lg:text-xl text-lg font-semibold text-red-800 mb-2">
                 Belum Ada Lowongan
               </h2>
-              <p className="text-slate-600 lg:text-base text-sm">
-                Saat ini belum tersedia lowongan pekerjaan.
-              </p>
               <p className="text-slate-600 lg:text-base text-sm">
                 Silakan kunjungi halaman ini secara berkala.
               </p>

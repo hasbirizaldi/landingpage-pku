@@ -4,7 +4,7 @@ import axios from "axios";
 import { IoIosArrowBack } from "react-icons/io";
 import ShareButton from "../components/ShareButton";
 
-const API = "http://localhost:8000/api/public-artikels";
+const API = "https://brewokode.site/api/public-artikels";
 
 const SkeletonBox = ({ className }) => (
   <div className={`animate-pulse bg-slate-200 rounded ${className}`} />
@@ -148,7 +148,7 @@ const BeritaDetail = () => {
             </p>
 
             <img
-              src={`http://localhost:8000/storage/${artikel.image}`}
+              src={`https://brewokode.site/storage/${artikel.image}`}
               alt={artikel.image_alt || artikel.title}
               className="w-full max-h-[420px] object-cover rounded-lg mb-6"
             />
@@ -201,7 +201,7 @@ const BeritaDetail = () => {
                     className="flex gap-3 group"
                   >
                     <img
-                      src={`http://localhost:8000/storage/${item.image}`}
+                      src={`https://brewokode.site/storage/${item.image}`}
                       alt={item.title}
                       className="w-24 h-20 object-cover rounded"
                     />
@@ -236,7 +236,7 @@ const BeritaDetail = () => {
                 className="bg-white rounded shadow hover:shadow-lg transition"
               >
                 <img
-                  src={`http://localhost:8000/storage/${item.image}`}
+                  src={`https://brewokode.site/storage/${item.image}`}
                   alt={item.title}
                   className="h-40 w-full object-cover rounded-t"
                 />

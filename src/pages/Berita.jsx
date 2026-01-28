@@ -30,7 +30,7 @@ const Berita = () => {
     setLoading(true);
 
     axios
-      .get("http://localhost:8000/api/public-artikels", {
+      .get("https://brewokode.site/api/public-artikels", {
         params: {
           page: pageNumber,
           search: search,
@@ -56,7 +56,7 @@ const Berita = () => {
     document.title = "RS PKU Sruweng | Berita & Artikel";
     fetchArtikel(1, true);
   }, [activeCategory, search]);
-  console.log(artikels)
+
   return (
     <div
       className="min-h-screen bg-fixed bg-cover bg-center"
@@ -139,7 +139,7 @@ const Berita = () => {
                   className="bg-white rounded shadow-lg overflow-hidden relative hover:scale-[1.01] transition pb-6 block"
                 >
                   <img
-                    src={`http://localhost:8000/storage/${item.image}`}
+                    src={`https://brewokode.site/storage/${item.image}`}
                     alt={item.title}
                     className="w-full h-48 object-cover"
                   />

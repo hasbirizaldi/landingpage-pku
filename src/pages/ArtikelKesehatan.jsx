@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { FiSearch } from "react-icons/fi";
 
-const Berita = () => {
+const ArtikelKesehatan = () => {
   const [activeCategory, setActiveCategory] = useState("artikel-kesehatan");
   const [artikels, setArtikels] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -30,7 +30,7 @@ const Berita = () => {
     setLoading(true);
 
     axios
-      .get("http://localhost:8000/api/public-artikels", {
+      .get("https://brewokode.site/api/public-artikels", {
         params: {
           page: pageNumber,
           search: search,
@@ -139,7 +139,7 @@ const Berita = () => {
                   className="bg-white rounded shadow-lg overflow-hidden relative hover:scale-[1.01] transition pb-6 block"
                 >
                   <img
-                    src={`http://localhost:8000/storage/${item.image}`}
+                    src={`https://brewokode.site/storage/${item.image}`}
                     alt={item.title}
                     className="w-full h-48 object-cover"
                   />
@@ -202,4 +202,4 @@ const Berita = () => {
   );
 };
 
-export default Berita;
+export default ArtikelKesehatan;
