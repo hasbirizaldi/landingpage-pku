@@ -17,14 +17,14 @@ export default function Slider() {
   return (
     <div className="bg-transparent">
       {/* ===== HERO ===== */}
-      <section>
-        <div className="w-full lg:w-[80%] mx-auto lg:pt-1 ">
+      <section data-aos="fade-up">
+        <div className="w-full lg:w-[80%] mx-auto lg:pt-1 " >
           <div className="relative overflow-hidden lg:rounded-xl shadow-ku">
             {/* overlay text */}
             <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white bg-black/40 z-10">
-              <h1 className="lg:text-3xl text-xl font-semibold mb-2">SELAMAT DATANG DI</h1>
-              <h1 className="lg:text-5xl text-2xl font-bold mb-1">RS PKU MUHAMMADIYAH SRUWENG</h1>
-              <h1 className="lg:text-2xl text-xl">"Semakin Unggul dan Islami"</h1>
+              <h1 className="lg:text-3xl text-xl font-semibold mb-2" >SELAMAT DATANG DI</h1>
+              <h1 className="lg:text-5xl text-2xl font-bold mb-1" >RS PKU MUHAMMADIYAH SRUWENG</h1>
+              <h1 className="lg:text-2xl text-xl" >"Semakin Unggul dan Islami"</h1>
             </div>
 
             {/* BACKGROUND HERO */}
@@ -64,8 +64,8 @@ export default function Slider() {
             <div className="bg-white p-2 lg:p-5 rounded-full">
               <FaUserDoctor className="text-2xl lg:text-4xl text-green-950" />
             </div>
-            <span className="text-white lg:text-base text-sm font-semibold mt-2">Jadwal Dokter</span>
-            <span className="text-white lg:text-base text-sm font-semibold">KAMI</span>
+            <span className="text-white lg:text-base text-sm font-semibold mt-2">Jadwal</span>
+            <span className="text-white lg:text-base text-sm font-semibold">Poliklinik</span>
           </Link>
 
           <Link to="/dokter-kami" className="flex flex-col items-center justify-center bg-gradient-to-r from-emerald-800 via-emerald-600 to-emerald-800 border-x-2 border-white hover:bg-green-950 transition">
@@ -80,8 +80,8 @@ export default function Slider() {
             <div className="bg-white p-2 lg:p-5 rounded-full">
               <MdLibraryBooks className="text-2xl lg:text-4xl text-green-950" />
             </div>
-            <span className="text-white lg:text-base text-sm font-semibold mt-2">PENDAFTARAN</span>
-            <span className="text-white lg:text-base text-sm font-semibold">ONLINE</span>
+            <span className="text-white lg:text-base text-sm font-semibold mt-2">Belum</span>
+            <span className="text-white lg:text-base text-sm font-semibold">Tau</span>
           </Link>
         </div>
       </section>

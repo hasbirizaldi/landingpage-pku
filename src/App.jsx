@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {  Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import DokterKami from "./pages/DokterKami";
@@ -27,8 +27,18 @@ import Akreditasi from "./pages/Akreditasi";
 import PublicLayout from "./components/layout/PublicLayout";
 import BeritaDetail from "./pages/BeritaDetail";
 import TagPage from "./pages/TagPage";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const App = () => {
+
+ useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: true,
+    });
+  }, []);
+
   return (
     <div className="relative poppins">
       <Routes>

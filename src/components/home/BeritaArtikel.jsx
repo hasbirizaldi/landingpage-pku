@@ -24,7 +24,7 @@ const BeritaArtikel = () => {
       <h3 className="text-xl sm:text-xl font-semibold text-slate-700 mb-4">Artikel Menarik</h3>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {artikels.map((item) => (
-          <Link to={`/berita/${item.slug}`}
+          <Link to={`/artikel/${item.slug}`}
             key={item.id}
             className="bg-white rounded-lg shadow-md hover:shadow-xl transition overflow-hidden relative pb-6"
           >
@@ -71,7 +71,7 @@ const BeritaArtikel = () => {
 
       <div className="sm:mt-10 mt-5 flex justify-center">
         <Link
-          to="/berita"
+          to="/artikel-baru"
           rel="noopener noreferrer"
           className="
              bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-600

@@ -122,7 +122,7 @@ const HeaderNavbar = () => {
       {/* ================= NAV DESKTOP ================= */}
       <nav
         className={`
-          bg-gradient-to-r from-emerald-800 via-emerald-600 to-emerald-800 z-40 h-12
+          bg-gradient-to-r from-emerald-900 via-emerald-600 to-emerald-900 z-40 h-12
           transition-all duration-300
           hidden lg:block shadow-ku
           ${scrolled ? "fixed top-0 w-full " : "relative mt-18"}
@@ -245,7 +245,13 @@ const HeaderNavbar = () => {
 
           <li className={`px-4 py-3 border-b ${location.pathname === "/jadwal-dokter" ? "bg-emerald-800 text-yellow-400" : ""}`}>
             <NavLink to="/jadwal-dokter" onClick={closeAll}>
-              JADWAL DOKTER
+              JADWAL POLIKLINIK
+            </NavLink>
+          </li>
+
+          <li className={`px-4 py-3 border-b ${location.pathname === "/jadwal-dokter" ? "bg-emerald-800 text-yellow-400" : ""}`}>
+            <NavLink to="/dokter-kami" onClick={closeAll}>
+              DOKTER KAMI
             </NavLink>
           </li>
 
