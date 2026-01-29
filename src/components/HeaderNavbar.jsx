@@ -249,7 +249,7 @@ const HeaderNavbar = () => {
             </NavLink>
           </li>
 
-          <li className={`px-4 py-3 border-b ${location.pathname === "/jadwal-dokter" ? "bg-emerald-800 text-yellow-400" : ""}`}>
+          <li className={`px-4 py-3 border-b ${location.pathname === "/dokter-kami" ? "bg-emerald-800 text-yellow-400" : ""}`}>
             <NavLink to="/dokter-kami" onClick={closeAll}>
               DOKTER KAMI
             </NavLink>
@@ -343,8 +343,8 @@ const HeaderNavbar = () => {
             {openDropdown === "berita" && (
               <ul className="bg-emerald-800 text-sm">
                 <li className="px-6 py-2">
-                  <Link to="/berita" onClick={closeAll}>
-                    Berita
+                  <Link to="/artikel-baru" onClick={closeAll}>
+                    Artikel Baru
                   </Link>
                 </li>
                 <li className="px-6 py-2">
