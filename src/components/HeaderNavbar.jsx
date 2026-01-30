@@ -114,7 +114,7 @@ const HeaderNavbar = () => {
           </div>
           {/* HAMBURGER */}
           <div className="lg:hidden cursor-pointer" onClick={() => setOpenMenu(!openMenu)}>
-            {openMenu ? <IoMdCloseCircle className="text-4xl text-green-900" /> : <TiThMenu className="text-4xl text-green-900 border-3 border-green-900 rounded" />}
+            {openMenu ? <IoMdCloseCircle className="text-4xl text-yellow-400 border-yellow-600" /> : <TiThMenu className="text-4xl text-yellow-500 border-3 border-yellow-600 rounded" />}
           </div>
         </div>
       </header>
@@ -229,12 +229,12 @@ const HeaderNavbar = () => {
       {/* ================= NAV MOBILE ================= */}
       <div
         className={`
-    lg:hidden fixed top-14 left-0 w-full 
-    bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-900 
-    text-white z-40
-    transition-all duration-300
-    ${openMenu ? "max-h-screen opacity-100" : "max-h-0 opacity-0 overflow-hidden"}
-  `}
+        lg:hidden fixed top-14 left-0 w-full mt-2
+        bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-900 
+        text-white z-40
+        transition-all duration-300
+        ${openMenu ? "max-h-screen opacity-100" : "max-h-0 opacity-0 overflow-hidden"}
+      `}
       >
         <ul className="flex flex-col text-sm font-semibold">
           <li className={`px-4 py-3 border-b ${location.pathname === "/" ? "bg-emerald-800 text-yellow-400" : ""}`}>
