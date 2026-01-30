@@ -17,10 +17,10 @@ const iconMap = {
 
 const PelayananKami = () => {
   return (
-    <section className="bg-white/50 lg:block hidden lg:w-[80%] lg:mx-auto rounded-lg px-5 my-5 shadow-ku">
+    <section data-aos="fade-up" className="bg-white/50 lg:block hidden lg:w-[80%] lg:mx-auto rounded-lg px-5 my-5 shadow-ku">
       <div className=" py-10">
-        <h1 className="font-bold text-center text-2xl sm:text-3xl text-[#1A2A75]">Layanan Kami</h1>
-        <div className="h-[3px] w-60 lg:w-80 mx-auto bg-gradient-to-r from-[#1A2A75]  to-[#079C4E] mb-8 sm:mb-10 mt-2"></div>
+        <h1 className="font-bold text-center text-2xl sm:text-3xl text-emerald-900">Layanan Kami</h1>
+        <div className="h-[3px] w-60 lg:w-80 mx-auto bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 mb-8 sm:mb-10 mt-2"></div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
           {layanan.map((item, index) => (
@@ -36,11 +36,11 @@ const PelayananKami = () => {
             "
             >
               {/* ICON */}
-              <div className="flex justify-center bg-[#1A2A75] py-4 rounded-t-sm">
+              <div className="flex justify-center bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 py-4 rounded-t-sm">
                 <div className="bg-white w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center rounded-full text-yellow-600">{iconMap[item.icon]}</div>
               </div>
               <div className=" rounded-b-xl  relative min-h-[210px] px-4">
-                <h3 className="font-bold text-base sm:text-lg text-slate-800 text-center">{item.title}</h3>
+                <h3 className="font-bold text-base sm:text-lg text-emerald-900 text-center">{item.title}</h3>
 
                 <p className="text-slate-600 text-sm leading-relaxed text-center sm:text-left ">{item.desc}</p>
 
@@ -48,8 +48,8 @@ const PelayananKami = () => {
                   to={item.url}
                   className="
                 absolute bottom-5 left-4
-                text-sm font-semibold text-blue-800
-                hover:text-blue-800
+                text-sm font-semibold text-blue-500
+                hover:text-blue-600
                 transition
                 flex items-center
               "

@@ -263,7 +263,7 @@ const handleSubmit = async (e) => {
         <div className="pt-4">
 
           {/* HEADER */}
-          <div className="lg:w-[80%] lg:mx-auto mx-2 text-white bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-500 lg:p-10 p-8 lg:h-36 h-30 rounded-lg shadow-ku mb-6">
+          <div data-aos="fade-up" className="lg:w-[80%] lg:mx-auto mx-2 text-white bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-500 lg:p-10 p-8 lg:h-36 h-30 rounded-lg shadow-ku mb-6">
             <h1 className="lg:text-2xl text-xl font-bold mb-1">Karir</h1>
             <div className="flex lg:text-base text-sm items-center gap-1 text-slate-200">
               <span>Beranda</span>
@@ -286,7 +286,7 @@ const handleSubmit = async (e) => {
 
           {/* EMPTY STATE */}
           {!loading && jobs.length === 0 && (
-            <div className="lg:w-[80%] lg:mx-auto mx-2 bg-white/80 rounded-lg py-6 text-center shadow-ku">
+            <div data-aos="fade-up" className="lg:w-[80%] lg:mx-auto mx-2 bg-white/80 rounded-lg py-6 text-center shadow-ku">
               <h2 className="lg:text-xl text-lg font-semibold text-red-800 mb-2">
                 Belum Ada Lowongan
               </h2>
@@ -301,7 +301,7 @@ const handleSubmit = async (e) => {
             <div className="grid lg:grid-cols-2 grid-cols-1 gap-6 lg:w-[80%] mx-2 lg:mx-auto">
               {jobs.map((item) => (
                 <div
-                  key={item.id}
+                  key={item.id} data-aos="fade-up"
                   className="bg-white/90 rounded-lg relative p-6 sm:p-8 shadow-ku"
                 >
                   <h2 className="text-base sm:text-xl font-bold bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-600 text-white py-1 rounded mb-3 text-center">

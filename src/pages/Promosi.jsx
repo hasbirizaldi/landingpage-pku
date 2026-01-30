@@ -81,17 +81,21 @@ const Promosi = () => {
       className="min-h-screen bg-fixed bg-cover bg-center"
       style={{ backgroundImage: "url('/5.jpg')" }}
     >
-      <div className="bg-white/10 min-h-screen pb-5 pt-4">
+      <div className="bg-white/10 min-h-screen pb-5">
 
         {/* HEADER */}
-        <div className="lg:w-[80%] mx-2 lg:mx-auto text-white bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-500 p-6 lg:p-12 rounded-lg mb-5">
-          <h1 className="lg:text-3xl text-lg font-bold">Leaflet & Gallery</h1>
-          <div className="flex items-center gap-1 text-sm">
-            <span>Beranda</span>
-            <IoIosArrowForward />
-            <span>Leaflet & Gallery</span>
+        <div className="pt-4 mb-8">
+            <div className="lg:w-[80%] lg:mx-auto mx-2  bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 lg:px-12 lg:py-10 p-8 rounded-lg shadow-ku text-white">
+              <h1 className="lg:text-2xl text-xl font-bold mb-1">
+                Promosi & Leaflet
+              </h1>
+              <div className="flex items-center gap-1 text-slate-200">
+                <span>Beranda</span>
+                <IoIosArrowForward />
+                <span>Promosi & Leaflet</span>
+              </div>
+            </div>
           </div>
-        </div>
 
         {/* TAB */}
         <div className="grid grid-cols-2 lg:w-[80%] mx-2 lg:mx-auto h-12 mb-5 bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-500 rounded-t-lg overflow-hidden ">

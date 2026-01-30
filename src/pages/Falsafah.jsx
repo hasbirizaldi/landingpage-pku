@@ -6,16 +6,28 @@ const Falsafah = () => {
     document.title = "RS PKU Sruweng | Falsafah Visi & Misi";
   }, []);
   return (
-    <div className="bg-slate-100 py-4 min-h-screen">
-      <div className="lg:w-[80%] lg:mx-auto mx-2 text-white bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-500 lg:p-12 p-8 lg:h-36 h-30 rounded-lg shadow-ku mb-6">
-        <h1 className="lg:text-2xl text-xl font-bold mb-1">Falsafah Visi & Misi</h1>
-        <div className="flex lg:text-base text-sm items-center gap-1 text-slate-200">
-          <span>Beranda</span>
-          <IoIosArrowForward />
-          <span>Falsafah Visi & Misi</span>
+    <div
+      className="min-h-screen bg-fixed bg-cover bg-center"
+      style={{ backgroundImage: "url('/5.jpg')" }}
+    >
+      <div className="bg-white/60 min-h-screen pb-6">
+
+        {/* ================= HEADER ================= */}
+        <div className="pt-4">
+          <div className="lg:w-[80%] lg:mx-auto mx-2  bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 lg:px-12 lg:py-10 p-8 rounded-lg shadow-ku text-white">
+            <h1 className="lg:text-2xl text-xl font-bold mb-1">
+              Falsafah Visi & Misi
+            </h1>
+            <div className="flex items-center gap-1 text-slate-200">
+              <span>Beranda</span>
+              <IoIosArrowForward />
+              <span>Falsafah Visi & Misi</span>
+            </div>
+          </div>
         </div>
-      </div>
-       <div className="bg-white/60 lg:w-[90%] mx-2 lg:mx-auto mt-8 sm:p-8 py-8 px-4 rounded-xl shadow-ku">
+        <div className="bg-slate-100 py-4 min-h-screen">
+
+       <div className="bg-white/60 lg:w-[90%] mx-2 lg:mx-auto mt-4 sm:p-8 py-8 px-4 rounded-xl shadow-ku">
           <p className="flex flex-col font-bold text-center text-xl sm:text-3xl text-green-900">
             <span>Falsafah Visi & Misi</span>
           </p>
@@ -44,6 +56,10 @@ const Falsafah = () => {
           </div>
         </div>
     </div>
+      </div>
+    </div>
+    
+    
   );
 };
 

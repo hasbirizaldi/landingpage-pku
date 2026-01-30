@@ -50,10 +50,10 @@ const JadwalDokter = () => {
       }}
     >
       {/* overlay biar teks kebaca */}
-      <div className="bg-white/10 min-h-screen pb-5">
-        <div className="pt-4">
-          <div className="lg:w-[80%] lg:mx-auto mx-2 text-slate-50 bg-gradient-to-r from-[#1A2A75]  to-[#079C4E] lg:p-12 p-8 flex flex-col justify-center h-36 rounded-lg shadow-ku">
-            <h1 className="lg:lg:text-3xl text-2xl text-2xl font-bold mb-1">Jadwal Dokter</h1>
+      <div className="bg-white/60 min-h-screen pb-5">
+        <div data-aos="fade-up" className="pt-4">
+          <div className="lg:w-[80%] lg:mx-auto mx-2 text-slate-50  bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 lg:p-12 p-8 flex flex-col justify-center h-36 rounded-lg shadow-ku">
+            <h1 className="lg:text-2xl text-xl font-bold mb-1">Jadwal Dokter</h1>
             <div className="flex items-center gap-1 text-slate-200">
               <span>Beranda</span>
               <IoIosArrowForward />
@@ -63,7 +63,7 @@ const JadwalDokter = () => {
         </div>
 
         {/* Cari */}
-        <div className="lg:w-[60%] lg:mx-auto mx-2 bg-gradient-to-r from-[#1A2A75]  to-[#079C4E] p-8 mt-8 rounded-xl shadow-ku">
+        <div data-aos="fade-up" className="lg:w-[60%] lg:mx-auto mx-2  bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 p-8 mt-8 rounded-xl shadow-ku">
           <p className="text-slate-50 text-base sm:text-lg font-semibold text-center mb-4">Cari Jadwal Dokter di RS PKU Muhammadiyah Sruweng</p>
           
 
@@ -76,9 +76,9 @@ const JadwalDokter = () => {
             </div>
 
         </div>
-        <div className="space-y-6 pt-4">
+        <div data-aos="fade-up" className="space-y-6 pt-4">
           <div className="lg:w-[85%] lg:mx-auto mx-2 bg-white/80 py-6 lg:px-10 px-2 rounded-lg shadow-ku">
-            <div className="text-center lg:w-[50%] w-[80%] h-19 mx-auto bg-gradient-to-r from-[#1A2A75]  to-[#079C4E]  lg:shadow-jak py-2 rounded-full text-[#ffffff] flex flex-col items-center mb-2">
+            <div className="text-center lg:w-[50%] w-[80%] h-19 mx-auto  bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 lg:shadow-ja shadow-jak py-2 rounded-full text-[#ffffff] flex flex-col items-center mb-2">
               <h2 className="lg:lg:text-3xl text-2xl text-xl font-bold text-[#ffffff]">Jadwal Poliklinik</h2>
               {tanggalApi && (
                 <p className="text-[#ffffff] sm:text-base text-sm font-semibold">
@@ -103,7 +103,7 @@ const JadwalDokter = () => {
               {/* KIRI */}
               <div>
                  <div className="mb-5">
-                    <h5 className="bg-gradient-to-r from-[#1A2A75]  to-[#079C4E]
+                    <h5 className=" bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600
                     font-semibold text-white px-8 py-1 rounded lg:shadow-ja shadow-jak mb-2 lg:text-lg text-sm">Spesialis Penyakit Dalam</h5>
                     <div className="flex items-center justify-between pr-4 font-semibold">
                       <p className="flex items-center text-slate-800 text-sm lg:text-base">
@@ -156,7 +156,7 @@ const JadwalDokter = () => {
                   </div>
 
                   <div  className="mb-5">
-                    <h5 className="bg-gradient-to-r from-[#1A2A75]  to-[#079C4E]
+                    <h5 className=" bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600
                     font-semibold text-white px-8 py-1 rounded lg:shadow-ja shadow-jak mb-2 lg:text-lg text-sm">Spesialis Bedah</h5>
                     <div className="flex items-center justify-between pr-4 font-semibold">
                       <p className="flex items-center text-slate-800 text-sm lg:text-base">
@@ -193,7 +193,7 @@ const JadwalDokter = () => {
                   </div>
 
                   <div  className="mb-5">
-                    <h5 className="bg-gradient-to-r from-[#1A2A75]  to-[#079C4E]
+                    <h5 className=" bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600
                     font-semibold text-white px-8 py-1 rounded lg:shadow-ja shadow-jak mb-2 lg:text-lg text-sm">Spesialis Anak</h5>
                     <div className="flex items-center justify-between pr-4 font-semibold">
                       <p className="flex items-center text-slate-800 text-sm lg:text-base">
@@ -230,7 +230,7 @@ const JadwalDokter = () => {
                   </div>
 
                   <div  className="mb-5">
-                    <h5 className="bg-gradient-to-r from-[#1A2A75]  to-[#079C4E]
+                    <h5 className=" bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600
                     font-semibold text-white px-8 py-1 rounded lg:shadow-ja shadow-jak mb-2 lg:text-lg text-sm">Spesialis Paru</h5>
                      <div className="flex items-center justify-between pr-4 font-semibold">
                       <p className="flex items-center text-slate-800 text-sm lg:text-base">
@@ -251,7 +251,7 @@ const JadwalDokter = () => {
                   </div>
 
                   <div  className="mb-5">
-                    <h5 className="bg-gradient-to-r from-[#1A2A75]  to-[#079C4E]
+                    <h5 className=" bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600
                     font-semibold text-white px-8 py-1 rounded lg:shadow-ja shadow-jak mb-2 lg:text-lg text-sm">Spesialis Kandungan</h5>
                      <div className="flex items-center justify-between pr-4 font-semibold">
                       <p className="flex items-center text-slate-800 text-sm lg:text-base">
@@ -288,7 +288,7 @@ const JadwalDokter = () => {
                   </div>
 
                   <div  className="mb-5">
-                    <h5 className="bg-gradient-to-r from-[#1A2A75]  to-[#079C4E]
+                    <h5 className=" bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600
                     font-semibold text-white px-8 py-1 rounded lg:shadow-ja shadow-jak mb-2 lg:text-lg text-sm">Spesialis THT</h5>
                     <div className="flex items-center justify-between pr-4 font-semibold">
                       <p className="flex items-center text-slate-800 text-sm lg:text-base">
@@ -325,7 +325,7 @@ const JadwalDokter = () => {
                   </div>
 
                   <div  className="mb-5">
-                    <h5 className="bg-gradient-to-r from-[#1A2A75]  to-[#079C4E]
+                    <h5 className=" bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600
                     font-semibold text-white px-8 py-1 rounded lg:shadow-ja shadow-jak mb-2 lg:text-lg text-sm">Spesialis Radiologi</h5>
                      <div className="flex items-center justify-between pr-4 font-semibold">
                       <p className="flex items-center text-slate-800 text-sm lg:text-base">
@@ -374,7 +374,7 @@ const JadwalDokter = () => {
                     <p className="font-bold mb-1">Pendaftaran Pasien Umum & Asuransi Non-JKN</p>
                     <Link to="https://wa.me/6282241997117?text=Assalamualaikum%20RS%20PKU%20Sruweng" target="_blank" className="font-semibold ">
                       <span className="flex items-center gap-1 text-xl"><IoLogoWhatsapp className="lg:text-3xl text-2xl text-green-700"/>
-                      <span className="text-blue-800 underline">0822 4199 7117</span></span>
+                      <span className="text-blue-500 underline">0822 4199 7117</span></span>
                     </Link>
                   </div>
               </div>
@@ -382,7 +382,7 @@ const JadwalDokter = () => {
               {/* KANAN */}
               <div>
                  <div  className="mb-5">
-                    <h5 className="bg-gradient-to-r from-[#1A2A75]  to-[#079C4E]
+                    <h5 className=" bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600
                     font-semibold text-white px-8 py-1 rounded lg:shadow-ja shadow-jak mb-2 lg:text-lg text-sm">Spesialis Saraf</h5>
                     <div className="flex items-center justify-between pr-4 font-semibold">
                       <p className="flex items-center text-slate-800 text-sm lg:text-base">
@@ -419,7 +419,7 @@ const JadwalDokter = () => {
                   </div>
 
                    <div  className="mb-5">
-                      <h5 className="bg-gradient-to-r from-[#1A2A75]  to-[#079C4E]
+                      <h5 className=" bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600
                       font-semibold text-white px-8 py-1 rounded lg:shadow-ja shadow-jak mb-2 lg:text-lg text-sm">Spesialis Jantung</h5>
                       <div className="flex items-center justify-between pr-4 font-semibold">
                         <p className="flex items-center text-slate-800 text-sm lg:text-base">
@@ -440,7 +440,7 @@ const JadwalDokter = () => {
                   </div>
 
                    <div  className="mb-5">
-                      <h5 className="bg-gradient-to-r from-[#1A2A75]  to-[#079C4E]
+                      <h5 className=" bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600
                       font-semibold text-white px-8 py-1 rounded lg:shadow-ja shadow-jak mb-2 lg:text-lg text-sm">Spesialis Mata</h5>
                       <div className="flex items-center justify-between pr-4 font-semibold">
                         <p className="flex items-center text-slate-800 text-sm lg:text-base">
@@ -461,7 +461,7 @@ const JadwalDokter = () => {
                   </div>
 
                    <div  className="mb-5">
-                    <h5 className="bg-gradient-to-r from-[#1A2A75]  to-[#079C4E]
+                    <h5 className=" bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600
                     font-semibold text-white px-8 py-1 rounded lg:shadow-ja shadow-jak mb-2 lg:text-lg text-sm">Spesialis Orthopedi</h5>
                     <div className="flex items-center justify-between pr-4 font-semibold">
                         <p className="flex items-center text-slate-800 text-sm lg:text-base">
@@ -482,7 +482,7 @@ const JadwalDokter = () => {
                   </div>
 
                    <div  className="mb-5">
-                    <h5 className="bg-gradient-to-r from-[#1A2A75]  to-[#079C4E]
+                    <h5 className=" bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600
                     font-semibold text-white px-8 py-1 rounded lg:shadow-ja shadow-jak mb-2 lg:text-lg text-sm">Spesialis Urologi</h5>
                     <div className="flex items-center justify-between pr-4 font-semibold">
                         <p className="flex items-center text-slate-800 text-sm lg:text-base">
@@ -503,7 +503,7 @@ const JadwalDokter = () => {
                   </div>
 
                    <div  className="mb-5">
-                    <h5 className="bg-gradient-to-r from-[#1A2A75]  to-[#079C4E]
+                    <h5 className=" bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600
                     font-semibold text-white px-8 py-1 rounded lg:shadow-ja shadow-jak mb-2 lg:text-lg text-sm">Spesialis Kulit & Kelamin</h5>
                     <div className="flex items-center justify-between pr-4 font-semibold">
                         <p className="flex items-center text-slate-800 text-sm lg:text-base">
@@ -524,7 +524,7 @@ const JadwalDokter = () => {
                   </div>
 
                    <div  className="mb-5">
-                    <h5 className="bg-gradient-to-r from-[#1A2A75]  to-[#079C4E]
+                    <h5 className=" bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600
                     font-semibold text-white px-8 py-1 rounded lg:shadow-ja shadow-jak mb-2 lg:text-lg text-sm">Spesialis Rehab Medik</h5>
                     <div className="flex items-center justify-between pr-4 font-semibold">
                         <p className="flex items-center text-slate-800 text-sm lg:text-base">
@@ -577,7 +577,7 @@ const JadwalDokter = () => {
                   </div>
 
                    <div  className="mb-5">
-                    <h5 className="bg-gradient-to-r from-[#1A2A75]  to-[#079C4E]
+                    <h5 className=" bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600
                     font-semibold text-white px-8 py-1 rounded lg:shadow-ja shadow-jak mb-2 lg:text-lg text-sm">Klinik Vaksinasi Internasional</h5>
                     <div className="flex items-center justify-between pr-4 font-semibold">
                       <p className="flex items-center text-slate-800 text-sm lg:text-base">
@@ -597,7 +597,7 @@ const JadwalDokter = () => {
                   </div>
 
                    <div  className="mb-5">
-                    <h5 className="bg-gradient-to-r from-[#1A2A75]  to-[#079C4E]
+                    <h5 className=" bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600
                     font-semibold text-white px-8 py-1 rounded lg:shadow-ja shadow-jak mb-2 lg:text-lg text-sm">Spesialis Patologi Klinik</h5>
                     <div className="flex items-center justify-between pr-4 font-semibold">
                       <p className="flex items-center text-slate-800 text-sm lg:text-base">
@@ -618,7 +618,7 @@ const JadwalDokter = () => {
                   </div>
 
                    <div  className="mb-5">
-                    <h5 className="bg-gradient-to-r from-[#1A2A75]  to-[#079C4E]
+                    <h5 className=" bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600
                     font-semibold text-white px-8 py-1 rounded lg:shadow-ja shadow-jak mb-2 lg:text-lg text-sm">Klinik Gizi</h5>
                     <div className="flex items-center justify-between pr-4 font-semibold">
                       <p className="flex items-center text-slate-800 text-sm lg:text-base">

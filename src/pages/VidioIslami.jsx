@@ -76,17 +76,19 @@ const VidioIslami = () => {
       style={{ backgroundImage: "url('/5.jpg')" }}
     >
       <div className="bg-white/10 min-h-screen pb-8">
-        <div className="pt-4">
+        <div className="">
 
           {/* HEADER */}
-          <div className="lg:w-[80%] lg:mx-auto mx-2 text-slate-50 bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-500 lg:p-12 p-8 h-36 rounded-lg shadow-ku mb-6">
-            <h1 className="lg:text-3xl text-2xl font-bold mb-1">
-              Vidio & Tutorial
-            </h1>
-            <div className="flex items-center gap-1 text-slate-200">
-              <span>Beranda</span>
-              <IoIosArrowForward />
-              <span>Vidio & Tutorial</span>
+          <div className="pt-4 mb-8">
+            <div className="lg:w-[80%] lg:mx-auto mx-2  bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 lg:px-12 lg:py-10 p-8 rounded-lg shadow-ku text-white">
+              <h1 className="lg:text-2xl text-xl font-bold mb-1">
+                Vidio & Tutorial
+              </h1>
+              <div className="flex items-center gap-1 text-slate-200">
+                <span>Beranda</span>
+                <IoIosArrowForward />
+                <span>Vidio & Tutorial</span>
+              </div>
             </div>
           </div>
 

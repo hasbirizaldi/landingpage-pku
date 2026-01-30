@@ -5,7 +5,7 @@ import { FaLocationDot } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-r from-[#1A2A75]  to-[#079C4E] border-t-2 border-yellow-400">
+    <footer className="bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 border-t-2 border-yellow-500">
       {/* CONTENT */}
       <div className="px-4 sm:px-10 md:px-20 lg:px-10 py-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr] gap-10">
         {/* LOGO & ADDRESS */}

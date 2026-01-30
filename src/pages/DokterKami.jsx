@@ -117,9 +117,9 @@ const DokterKami = () => {
       <div className="bg-white/60 min-h-screen pb-6">
 
         {/* ================= HEADER ================= */}
-        <div className="pt-4">
-          <div className="lg:w-[80%] lg:mx-auto mx-2 bg-gradient-to-r from-[#1A2A75]  to-[#079C4E] lg:px-12 lg:py-10 p-8 rounded-lg shadow-ku text-white">
-            <h1 className="lg:text-3xl text-xl font-bold mb-1">
+        <div data-aos="fade-up" className="pt-4">
+          <div className="lg:w-[80%] lg:mx-auto mx-2  bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 lg:px-12 lg:py-10 p-8 rounded-lg shadow-ku text-white">
+            <h1 className="lg:text-2xl text-xl font-bold mb-1">
               Dokter Kami
             </h1>
             <div className="flex items-center gap-1 text-slate-200">
@@ -131,7 +131,7 @@ const DokterKami = () => {
         </div>
 
         {/* ================= FILTER ================= */}
-        <div className="lg:w-[60%] lg:mx-auto mx-2 bg-gradient-to-r from-[#1A2A75]  to-[#079C4E] p-8 mt-8 rounded-xl shadow-ku">
+        <div data-aos="fade-up" className="lg:w-[60%] lg:mx-auto mx-2  bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 p-8 mt-8 rounded-xl shadow-ku">
           <p className="text-white text-lg font-semibold text-center mb-4">
             Cari Dokter di RS PKU Muhammadiyah Sruweng
           </p>
@@ -180,8 +180,8 @@ const DokterKami = () => {
         <div className="space-y-6 pt-6">
           {dokterFiltered.slice(0, visibleCount).map((dokter) => (
             <div
-              key={dokter.id}
-              className="lg:w-[80%] lg:mx-auto mx-2 bg-gradient-to-r from-[#1A2A75]  to-[#079C4E] lg:p-6 p-4 rounded-lg shadow-ku"
+              key={dokter.id} 
+              className="lg:w-[80%] lg:mx-auto mx-2  bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 lg:p-6 p-4 rounded-lg shadow-ku" data-aos="fade-up"
             >
               <div className="flex flex-col lg:flex-row gap-6">
 
@@ -190,7 +190,7 @@ const DokterKami = () => {
                   <img
                     src={dokter.foto}
                     alt={dokter.nama}
-                    className="w-60 h-60 object-contain rounded-full border-2 border-yellow-500 bg-gradient-to-r from-slate-300 via-white to-slate-300 "
+                    className="w-60 h-60 object-contain rounded-full border-2 border-yellow-600 bg-gradient-to-r from-slate-400 via-white to-slate-400 "
                   />
                 </div>
 
@@ -245,7 +245,7 @@ const DokterKami = () => {
           <div className="flex justify-center mt-6">
             <button
               onClick={() => setVisibleCount(v => v + ITEMS_PER_PAGE)}
-              className="bg-[#1A2A75] text-white px-6 py-1 rounded cursor-pointer"
+              className="bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 text-white px-6 py-1 rounded cursor-pointer"
             >
               Lihat Lainnya
             </button>

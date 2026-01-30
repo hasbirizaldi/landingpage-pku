@@ -3,11 +3,11 @@ import { partner } from "../../api/data";
 
 const PartnerKami = () => {
   return (
-    <section className="bg-white/50 rounded-lg py-10 sm:py-14 lg:py-10 lg:w-[80%] lg:mx-auto mx-2 my-5 shadow-ku">
+    <section className="bg-white/50 rounded-lg py-10 sm:py-14 lg:py-10 lg:w-[80%] lg:mx-auto mx-2 my-5 shadow-ku" data-aos="fade-up">
       <div className="max-w-7xl mx-auto">
-        <h1 className="font-bold text-center text-2xl sm:text-3xl text-[#1A2A75]">Partner Kami</h1>
+        <h1 className="font-bold text-center text-2xl sm:text-3xl text-emerald-900">Partner Kami</h1>
 
-        <div className="h-[2px] w-60 lg:w-80 mx-auto bg-gradient-to-r from-[#1A2A75]  to-[#079C4E] to-emerald-500 mb-8 sm:mb-10 mt-2"></div>
+        <div className="h-[2px] w-60 lg:w-80 mx-auto bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 mb-8 sm:mb-10 mt-2"></div>
 
         {/* GRID PARTNER */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-y-10">
@@ -28,14 +28,14 @@ const PartnerKami = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="
-             bg-[#1A2A75]
+             bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600
               text-white
               px-4 sm:px-8 py-2 sm:py-2 
               rounded
               font-semibold
               text-sm sm:text-lg
               shadow-ku
-              hover:scale-105
+              hover:scale-102
               transition
             "
           >

@@ -5,13 +5,13 @@ import { FaCloudDownloadAlt, FaUsers } from "react-icons/fa";
 
 const JknGoObat = () => {
   return (
-    <div className="bg-transparent">
+    <div className="bg-transparent" data-aos="fade-up">
       {/* ================= QUICK MENU ================= */}
 
       {/* ================= MOBILE JKN & GO OBAT ================= */}
       <section className=" py-10 lg:w-[80%] lg:mx-auto mx-2 bg-white/50 rounded-lg my-5 shadow-ku">
-        <p className="font-bold text-center text-2xl sm:text-3xl text-blue-950">Layanan Unggulan</p>
-        <div className="h-[2px] w-60 lg:w-80 mx-auto bg-gradient-to-r from-[#1A2A75]  to-[#079C4E] mb-8 sm:mb-10 mt-2"></div>
+        <p className="font-bold text-center text-2xl sm:text-3xl text-green-900">Layanan Unggulan</p>
+        <div className="h-[2px] w-60 lg:w-80 mx-auto bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 mb-8 sm:mb-10 mt-2"></div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2  gap-20 ">
           {/* MOBILE JKN */}
@@ -28,7 +28,7 @@ const JknGoObat = () => {
 
             <Link
               to="https://play.google.com/store/apps/details?id=app.bpjs.mobile&hl=id"
-              className="mt-6 bg-blue-950 text-white lg:py-2 py-1 lg:px-5 px-3 rounded shadow-icon flex items-center gap-2 font-semibold text-base hover:scale-105 transition"
+              className="mt-6 bg-gradient-to-r from-blue-800 via-blue-700 to-blue-600 text-white lg:py-2 py-1 lg:px-5 px-3 rounded shadow-icon flex items-center gap-2 font-semibold text-base hover:scale-105 transition"
             >
               <FaCloudDownloadAlt />
               Download Mobile JKN
