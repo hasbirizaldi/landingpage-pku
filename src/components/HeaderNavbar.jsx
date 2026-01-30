@@ -24,7 +24,7 @@ const HeaderNavbar = () => {
   const pathsBerita = ["/artikel-baru", "/artikel-kesehatan", "/artikel-islami", "/promosi-leaflet", "/gallery"];
   const pathsVideo = ["/vidio-promosi", "/kesehatan", "/keislaman", "/simrs"];
 
-  const navClass = ({ isActive }) => (isActive ? " border-b-2 border-white transition-all ease" : "hover:text-yellow-200 transition-all ease");
+  const navClass = ({ isActive }) => (isActive ? " border-b-2 border-yellow-600 transition-all ease" : "hover:text-yellow-950 transition-all ease");
 
   const toggleDropdown = (menu) => {
     setOpenDropdown(openDropdown === menu ? null : menu);
@@ -50,15 +50,15 @@ const HeaderNavbar = () => {
       {/* ================= HEADER ================= */}
       <header
         className={`
-    sticky top-0 lg:fixed lg:top-0 lg:left-0
-    w-full z-50
-    bg-white
-    lg:h-18 h-16
-    lg:px-20 px-2
-    flex items-center
-    transition-all duration-300 lg:border-none border-b-2 border-yellow-400
-    ${scrolled ? "lg:-translate-y-full lg:opacity-0" : ""}
-  `}
+        sticky top-0 lg:fixed lg:top-0 lg:left-0
+        w-full z-50
+        bg-gradient-to-r from-[#1A2A75]  to-[#079C4E] 
+        lg:h-18 h-16
+        lg:px-20 px-2
+        flex items-center
+        transition-all duration-300 lg:border-none border-b-2 border-yellow-400
+        ${scrolled ? "lg:-translate-y-full lg:opacity-0" : ""}
+      `}
       >
         <div className="flex justify-between items-center w-full">
           {/* LOGO */}
@@ -66,8 +66,8 @@ const HeaderNavbar = () => {
             <div className="flex lg:gap-2 gap-1">
               <img src={img[0]} alt="logo" className="max-w-12 lg:max-w-14 lg:max-h-16" />
               <div className="flex flex-col justify-center">
-                <h1 className="font-bold leading-5 text-green-800 text-sm lg:text-base">RS PKU MUHAMMADIYAH</h1>
-                <h1 className="font-bold leading-5 text-green-800 text-sm lg:text-base">SRUWENG</h1>
+                <h1 className="font-bold leading-5 text-green-50 text-sm lg:text-base">RS PKU MUHAMMADIYAH</h1>
+                <h1 className="font-bold leading-5 text-green-50 text-sm lg:text-base">SRUWENG</h1>
               </div>
             </div>
             <img src={img[1]} alt="logo" className="w-12 lg:w-34 hidden lg:flex" />
@@ -77,37 +77,37 @@ const HeaderNavbar = () => {
           <div className="lg:flex hidden items-center justify-between">
             <div className="flex gap-3">
               <Link to="https://wa.me/6287764936777?text=Assalamualaikum%20Ambulance%20RS%20PKU%20Sruweng" target="_blank" className="flex gap-2 items-center font-bold text-sm ">
-                <div className="border-2 border-red-600 p-1 rounded-full shadow-icon">
-                  <FaAmbulance className="text-red-600 text-xl" />
+                <div className="border-2 border-red-50 p-1 rounded-full shadow-icon">
+                  <FaAmbulance className="text-red-50 text-xl" />
                 </div>
                 <div className="flex flex-col">
-                  <span className="font-semibold leading-4 text-red-600 text-sm ">Ambulance</span>
-                  <span className="text-red-600">0877 6493 6777</span>
+                  <span className="font-semibold leading-4 text-red-50 text-sm ">Ambulance</span>
+                  <span className="text-red-50">0877 6493 6777</span>
                 </div>
               </Link>
               <Link to="https://wa.me/6287877505050?text=Assalamualaikum%20RS%20PKU%20Sruweng%2C%20saya%20ingin%20bertanya" target="_blank" className="flex gap-2 items-center font-bold text-sm">
-                <div className="border-2 border-green-800 p-1 rounded-full  shadow-icon">
-                 <FaPhoneAlt className="text-lg text-green-800"/>
+                <div className="border-2 border-green-50 p-1 rounded-full  shadow-icon">
+                 <FaPhoneAlt className="text-lg text-green-50"/>
                 </div>
                 <p className="flex flex-col">
-                  <span className="font-semibold leading-4 text-green-800">Call Center</span>
-                  <span className="text-green-800">0287 - 6601061</span>
+                  <span className="font-semibold leading-4 text-green-50">Call Center</span>
+                  <span className="text-green-50">0287 - 6601061</span>
                 </p>
               </Link>
             </div>
             <div className="flex flex-col justify-center items-center">
               <div className="flex gap-1 ml-12">
                 <Link to="https://www.instagram.com/rspkumuhammadiyahsruweng/" target="_blank" className="w-8 h-8 flex items-center justify-center transition">
-                  <FaInstagram className="text-lg text-slate-700 hover:text-pink-700 hover:scale-110 transition-all ease-in-out" />
+                  <FaInstagram className="text-lg text-slate-50 hover:text-pink-500 hover:scale-110 transition-all ease-in-out" />
                 </Link>
                 <Link to="https://web.facebook.com/pkusruweng" target="_blank" className="w-8 h-8 flex items-center justify-center transition">
-                  <FaFacebookF className="text-lg text-slate-700 hover:text-blue-600 hover:scale-110 transition-all " />
+                  <FaFacebookF className="text-lg text-slate-50 hover:text-blue-600 hover:scale-110 transition-all " />
                 </Link>
                 <Link to="https://www.tiktok.com/@rspkumuhammadiyahsruweng" target="_blank" className="w-8 h-8 flex items-center justify-center transition">
-                  <FaTiktok className="text-lg text-slate-700 hover:text-gray-700 hover:scale-110 transition-all " />
+                  <FaTiktok className="text-lg text-slate-50 hover:text-gray-500 hover:scale-110 transition-all " />
                 </Link>
                 <Link to="https://www.youtube.com/@pkusruweng9292" target="_blank" className="w-8 h-8 flex items-center justify-center transition">
-                  <FaYoutube className="text-lg text-slate-700 hover:text-red-600 hover:scale-110 transition-all " />
+                  <FaYoutube className="text-lg text-slate-50 hover:text-red-600 hover:scale-110 transition-all " />
                 </Link>
               </div>
             </div>
@@ -122,14 +122,14 @@ const HeaderNavbar = () => {
       {/* ================= NAV DESKTOP ================= */}
       <nav
         className={`
-          bg-gradient-to-r from-emerald-900 via-emerald-600 to-emerald-900 z-40 h-12
+          bg-gradient-to-r from-[#1A2A75]  to-[#079C4E] z-40 h-12
           transition-all duration-300
           hidden lg:block shadow-ku
           ${scrolled ? "fixed top-0 w-full " : "relative mt-18"}
         `}
       >
-        <div className="bg-gradient-to-r from-yellow-700 via-yellow-500 to-yellow-600 max-w-[85%] mx-auto rounded-b-full flex justify-center items-center ">
-          <ul className="flex justify-center items-center text-white text-[13px] font-semibold h-11">
+        <div className="border-1 border-yellow-400 bg-white max-w-[85%] mx-auto rounded-full flex justify-center items-center ">
+          <ul className="flex justify-center items-center text-yellow-700 text-[13px] font-bold h-11">
             <li className="px-3 py-4">
               <NavLink to="/" className={navClass}>
                 BERANDA

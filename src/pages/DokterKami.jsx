@@ -46,7 +46,6 @@ const DokterSkeleton = () => {
   );
 };
 
-
 const DokterKami = () => {
   const ITEMS_PER_PAGE = 10;
 
@@ -99,7 +98,7 @@ const DokterKami = () => {
       <div className="min-h-screen bg-fixed bg-cover bg-center"
         style={{ backgroundImage: "url('/5.jpg')" }}
       >
-        <div className="bg-white/10 min-h-screen pb-6 space-y-6 pt-6">
+        <div className="bg-white/60 min-h-screen pb-6 space-y-6 pt-6">
           {[...Array(5)].map((_, i) => (
             <DokterSkeleton key={i} />
           ))}
@@ -115,11 +114,11 @@ const DokterKami = () => {
       className="min-h-screen bg-fixed bg-cover bg-center"
       style={{ backgroundImage: "url('/5.jpg')" }}
     >
-      <div className="bg-white/10 min-h-screen pb-6">
+      <div className="bg-white/60 min-h-screen pb-6">
 
         {/* ================= HEADER ================= */}
         <div className="pt-4">
-          <div className="lg:w-[80%] lg:mx-auto mx-2 bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-500 lg:px-12 lg:py-10 p-8 rounded-lg shadow-ku text-white">
+          <div className="lg:w-[80%] lg:mx-auto mx-2 bg-gradient-to-r from-[#1A2A75]  to-[#079C4E] lg:px-12 lg:py-10 p-8 rounded-lg shadow-ku text-white">
             <h1 className="lg:text-3xl text-xl font-bold mb-1">
               Dokter Kami
             </h1>
@@ -132,7 +131,7 @@ const DokterKami = () => {
         </div>
 
         {/* ================= FILTER ================= */}
-        <div className="lg:w-[60%] lg:mx-auto mx-2 bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-500 p-8 mt-8 rounded-xl shadow-ku">
+        <div className="lg:w-[60%] lg:mx-auto mx-2 bg-gradient-to-r from-[#1A2A75]  to-[#079C4E] p-8 mt-8 rounded-xl shadow-ku">
           <p className="text-white text-lg font-semibold text-center mb-4">
             Cari Dokter di RS PKU Muhammadiyah Sruweng
           </p>
@@ -182,7 +181,7 @@ const DokterKami = () => {
           {dokterFiltered.slice(0, visibleCount).map((dokter) => (
             <div
               key={dokter.id}
-              className="lg:w-[80%] lg:mx-auto mx-2 bg-white/80 lg:p-6 p-4 rounded-lg shadow-ku"
+              className="lg:w-[80%] lg:mx-auto mx-2 bg-gradient-to-r from-[#1A2A75]  to-[#079C4E] lg:p-6 p-4 rounded-lg shadow-ku"
             >
               <div className="flex flex-col lg:flex-row gap-6">
 
@@ -191,13 +190,13 @@ const DokterKami = () => {
                   <img
                     src={dokter.foto}
                     alt={dokter.nama}
-                    className="w-60 h-60 object-contain rounded border-2 border-yellow-500 bg-gradient-to-r from-slate-400 via-white to-slate-400 "
+                    className="w-60 h-60 object-contain rounded-full border-2 border-yellow-500 bg-gradient-to-r from-slate-300 via-white to-slate-300 "
                   />
                 </div>
 
                 {/* INFO */}
                 <div className="flex-1">
-                  <p className="text-lg  font-semibold text-emerald-900">
+                  <p className="text-lg  font-semibold text-white">
                     {dokter.nama}
                   </p>
 
@@ -246,7 +245,7 @@ const DokterKami = () => {
           <div className="flex justify-center mt-6">
             <button
               onClick={() => setVisibleCount(v => v + ITEMS_PER_PAGE)}
-              className="bg-emerald-700 text-white px-6 py-1 rounded cursor-pointer"
+              className="bg-[#1A2A75] text-white px-6 py-1 rounded cursor-pointer"
             >
               Lihat Lainnya
             </button>

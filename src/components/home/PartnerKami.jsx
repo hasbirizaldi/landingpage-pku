@@ -5,9 +5,9 @@ const PartnerKami = () => {
   return (
     <section className="bg-white/50 rounded-lg py-10 sm:py-14 lg:py-10 lg:w-[80%] lg:mx-auto mx-2 my-5 shadow-ku">
       <div className="max-w-7xl mx-auto">
-        <h1 className="font-bold text-center text-2xl sm:text-3xl text-green-900">Partner Kami</h1>
+        <h1 className="font-bold text-center text-2xl sm:text-3xl text-[#1A2A75]">Partner Kami</h1>
 
-        <div className="h-[2px] w-60 lg:w-80 mx-auto   bg-gradient-to-r from-emerald-800 via-emerald-600 to-emerald-500 mb-8 sm:mb-10 mt-2"></div>
+        <div className="h-[2px] w-60 lg:w-80 mx-auto bg-gradient-to-r from-[#1A2A75]  to-[#079C4E] to-emerald-500 mb-8 sm:mb-10 mt-2"></div>
 
         {/* GRID PARTNER */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-y-10">
@@ -28,7 +28,7 @@ const PartnerKami = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="
-             bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-600
+             bg-[#1A2A75]
               text-white
               px-4 sm:px-8 py-2 sm:py-2 
               rounded

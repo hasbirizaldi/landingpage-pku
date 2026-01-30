@@ -118,10 +118,10 @@
 }
 
 .shadow-ja {
-  box-shadow: 4px 4px 1px #fcce00fd;
+  box-shadow: 4px 4px 1px #e3ce70fd;
 }
 .shadow-jak {
-  box-shadow: 2px 2px 1px #fcce00fd;
+  box-shadow: 2px 2px 1px rgba(226, 179, 38, 0.992);
 }
 
 .shadow-nav {

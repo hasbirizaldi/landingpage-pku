@@ -18,10 +18,10 @@ const BeritaArtikel = () => {
   }, []);
   return (
     <section className="bg-white/50 py-10 lg:px-5 px-3 lg:w-[80%] lg:mx-auto mx-2 rounded-lg shadow-ku my-5">
-      <h1 className="font-bold text-center text-2xl sm:text-3xl text-green-900">Berita & Artikel</h1>
-      <div className="h-[2px] w-60 lg:w-80 mx-auto   bg-gradient-to-r from-emerald-800 via-emerald-600 to-emerald-500 mb-8 sm:mb-10 mt-2"></div>
+      <h1 className="font-bold text-center text-2xl sm:text-3xl text-[#1A2A75]">Berita & Artikel</h1>
+      <div className="h-[3px] w-60 lg:w-80 mx-auto bg-gradient-to-r from-[#1A2A75]  to-[#079C4E] mb-8 sm:mb-10 mt-2"></div>
 
-      <h3 className="text-xl sm:text-xl font-semibold text-slate-700 mb-4">Artikel Menarik</h3>
+      <h3 className="text-xl sm:text-xl font-semibold text-[#1A2A75] mb-4">Artikel Menarik</h3>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {artikels.map((item) => (
           <Link to={`/artikel/${item.slug}`}
@@ -59,7 +59,7 @@ const BeritaArtikel = () => {
 
               {/* LINK */}
               <span
-                className="absolute bottom-4 left-4 text-sm font-semibold text-blue-600 hover:text-blue-800 flex items-center"
+                className="absolute bottom-4 left-4 text-sm font-semibold text-blue-800 hover:text-blue-900 flex items-center"
               >
                 Baca Selengkapnya
                 <MdKeyboardDoubleArrowRight className="text-xl ml-1" />
@@ -74,7 +74,7 @@ const BeritaArtikel = () => {
           to="/artikel-baru"
           rel="noopener noreferrer"
           className="
-             bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-600
+             bg-[#1A2A75]
               text-white
               px-4 sm:px-8 py-2 sm:py-2 
               rounded
