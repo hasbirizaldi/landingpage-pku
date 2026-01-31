@@ -30,10 +30,10 @@ const VidioIslami = () => {
   const [loading, setLoading] = useState(false);
 
   const tabs = [
-    { label: "Vidio Promosi", value: "promosi" },
-    { label: "Vidio Kesehatan", value: "kesehatan" },
-    { label: "Vidio Keislaman", value: "islami" },
-    { label: "Vidio SIMRS", value: "simrs" },
+    { label: " Promosi", value: "promosi" },
+    { label: " Kesehatan", value: "kesehatan" },
+    { label: " Keislaman", value: "islami" },
+    { label: " SIMRS", value: "simrs" },
   ];
 
   const fetchVidio = async (pageNumber = 1, category = activeCategory) => {

@@ -14,8 +14,8 @@ const Footer = () => {
             <img src={img[0]} alt="PKU Muhammadiyah Sruweng" className="w-14 sm:w-16" />
             <div className="-space-y-1">
               <div className="-space-y-2">
-                <p className="font-bold text-lg sm:text-xl text-white">RS PKU Muhammadiyah </p>
-                <p className="font-bold text-lg sm:text-xl text-white">Sruweng</p>
+                <p className="font-bold text-lg sm:text-lg text-white">RS PKU Muhammadiyah </p>
+                <p className="font-bold text-lg sm:text-lg text-white">Sruweng</p>
               </div>
               <p className="font-semibold text-sm sm:text-md text-yellow-300">Semakin Unggul dan Islami</p>
             </div>
@@ -51,7 +51,7 @@ const Footer = () => {
               <FaFacebookF className="text-xl sm:text-lg text-slate-50 hover:text-blue-500 hover:scale-110 transition" />
             </Link>
             <Link to="https://www.tiktok.com/@rspkumuhammadiyahsruweng" target="_blank">
-              <FaTiktok className="text-xl sm:text-lg text-slate-50 hover:text-gray-300 hover:scale-110 transition" />
+              <FaTiktok className="text-xl sm:text-lg text-slate-50 hover:text-gray-800 hover:scale-110 transition" />
             </Link>
             <Link to="https://www.youtube.com/@pkusruweng9292" target="_blank">
               <FaYoutube className="text-xl sm:text-lg text-slate-50 hover:text-red-600 hover:scale-110 transition" />
@@ -61,7 +61,7 @@ const Footer = () => {
 
         {/* HUBUNGI KAMI */}
         <div>
-          <h3 className="font-bold text-lg sm:text-lg mb-4 text-slate-50">Hubungi Kami</h3>
+          <h3 className="font-bold text-base sm:text-base mb-4 text-slate-50">Hubungi Kami</h3>
 
           <div className="space-y-3 text-slate-200 text-sm sm:text-sm">
             <Link to="https://wa.me/6287764936777?text=Assalamualaikum%20RS%20PKU%20Sruweng" target="_blank" className="flex items-center gap-3 hover:text-white">
@@ -80,7 +80,7 @@ const Footer = () => {
 
         {/* TENTANG KAMI */}
         <div>
-          <h3 className="font-bold text-lg sm:text-lg mb-4 text-slate-50">Tentang Kami</h3>
+          <h3 className="font-bold text-lg sm:text-base mb-4 text-slate-50">Tentang Kami</h3>
 
           <div className="space-y-3 flex flex-col text-sm sm:text-sm text-slate-200">
             <Link to="/" className="hover:text-white">
@@ -97,7 +97,7 @@ const Footer = () => {
 
         {/* HOT LINE */}
         <div>
-          <h3 className="font-bold text-lg sm:text-lg mb-4 text-slate-50">Hot Line</h3>
+          <h3 className="font-bold text-lg sm:text-base mb-4 text-slate-50">Hot Line</h3>
 
           <div className="space-y-3 flex flex-col text-sm sm:text-base text-slate-200">
             <Link to="/berita" className="hover:text-white">

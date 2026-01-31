@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import { IoIosArrowBack } from "react-icons/io";
 import ShareButton from "../components/ShareButton";
+import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 
 const API = "https://brewokode.site/api/public-artikels";
 
@@ -50,7 +51,7 @@ const BeritaDetail = () => {
   if (loading) {
     return (
       <div className="min-h-screen bg-slate-100 py-6">
-        <div className="lg:w-[95%] mx-3 lg:mx-auto bg-white rounded-lg shadow">
+        <div className="lg:w-[95%] mx-2 lg:mx-auto bg-white rounded-lg shadow">
           <div className="grid grid-cols-1 lg:grid-cols-[5fr_2fr]">
 
             {/* KONTEN UTAMA */}
@@ -120,12 +121,12 @@ const BeritaDetail = () => {
   }
 
   return (
-    <div className="min-h-screen bg-slate-100 py-6">
-      <div className="lg:w-[95%] mx-3 lg:mx-auto bg-white rounded-lg shadow">
+    <div className="min-h-screen bg-slate-100 pt-3 pb-6">
+      <div className="lg:w-[95%] mx-2 lg:mx-auto bg-white rounded-lg shadow">
         <div className="grid grid-cols-1 lg:grid-cols-[5fr_2fr]">
 
           {/* ================= KONTEN UTAMA ================= */}
-          <div className="p-5 lg:p-8">
+          <div className="p-2 lg:p-8">
             <Link
               to="/artikel"
               className="inline-flex items-center text-sm text-emerald-700 font-semibold mb-4 hover:underline"
@@ -138,7 +139,7 @@ const BeritaDetail = () => {
               {artikel.title}
             </h1>
 
-            <p className="text-sm text-slate-500 mb-6">
+            <p className="text-sm text-slate-500 ">
               {new Date(artikel.published_at).toLocaleDateString("id-ID", {
                 day: "numeric",
                 month: "long",
@@ -146,6 +147,7 @@ const BeritaDetail = () => {
               })}{" "}
               | {artikel.category}
             </p>
+            <p className="text-sm text-slate-800 mb-4">Penulis: {artikel.user.name}</p>
 
             <img
               src={`https://brewokode.site/storage/${artikel.image}`}
@@ -181,7 +183,7 @@ const BeritaDetail = () => {
           </div>
 
           {/* ================= SIDEBAR ================= */}
-          <aside className="px-5 py-6 sticky top-24 h-fit space-y-8 border-l border-gray-300">
+          <aside className="sm:block hidden px-2 sm:px-5 py-6 sticky top-24 h-fit space-y-8 border-l border-gray-300">
 
             {/* ARTIKEL TERKAIT */}
             <div>
@@ -198,7 +200,7 @@ const BeritaDetail = () => {
                   <Link
                     key={item.id}
                     to={`/artikel/${item.slug}`}
-                    className="flex gap-3 group"
+                    className="flex gap-3 group shadow rounded overflow-hidden"
                   >
                     <img
                       src={`https://brewokode.site/storage/${item.image}`}
@@ -216,14 +218,69 @@ const BeritaDetail = () => {
                             year: "numeric",
                           })}
                       </p>
+                      <p className="text-slate-800 text-xs mb-4 line-clamp-2 mt-1">
+                        {item.excerpt}
+                      </p>
                     </div>
                   </Link>
                 ))}
               </div>
             </div>
           </aside>
+
+          {/* MOBILE ARTIKEL TERKAIT */}
+          <div className="px-1 sm:px-6 py-8 sm:hidden">
+            <h3 className="text-xl font-semibold mb-4">
+              Artikel Terkait
+            </h3>
+
+            {related.length === 0 && (
+              <p className="text-sm text-slate-500">
+                Tidak ada artikel terkait
+              </p>
+            )}
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {related.map(item => (
+                <Link
+                  key={item.id}
+                  to={`/artikel/${item.slug}`}
+                  className="bg-white rounded shadow hover:shadow-lg transition border border-green-800"
+                >
+                  <img
+                    src={`https://brewokode.site/storage/${item.image}`}
+                    alt={item.title}
+                    className="h-40 w-full object-cover rounded-t"
+                  />
+                  <div className="sm:p-3 p-2">
+                    <p className="font-semibold line-clamp-2 text-lg">
+                      {item.title}
+                    </p>
+                    <p className="text-sm text-slate-500 mt-1">
+                      {new Date(item.published_at).toLocaleDateString("id-ID", {
+                          day: "numeric",
+                          month: "long",
+                          year: "numeric",
+                        })} | {item.category}
+                    </p>
+                    {/* EXCERPT */}
+                  <p className="text-slate-800 text-base mb-4 line-clamp-3 mt-1">
+                    {item.excerpt}
+                  </p>
+                  <span
+                    className="text-sm  text-blue-400 hover:text-blue-600 flex items-center"
+                  >
+                    Baca Selengkapnya
+                    <MdKeyboardDoubleArrowRight className="text-sm ml-1" />
+                  </span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+
         {/* ================= FEATURED BAWAH ================= */}
-        <div className="px-6 py-8 ">
+        <div className="px-1 sm:px-6 py-8 ">
           <h3 className="text-xl font-semibold mb-4">
             Artikel Menarik Lainnya
           </h3>
@@ -233,14 +290,14 @@ const BeritaDetail = () => {
               <Link
                 key={item.id}
                 to={`/artikel/${item.slug}`}
-                className="bg-white rounded shadow hover:shadow-lg transition"
+                className="bg-white rounded shadow hover:shadow-lg transition sm:border-none border border-green-700"
               >
                 <img
                   src={`https://brewokode.site/storage/${item.image}`}
                   alt={item.title}
                   className="h-40 w-full object-cover rounded-t"
                 />
-                <div className="p-3">
+                <div className="p-2 sm:p-3">
                   <p className="font-semibold line-clamp-2">
                     {item.title}
                   </p>
@@ -252,14 +309,21 @@ const BeritaDetail = () => {
                       })} | {item.category}
                   </p>
                   {/* EXCERPT */}
-                <p className="text-slate-800 text-sm mb-4 line-clamp-3 mt-1">
+                <p className="text-slate-800 text-sm mb-1 line-clamp-3 mt-1">
                   {item.excerpt}
                 </p>
+                 <span
+                    className="text-sm  text-blue-400 hover:text-blue-600 flex items-center"
+                  >
+                    Baca Selengkapnya
+                    <MdKeyboardDoubleArrowRight className="text-sm ml-1" />
+                  </span>
                 </div>
               </Link>
             ))}
           </div>
         </div>
+
         </div>
 
 

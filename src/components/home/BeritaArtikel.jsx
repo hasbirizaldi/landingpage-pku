@@ -17,7 +17,7 @@ const BeritaArtikel = () => {
       });
   }, []);
   return (
-    <section data-aos="fade-up" className="bg-white/50 py-10 lg:px-5 px-3 lg:w-[80%] lg:mx-auto mx-2 rounded-lg shadow-ku my-5">
+    <section data-aos="fade-up" className="bg-white/60 py-10 lg:px-5 px-2 lg:w-[80%] lg:mx-auto mx-2 rounded sm:rounded-lg shadow-ku my-5">
       <h1 className="font-bold text-center text-2xl sm:text-3xl text-emerald-900">Berita & Artikel</h1>
       <div className="h-[3px] w-60 lg:w-80 mx-auto bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 mb-8 sm:mb-10 mt-2"></div>
 
@@ -26,7 +26,7 @@ const BeritaArtikel = () => {
         {artikels.map((item) => (
           <Link to={`/artikel/${item.slug}`}
             key={item.id}
-            className="bg-white rounded-lg shadow-md hover:shadow-xl transition overflow-hidden relative pb-6"
+            className="bg-white rounded sm:border-none border border-emerald-600 sm:rounded-lg shadow-md hover:shadow-xl transition overflow-hidden relative pb-6"
           >
             {/* IMAGE */}
             <img

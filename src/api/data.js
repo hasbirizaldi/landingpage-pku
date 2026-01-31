@@ -667,6 +667,373 @@ export const dokterList = [
   },
 ];
 
+export const rawatJalan = [
+  {
+    poliklinik: "Poliklinik Penyakit Dalam",
+    spesialis:'Spasialis Penyakit Dalam',
+    dokterPoli: [
+      {
+        nama: "dr. Khoerul Anwar, Sp.PD",
+        foto: anwar,
+      },
+      {
+        nama: "dr. Khayati Handayani, Sp.PD",
+        foto: khayati,
+      },
+      {
+        nama: "dr. Haryono Yuniarto, Sp.PD-KGH",
+        foto: haryono,
+      },
+    ],
+    layanan: [
+      "Pemeriksaan penyakit dalam",
+      "Konsultasi diabetes",
+      "Konsultasi hipertensi",
+      "Pemeriksaan ginjal dan metabolik",
+    ],
+  },
+  {
+    poliklinik: "Poliklinik Bedah",
+
+    spesialis:'Spesialis Bedah',
+    dokterPoli: [
+      {
+        nama: "dr. Ricky Dwi Nur Tyastono, Sp.B",
+        foto: ricky,
+      },
+      {
+        nama: "dr. Adi Purnomo, Sp.B",
+        foto: adi,
+      },
+    ],
+
+    layanan: [
+      "Konsultasi bedah umum",
+      "Pemeriksaan luka dan infeksi",
+      "Penanganan abses dan bisul",
+      "Operasi kecil (rawat jalan)",
+      "Perawatan pasca operasi",
+      "Bedah saluran cerna",
+      "Bedah hernia",
+      "Bedah tumor jinak",
+    ],
+  },
+   {
+    poliklinik: "Poliklinik Anak",
+
+    spesialis:'Spesialis Anak',
+    dokterPoli: [
+      {
+        nama: "dr. Dyah Ayu Wulansari, M.Sc., Sp.A",
+        foto: saria,
+      },
+      {
+        nama: "dr. M. Jalul Mutaqorrib, M.Med.Sc., Sp.A",
+        foto: jalul,
+      },
+    ],
+
+    layanan: [
+      "Pemeriksaan kesehatan anak",
+      "Imunisasi",
+      "Konsultasi tumbuh kembang",
+      "Penanganan demam dan infeksi",
+    ],
+  },
+   {
+    poliklinik: "Poliklinik Paru",
+
+    spesialis:'Spesialis Paru',
+    dokterPoli: [
+      {
+        nama: "dr. Inet Fyndiannne M, Sp. P",
+        foto: inet,
+      },
+    ],
+
+    layanan: [
+      "Konsultasi penyakit paru dan pernapasan",
+      "Pemeriksaan batuk kronis dan sesak napas",
+      "Penanganan asma dan bronkitis",
+      "Diagnosis dan terapi TBC (tuberkulosis)",
+      "Pemeriksaan infeksi saluran pernapasan",
+      "Spirometri (tes fungsi paru)",
+      "Konsultasi berhenti merokok",
+      "Penanganan PPOK (Penyakit Paru Obstruktif Kronik)",
+    ],
+  },
+   {
+    poliklinik: "Poliklinik Kandungan",
+
+    spesialis:'Spesialis Kandungan',
+    dokterPoli: [
+      {
+        nama: "dr. Deyna Primavita P., Sp.OG(K)-KFM",
+        foto: levi,
+      },
+      {
+        nama: "dr. Syaiful Alam, Sp.OG",
+        foto: alam,
+      },
+    ],
+
+    layanan: [
+        "Konsultasi kehamilan dan pemeriksaan rutin",
+        "USG kehamilan (2D/4D)",
+        "Pemantauan tumbuh kembang janin",
+        "Konsultasi program hamil",
+        "Penanganan gangguan menstruasi",
+        "Deteksi dan terapi kista ovarium",
+        "Konsultasi menopause",
+        "Pemeriksaan kesehatan reproduksi wanita",
+        "Penanganan infeksi organ kewanitaan",
+    ],
+  },
+   {
+    poliklinik: "Poliklinik THT",
+
+    spesialis:'Spesialis THT',
+    dokterPoli: [
+      {
+        nama: "dr. Windy Rizkiana, Sp.THT-KL",
+        foto: windy,
+      },
+      {
+        nama: "dr. Yayan Mitayani, Sp.THT-KL",
+        foto: yayan,
+      },
+    ],
+
+    layanan: [
+        "Konsultasi gangguan telinga, hidung, dan tenggorokan",
+        "Pemeriksaan infeksi telinga (otitis)",
+        "Penanganan gangguan pendengaran",
+        "Pemeriksaan dan terapi sinusitis",
+        "Penanganan pilek kronis dan alergi hidung",
+        "Pemeriksaan amandel dan radang tenggorokan",
+        "Penanganan suara serak dan gangguan pita suara",
+        "Tindakan pembersihan telinga (serumen)",
+        "Deteksi dan terapi polip hidung",
+    ],
+  },
+   {
+    poliklinik: "Poliklinik Radiologi",
+
+    spesialis:'Spesialis Radiologi',
+    dokterPoli: [
+      {
+        nama: "dr. Vida Berry Al Aden, Sp.Rad",
+        foto: vida,
+      },
+      {
+        nama: "dr. Iwan Danardono, Sp.Rad",
+        foto: iwan,
+      },
+    ],
+
+    layanan: [
+        "Pemeriksaan Rontgen (X-Ray)",
+        "USG Abdomen dan Organ Dalam",
+        "USG Kehamilan (2D/4D)",
+        "CT Scan (sesuai indikasi medis)",
+        "MRI (jika tersedia)",
+        "Pemeriksaan radiologi thorax (paru-paru)",
+        "Pemeriksaan tulang dan sendi",
+        "Mammografi (pemeriksaan payudara)",
+        "Konsultasi hasil pemeriksaan radiologi",
+    ],
+  },
+  {
+    poliklinik: "Poliklinik Saraf",
+
+    spesialis:'Spesialis Saraf',
+    dokterPoli: [
+      {
+        nama: "dr. Khalifa Rahmani, Sp.N",
+        foto: khalifa,
+      },
+      {
+        nama: "dr. Tri Hastuti H, Sp.S",
+        foto: tri,
+      },
+    ],
+
+    layanan: [
+       "Konsultasi gangguan sistem saraf",
+      "Penanganan sakit kepala dan migrain",
+      "Diagnosis dan terapi stroke",
+      "Penanganan kesemutan dan baal (neuropati)",
+      "Pemeriksaan gangguan saraf tepi",
+      "Penanganan epilepsi dan kejang",
+      "Konsultasi gangguan tidur akibat saraf",
+      "Penanganan vertigo dan pusing berulang",
+      "Pemeriksaan kelemahan otot dan tremor",
+    ],
+  },
+   {
+    poliklinik: "Poliklinik Jantung",
+
+    spesialis:'Spesialis Jantung',
+    dokterPoli: [
+      {
+        nama: "dr. Sari Rahayu Dwi Utami, Sp.JP",
+        foto: sarijan,
+      },
+    ],
+
+    layanan: [
+       "Konsultasi penyakit jantung dan pembuluh darah",
+      "Pemeriksaan tekanan darah dan hipertensi",
+      "Diagnosis dan terapi penyakit jantung koroner",
+      "Pemeriksaan nyeri dada dan sesak napas",
+      "Elektrokardiogram (EKG)",
+      "Ekokardiografi (USG jantung)",
+      "Treadmill test (uji latih jantung)",
+      "Pemantauan gagal jantung",
+      "Konsultasi pencegahan serangan jantung",
+    ],
+  },
+  {
+    poliklinik: "Poliklinik Mata",
+
+    spesialis:'Spesialis Mata',
+    dokterPoli: [
+      {
+        nama: "dr. Inkoni Novitasari, Sp. M",
+        foto: inkoni,
+      },
+    ],
+
+    layanan: [
+       "Konsultasi gangguan kesehatan mata",
+      "Pemeriksaan mata rutin dan tajam penglihatan",
+      "Penanganan mata merah dan infeksi mata",
+      "Diagnosis dan terapi katarak",
+      "Pemeriksaan dan terapi glaukoma",
+      "Penanganan gangguan refraksi (minus/plus/silinder)",
+      "Pemeriksaan retina dan mata diabetes",
+      "Pemeriksaan mata anak",
+      "Konsultasi operasi mata (sesuai indikasi)",
+    ],
+  },
+  {
+    poliklinik: "Poliklinik Orthopedi",
+
+    spesialis:'Spesialis Orthopedi',
+    dokterPoli: [
+      {
+        nama: "dr. M. Abdul Aziz, Sp.OT",
+        foto: aziz,
+      },
+    ],
+
+    layanan: [
+       "Konsultasi gangguan tulang dan sendi",
+      "Penanganan patah tulang (fraktur)",
+      "Terapi nyeri lutut dan pinggul",
+      "Penanganan cedera olahraga",
+      "Diagnosis dan terapi osteoarthritis",
+      "Penanganan skoliosis dan kelainan tulang belakang",
+      "Pemeriksaan dislokasi dan keseleo sendi",
+      "Tindakan pemasangan gips",
+      "Konsultasi operasi tulang (sesuai indikasi medis)",
+    ],
+  },
+  {
+    poliklinik: "Poliklinik Urologi",
+
+    spesialis:'Spesialis Urologi',
+    dokterPoli: [
+      {
+        nama: "dr. Andreas Pramudito, Sp. U",
+        foto: andreas,
+      },
+    ],
+
+    layanan: [
+        "Konsultasi gangguan saluran kemih dan ginjal",
+        "Penanganan batu ginjal dan batu saluran kemih",
+        "Diagnosis dan terapi infeksi saluran kemih (ISK)",
+        "Konsultasi pembesaran prostat (BPH)",
+        "Penanganan gangguan buang air kecil",
+        "Pemeriksaan hematuria (urin berdarah)",
+        "Konsultasi kesehatan reproduksi pria",
+        "Penanganan varikokel dan hidrokel",
+        "Konsultasi operasi urologi (sesuai indikasi medis)",
+    ],
+  },
+   {
+    poliklinik: "Poliklinik Kulit & Kelamin",
+
+    spesialis:'Spesialis Kulit & Kelamin',
+    dokterPoli: [
+      {
+        nama: "dr. Ahmad Satya Negara, Sp.D.V",
+        foto: satya,
+      },
+    ],
+
+    layanan: [
+        "Konsultasi penyakit kulit dan kelamin",
+        "Penanganan jerawat dan bekas jerawat",
+        "Terapi alergi kulit dan eksim",
+        "Penanganan infeksi jamur dan bakteri kulit",
+        "Diagnosis dan terapi psoriasis",
+        "Penanganan gatal kronis dan dermatitis",
+        "Pemeriksaan penyakit menular seksual (PMS)",
+        "Konsultasi kesehatan kulit dan perawatan kulit",
+        "Tindakan kecil dermatologi (sesuai indikasi medis)",
+    ],
+  },
+   {
+    poliklinik: "Poliklinik Rehab Medik",
+
+    spesialis:'Spesialis Rehab Medik',
+    dokterPoli: [
+      {
+        nama: "dr. Andi Sulistyo Nugroho, Sp.KFR",
+        foto: andi,
+      },
+    ],
+
+    layanan: [
+        "Konsultasi rehabilitasi dan pemulihan fungsi gerak",
+        "Fisioterapi pasca stroke",
+        "Terapi nyeri otot dan sendi",
+        "Rehabilitasi cedera olahraga",
+        "Terapi pasca operasi tulang dan sendi",
+        "Latihan penguatan otot dan mobilisasi",
+        "Penanganan gangguan saraf motorik",
+        "Terapi okupasi untuk aktivitas sehari-hari",
+        "Program rehabilitasi pasien disabilitas",
+    ],
+  },
+  {
+    poliklinik: "Poliklinik Patologi Klinik",
+
+    spesialis:'Spesialis Patologi Klinik',
+    dokterPoli: [
+      {
+        nama: "dr. Desi Widiyanti, Sp.PK",
+        foto: andi,
+      },
+    ],
+
+    layanan: [
+        "Pemeriksaan darah lengkap (hematologi)",
+        "Pemeriksaan gula darah dan diabetes",
+        "Pemeriksaan kolesterol dan profil lipid",
+        "Pemeriksaan fungsi hati dan ginjal",
+        "Pemeriksaan urin lengkap",
+        "Tes infeksi (Hepatitis, HIV, dll sesuai indikasi)",
+        "Pemeriksaan elektrolit dan kimia klinik",
+        "Pemeriksaan marker tumor (sesuai kebutuhan)",
+        "Konsultasi hasil pemeriksaan laboratorium",
+    ],
+  },
+];
+
+
 export const leaflet = [
   {
     id: 1,

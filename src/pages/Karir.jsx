@@ -370,7 +370,7 @@ const handleSubmit = async (e) => {
             {/* CLOSE */}
             <button
               onClick={() => setShowModal(false)}
-              className="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-xl"
+              className="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold cursor-pointer"
             >
               ✕
             </button>
@@ -450,7 +450,7 @@ const handleSubmit = async (e) => {
                     <select
                       name="pendidikan"
                       onChange={handleChange}
-                      className="input bg-white"
+                      className="input bg-white cursor-pointer"
                       value={form.pendidikan}
                       required
                     >

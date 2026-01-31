@@ -56,7 +56,7 @@ const HeaderNavbar = () => {
         lg:h-18 h-16
         lg:px-20 px-2
         flex items-center
-        transition-all duration-300 lg:border-none border-b-2 border-white
+        transition-all duration-300 lg:border-none border-b-2 border-yellow-500
         ${scrolled ? "lg:-translate-y-full lg:opacity-0" : ""}
       `}
       >
@@ -128,7 +128,7 @@ const HeaderNavbar = () => {
           ${scrolled ? "fixed top-0 w-full " : "relative mt-18"}
         `}
       >
-        <div className="bg-gradient-to-r from-yellow-700 via-yellow-500 to-yellow-600 max-w-[85%] mx-auto rounded-full flex justify-center items-center border-1 border-yellow-600">
+        <div className="bg-gradient-to-r from-yellow-700 via-yellow-500 to-yellow-700 max-w-[85%] mx-auto rounded-full flex justify-center items-center border-1 border-yellow-400">
           <ul className="flex justify-center items-center text-white text-[13px] font-semibold h-10">
             <li className="px-3 py-4">
               <NavLink to="/" className={navClass}>
@@ -411,18 +411,18 @@ const HeaderNavbar = () => {
 
           {/* SOSMED MOBILE */}
           <li className="px-4 py-3" onClick={closeAll}>
-            <div className="flex gap-1">
+            <div className="flex gap-6 sm:gap-1 justify-center">
               <Link to="https://www.instagram.com/rspkumuhammadiyahsruweng/" target="_blank" className="w-8 h-8 flex items-center justify-center transition">
-                <FaInstagram className="text-lg text-slate-50 hover:text-pink-700 hover:scale-110 transition-all ease-in-out" />
+                <FaInstagram className="text-2xl sm:text-lg text-slate-50 hover:text-pink-700 hover:scale-110 transition-all ease-in-out" />
               </Link>
               <Link to="https://web.facebook.com/pkusruweng" target="_blank" className="w-8 h-8 flex items-center justify-center transition">
-                <FaFacebookF className="text-lg text-slate-50 hover:text-blue-600 hover:scale-110 transition-all " />
+                <FaFacebookF className="text-2xl sm:text-lg text-slate-50 hover:text-blue-600 hover:scale-110 transition-all " />
               </Link>
               <Link to="https://www.tiktok.com/@rspkumuhammadiyahsruweng" target="_blank" className="w-8 h-8 flex items-center justify-center transition">
-                <FaTiktok className="text-lg text-slate-50 hover:text-gray-700 hover:scale-110 transition-all " />
+                <FaTiktok className="text-2xl sm:text-lg text-slate-50 hover:text-gray-700 hover:scale-110 transition-all " />
               </Link>
               <Link to="https://www.youtube.com/@pkusruweng9292" target="_blank" className="w-8 h-8 flex items-center justify-center transition">
-                <FaYoutube className="text-lg text-slate-50 hover:text-red-600 hover:scale-110 transition-all " />
+                <FaYoutube className="text-2xl sm:text-lg text-slate-50 hover:text-red-600 hover:scale-110 transition-all " />
               </Link>
             </div>
           </li>

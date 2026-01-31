@@ -131,7 +131,7 @@ const DokterKami = () => {
         </div>
 
         {/* ================= FILTER ================= */}
-        <div data-aos="fade-up" className="lg:w-[60%] lg:mx-auto mx-2  bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 p-8 mt-8 rounded-xl shadow-ku">
+        <div data-aos="fade-up" className="lg:w-[60%] lg:mx-auto mx-2  bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 p-8 mt-8 rounded-lg sm:rounded-xl shadow-ku">
           <p className="text-white text-lg font-semibold text-center mb-4">
             Cari Dokter di RS PKU Muhammadiyah Sruweng
           </p>

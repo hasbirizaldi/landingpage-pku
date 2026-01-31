@@ -7,11 +7,11 @@ const MenuBottom = () => {
   return (
     <section className="lg:hidden fixed bottom-0 w-full z-60 border-t-2 border-white">
       <div className="grid grid-cols-3 lg:grid-cols-3 h-16 lg:rounded-b-2xl overflow-hidden">
-        <Link to="/jadwal-dokter" className="flex flex-col items-center justify-center py-1 bg-gradient-to-r from-green-900 via-green-700 to-green-800 group hover:bg-green-900 transition">
+        <Link to="/jadwal-dokter" className="flex flex-col items-center justify-center py-1 bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 group hover:bg-green-900 transition">
           <div className="bg-white group-hover:bg-green-700 p-1 rounded-full">
             <FaUserDoctor className="text-lg text-green-900 group-hover:text-white" />
           </div>
-          <span className="font-semibold text-white text-[12px] leading-3 mt-1">Jadwal Dokter</span>
+          <span className="font-semibold text-white text-[12px] leading-3 mt-1">Jadwal Poliklinik</span>
         </Link>
 
         <Link
@@ -25,7 +25,7 @@ const MenuBottom = () => {
           <span className="font-semibold text-white text-[12px] leading-3 mt-1">Ambulance</span>
         </Link>
 
-        <Link to="/" className="flex flex-col items-center justify-center py-1 bg-gradient-to-r from-green-900 via-green-700 to-green-800 group hover:bg-green-900 transition">
+        <Link to="/" className="flex flex-col items-center justify-center py-1 bg-gradient-to-r from-emerald-600 via-emerald-700 to-emerald-900 group hover:bg-green-900 transition">
           <div className="bg-white p-1 rounded-full group-hover:bg-green-700">
             <MdCall className="text-lg text-green-900 group-hover:text-white" />
           </div>
