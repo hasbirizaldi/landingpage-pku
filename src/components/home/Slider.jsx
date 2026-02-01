@@ -18,8 +18,8 @@ export default function Slider() {
     <div className="bg-transparent">
       {/* ===== HERO ===== */}
       <section data-aos="fade-up">
-        <div className="w-full lg:w-[80%] mx-auto lg:pt-1 " >
-          <div className="relative overflow-hidden lg:rounded-xl shadow-ku">
+        <div className="w-full lg:w-[80%] mx-auto lg:pt-1 min-h-screen" >
+          <div className="relative overflow-hidden lg:rounded-xl shadow-ku ">
             {/* overlay text */}
             <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white bg-black/40 z-10">
               <h1 className="lg:text-3xl text-xl font-semibold mb-2" >SELAMAT DATANG DI</h1>
@@ -28,7 +28,7 @@ export default function Slider() {
             </div>
 
             {/* BACKGROUND HERO */}
-            <div className="h-80 lg:h-[480px] bg-cover bg-center" style={{ backgroundImage: `url(${images[0]})` }} />
+            <div className="h-80 lg:h-[350px] bg-cover bg-center" style={{ backgroundImage: `url(${images[0]})` }} />
           </div>
 
           {/* ===== SLIDER GAMBAR ===== */}

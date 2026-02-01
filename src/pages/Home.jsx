@@ -4,6 +4,7 @@ import JknGoObat from "../components/home/JknGoObat";
 import PelayananKami from "../components/home/PelayananKami";
 import Slider from "../components/home/Slider";
 import BeritaArtikel from "../components/home/BeritaArtikel";
+import VidioHome from "../components/home/VidioHome";
 
 const Home = () => {
   useEffect(() => {
@@ -33,6 +34,7 @@ const Home = () => {
           <PartnerKami />
           <PelayananKami />
           <BeritaArtikel />
+          <VidioHome />
         </div>
       </div>
     </div>

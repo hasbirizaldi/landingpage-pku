@@ -1033,6 +1033,224 @@ export const rawatJalan = [
   },
 ];
 
+export const rawatInap = [
+  {
+    kelas: "Bangsal President Suite",
+    harga: "xxxxxxxx",
+    images: [slider1, slider2, slider3, slider4, slider5],
+    fasilitas: [
+      "Kamar VIP + ruang tamu",
+      "AC dan TV",
+      "Kamar mandi dalam",
+      "Nurse call 24 jam",
+      "Makan pasien & pendamping",
+    ],
+  },
+
+  {
+    kelas: "Bangsal VVIP",
+    harga: "xxxxxxxx",
+     images: [slider1, slider2, slider3, slider4, slider5],
+    fasilitas: [
+      "Kamar eksklusif 1 pasien",
+      "AC, TV, Sofa keluarga",
+      "Kamar mandi dalam + water heater",
+      "Pelayanan perawat 24 jam",
+      "Makan pasien & pendamping",
+      "WiFi dan ruang tunggu keluarga",
+    ],
+  },
+
+  {
+    kelas: "Bangsal VIP",
+    harga: "xxxxxxx",
+     images: [slider1, slider2, slider3, slider4, slider5],
+    fasilitas: [
+      "Kamar 1 pasien",
+      "AC dan TV",
+      "Kamar mandi dalam",
+      "Nurse call",
+      "Pelayanan perawat",
+      "Makan pasien",
+    ],
+  },
+
+  {
+    kelas: "Bangsal Kelas 1",
+    harga: "xxxxxx",
+     images: [slider1, slider2, slider3, slider4, slider5],
+    fasilitas: [
+      "Kamar 2 pasien",
+      "TV bersama",
+      "Kamar mandi dalam",
+      "Pelayanan perawat",
+      "Nurse call",
+    ],
+  },
+
+  {
+    kelas: "Bangsal Kelas 2",
+    harga: "xxxxxxx",
+    images: [slider1, slider2, slider3, slider4, slider5],
+    fasilitas: [
+      "Kamar 3–4 pasien",
+      "Kipas angin",
+      "Kamar mandi bersama",
+      "Pelayanan perawat",
+      "Nurse call",
+    ],
+  },
+
+  {
+    kelas: "Bangsal Kelas 3",
+    harga: "xxxxxx",
+     images: [slider1, slider2, slider3, slider4, slider5],
+    fasilitas: [
+      "Kamar 6–8 pasien",
+      "Ventilasi standar",
+      "Kamar mandi bersama",
+      "Pelayanan perawat",
+      "Nurse call",
+    ],
+  },
+];
+
+export const penunjang = [
+  {
+    nama: "Instalasi Laboratorium",
+    image: slider1,
+    fasilitas: [
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+    ],
+  },
+   {
+    nama: "Instalasi Radiologi",
+    image: slider1,
+    fasilitas: [
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+    ],
+  },
+   {
+    nama: "Instalasi Farmasi",
+    image: slider1,
+    fasilitas: [
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+    ],
+  },
+   {
+    nama: "Kamar Operasi",
+    image: slider1,
+    fasilitas: [
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+    ],
+  },
+   {
+    nama: "Klinik Fisioterapi",
+    image: slider1,
+    fasilitas: [
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+    ],
+  },
+   {
+    nama: "Terapi Wicara",
+    image: slider1,
+    fasilitas: [
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+    ],
+  },
+   {
+    nama: "Okupasi Terapi",
+    image: slider1,
+    fasilitas: [
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+    ],
+  },
+   {
+    nama: "Konsultasi Gizi",
+    image: slider1,
+    fasilitas: [
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+    ],
+  },
+   {
+    nama: "Ambulance 24 jam",
+    image: slider1,
+    fasilitas: [
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+    ],
+  },
+   {
+    nama: "Suntik KB",
+    image: slider1,
+    fasilitas: [
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+    ],
+  },
+   {
+    nama: "Donor Darah",
+    image: slider1,
+    fasilitas: [
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+    ],
+  },
+   {
+    nama: "Pembinaan Kerohanian",
+    image: slider1,
+    fasilitas: [
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+    ],
+  },
+]
+
+
 
 export const leaflet = [
   {
