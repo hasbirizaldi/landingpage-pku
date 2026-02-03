@@ -25,7 +25,6 @@ const VidioHome = () => {
 
     fetchVidios();
   }, []);
-console.log(vidios)
   return (
     <section data-aos="fade-up" className="bg-white/60 py-10 lg:px-5 px-2 lg:w-[80%] lg:mx-auto mx-2 rounded sm:rounded-lg shadow-ku my-5">
       <h1 className="font-bold text-center text-2xl sm:text-3xl text-emerald-900">Vidio Kami</h1>
