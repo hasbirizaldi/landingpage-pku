@@ -49,7 +49,7 @@ const StrukturOrganisasi = () => {
                 <p className="text-center text-sm font-semibold leading-tight">
                   {item.nama}
                 </p>
-                <p className="text-center text-xs font-bold text-yellow-400 mt-2">
+                <p className="text-center text-xs font-bold bg-gradient-to-r from-yellow-700 via-yellow-500 to-yellow-700 text-white mt-2 py-1 rounded">
                   {item.jabatan}
                 </p>
               </div>
