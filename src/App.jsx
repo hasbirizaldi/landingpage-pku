@@ -51,12 +51,12 @@ const App = () => {
           <Route path="/indikator-mutu" element={<IndikatorMutu />} />
           <Route path="/akreditasi-penghargaan" element={<Akreditasi />} />
           <Route path="/falsafah-visi-misi" element={<Falsafah />} />
-          <Route path="/rawat-jalan" element={<RawatJalan />} />
-          <Route path="/rawat-inap" element={<RawatInap />} />
-          <Route path="/penunjang" element={<PelayananPenunjang />} />
-          <Route path="/igd" element={<Igd />} />
-          <Route path="/bed-pasien" element={<BedPasien />} />
-          <Route path="/go-obat" element={<GoObat />} />
+          <Route path="/fasilitas/rawat-jalan" element={<RawatJalan />} />
+          <Route path="/fasilitas/rawat-inap" element={<RawatInap />} />
+          <Route path="/fasilitas/penunjang" element={<PelayananPenunjang />} />
+          <Route path="/fasilitas/igd" element={<Igd />} />
+          <Route path="/fasilitas/bed-pasien" element={<BedPasien />} />
+          <Route path="/fasilitas/go-obat" element={<GoObat />} />
           <Route path="/artikel-baru" element={<Berita />} />
           <Route path="/artikel/:slug" element={<BeritaDetail />} />
           <Route path="/tags/:tag" element={<TagPage />} />

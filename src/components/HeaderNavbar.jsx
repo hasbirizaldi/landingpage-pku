@@ -20,7 +20,7 @@ const HeaderNavbar = () => {
 
   // List path untuk masing-masing dropdown
   const pathsTentang = ["/sejarah", "/falsafah-visi-misi", "/akreditasi-penghargaan", "/indikator-mutu", "/struktur-organisasi"];
-  const pathsPelayanan = ["/rawat-jalan", "/rawat-inap", "/penunjang", "/igd", "/bed-pasien", "/go-obat"];
+  const pathsPelayanan = ["/fasilitas/rawat-jalan", "/fasilitas/rawat-inap", "/fasilitas/penunjang", "/fasilitas/igd", "/fasilitas/bed-pasien", "/fasilitas/go-obat"];
   const pathsBerita = ["/artikel-baru", "/artikel-kesehatan", "/artikel-islami", "/promosi-leaflet", "/gallery"];
   const pathsVideo = ["/vidio-promosi", "/kesehatan", "/keislaman", "/simrs"];
 
@@ -301,32 +301,32 @@ const HeaderNavbar = () => {
             {openDropdown === "pelayanan" && (
               <ul className="bg-emerald-800 text-sm">
                 <li className="px-6 py-2">
-                  <Link to="/rawat-jalan" onClick={closeAll}>
+                  <Link to="/fasilitas/rawat-jalan" onClick={closeAll}>
                     Rawat Jalan
                   </Link>
                 </li>
                 <li className="px-6 py-2">
-                  <Link to="/rawat-inap" onClick={closeAll}>
+                  <Link to="/fasilitas/rawat-inap" onClick={closeAll}>
                     Rawat Inap
                   </Link>
                 </li>
                 <li className="px-6 py-2">
-                  <Link to="/penunjang" onClick={closeAll}>
+                  <Link to="/fasilitas/penunjang" onClick={closeAll}>
                     Penunjang
                   </Link>
                 </li>
                 <li className="px-6 py-2">
-                  <Link to="/igd" onClick={closeAll}>
+                  <Link to="/fasilitas/igd" onClick={closeAll}>
                     IGD 24 Jam
                   </Link>
                 </li>
                 <li className="px-6 py-2">
-                  <Link to="/bed-pasien" onClick={closeAll}>
+                  <Link to="/fasilitas/bed-pasien" onClick={closeAll}>
                     Bed Pasien
                   </Link>
                 </li>
                 <li className="px-6 py-2">
-                  <Link to="/go-obat" onClick={closeAll}>
+                  <Link to="/fasilitas/go-obat" onClick={closeAll}>
                     Go Obat
                   </Link>
                 </li>

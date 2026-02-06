@@ -17,7 +17,7 @@ const Footer = () => {
                 <p className="font-bold text-lg sm:text-lg text-white">RS PKU Muhammadiyah </p>
                 <p className="font-bold text-lg sm:text-lg text-white">Sruweng</p>
               </div>
-              <p className="font-semibold text-sm sm:text-md text-yellow-300">Semakin Unggul dan Islami</p>
+              <p className="font-semibold text-sm sm:text-md text-yellow-500">Semakin Unggul dan Islami</p>
             </div>
           </Link>
 

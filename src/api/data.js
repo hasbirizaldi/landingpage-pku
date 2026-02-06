@@ -84,6 +84,50 @@ export const images = [imgHome];
 export const partner = [bpjskes, bpjstk, car, brilife, kai, jasa_raharja, mag, pln];
 export const direksiImg = [hasan, dyah, adi_hamid, niken];
 
+export const dataBangsal = [
+  { 
+    nama: "Bangsal AR Fakhrudin", 
+    jumlah: 22,
+    img: sliderImages[3]
+  },
+  { 
+    nama: "Bangsal Alma'un", 
+    jumlah: 41,
+    img: sliderImages[3]
+  },
+  { 
+    nama: "Bangsal Chamdani", 
+    jumlah: 32,
+    img: sliderImages[3]
+  },
+  { 
+    nama: "Bangsal ICU", 
+    jumlah: 7,
+    img: sliderImages[3]
+  },
+  { 
+    nama: "Bangsal Khodijah", 
+    jumlah: 23,
+    img: sliderImages[3]
+  },
+  { 
+    nama: "Bangsal Peristi", 
+    jumlah: 5,
+    img: sliderImages[3]
+  },
+  { 
+    nama: "Bangsal Salamah", 
+    jumlah: 13,
+    img: sliderImages[3]
+  },
+  { 
+    nama: "Bangsal VK", 
+    jumlah: 6,
+    img: sliderImages[3]
+  },
+];
+
+
 export const direksi = [
   {
     nama: 'dr. H. Hasan Bayuni',
