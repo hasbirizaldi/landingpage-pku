@@ -75,7 +75,6 @@ import dyah from "../assets/direksi/dyah.png";
 import niken from "../assets/direksi/niken.png";
 import gallery1 from "../assets/gallery/1.jpg";
 import gallery2 from "../assets/gallery/2.jpg";
-import gallery3 from "../assets/gallery/3.jpg";
 import gallery4 from "../assets/gallery/4.jpg";
 import gallery5 from "../assets/gallery/5.jpg";
 import gallery6 from "../assets/gallery/6.jpg";
@@ -101,7 +100,7 @@ import gallery25 from "../assets/gallery/25.jpg";
 import gallery26 from "../assets/gallery/26.jpg";
 
 export const sliderImages = [slider1, slider2, slider3, slider4, slider5];
-export const imgRi = [gallery1, gallery2,gallery3, gallery4,gallery5,gallery6, gallery7, gallery8, gallery9, gallery10, gallery11, gallery12, gallery13, gallery14, gallery15, gallery16, gallery17, gallery18, gallery19, gallery20, gallery21, gallery22, gallery23, gallery24, gallery25, gallery26]
+export const imgRi = [gallery1, gallery2, gallery4,gallery5,gallery6, gallery7, gallery8, gallery9, gallery10, gallery11, gallery12, gallery13, gallery14, gallery15, gallery16, gallery17, gallery18, gallery19, gallery20, gallery21, gallery22, gallery23, gallery24, gallery25, gallery26]
 export const img = [logo, mas, jkn, logo2, ios, go_obat, call, emergency, dokter, andro];
 export const dokterImg = [anwar, adi, khayati, ricky, saria, jalul, sarijan, inet, haryono, alam, inkoni, levi, khalifa, desi, andi, vida, windy, tri, yayan, andreas, satya, aziz, iwan, faizal, prasdika, robi, kevin, hartika, agung, nurwahidin, pandu, keijstha, ade, karmila, arima, hana, ilham];
 export const images = [imgHome];
@@ -1148,7 +1147,7 @@ export const rawatInap = [
       {
         namaKelas:'Kelas I',
         harga: "xxxxxxxx",
-        images: [gallery3, gallery22, gallery23, gallery6, gallery14],
+        images: [ gallery22, gallery23, gallery6, gallery14],
         fasilitas: [
           "Bed Remote Pasien",
           "1 Ruangan 1 Bed Pasien",
@@ -1165,7 +1164,7 @@ export const rawatInap = [
       {
         namaKelas:'Kelas II',
         harga: "xxxxxxxx",
-        images: [gallery3, gallery22, gallery23, gallery6, gallery14],
+        images: [ gallery22, gallery23, gallery6, gallery14],
         fasilitas: [
           "Bed Remote Pasien",
           "1 Ruangan 2 Bed Pasien",
@@ -1227,7 +1226,7 @@ export const rawatInap = [
       {
         namaKelas:'Kelas I',
         harga: "xxxxxxxx",
-         images: [gallery3, gallery22, gallery23, gallery6, gallery14],
+         images: [ gallery22, gallery23, gallery6, gallery14],
         fasilitas: [
           "Bed Remote Pasien",
           "1 Ruangan 1 Bed Pasien",
@@ -1244,7 +1243,7 @@ export const rawatInap = [
       {
         namaKelas:'Kelas II',
         harga: "xxxxxxxx",
-         images: [gallery3, gallery22, gallery23, gallery6, gallery14],
+         images: [ gallery22, gallery23, gallery6, gallery14],
         fasilitas: [
           "Bed Remote Pasien",
           "1 Ruangan 2 Bed Pasien",
