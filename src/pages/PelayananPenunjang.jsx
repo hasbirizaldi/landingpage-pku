@@ -44,24 +44,24 @@ const PelayananPenunjang = () => {
             <div
               key={index}
               data-aos="fade-up"
-              className="bg-white rounded-xl pb-6 shadow-ku overflow-hidden "
+              className="bg-white rounded-lg pb-6 shadow-ku overflow-hidden "
             >
               {/* Nama Poliklinik */}
-              <div className="bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 py-3 px-5 font-semibold text-white text-lg">
+              <div className="bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 sm:py-3 py-2 px-2 sm:px-5 font-semibold text-white sm:text-lg text-sm">
                 {item.nama}
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-[2fr_3fr] px-6 py-2">
+              <div className="grid grid-cols-1 sm:grid-cols-[2fr_3fr] sm:px-6 sm:py-2">
                 <div>
                   <img src={item.image} alt="" />
                 </div>
                 <div>
                 {/* ================= LAYANAN ================= */}
-                <h2 className="text-emerald-900 font-bold text-lg mt-2 mb-4 ml-3">
+                <h2 className="text-emerald-900 font-bold sm:text-lg text-sm mt-2 mb-4 ml-3">
                   Layanan
                 </h2>
 
-                <ul className="  text-slate-700 space-y-1 ml-6">
+                <ul className="  text-slate-700 space-y-1 ml-6 sm:text-base text-sm">
                   {item.fasilitas.map((fas, j) => (
                     <li key={j} className="flex items-center gap-2"><FaCheckCircle className="text-green-700"/>{fas} </li>
                   ))}

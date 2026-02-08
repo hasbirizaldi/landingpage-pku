@@ -14,11 +14,11 @@ const RawatInap = () => {
   }, []);
 
    // ================= PAGINATION STATE =================
-  const [visibleCount, setVisibleCount] = useState(3);
+  const [visibleCount, setVisibleCount] = useState(1);
 
   // tombol load more
   const handleLoadMore = () => {
-    setVisibleCount((prev) => prev + 3);
+    setVisibleCount((prev) => prev + 1);
   };
 
   return (
@@ -45,73 +45,105 @@ const RawatInap = () => {
         {/* ================= LIST RAWAT INAP ================= */}
         <div className="lg:w-[80%] lg:mx-auto mx-2 mt-10 space-y-10">
 
-          {rawatInap.slice(0, visibleCount).map((item, index) => (
+          {rawatInap.slice(0, visibleCount).map((bangsal, index) => (
             <div
               key={index}
-              data-aos="fade-up"
-              className="bg-white rounded-xl pb-6 shadow-ku overflow-hidden "
+              className="bg-white rounded-lg pb-6 shadow-ku overflow-hidden"
             >
               {/* Nama Bangsal */}
-              <div className="bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 py-3 px-5 font-semibold text-white text-lg border-b-3 border-yellow-500">
-                <h2>{item.kelas}</h2>
+              <div className="bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 py-4 px-3 sm:px-5 font-semibold text-white text-lg border-b-5 border-yellow-500">
+                <h2>{bangsal.bangsal}</h2>
               </div>
 
-              <div className="px-5 py-2">
-                <Swiper
-                modules={[Navigation, Autoplay]}
-                navigation
-                autoplay={{ delay: 2500, disableOnInteraction: false }}
-                loop
-                spaceBetween={20}
-                slidesPerView={3}
-                breakpoints={{
-                  0: { slidesPerView: 1 },
-                  768: { slidesPerView: 2 },
-                  1024: { slidesPerView: 3 },
-                }}
-                className="lg:my-3 my-1 "
-              >
-                {item.images.map((img, i) => (
-                  <SwiperSlide key={i}>
-                    <div onClick={() => {
-                      setActiveRoom(item);
-                      setActiveIndex(i);
-                    }} className="overflow-hidden lg:rounded-lg cursor-pointer">
-                      <div className="h-[180px] bg-cover bg-center hover:scale-105 transition duration-500" style={{ backgroundImage: `url(${img})` }} />
+              <div className="sm:px-5 px-1 py-3 space-y-10">
+                {bangsal.kelas.map((kelas, i) => (
+                  <div key={i} className="px-1">
+
+                    {/* Nama Kelas */}
+                    <h3 className="sm:text-lg text-sm font-semibold bg-gradient-to-r from-yellow-700 via-yellow-500 to-yellow-700 text-white mb-2 w-50 py-1 px-3 rounded shadow-lg">
+                      {kelas.namaKelas}
+                    </h3>
+
+                    {/* Swiper Images */}
+                    <Swiper
+                      modules={[Navigation, Autoplay]}
+                      navigation
+                      autoplay={{ delay: 1500, disableOnInteraction: false }}
+                      loop
+                      spaceBetween={20}
+                      slidesPerView={3}
+                      breakpoints={{
+                        0: { slidesPerView: 1 },
+                        768: { slidesPerView: 2 },
+                        1024: { slidesPerView: 3 },
+                      }}
+                      className="mb-6"
+                    >
+                      {kelas.images.map((img, j) => (
+                        <SwiperSlide key={j}>
+                          <div
+                            onClick={() => {
+                              setActiveRoom(kelas);
+                              setActiveIndex(j);
+                            }}
+                            className="overflow-hidden rounded-lg cursor-pointer"
+                          >
+                            <div
+                              className="h-[200px] bg-cover bg-center hover:scale-105 transition duration-500"
+                              style={{ backgroundImage: `url(${img})` }}
+                            />
+                          </div>
+                        </SwiperSlide>
+                      ))}
+                    </Swiper>
+
+                    {/* Grid Detail */}
+                    <div className="grid md:grid-cols-[2fr_1fr] gap-6">
+
+                      {/* Fasilitas */}
+                      <div>
+                        <h4 className="text-emerald-900 font-bold text-sm sm:text-lg mb-3">
+                          Fasilitas
+                        </h4>
+                        <ul className="text-slate-700 sm:space-y-2 space-y-1 sm:text-base text-sm">
+                          {kelas.fasilitas.map((fas, k) => (
+                            <li key={k} className="flex items-center gap-2">
+                              <FaCheckCircle className="text-green-700 sm:text-base text-s," />
+                              {fas}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {/* Harga & WA */}
+                      <div className="flex flex-col justify-center items-center gap-6">
+                        <div className="border border-yellow-500 shadow rounded font-semibold  w-full text-center">
+                          <p className="bg-yellow-500 text-white py-1 sm:text-base text-sm">Harga</p>
+                          <p className="py-2 text-slate-700 sm:text-base text-sm">
+                            Rp{" "}
+                            {typeof kelas.harga === "number"
+                              ? kelas.harga.toLocaleString("id-ID")
+                              : kelas.harga}
+                          </p>
+                        </div>
+
+                        <div className="border border-green-700 shadow rounded font-semibold  w-full text-center sm:text-base text-sm">
+                          <p className="flex justify-center items-center gap-2 bg-green-700 text-white py-1">
+                            <FaWhatsapp className="sm:text-3xl text-xl"/> Pendaftaran
+                          </p>
+                          <p className="py-2 text-slate-700">
+                            08xxxxxxxxxx
+                          </p>
+                        </div>
+                      </div>
+
                     </div>
-                  </SwiperSlide>
+                  </div>
                 ))}
-              </Swiper>
-              
-              <div className="grid sm:grid-cols-2 grid-cols-1">
-                <div>
-                  {/* ================= FASILITAS ================= */}
-                  <h4 className="text-emerald-900 font-bold text-lg mb-2 ml-3">
-                    Fasilitas 
-                  </h4>
-
-                  <ul className="  text-slate-700 space-y-1 ml-6">
-                    {item.fasilitas.map((fas, j) => (
-                      <li key={j} className="flex items-center gap-2"><FaCheckCircle className="text-green-700"/>{fas} </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="flex flex-col justify-center items-center gap-6">
-                  <div className="border border-yellow-500 shadow rounded font-semibold text-lg">
-                    <p className="bg-yellow-500 text-white px-3 text-center">Harga</p>
-                    <p className="px-3 text-slate-600">Rp. {item.harga.toLocaleString("id-ID")}</p>
-                  </div>
-                  <div className="border border-green-700 shadow rounded font-semibold text-lg">
-                    <p className="flex gap-1 items-center bg-green-700 text-white px-3 text-center"><FaWhatsapp className="text-xl "/> Pendaftaran</p>
-                    <p className="px-3 text-slate-600">08xxxxxxxxxxxx</p>
-                  </div>
-                </div>
-              </div>
-
               </div>
             </div>
-            
           ))}
+
 
            {/* ================= BUTTON LOAD MORE ================= */}
           {visibleCount < rawatInap.length && (

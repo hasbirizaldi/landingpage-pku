@@ -4,14 +4,17 @@ import slider3 from "../assets/slider/s3.webp";
 import slider4 from "../assets/slider/s4.webp";
 import slider5 from "../assets/slider/s5.webp";
 import logo from "../assets/logo/pku.webp";
-import imgHome from "../assets/img/1.jpg";
+import imgHome from "../assets/img/1.webp";
 import logo2 from "../assets/logo/kiri.png";
 import mas from "../assets/logo/mas.webp";
 import jkn from "../assets/logo/jkn.png";
 import call from "../assets/logo/call.png";
 import emergency from "../assets/logo/emergency.png";
 import ios from "../assets/logo/ios.png";
+import andro from "../assets/logo/andro.png";
 import go_obat from "../assets/logo/go-obat.png";
+import medilink from "../assets/logo/partner/medilink.png";
+import admedika from "../assets/logo/partner/admedika.png";
 import pln from "../assets/logo/partner/pln.png";
 import mag from "../assets/logo/partner/mag.png";
 import bpjstk from "../assets/logo/partner/bpjstk.png";
@@ -72,16 +75,37 @@ import dyah from "../assets/direksi/dyah.png";
 import niken from "../assets/direksi/niken.png";
 import gallery1 from "../assets/gallery/1.jpg";
 import gallery2 from "../assets/gallery/2.jpg";
+import gallery3 from "../assets/gallery/3.jpg";
 import gallery4 from "../assets/gallery/4.jpg";
 import gallery5 from "../assets/gallery/5.jpg";
 import gallery6 from "../assets/gallery/6.jpg";
 import gallery7 from "../assets/gallery/7.jpg";
+import gallery8 from "../assets/gallery/8.jpeg";
+import gallery9 from "../assets/gallery/9.jpeg";
+import gallery10 from "../assets/gallery/10.jpeg";
+import gallery11 from "../assets/gallery/11.jpeg";
+import gallery12 from "../assets/gallery/12.jpeg";
+import gallery13 from "../assets/gallery/13.jpeg";
+import gallery14 from "../assets/gallery/14.jpeg";
+import gallery15 from "../assets/gallery/15.jpeg";
+import gallery16 from "../assets/gallery/16.webp";
+import gallery17 from "../assets/gallery/17.webp";
+import gallery18 from "../assets/gallery/18.webp";
+import gallery19 from "../assets/gallery/19.webp";
+import gallery20 from "../assets/gallery/20.webp";
+import gallery21 from "../assets/gallery/21.webp";
+import gallery22 from "../assets/gallery/22.jpg";
+import gallery23 from "../assets/gallery/23.jpg";
+import gallery24 from "../assets/gallery/24.jpg";
+import gallery25 from "../assets/gallery/25.jpg";
+import gallery26 from "../assets/gallery/26.jpg";
 
 export const sliderImages = [slider1, slider2, slider3, slider4, slider5];
-export const img = [logo, mas, jkn, logo2, ios, go_obat, call, emergency, dokter];
+export const imgRi = [gallery1, gallery2,gallery3, gallery4,gallery5,gallery6, gallery7, gallery8, gallery9, gallery10, gallery11, gallery12, gallery13, gallery14, gallery15, gallery16, gallery17, gallery18, gallery19, gallery20, gallery21, gallery22, gallery23, gallery24, gallery25, gallery26]
+export const img = [logo, mas, jkn, logo2, ios, go_obat, call, emergency, dokter, andro];
 export const dokterImg = [anwar, adi, khayati, ricky, saria, jalul, sarijan, inet, haryono, alam, inkoni, levi, khalifa, desi, andi, vida, windy, tri, yayan, andreas, satya, aziz, iwan, faizal, prasdika, robi, kevin, hartika, agung, nurwahidin, pandu, keijstha, ade, karmila, arima, hana, ilham];
 export const images = [imgHome];
-export const partner = [bpjskes, bpjstk, car, brilife, kai, jasa_raharja, mag, pln];
+export const partner = [bpjskes, bpjstk, car, brilife, kai, jasa_raharja, mag, pln, medilink, admedika];
 export const direksiImg = [hasan, dyah, adi_hamid, niken];
 
 export const dataBangsal = [
@@ -1079,84 +1103,242 @@ export const rawatJalan = [
 
 export const rawatInap = [
   {
-    kelas: "Bangsal President Suite",
-    harga: "xxxxxxxx",
-    images: [slider1, slider2, slider3, slider4, slider5],
-    fasilitas: [
-      "Kamar VIP + ruang tamu",
-      "AC dan TV",
-      "Kamar mandi dalam",
-      "Nurse call 24 jam",
-      "Makan pasien & pendamping",
+    bangsal: "Bangsal Khodijah",
+    kelas:[
+      {
+        namaKelas:'President Suite',
+        harga: "xxxxxxxx",
+        images: [gallery4,gallery10, gallery13, gallery17, gallery18],
+        fasilitas: [
+          "Bed Remote Pasien",
+          "Bedside Table",
+          "1 Set Sofa",
+          "Pantry",
+          "TV LED",
+          "Bed Penunggu (King Size)",
+          "Kulkas",
+          "Dispenser",
+          "Set Meja Makan",
+          "Almari Pakaian",
+          "Kamar Mandi (Water Heater)",
+          "AC",
+          "WiFi"
+        ],
+      },
+      {
+        namaKelas:'VIP',
+        harga: "xxxxxxxx",
+        images: [gallery4,gallery10, gallery6, gallery14],
+        fasilitas: [
+          "Bed Remote Pasien",
+          "Bedside Table",
+          "1 Set Sofa",
+          "Pantry",
+          "TV LED",
+          "Bed Penunggu",
+          "Kulkas",
+          "Dispenser",
+          "Set Meja Makan",
+          "Almari Pakaian",
+          "Kamar Mandi (Water Heater)",
+          "AC",
+          "WiFi"
+        ],
+      },
+      {
+        namaKelas:'Kelas I',
+        harga: "xxxxxxxx",
+        images: [gallery3, gallery22, gallery23, gallery6, gallery14],
+        fasilitas: [
+          "Bed Remote Pasien",
+          "1 Ruangan 1 Bed Pasien",
+          "Sofa",
+          "TV LED",
+          "Kulkas",
+          "Dispenser",
+          "Almari Pakaian",
+          "Kamar Mandi (Water Heater)",
+          "AC",
+          "WiFi"
+        ],
+      },
+      {
+        namaKelas:'Kelas II',
+        harga: "xxxxxxxx",
+        images: [gallery3, gallery22, gallery23, gallery6, gallery14],
+        fasilitas: [
+          "Bed Remote Pasien",
+          "1 Ruangan 2 Bed Pasien",
+          "Sofa",
+          "TV LED",
+          "Kulkas",
+          "Almari Pakaian",
+          "Kamar Mandi (Water Heater)",
+          "AC",
+          "WiFi"
+        ],
+      }
     ],
   },
 
-  {
-    kelas: "Bangsal VVIP",
-    harga: "xxxxxxxx",
-     images: [slider1, slider2, slider3, slider4, slider5],
-    fasilitas: [
-      "Kamar eksklusif 1 pasien",
-      "AC, TV, Sofa keluarga",
-      "Kamar mandi dalam + water heater",
-      "Pelayanan perawat 24 jam",
-      "Makan pasien & pendamping",
-      "WiFi dan ruang tunggu keluarga",
+ {
+    bangsal: "Bangsal Salamah",
+    kelas:[
+      {
+        namaKelas:'President Suite',
+        harga: "xxxxxxxx",
+        images: [gallery4,gallery10, gallery13, gallery17, gallery18],
+        fasilitas: [
+          "Bed Remote Pasien",
+          "Bedside Table",
+          "1 Set Sofa",
+          "Pantry",
+          "TV LED",
+          "Bed Penunggu (King Size)",
+          "Kulkas",
+          "Dispenser",
+          "Set Meja Makan",
+          "Almari Pakaian",
+          "Kamar Mandi (Water Heater)",
+          "AC",
+          "WiFi"
+        ],
+      },
+      {
+        namaKelas:'VIP',
+        harga: "xxxxxxxx",
+        images: [gallery4,gallery10, gallery6, gallery14],
+        fasilitas: [
+          "Bed Remote Pasien",
+          "Bedside Table",
+          "1 Set Sofa",
+          "Pantry",
+          "TV LED",
+          "Bed Penunggu",
+          "Kulkas",
+          "Dispenser",
+          "Set Meja Makan",
+          "Almari Pakaian",
+          "Kamar Mandi (Water Heater)",
+          "AC",
+          "WiFi"
+        ],
+      },
+      {
+        namaKelas:'Kelas I',
+        harga: "xxxxxxxx",
+         images: [gallery3, gallery22, gallery23, gallery6, gallery14],
+        fasilitas: [
+          "Bed Remote Pasien",
+          "1 Ruangan 1 Bed Pasien",
+          "Sofa",
+          "TV LED",
+          "Kulkas",
+          "Dispenser",
+          "Almari Pakaian",
+          "Kamar Mandi (Water Heater)",
+          "AC",
+          "WiFi"
+        ],
+      },
+      {
+        namaKelas:'Kelas II',
+        harga: "xxxxxxxx",
+         images: [gallery3, gallery22, gallery23, gallery6, gallery14],
+        fasilitas: [
+          "Bed Remote Pasien",
+          "1 Ruangan 2 Bed Pasien",
+          "Sofa",
+          "TV LED",
+          "Kulkas",
+          "Almari Pakaian",
+          "Kamar Mandi (Water Heater)",
+          "AC",
+          "WiFi"
+        ],
+      }
     ],
   },
 
+
   {
-    kelas: "Bangsal VIP",
-    harga: "xxxxxxx",
-     images: [slider1, slider2, slider3, slider4, slider5],
-    fasilitas: [
-      "Kamar 1 pasien",
-      "AC dan TV",
-      "Kamar mandi dalam",
-      "Nurse call",
-      "Pelayanan perawat",
-      "Makan pasien",
+    bangsal: "Bangsal AR Fakhrudin",
+    kelas:[
+      {
+        namaKelas:"VIP",
+        harga:"xxxxxxx",
+        images: [gallery24, gallery25, gallery26, gallery24],
+        fasilitas: [
+          "Bed Pasien",
+          "1 Kamar 1 Bed Pasien",
+          "Sofa Bed",
+          "Meja Makan",
+          "Ruang Tamu",
+          "TV LED",
+          "Kulkas",
+          "Dispenser",
+          "Almari Pakaian",
+          "Kamar Mandi (Water Heater)",
+          "AC",
+          "WiFi"
+        ],
+      },
+      {
+        namaKelas:"Kelas I",
+        harga:"xxxxxxx",
+        images: [gallery24, gallery25, gallery26, gallery24],
+        fasilitas: [
+          "Bed Pasien",
+          "1 Kamar 1 Bed Pasien",
+          "Sofa Bed",
+          "Meja Makan",
+          "TV LED",
+          "Kulkas",
+          "Dispenser",
+          "Almari Pakaian",
+          "Kamar Mandi (Water Heater)",
+          "AC",
+          "WiFi"
+        ],
+      },
+      {
+        namaKelas:"Kelas II",
+        harga:"xxxxxxx",
+        images: [gallery24, gallery25, gallery26, gallery24],
+        fasilitas: [
+          "Bed Pasien",
+          "1 Kamar 1 Bed Pasien",
+          "Sofa ",
+          "Meja Makan",
+          "TV LED",
+          "Almari Pakaian",
+          "Kamar Mandi",
+          "AC",
+          "WiFi"
+        ],
+      },
+       {
+        namaKelas:"Kelas Khusus Anak",
+        harga:"xxxxxxx",
+        images: [gallery24, gallery25, gallery26, gallery24],
+        fasilitas: [
+          "Bed Pasien",
+          "1 Kamar 1 Bed Pasien",
+          "Playground Anak",
+          "Sofa Penunggu Pasien",
+          "Meja Makan",
+          "Dispenser",
+          "TV LED",
+          "Almari Pakaian",
+          "Kamar Mandi (Water Heater)",
+          "AC",
+          "WiFi"
+        ],
+      },
+
     ],
   },
 
-  {
-    kelas: "Bangsal Kelas 1",
-    harga: "xxxxxx",
-     images: [slider1, slider2, slider3, slider4, slider5],
-    fasilitas: [
-      "Kamar 2 pasien",
-      "TV bersama",
-      "Kamar mandi dalam",
-      "Pelayanan perawat",
-      "Nurse call",
-    ],
-  },
-
-  {
-    kelas: "Bangsal Kelas 2",
-    harga: "xxxxxxx",
-    images: [slider1, slider2, slider3, slider4, slider5],
-    fasilitas: [
-      "Kamar 3–4 pasien",
-      "Kipas angin",
-      "Kamar mandi bersama",
-      "Pelayanan perawat",
-      "Nurse call",
-    ],
-  },
-
-  {
-    kelas: "Bangsal Kelas 3",
-    harga: "xxxxxx",
-     images: [slider1, slider2, slider3, slider4, slider5],
-    fasilitas: [
-      "Kamar 6–8 pasien",
-      "Ventilasi standar",
-      "Kamar mandi bersama",
-      "Pelayanan perawat",
-      "Nurse call",
-    ],
-  },
 ];
 
 export const penunjang = [

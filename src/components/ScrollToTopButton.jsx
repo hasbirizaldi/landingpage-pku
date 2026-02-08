@@ -34,7 +34,7 @@ const ScrollTopButton = () => {
         z-50 border-2 borer-white
         bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-500
         text-white
-        p-4
+        sm:p-4 p-3
         rounded-full
         shadow-ku cursor-pointer
         hover:scale-104
@@ -42,7 +42,7 @@ const ScrollTopButton = () => {
       "
       aria-label="Scroll to top"
     >
-      <FaArrowUp className="lg:text-2xl text-xl" />
+      <FaArrowUp className="lg:text-2xl text-lg" />
     </button>
   );
 };

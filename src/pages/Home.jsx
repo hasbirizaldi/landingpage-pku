@@ -1,10 +1,11 @@
 import { Helmet } from "react-helmet-async";
 import PartnerKami from "../components/home/PartnerKami";
-import JknGoObat from "../components/home/JknGoObat";
 import PelayananKami from "../components/home/PelayananKami";
 import Slider from "../components/home/Slider";
 import BeritaArtikel from "../components/home/BeritaArtikel";
 import VidioHome from "../components/home/VidioHome";
+import LayananUnggulan from "../components/home/LayananUnggulan";
+import JknHome from "../components/home/JknHome";
 
 const Home = () => {
 
@@ -38,7 +39,8 @@ const Home = () => {
 
         {/* konten dengan background semi transparan */}
         <div>
-          <JknGoObat />
+          <JknHome />
+          <LayananUnggulan />
           <PartnerKami />
           <PelayananKami />
           <BeritaArtikel />

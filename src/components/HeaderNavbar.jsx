@@ -295,24 +295,24 @@ const HeaderNavbar = () => {
           {/* MOBILE PELAYANAN */}
           <li className="border-b">
             <button onClick={() => toggleDropdown("pelayanan")} className={`w-full px-4 py-3 flex justify-between items-center ${isActiveParent(pathsPelayanan) ? "text-yellow-300" : ""}`}>
-              PELAYANAN
+              FASILITAS
               <MdKeyboardArrowDown className={`transition ${openDropdown === "pelayanan" ? "rotate-180" : ""}`} />
             </button>
             {openDropdown === "pelayanan" && (
               <ul className="bg-emerald-800 text-sm">
                 <li className="px-6 py-2">
                   <Link to="/fasilitas/rawat-jalan" onClick={closeAll}>
-                    Rawat Jalan
+                    Pelayanan Rawat Jalan
                   </Link>
                 </li>
                 <li className="px-6 py-2">
                   <Link to="/fasilitas/rawat-inap" onClick={closeAll}>
-                    Rawat Inap
+                    Pelayanan Rawat Inap
                   </Link>
                 </li>
                 <li className="px-6 py-2">
                   <Link to="/fasilitas/penunjang" onClick={closeAll}>
-                    Penunjang
+                    Pelayanan Penunjang
                   </Link>
                 </li>
                 <li className="px-6 py-2">

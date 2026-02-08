@@ -22,7 +22,7 @@ const BedPasien = () => {
        <meta property="og:title" content="Bed Pasien RS PKU Sruweng" />
       <meta
         property="og:description"
-        content="Jumlah bed bangsal rawat inap RS PKU Muhammadiyah Sruweng."
+        content="Jumlah bed bangsal rawat inap RS PKU Muhammadiyah Sruweng"
       />
       <meta property="og:image" content="/pku.webp" />
       <meta property="og:type" content="website" />

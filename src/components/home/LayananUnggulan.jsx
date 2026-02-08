@@ -1,30 +1,25 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
-import { MdLibraryBooks } from "react-icons/md";
-import { FaUserDoctor } from "react-icons/fa6";
-import { FaUsers } from "react-icons/fa";
+import {  FaWhatsappSquare } from "react-icons/fa";
 import "swiper/css";
 import "swiper/css/navigation";
-import { images } from "../../api/data";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { RxDoubleArrowLeft, RxDoubleArrowRight } from "react-icons/rx";
 import { IoClose } from "react-icons/io5";
 import axios from "axios";
 
-
-export default function Slider() {
-  const [activeIndex, setActiveIndex] = useState(null);
-  const [sliderImages, setSliderImages] = useState([]);
-  const [loading, setLoading] = useState(true);
-
- useEffect(() => {
+const LayananUnggulan = () => {
+    const [activeIndex, setActiveIndex] = useState(null);
+    const [sliderImages, setSliderImages] = useState([]);
+    const [loading, setLoading] = useState(true);
+     useEffect(() => {
     const fetchGallery = async () => {
       try {
         setLoading(true);
 
         const res = await axios.get(
-          "https://brewokode.site/api/public-galleries"
+          "https://brewokode.site/api/public-sliders"
         );
 
         const images = res.data.data.data.map((item) => ({
@@ -42,43 +37,20 @@ export default function Slider() {
 
     fetchGallery();
   }, []);
-
-
   return (
-    <div className="bg-transparent">
-      {/* ===== HERO ===== */}
-      <section data-aos="fade-up">
-        <div className="w-full lg:w-[80%] mx-auto lg:pt-1 " >
-          <div className="relative overflow-hidden lg:rounded-xl shadow-ku ">
-            {/* overlay text */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white bg-black/40 z-10">
-              <h1 className="lg:text-3xl text-xl font-semibold mb-2" >SELAMAT DATANG DI</h1>
-              <h1 className="lg:text-5xl text-2xl font-bold mb-1" >RS PKU MUHAMMADIYAH SRUWENG</h1>
-              <h1 className="lg:text-2xl text-xl text-yellow-400" >"Semakin Unggul dan Islami"</h1>
-            </div>
+    <div className="bg-transparent" data-aos="fade-up">
+      {/* ================= QUICK MENU ================= */}
 
-            {/* BACKGROUND HERO */}
-            <div className="relative h-80 lg:h-[400px]">
+      {/* ================= MOBILE JKN & GO OBAT ================= */}
+      <section className=" py-10 lg:w-[80%] lg:mx-auto mx-2 bg-white/50 rounded-lg my-5 shadow-ku">
+        <p className="font-bold text-center text-2xl sm:text-3xl text-green-900">Layanan Unggulan</p>
+        <div className="h-[2px] w-60 lg:w-80 mx-auto bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 mb-8 sm:mb-10 mt-2"></div>
 
-          {/* Background Image */}
-          <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url(${images[0]})` }}
-          />
-
-          {/* Overlay Gelap */}
-          <div className="absolute inset-0 bg-black/20" />
-
-        </div>
-
-          </div>
-
-          {/* ===== SLIDER GAMBAR ===== */}
-          <div className="relative my-2">
+        <div className="relative my-2 px-3">
 
             {/* ✅ LOADING SKELETON */}
             {loading ? (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
                 {[1, 2, 3].map((item) => (
                   <div
                     key={item}
@@ -121,37 +93,16 @@ export default function Slider() {
             )}
           </div>
 
-        </div>
+          <Link
+            to="https://wa.me/6287877505050?text=Assalamualaikum%20RS%20PKU%20Sruweng%2C%20saya%20ingin%20bertanya"
+            target="_blank"
+            className="bg-white cursor-pointer hover:scale-105 transition-all ease-in-out rounded-lg shadow-icon flex items-center justify-center gap-2 border border-emerald-700 sm:w-80 w-50 mx-auto mt-8"
+          >
+            <FaWhatsappSquare className="text-emerald-700 lg:text-6xl text-4xl" /><span className="text-sm sm:text-xl text-emerald-800 font-semibold">Hubungi Admin</span>
+          </Link>
+        
       </section>
-
-      {/* ===== MENU ICON ===== */}
-      <section className="lg:w-[80%] mx-auto " data-aos="fade-up">
-        <div className="grid grid-cols-3 h-28 lg:h-40  lg:rounded-lg overflow-hidden">
-          <Link to="/jadwal-dokter" className="flex flex-col py-2 items-center justify-center bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 hover:bg-emerald-800 transition">
-            <div className="bg-white p-2 lg:p-5 rounded-full">
-              <FaUserDoctor className="text-2xl lg:text-4xl text-yellow-600" />
-            </div>
-             <span className="text-white lg:text-base text-sm font-semibold mt-2">Jadwl Poliklinik</span>
-           
-          </Link>
-
-          <Link to="/dokter-kami" className="flex flex-col items-center justify-center bg-emerald-600 border-x-2 border-white hover:bg-emerald-800 transition">
-            <div className="bg-white p-2 lg:p-5 rounded-full">
-              <FaUsers className="text-2xl lg:text-4xl text-yellow-600" />
-            </div>
-            <span className="text-white lg:text-base text-sm font-semibold mt-2">Dokter Kami</span>
-           
-          </Link>
-
-          <Link to="/" className="flex flex-col items-center justify-center bg-gradient-to-r from-emerald-600 via-emerald-700 to-emerald-900 hover:bg-emerald-800 transition">
-            <div className="bg-white p-2 lg:p-5 rounded-full">
-              <MdLibraryBooks className="text-2xl lg:text-4xl text-yellow-600" />
-            </div>
-             <span className="text-white lg:text-base text-sm font-semibold mt-2">Live Antrian</span>
-           
-          </Link>
-        </div>
-      </section>
+      
       {/* ===== MODAL IMAGE (SWIPER SAFE CLOSE) ===== */}
       {activeIndex !== null && (
         <div className="fixed inset-0 z-50">
@@ -216,6 +167,9 @@ export default function Slider() {
           </div>
         </div>
       )}
+      
     </div>
   );
-}
+};
+
+export default LayananUnggulan;

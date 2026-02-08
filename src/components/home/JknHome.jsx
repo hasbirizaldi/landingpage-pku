@@ -3,36 +3,50 @@ import { img } from "../../api/data";
 import { IoIosArrowDroprightCircle } from "react-icons/io";
 import { FaCloudDownloadAlt, FaUsers } from "react-icons/fa";
 
-const JknGoObat = () => {
+const JknHome = () => {
   return (
     <div className="bg-transparent" data-aos="fade-up">
       {/* ================= QUICK MENU ================= */}
 
       {/* ================= MOBILE JKN & GO OBAT ================= */}
-      <section className=" py-10 lg:w-[80%] lg:mx-auto mx-2 bg-white/50 rounded-lg my-5 shadow-ku">
-        <p className="font-bold text-center text-2xl sm:text-3xl text-green-900">Layanan Unggulan</p>
-        <div className="h-[2px] w-60 lg:w-80 mx-auto bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 mb-8 sm:mb-10 mt-2"></div>
-
+      <section className=" py-8 lg:w-[80%] lg:mx-auto mx-2 bg-white/50 rounded-lg my-5 shadow-ku">
         <div className="grid grid-cols-1 lg:grid-cols-2  gap-20 ">
           {/* MOBILE JKN */}
           <div className="flex flex-col items-center">
             <div className="font-semibold text-center">
               <p className="text-lg">Pelayanan Rawat Jalan</p>
-              <p className="text-2xl">Pendaftaran Melalui Mobile JKN</p>
+              <p className="text-xl">Pendaftaran Online Melalui Mobile JKN</p>
             </div>
 
             <div className="flex gap-4 mt-5">
-              <img src={img[2]} alt="Mobile JKN" className="w-24 sm:w-28" />
-              <img src={img[4]} alt="Mobile JKN" className="w-32 sm:w-40" />
+            
+            <img
+                src={img[2]}
+                alt="Mobile JKN"
+                className="w-24 sm:w-30 hover:scale-105 transition"
+            />
+           <div className="flex flex-col gap-2">
+             <a
+            href="https://apps.apple.com/id/app/mobile-jkn/id1237601115"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative z-10 inline-block"
+            >
+                <img src={img[4]} alt="Mobile JKN" className="w-32 sm:w-40 hover:scale-105 transition" />
+            </a>
+             <a
+            href="https://play.google.com/store/apps/details?id=app.bpjs.mobile&hl=id"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative z-10 inline-block"
+            >
+                <img src={img[9]} alt="Mobile JKN" className="w-32 sm:w-40 hover:scale-105 transition" />
+            </a>
+           </div>
+
             </div>
 
-            <Link
-              to="https://play.google.com/store/apps/details?id=app.bpjs.mobile&hl=id"
-              className="mt-6 bg-gradient-to-r from-blue-800 via-blue-700 to-blue-600 text-white lg:py-2 py-1 lg:px-5 px-3 rounded shadow-icon flex items-center gap-2 font-semibold text-base hover:scale-105 transition"
-            >
-              <FaCloudDownloadAlt />
-              Download Mobile JKN
-            </Link>
+           
           </div>
 
           {/* GO OBAT */}
@@ -53,4 +67,4 @@ const JknGoObat = () => {
   );
 };
 
-export default JknGoObat;
+export default JknHome;
