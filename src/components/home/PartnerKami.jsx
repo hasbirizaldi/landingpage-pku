@@ -12,15 +12,15 @@ const PartnerKami = () => {
         {/* GRID PARTNER */}
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-y-10">
           <img src={partner[0]} alt="JKN" className="h-6 lg:h-7 w-full object-contain" />
-          <img src={partner[1]} alt="BPJSTK" className="h-6 lg:h-10 w-full object-contain" />
-          <img src={partner[2]} alt="CAR" className="h-6 lg:h-12 w-full object-contain" />
-          <img src={partner[3]} alt="BRILIFE" className="h-6 lg:h-10 w-full object-contain" />
+          <img src={partner[1]} alt="BPJSTK" className="h-8 lg:h-10 w-full object-contain" />
+          <img src={partner[2]} alt="CAR" className="h-8 lg:h-12 w-full object-contain" />
+          <img src={partner[3]} alt="BRILIFE" className="h-8 lg:h-10 w-full object-contain" />
+          <img src={partner[6]} alt="MAG" className="h-8 lg:h-9 w-full object-contain" />
+          <img src={partner[5]} alt="JASA-RAHARJA" className="h-10 lg:h-12 w-full object-contain" />
           <img src={partner[4]} alt="KAI" className="h-6 lg:h-8 w-full object-contain" />
-          <img src={partner[5]} alt="JASA-RAHARJA" className="h-6 lg:h-12 w-full object-contain" />
-          <img src={partner[6]} alt="MAG" className="h-6 lg:h-9 w-full object-contain" />
-          <img src={partner[7]} alt="PLN" className="h-6 lg:h-10 w-full object-contain" />
-          <img src={partner[8]} alt="PLN" className="h-6 lg:h-20 w-full object-contain" />
-          <img src={partner[9]} alt="PLN" className="h-6 lg:h-20 w-full object-contain" />
+          <img src={partner[7]} alt="PLN" className="h-10 lg:h-10 w-full object-contain" />
+          <img src={partner[8]} alt="PLN" className="h-20 lg:h-20 w-full object-contain" />
+          <img src={partner[9]} alt="PLN" className="h-20 lg:h-20 w-full object-contain" />
         </div>
 
         {/* BUTTON */}

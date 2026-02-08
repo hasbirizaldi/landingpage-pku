@@ -38,7 +38,7 @@ const LayananUnggulan = () => {
     fetchGallery();
   }, []);
   return (
-    <div className="bg-transparent" data-aos="fade-up">
+    <div className="bg-transparent" >
       {/* ================= QUICK MENU ================= */}
 
       {/* ================= MOBILE JKN & GO OBAT ================= */}
@@ -46,7 +46,7 @@ const LayananUnggulan = () => {
         <p className="font-bold text-center text-2xl sm:text-3xl text-green-900">Layanan Unggulan</p>
         <div className="h-[2px] w-60 lg:w-80 mx-auto bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 mb-8 sm:mb-10 mt-2"></div>
 
-        <div className="relative my-2 px-3">
+        <div className="relative my-2 px-2">
 
             {/* ✅ LOADING SKELETON */}
             {loading ? (
@@ -84,7 +84,7 @@ const LayananUnggulan = () => {
                     >
                       <img
                         src={img.url}
-                        className="w-full h-[220px] object-cover sm:rounded-lg"
+                        className="w-full h-full object-cover rounded-lg"
                       />
                     </div>
                   </SwiperSlide>
@@ -102,13 +102,12 @@ const LayananUnggulan = () => {
           </Link>
         
       </section>
-      
       {/* ===== MODAL IMAGE (SWIPER SAFE CLOSE) ===== */}
       {activeIndex !== null && (
-        <div className="fixed inset-0 z-50">
+        <div className="fixed inset-0 z-[9999]">
           {/* BACKDROP */}
           <div
-            className="absolute inset-0 bg-black/80 z-40"
+            className="absolute inset-0 bg-black/90 "
             onMouseDown={() => setActiveIndex(null)} // 🔥 FIX
           />
 
@@ -118,18 +117,18 @@ const LayananUnggulan = () => {
             <button
               type="button"
               onMouseDown={() => setActiveIndex(null)} // 🔥 FIX
-              className="absolute top-50 lg:top-0 right-0 lg:right-15 z-[999] cursor-pointer text-white hover:scale-110 transition"
+              className="absolute top-10 lg:top-0 right-0 lg:right-15 z-[999] cursor-pointer text-white hover:scale-110 transition"
             >
               <IoClose className="lg:text-5xl text-5xl" />
             </button>
 
             {/* Arrow Kiri */}
-            <button className="swiper-prev absolute left-0 lg:left-20 z-[999] text-white cursor-pointer text-5xl lg:text-7xl">
+            <button className="swiper-prev absolute left-0 lg:left-20 z-[999] text-white cursor-pointer text-4xl lg:text-7xl">
               <RxDoubleArrowLeft />
             </button>
 
             {/* Arrow Kanan */}
-            <button className="swiper-next absolute right-0 lg:right-20 z-[999] text-white cursor-pointer text-5xl lg:text-7xl">
+            <button className="swiper-next absolute right-0 lg:right-20 z-[999] text-white cursor-pointer text-4xl lg:text-7xl">
               <RxDoubleArrowRight />
             </button>
 
@@ -151,8 +150,8 @@ const LayananUnggulan = () => {
                       src={img.url}
                       alt={`Preview ${i}`}
                       className="
-                        lg:w-[900px]
-                        lg:h-[600px]
+                        lg:w-[400px]
+                        lg:h-[500px]
                         object-cover
                         rounded-lg
                         shadow-lg
@@ -167,6 +166,7 @@ const LayananUnggulan = () => {
           </div>
         </div>
       )}
+      
       
     </div>
   );

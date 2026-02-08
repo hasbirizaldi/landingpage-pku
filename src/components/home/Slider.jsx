@@ -74,7 +74,7 @@ export default function Slider() {
           </div>
 
           {/* ===== SLIDER GAMBAR ===== */}
-          <div className="relative my-2">
+          <div className="relative my-2 mx-1">
 
             {/* ✅ LOADING SKELETON */}
             {loading ? (
@@ -167,18 +167,18 @@ export default function Slider() {
             <button
               type="button"
               onMouseDown={() => setActiveIndex(null)} // 🔥 FIX
-              className="absolute top-50 lg:top-0 right-0 lg:right-15 z-[999] cursor-pointer text-white hover:scale-110 transition"
+              className="absolute top-30 lg:top-0 right-0 lg:right-15 z-[999] cursor-pointer text-white hover:scale-110 transition"
             >
               <IoClose className="lg:text-5xl text-5xl" />
             </button>
 
             {/* Arrow Kiri */}
-            <button className="swiper-prev absolute left-0 lg:left-20 z-[999] text-white cursor-pointer text-5xl lg:text-7xl">
+            <button className="swiper-prev absolute left-0 lg:left-32 z-[999] text-white cursor-pointer text-3xl lg:text-5xl">
               <RxDoubleArrowLeft />
             </button>
 
             {/* Arrow Kanan */}
-            <button className="swiper-next absolute right-0 lg:right-20 z-[999] text-white cursor-pointer text-5xl lg:text-7xl">
+            <button className="swiper-next absolute right-0 lg:right-32 z-[999] text-white cursor-pointer text-3xl lg:text-5xl">
               <RxDoubleArrowRight />
             </button>
 
