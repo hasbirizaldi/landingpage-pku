@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { IoIosArrowForward } from "react-icons/io";
 import { dataBangsal } from "../api/data";
-import { Helmet } from "react-helmet-async";
 
 const BedPasien = () => {
   const totalBed = dataBangsal.reduce((acc, item) => acc + item.jumlah, 0);
@@ -13,21 +12,6 @@ const BedPasien = () => {
     className="min-h-screen bg-fixed bg-cover bg-center"
     style={{ backgroundImage: "url('/5.jpg')" }}
     >
-    <Helmet>
-      <title>Bed Pasien RS PKU Muhammadiyah Sruweng</title>
-      <meta
-        name="description"
-        content="Informasi jumlah bed bangsal rawat inap RS PKU Muhammadiyah Sruweng."
-      />
-       <meta property="og:title" content="Bed Pasien RS PKU Sruweng" />
-      <meta
-        property="og:description"
-        content="Jumlah bed bangsal rawat inap RS PKU Muhammadiyah Sruweng"
-      />
-      <meta property="og:image" content="/pku.webp" />
-      <meta property="og:type" content="website" />
-    </Helmet>
-
       <div className="bg-white/60 min-h-screen pb-6">
 
         {/* ================= HEADER ================= */}

@@ -98,7 +98,7 @@ const LayananUnggulan = () => {
             target="_blank"
             className="bg-white cursor-pointer hover:scale-105 transition-all ease-in-out rounded-lg shadow-icon flex items-center justify-center gap-2 border border-emerald-700 sm:w-80 w-50 mx-auto mt-8"
           >
-            <FaWhatsappSquare className="text-emerald-700 lg:text-6xl text-4xl" /><span className="text-sm sm:text-xl text-emerald-800 font-semibold">Hubungi Admin</span>
+            <FaWhatsappSquare className="text-emerald-700 lg:text-5xl text-4xl" /><span className="text-sm sm:text-lg text-emerald-800 font-semibold">Hubungi Admin</span>
           </Link>
         
       </section>

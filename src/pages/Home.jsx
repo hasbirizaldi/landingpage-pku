@@ -1,4 +1,3 @@
-import { Helmet } from "react-helmet-async";
 import PartnerKami from "../components/home/PartnerKami";
 import PelayananKami from "../components/home/PelayananKami";
 import Slider from "../components/home/Slider";
@@ -11,18 +10,6 @@ const Home = () => {
 
   return (
     <div className="relative min-h-screen">
-       <Helmet>
-          <title>RS PKU Sruweng | Beranda</title>
-
-          <meta
-            name="description"
-            content="Website resmi RS PKU Muhammadiyah Sruweng, menyediakan layanan kesehatan, BPJS, rawat inap dan rawat jalan."
-          />
-
-          <meta property="og:title" content="RS PKU Sruweng" />
-          <meta property="og:image" content="/pku.webp" />
-        </Helmet>
-      {/* ===== BACKGROUND DIAM ===== */}
       <div
         className="fixed inset-0 bg-cover bg-center -z-20"
         style={{
