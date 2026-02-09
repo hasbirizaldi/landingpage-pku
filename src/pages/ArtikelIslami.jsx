@@ -15,9 +15,9 @@ const ArtikelIslami = () => {
 
 
   const tabs = [
-    { label: "Berita Terbaru", value: "berita" },
-    { label: "Artikel Kesehatan", value: "artikel-kesehatan" },
-    { label: "Artikel Islami", value: "artikel-islami" },
+    { label: " Terbaru", value: "berita" },
+    { label: " Kesehatan", value: "artikel-kesehatan" },
+    { label: " Islami", value: "artikel-islami" },
   ];
 
   const categoryMap = {

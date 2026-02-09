@@ -66,7 +66,7 @@ const HeaderNavbar = () => {
             <div className="flex lg:gap-2 gap-1">
               <img src={img[0]} alt="logo" className="max-w-12 lg:max-w-14 lg:max-h-16" />
               <div className="flex flex-col justify-center">
-                <h1 className="font-bold leading-5 text-white text-sm lg:text-base">RS PKU MUHAMMADIYAH</h1>
+                <h1 className="font-bold leading-5 text-white text-sm lg:text-base ">RS PKU MUHAMMADIYAH</h1>
                 <h1 className="font-bold leading-5 text-white text-sm lg:text-base">SRUWENG</h1>
               </div>
             </div>
@@ -91,26 +91,27 @@ const HeaderNavbar = () => {
                 </div>
                 <p className="flex flex-col">
                   <span className="font-semibold leading-4 text-white">Call Center</span>
-                  <span className="text-white font-normal">0287 - 6601061</span>
+                  <span className="text-white font-normal">(0287)382597/550667</span>
                 </p>
               </Link>
             </div>
-            <div className="flex flex-col justify-center items-center">
-              <div className="flex gap-1 ml-12">
-                <Link to="https://www.instagram.com/rspkumuhammadiyahsruweng/" target="_blank" className="w-8 h-8 flex items-center justify-center transition">
-                  <FaInstagram className="text-lg text-white hover:text-pink-700 hover:scale-110 transition-all ease-in-out" />
-                </Link>
-                <Link to="https://web.facebook.com/pkusruweng" target="_blank" className="w-8 h-8 flex items-center justify-center transition">
-                  <FaFacebookF className="text-lg text-white hover:text-blue-600 hover:scale-110 transition-all " />
-                </Link>
-                <Link to="https://www.tiktok.com/@rspkumuhammadiyahsruweng" target="_blank" className="w-8 h-8 flex items-center justify-center transition">
-                  <FaTiktok className="text-lg text-white hover:text-gray-700 hover:scale-110 transition-all " />
-                </Link>
-                <Link to="https://www.youtube.com/@pkusruweng9292" target="_blank" className="w-8 h-8 flex items-center justify-center transition">
-                  <FaYoutube className="text-lg text-white hover:text-red-600 hover:scale-110 transition-all " />
-                </Link>
+              
+              <div className="flex flex-col justify-center items-center">
+                <div className="flex gap-1 ml-12">
+                  <Link to="https://www.instagram.com/rspkumuhammadiyahsruweng/" target="_blank" className="w-8 h-8 flex items-center justify-center transition">
+                    <FaInstagram className="text-lg text-white hover:text-pink-700 hover:scale-110 transition-all ease-in-out" />
+                  </Link>
+                  <Link to="https://web.facebook.com/pkusruweng" target="_blank" className="w-8 h-8 flex items-center justify-center transition">
+                    <FaFacebookF className="text-lg text-white hover:text-blue-600 hover:scale-110 transition-all " />
+                  </Link>
+                  <Link to="https://www.tiktok.com/@rspkumuhammadiyahsruweng" target="_blank" className="w-8 h-8 flex items-center justify-center transition">
+                    <FaTiktok className="text-lg text-white hover:text-gray-700 hover:scale-110 transition-all " />
+                  </Link>
+                  <Link to="https://www.youtube.com/@pkusruweng9292" target="_blank" className="w-8 h-8 flex items-center justify-center transition">
+                    <FaYoutube className="text-lg text-white hover:text-red-600 hover:scale-110 transition-all " />
+                  </Link>
+                </div>
               </div>
-            </div>
           </div>
           {/* HAMBURGER */}
           <div className="lg:hidden cursor-pointer" onClick={() => setOpenMenu(!openMenu)}>
@@ -146,10 +147,10 @@ const HeaderNavbar = () => {
               </NavLink>
             </li>
 
-            {/* TENTANG KAMI - LOGIKA ACTIVE DROPDOWN */}
+            {/* PROFIL - LOGIKA ACTIVE DROPDOWN */}
             <li className={`relative group px-3 py-4 cursor-pointer`}>
               <div className={`flex items-center ${isActiveParent(pathsTentang) ? " border-b-2 border-white" : ""}`}>
-                TENTANG KAMI <MdKeyboardArrowDown />
+                PROFIL <MdKeyboardArrowDown />
               </div>
               <div className="absolute font-normal left-0 top-full bg-white text-black w-56 rounded shadow opacity-0 invisible group-hover:visible group-hover:opacity-100 transition">
                 {pathsTentang.map((path, idx) => {
@@ -255,10 +256,10 @@ const HeaderNavbar = () => {
             </NavLink>
           </li>
 
-          {/* MOBILE TENTANG KAMI */}
+          {/* MOBILE PROFIL */}
           <li className="border-b">
             <button onClick={() => toggleDropdown("tentang")} className={`w-full px-4 py-3 flex justify-between items-center ${isActiveParent(pathsTentang) ? "text-yellow-300" : ""}`}>
-              TENTANG KAMI
+              PROFIL
               <MdKeyboardArrowDown className={`transition ${openDropdown === "tentang" ? "rotate-180" : ""}`} />
             </button>
             {openDropdown === "tentang" && (
@@ -270,12 +271,12 @@ const HeaderNavbar = () => {
                 </li>
                 <li className="px-6 py-2">
                   <Link to="/falsafah-visi-misi" onClick={closeAll}>
-                    Visi & Misi
+                    Falsafah Visi & Misi
                   </Link>
                 </li>
                 <li className="px-6 py-2">
                   <Link to="/akreditasi-penghargaan" onClick={closeAll}>
-                    Akreditasi
+                    Akreditasi & Penghargaan
                   </Link>
                 </li>
                 <li className="px-6 py-2">
@@ -285,7 +286,7 @@ const HeaderNavbar = () => {
                 </li>
                 <li className="px-6 py-2">
                   <Link to="/struktur-organisasi" onClick={closeAll}>
-                    Struktur
+                    Struktur Organisasi
                   </Link>
                 </li>
               </ul>
@@ -337,7 +338,7 @@ const HeaderNavbar = () => {
           {/* MOBILE BERITA */}
           <li className="border-b">
             <button onClick={() => toggleDropdown("berita")} className={`w-full px-4 py-3 flex justify-between items-center ${isActiveParent(pathsBerita) ? "text-yellow-300" : ""}`}>
-              BERITA & ARTIKEL
+              ARTIKEL
               <MdKeyboardArrowDown className={`transition ${openDropdown === "berita" ? "rotate-180" : ""}`} />
             </button>
             {openDropdown === "berita" && (

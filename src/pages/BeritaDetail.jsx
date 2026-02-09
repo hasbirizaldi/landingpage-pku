@@ -128,7 +128,7 @@ const BeritaDetail = () => {
           {/* ================= KONTEN UTAMA ================= */}
           <div className="p-2 lg:p-8">
             <Link
-              to="/artikel"
+              to="/artikel-baru"
               className="inline-flex items-center text-sm text-emerald-700 font-semibold mb-4 hover:underline"
             >
               <IoIosArrowBack className="mr-1" />

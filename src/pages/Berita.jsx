@@ -15,9 +15,9 @@ const Berita = () => {
 
 
   const tabs = [
-    { label: "Artikel Terbaru", value: "berita" },
-    { label: "Artikel Kesehatan", value: "artikel-kesehatan" },
-    { label: "Artikel Islami", value: "artikel-islami" },
+    { label: " Terbaru", value: "berita" },
+    { label: " Kesehatan", value: "artikel-kesehatan" },
+    { label: " Islami", value: "artikel-islami" },
   ];
 
   const categoryMap = {
@@ -114,13 +114,13 @@ const Berita = () => {
             </div>
 
             {/* LIST */}
-            <div className="grid lg:grid-cols-3 grid-cols-1 gap-4 lg:w-[80%] sm:mx-auto mx-2">
+            <div className="grid lg:grid-cols-3 grid-cols-1 gap-4 lg:w-[80%] sm:mx-auto mx-2" >
               {loading && (
                 <>
                   {[...Array(6)].map((_, i) => (
                     <div
                       key={i}
-                      className="bg-white rounded shadow-ku overflow-hidden animate-pulse"
+                      className="bg-white rounded shadow-ku overflow-hidden animate-pulse" 
                     >
                       <div className="h-48 bg-slate-200" />
                       <div className="p-3 space-y-2">

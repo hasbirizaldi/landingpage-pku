@@ -52,9 +52,9 @@ export default function Slider() {
           <div className="relative overflow-hidden lg:rounded-xl shadow-ku ">
             {/* overlay text */}
             <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white bg-black/40 z-10">
-              <h1 className="lg:text-3xl text-xl font-semibold mb-2" >SELAMAT DATANG DI</h1>
-              <h1 className="lg:text-5xl text-2xl font-bold mb-1" >RS PKU MUHAMMADIYAH SRUWENG</h1>
-              <h1 className="lg:text-2xl text-xl text-yellow-400" >"Semakin Unggul dan Islami"</h1>
+              <h1 className="lg:text-3xl text-xl font-semibold mb-2 " >SELAMAT DATANG DI</h1>
+              <h1 className="lg:text-5xl text-3xl font-bold mb-1" >RS PKU MUHAMMADIYAH SRUWENG</h1>
+              <h1 className="lg:text-3xl text-xl text-yellow-400 el-messiri" >"Semakin Unggul dan Islami"</h1>
             </div>
 
             {/* BACKGROUND HERO */}
@@ -112,7 +112,7 @@ export default function Slider() {
                     >
                       <img
                         src={img.url}
-                        className="w-full h-[220px] object-cover sm:rounded-lg"
+                        className="w-full h-[220px] object-cover sm:rounded-lg rounded-lg"
                       />
                     </div>
                   </SwiperSlide>
@@ -125,18 +125,18 @@ export default function Slider() {
       </section>
 
       {/* ===== MENU ICON ===== */}
-      <section className="lg:w-[80%] mx-auto " data-aos="fade-up">
-        <div className="grid grid-cols-3 h-28 lg:h-40  lg:rounded-lg overflow-hidden">
+      <section className="lg:w-[80%] sm:mx-auto mx-1" data-aos="fade-up">
+        <div className="grid grid-cols-3 h-28 lg:h-40 rounded-lg overflow-hidden">
           <Link to="/jadwal-dokter" className="flex flex-col py-2 items-center justify-center bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 hover:bg-emerald-800 transition">
-            <div className="bg-white p-2 lg:p-5 rounded-full">
+            <div className="bg-white p-2 lg:p-5 rounded-full" data-aos="flip-right">
               <FaUserDoctor className="text-2xl lg:text-4xl text-yellow-600" />
             </div>
-             <span className="text-white lg:text-base text-sm font-semibold mt-2">Jadwl Poliklinik</span>
+             <span className="text-white lg:text-base text-sm font-semibold mt-2">Jadwal Poliklinik</span>
            
           </Link>
 
           <Link to="/dokter-kami" className="flex flex-col items-center justify-center bg-emerald-600 border-x-2 border-white hover:bg-emerald-800 transition">
-            <div className="bg-white p-2 lg:p-5 rounded-full">
+            <div className="bg-white p-2 lg:p-5 rounded-full" data-aos="flip-right">
               <FaUsers className="text-2xl lg:text-4xl text-yellow-600" />
             </div>
             <span className="text-white lg:text-base text-sm font-semibold mt-2">Dokter Kami</span>
@@ -144,10 +144,10 @@ export default function Slider() {
           </Link>
 
           <Link to="/" className="flex flex-col items-center justify-center bg-gradient-to-r from-emerald-600 via-emerald-700 to-emerald-900 hover:bg-emerald-800 transition">
-            <div className="bg-white p-2 lg:p-5 rounded-full">
+            <div className="bg-white p-2 lg:p-5 rounded-full" data-aos="flip-right">
               <MdLibraryBooks className="text-2xl lg:text-4xl text-yellow-600" />
             </div>
-             <span className="text-white lg:text-base text-sm font-semibold mt-2">Live Antrian</span>
+             <span className="text-white lg:text-base text-sm font-semibold mt-2">----</span>
            
           </Link>
         </div>

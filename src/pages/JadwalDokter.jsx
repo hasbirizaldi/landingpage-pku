@@ -36,7 +36,7 @@ const JadwalDokter = () => {
 
 
   useEffect(() => {
-    document.title = "RS PKU Sruweng | Jadwal Dokter";
+    document.title = "RS PKU Sruweng | Jadwal Poliklinik";
 
     fetchData(tanggal || null);
   }, [tanggal]); // ⬅️ PENTING
@@ -53,11 +53,11 @@ const JadwalDokter = () => {
       <div className="bg-white/60 min-h-screen pb-5">
         <div data-aos="fade-up" className="pt-4">
           <div className="lg:w-[80%] lg:mx-auto mx-2 text-slate-50  bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 lg:p-12 p-8 flex flex-col justify-center h-36 rounded-lg shadow-ku">
-            <h1 className="lg:text-2xl text-xl font-bold mb-1">Jadwal Dokter</h1>
+            <h1 className="lg:text-2xl text-xl font-bold mb-1">Jadwal Poliklinik</h1>
             <div className="flex items-center gap-1 text-slate-200">
               <span>Beranda</span>
               <IoIosArrowForward />
-              <span>Jadwal Dokter</span>
+              <span>Jadwal Poliklinik</span>
             </div>
           </div>
         </div>

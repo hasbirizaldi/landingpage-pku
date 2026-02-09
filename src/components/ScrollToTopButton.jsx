@@ -34,7 +34,7 @@ const ScrollTopButton = () => {
         z-50 border-2 borer-white
         bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-500
         text-white
-        sm:p-4 p-3
+        sm:p-4 p-3.5
         rounded-full
         shadow-ku cursor-pointer
         hover:scale-104

@@ -9,7 +9,7 @@ const JknHome = () => {
       {/* ================= QUICK MENU ================= */}
 
       {/* ================= MOBILE JKN & GO OBAT ================= */}
-      <section className=" py-8 lg:w-[80%] lg:mx-auto mx-2 bg-white/50 rounded-lg my-5 shadow-ku">
+      <section className=" py-8 lg:w-[80%] lg:mx-auto mx-2 bg-white/50 rounded-lg mb-5 mt-2 shadow-ku">
         <div className="grid grid-cols-1 lg:grid-cols-2  gap-20 ">
           {/* MOBILE JKN */}
           <div className="flex flex-col items-center">

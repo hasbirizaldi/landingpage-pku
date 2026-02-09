@@ -17,7 +17,7 @@ const Footer = () => {
                 <p className="font-bold text-lg sm:text-lg text-white">RS PKU Muhammadiyah </p>
                 <p className="font-bold text-lg sm:text-lg text-white">Sruweng</p>
               </div>
-              <p className="font-semibold text-sm sm:text-md text-yellow-500">Semakin Unggul dan Islami</p>
+              <p className="font-semibold text-sm sm:text-md text-yellow-500 el-messiri">Semakin Unggul dan Islami</p>
             </div>
           </Link>
 
@@ -38,7 +38,7 @@ const Footer = () => {
 
             <div className="flex items-center gap-2">
               <FaPhoneAlt />
-              <p className="text-sm font-normal">0287 – 6601061</p>
+              <p className="text-sm font-normal">(0287)382597/550667</p>
             </div>
           </div>
 
@@ -84,13 +84,13 @@ const Footer = () => {
 
           <div className="space-y-3 flex flex-col text-sm sm:text-sm text-slate-200">
             <Link to="/" className="hover:text-white">
-              Kenapa Kami
-            </Link>
-            <Link to="/" className="hover:text-white">
               Profil Rumah Sakit
             </Link>
             <Link to="/indikator-mutu" className="hover:text-white">
               Indikator Mutu
+            </Link>
+            <Link to="/struktur-organisasi" className="hover:text-white">
+              Struktur Organisasi
             </Link>
           </div>
         </div>
@@ -100,14 +100,14 @@ const Footer = () => {
           <h3 className="font-bold text-lg sm:text-base mb-4 text-slate-50">Hot Line</h3>
 
           <div className="space-y-3 flex flex-col text-sm sm:text-base text-slate-200">
-            <Link to="/berita" className="hover:text-white">
-              Berita
+            <Link to="/artikel-baru" className="hover:text-white">
+              Artikel
             </Link>
-            <Link to="/" className="hover:text-white">
-              Layanan
+            <Link to="/jadwal-dokter" className="hover:text-white">
+              Jadwal Poliklinik
             </Link>
-            <Link to="/" className="hover:text-white">
-              Kontak Kami
+            <Link to="/dokter-kami" className="hover:text-white">
+              Dokter Kami
             </Link>
             <Link to="/karir" className="hover:text-white">
               Karier
