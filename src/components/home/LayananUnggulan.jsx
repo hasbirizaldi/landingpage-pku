@@ -39,8 +39,6 @@ const LayananUnggulan = () => {
   }, []);
   return (
     <div className="bg-transparent" >
-      {/* ================= QUICK MENU ================= */}
-
       {/* ================= MOBILE JKN & GO OBAT ================= */}
       <section className=" py-10 lg:w-[80%] lg:mx-auto mx-2 bg-white/50 rounded-lg my-5 shadow-ku">
         <p className="font-bold text-center text-2xl sm:text-3xl text-green-900">Layanan Unggulan</p>
