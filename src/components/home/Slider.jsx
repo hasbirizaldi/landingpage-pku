@@ -74,7 +74,7 @@ export default function Slider() {
           </div>
 
           {/* ===== SLIDER GAMBAR ===== */}
-          <div className="relative my-2 mx-1">
+          <div className="relative my-2 mx-1 lg:mx-0">
 
             {/* ✅ LOADING SKELETON */}
             {loading ? (

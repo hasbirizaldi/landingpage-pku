@@ -162,7 +162,7 @@ const BeritaDetail = () => {
             {artikel.tags && artikel.tags.length > 0 && (
               <div className="mb-4">
                 <strong>Tags:</strong>
-                <ul className="flex gap-2 mt-1">
+                <ul className="flex flex-wrap gap-2 mt-1">
                   {artikel.tags.map(tag => (
                     <li key={tag.id} className="px-2 py-1 bg-gray-200 rounded hover:bg-gray-300 transition">
                       <Link to={`/tags/${tag.slug}`} className="text-emerald-700 hover:underline">
