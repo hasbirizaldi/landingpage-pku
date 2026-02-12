@@ -80,11 +80,11 @@ const Footer = () => {
 
         {/* TENTANG KAMI */}
         <div>
-          <h3 className="font-bold text-lg sm:text-base mb-4 text-slate-50">Tentang Kami</h3>
+          <h3 className="font-bold text-lg sm:text-base mb-4 text-slate-50">Profil Kami</h3>
 
           <div className="space-y-3 flex flex-col text-sm sm:text-sm text-slate-200">
-            <Link to="/" className="hover:text-white">
-              Profil Rumah Sakit
+            <Link to="/sejarah" className="hover:text-white">
+              Sejarah
             </Link>
             <Link to="/indikator-mutu" className="hover:text-white">
               Indikator Mutu
